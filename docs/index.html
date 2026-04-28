@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoyaltyOS — Build Your AI Loyalty Programme</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0f;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .logo span { color: #7C3AED; }
+    .nav-link {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #fff; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: #a78bfa;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    h1 span { color: #7C3AED; }
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+      padding: 0 1.5rem;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(124,58,237,0.2);
+      border: 1px solid rgba(124,58,237,0.4);
+      color: #a78bfa;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-arrow { color: rgba(255,255,255,0.2); font-size: 0.7rem; }
+
+    /* FORM CARD */
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    /* PROGRESS */
+    .progress-bar-wrap {
+      margin-bottom: 2rem;
+    }
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .progress-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      transition: color 0.3s;
+    }
+    .progress-label.active { color: #a78bfa; font-weight: 600; }
+    .progress-track {
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7C3AED, #a78bfa);
+      border-radius: 2px;
+      transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* STEP PANELS */
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .step-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }
+
+    /* FORM FIELDS */
+    .field { margin-bottom: 1.25rem; }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    label .req { color: #7C3AED; margin-left: 2px; }
+    label .hint {
+      font-weight: 400;
+      color: rgba(255,255,255,0.3);
+      margin-left: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem;
+      color: #fff;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(124,58,237,0.6);
+      background: rgba(124,58,237,0.05);
+    }
+    textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
+    select option { background: #1a1a2e; color: #fff; }
+
+    .slug-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .slug-wrap:focus-within { border-color: rgba(124,58,237,0.6); }
+    .slug-prefix {
+      padding: 0.7rem 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      white-space: nowrap;
+      background: rgba(255,255,255,0.03);
+    }
+    .slug-wrap input {
+      border: none;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    /* BUSINESS TYPE GRID */
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    .type-option { display: none; }
+    .type-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
+    .type-label:hover { border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.05); }
+    .type-option:checked + .type-label {
+      border-color: #7C3AED;
+      background: rgba(124,58,237,0.12);
+      color: #a78bfa;
+    }
+    .type-icon { font-size: 1.4rem; }
+    .type-name { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+    .type-option:checked + .type-label .type-name { color: #a78bfa; }
+
+    /* CHALLENGE OPTIONS */
+    .challenge-options { display: flex; flex-direction: column; gap: 0.5rem; }
+    .challenge-option { display: none; }
+    .challenge-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .challenge-label:hover { border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.05); }
+    .challenge-option:checked + .challenge-label {
+      border-color: #7C3AED;
+      background: rgba(124,58,237,0.1);
+    }
+    .challenge-radio {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.15s;
+    }
+    .challenge-option:checked + .challenge-label .challenge-radio {
+      border-color: #7C3AED;
+      background: #7C3AED;
+    }
+    .challenge-text strong { font-size: 0.85rem; display: block; margin-bottom: 0.1rem; }
+    .challenge-text span { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+    /* FIELD ROW */
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+
+    /* ERROR */
+    .field-error {
+      font-size: 0.75rem;
+      color: #f87171;
+      margin-top: 0.35rem;
+      display: none;
+    }
+    .field-error.show { display: block; }
+
+    /* BUTTONS */
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      justify-content: flex-end;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .btn-primary {
+      background: #7C3AED;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #6d28d9; }
+    .btn-primary:disabled { background: rgba(124,58,237,0.3); cursor: not-allowed; }
+    .btn-submit {
+      background: linear-gradient(135deg, #7C3AED, #6d28d9);
+      color: #fff;
+      padding: 0.85rem 2rem;
+    }
+    .btn-submit:hover { background: linear-gradient(135deg, #6d28d9, #5b21b6); transform: translateY(-1px); }
+
+    /* SUCCESS STATE */
+    .success-state { display: none; text-align: center; padding: 2rem 0; }
+    .success-state.show { display: block; }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(124,58,237,0.15);
+      border: 2px solid rgba(124,58,237,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin: 0 auto 1.5rem;
+    }
+    .success-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .success-body { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .success-url {
+      display: inline-block;
+      padding: 0.6rem 1.25rem;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #a78bfa;
+      font-family: monospace;
+      margin-bottom: 1.5rem;
+    }
+    .pipeline-steps { text-align: left; margin-top: 1.5rem; }
+    .pipeline-step {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .pipeline-step:last-child { border-bottom: none; }
+    .ps-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+      transition: background 0.4s;
+    }
+    .ps-dot.done { background: #10b981; }
+    .ps-dot.running { background: #7C3AED; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* ERROR STATE */
+    .error-state { display: none; text-align: center; padding: 1.5rem 0; }
+    .error-state.show { display: block; }
+    .error-msg {
+      color: #f87171;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Loyalty<span>OS</span></div>
+  <a href="https://loyaltyos.vercel.app" class="nav-link" target="_blank">View live app →</a>
+</nav>
+
+<section class="hero">
+  <div class="badge">Powered by Claude AI</div>
+  <h1>Your loyalty programme,<br><span>built in minutes</span></h1>
+  <p class="subtitle">
+    Tell us about your business. Our AI pipeline — five specialist agents working in sequence —
+    researches your market, designs your loyalty system, builds the tech spec, writes the copy,
+    and delivers a live loyalty app at your own URL.
+  </p>
+</section>
+
+<div class="steps">
+  <div class="step"><div class="step-num">1</div> Fill in your business details</div>
+  <div class="step-arrow">→</div>
+  <div class="step"><div class="step-num">2</div> AI pipeline runs (5 agents)</div>
+  <div class="step-arrow">→</div>
+  <div class="step"><div class="step-num">3</div> Your app goes live</div>
+  <div class="step-arrow">→</div>
+  <div class="step"><div class="step-num">4</div> Customers start earning</div>
+</div>
+
+<div class="form-wrap">
+  <div class="card">
+
+    <!-- SUCCESS STATE -->
+    <div class="success-state" id="successState">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Pipeline is running!</h2>
+      <p class="success-body">
+        Five AI agents are now researching your market, designing your loyalty system,
+        building the tech spec, writing your copy, and generating your executive summary.
+        Your app will be live at:
+      </p>
+      <div class="success-url" id="successUrl">loyaltyos.vercel.app/...</div>
+      <p class="success-body">This usually takes 3–5 minutes. Bookmark the URL above.</p>
+      <div class="pipeline-steps">
+        <div class="pipeline-step"><div class="ps-dot running" id="dot1"></div> Researcher — analysing your market & customers</div>
+        <div class="pipeline-step"><div class="ps-dot" id="dot2"></div> Designer — designing your loyalty experience</div>
+        <div class="pipeline-step"><div class="ps-dot" id="dot3"></div> Maker — building the technical specification</div>
+        <div class="pipeline-step"><div class="ps-dot" id="dot4"></div> Communicator — writing your customer copy</div>
+        <div class="pipeline-step"><div class="ps-dot" id="dot5"></div> Manager — synthesising the final strategy</div>
+      </div>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div class="error-state" id="errorState">
+      <p class="error-msg" id="errorMsg">Something went wrong. Please try again.</p>
+      <button class="btn btn-primary" onclick="resetForm()">Try again</button>
+    </div>
+
+    <!-- FORM -->
+    <div id="formContent">
+      <div class="progress-bar-wrap">
+        <div class="progress-labels">
+          <span class="progress-label active" id="lbl1">Business</span>
+          <span class="progress-label" id="lbl2">Customers</span>
+          <span class="progress-label" id="lbl3">Challenge</span>
+          <span class="progress-label" id="lbl4">Contact</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <form id="onboardForm" novalidate>
+
+        <!-- STEP 1: Business basics -->
+        <div class="step-panel active" id="panel1">
+          <h2 class="step-title">Tell us about your business</h2>
+          <p class="step-desc">We use this to research your market and design a loyalty programme specific to your business type.</p>
+
+          <div class="field">
+            <label>Business name <span class="req">*</span></label>
+            <input type="text" id="businessName" placeholder="e.g. The Rusty Anchor, FitLife Gym, Smile Studio" autocomplete="off" />
+            <div class="field-error" id="err-businessName">Please enter your business name.</div>
+          </div>
+
+          <div class="field">
+            <label>Business type <span class="req">*</span></label>
+            <div class="type-grid">
+              <div>
+                <input type="radio" name="businessType" value="pub_bar" id="t1" class="type-option">
+                <label for="t1" class="type-label"><span class="type-icon">🍺</span><span class="type-name">Pub / Bar</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="gaming_pub" id="t2" class="type-option">
+                <label for="t2" class="type-label"><span class="type-icon">🎮</span><span class="type-name">Gaming Pub</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="restaurant" id="t3" class="type-option">
+                <label for="t3" class="type-label"><span class="type-icon">🍽️</span><span class="type-name">Restaurant</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="cafe" id="t4" class="type-option">
+                <label for="t4" class="type-label"><span class="type-icon">☕</span><span class="type-name">Cafe</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="gym" id="t5" class="type-option">
+                <label for="t5" class="type-label"><span class="type-icon">💪</span><span class="type-name">Gym</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="dental_clinic" id="t6" class="type-option">
+                <label for="t6" class="type-label"><span class="type-icon">🦷</span><span class="type-name">Dental Clinic</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="salon" id="t7" class="type-option">
+                <label for="t7" class="type-label"><span class="type-icon">💇</span><span class="type-name">Salon / Spa</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="retail" id="t8" class="type-option">
+                <label for="t8" class="type-label"><span class="type-icon">🛍️</span><span class="type-name">Retail</span></label>
+              </div>
+              <div>
+                <input type="radio" name="businessType" value="other" id="t9" class="type-option">
+                <label for="t9" class="type-label"><span class="type-icon">🏢</span><span class="type-name">Other</span></label>
+              </div>
+            </div>
+            <div class="field-error" id="err-businessType">Please select a business type.</div>
+          </div>
+
+          <div class="field">
+            <label>Describe your business <span class="req">*</span> <span class="hint">2-4 sentences</span></label>
+            <textarea id="businessDesc" placeholder="e.g. A 60-seat independent coffee shop in Dublin city centre. We serve specialty coffee and homemade food. Busy weekday mornings, slow on weekends. Core customers are office workers aged 25-40."></textarea>
+            <div class="field-error" id="err-businessDesc">Please describe your business (at least 20 characters).</div>
+          </div>
+
+          <div class="field">
+            <label>Your app URL <span class="req">*</span></label>
+            <div class="slug-wrap">
+              <span class="slug-prefix">loyaltyos.vercel.app/</span>
+              <input type="text" id="slug" placeholder="mybusiness" autocomplete="off" />
+            </div>
+            <div class="field-error" id="err-slug">URL must be 3-30 characters, letters and numbers only.</div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Customers -->
+        <div class="step-panel" id="panel2">
+          <h2 class="step-title">Who are your customers?</h2>
+          <p class="step-desc">Help our Researcher agent build accurate customer personas so the loyalty mechanics are targeted correctly.</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Primary age range <span class="req">*</span></label>
+              <select id="ageRange">
+                <option value="">Select…</option>
+                <option value="Under 18">Under 18</option>
+                <option value="18-25">18–25</option>
+                <option value="25-35">25–35</option>
+                <option value="35-50">35–50</option>
+                <option value="50+">50+</option>
+                <option value="Mixed ages">Mixed ages</option>
+              </select>
+              <div class="field-error" id="err-ageRange">Please select an age range.</div>
+            </div>
+            <div class="field">
+              <label>Visit frequency <span class="req">*</span></label>
+              <select id="visitFreq">
+                <option value="">Select…</option>
+                <option value="Daily">Daily</option>
+                <option value="Several times a week">Several times a week</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Every few months">Every few months</option>
+                <option value="Once or twice a year">Once or twice a year</option>
+              </select>
+              <div class="field-error" id="err-visitFreq">Please select visit frequency.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>What do customers love most about your business? <span class="req">*</span></label>
+            <textarea id="customerLoves" placeholder="e.g. The atmosphere, the staff knowing their name, the quality of the product, the community feel, the convenience of the location..." style="min-height: 80px;"></textarea>
+            <div class="field-error" id="err-customerLoves">Please fill this in.</div>
+          </div>
+
+          <div class="field">
+            <label>What brings customers back? <span class="req">*</span></label>
+            <textarea id="returnReasons" placeholder="e.g. They come back when there's a special event, when they want to treat themselves, when they're forming a routine habit, when a friend recommends it..." style="min-height: 80px;"></textarea>
+            <div class="field-error" id="err-returnReasons">Please fill this in.</div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-ghost" onclick="prevStep(2)">← Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Challenge -->
+        <div class="step-panel" id="panel3">
+          <h2 class="step-title">What's your biggest challenge?</h2>
+          <p class="step-desc">This shapes everything — the loyalty mechanics, the AI interventions, and the offers the system generates.</p>
+
+          <div class="field">
+            <label>Primary retention problem <span class="req">*</span></label>
+            <div class="challenge-options">
+              <input type="radio" name="challenge" value="Low footfall on quiet days" id="c1" class="challenge-option">
+              <label for="c1" class="challenge-label">
+                <div class="challenge-radio"></div>
+                <div class="challenge-text">
+                  <strong>Low footfall on quiet days</strong>
+                  <span>Revenue dips on off-peak days and times — need to drive visits mid-week or at specific hours</span>
+                </div>
+              </label>
+              <input type="radio" name="challenge" value="Customers visit once and don't return" id="c2" class="challenge-option">
+              <label for="c2" class="challenge-label">
+                <div class="challenge-radio"></div>
+                <div class="challenge-text">
+                  <strong>Customers visit once and don't return</strong>
+                  <span>High one-time visitors, low repeat rate — acquisition is not the problem, retention is</span>
+                </div>
+              </label>
+              <input type="radio" name="challenge" value="Appointment no-shows and cancellations" id="c3" class="challenge-option">
+              <label for="c3" class="challenge-label">
+                <div class="challenge-radio"></div>
+                <div class="challenge-text">
+                  <strong>Appointment no-shows and cancellations</strong>
+                  <span>Booked appointments are not showing up — wasted slots and unpredictable revenue</span>
+                </div>
+              </label>
+              <input type="radio" name="challenge" value="Customers not forming daily habits" id="c4" class="challenge-option">
+              <label for="c4" class="challenge-label">
+                <div class="challenge-radio"></div>
+                <div class="challenge-text">
+                  <strong>Customers not forming daily habits</strong>
+                  <span>The product depends on regular use but customers engage sporadically — habit formation is weak</span>
+                </div>
+              </label>
+              <input type="radio" name="challenge" value="Losing customers to competitors" id="c5" class="challenge-option">
+              <label for="c5" class="challenge-label">
+                <div class="challenge-radio"></div>
+                <div class="challenge-text">
+                  <strong>Losing customers to competitors</strong>
+                  <span>Customers are switching to similar businesses — need differentiation and stickiness</span>
+                </div>
+              </label>
+            </div>
+            <div class="field-error" id="err-challenge">Please select your main challenge.</div>
+          </div>
+
+          <div class="field">
+            <label>What would a perfect loyal customer do? <span class="req">*</span></label>
+            <textarea id="idealCustomer" placeholder="e.g. Visit 3 times a week, refer 2 friends a year, spend €20 per visit, engage with us on quieter Tuesdays, never cancel an appointment..." style="min-height: 80px;"></textarea>
+            <div class="field-error" id="err-idealCustomer">Please fill this in.</div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-ghost" onclick="prevStep(3)">← Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Contact -->
+        <div class="step-panel" id="panel4">
+          <h2 class="step-title">Almost done</h2>
+          <p class="step-desc">We'll notify you when your loyalty app is live. Double-check your URL — this is where your customers will go.</p>
+
+          <div class="field">
+            <label>Contact email <span class="req">*</span></label>
+            <input type="email" id="contactEmail" placeholder="you@yourbusiness.com" />
+            <div class="field-error" id="err-contactEmail">Please enter a valid email address.</div>
+          </div>
+
+          <div class="field">
+            <label>Your app URL <span class="hint">auto-filled from step 1</span></label>
+            <div class="slug-wrap" style="opacity:0.6; pointer-events:none;">
+              <span class="slug-prefix">loyaltyos.vercel.app/</span>
+              <input type="text" id="slugConfirm" readonly />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Anything else we should know? <span class="hint">optional</span></label>
+            <textarea id="extraContext" placeholder="Any specific requests, unique aspects of your business, target events, seasonal patterns, or brand personality notes..." style="min-height: 80px;"></textarea>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-ghost" onclick="prevStep(4)">← Back</button>
+            <button type="submit" class="btn btn-submit" id="submitBtn">Build my loyalty app →</button>
+          </div>
+        </div>
+
+      </form>
+    </div><!-- /formContent -->
+  </div><!-- /card -->
+</div><!-- /form-wrap -->
+
+<footer>
+  LoyaltyOS &mdash; NCI MSc AI for Business &mdash; CEAI Final Project &mdash;
+  <a href="https://github.com/riyazrs/loyaltyos" target="_blank" style="color:rgba(255,255,255,0.35)">GitHub</a>
+</footer>
+
+<script>
+  const ONBOARD_URL = 'https://loyaltyos.vercel.app/api/onboard'
+  let currentStep = 1
+  const totalSteps = 4
+
+  // Auto-generate slug from business name
+  document.getElementById('businessName').addEventListener('input', function() {
+    const slug = this.value
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '')
+      .slice(0, 30)
+    document.getElementById('slug').value = slug
+    document.getElementById('slugConfirm').value = slug
+  })
+
+  document.getElementById('slug').addEventListener('input', function() {
+    this.value = this.value.toLowerCase().replace(/[^a-z0-9]/g, '')
+    document.getElementById('slugConfirm').value = this.value
+  })
+
+  function updateProgress(step) {
+    const pct = (step / totalSteps) * 100
+    document.getElementById('progressFill').style.width = pct + '%'
+    for (let i = 1; i <= totalSteps; i++) {
+      const lbl = document.getElementById('lbl' + i)
+      lbl.classList.toggle('active', i === step)
+    }
+  }
+
+  function showPanel(n) {
+    for (let i = 1; i <= totalSteps; i++) {
+      document.getElementById('panel' + i).classList.toggle('active', i === n)
+    }
+    updateProgress(n)
+    currentStep = n
+  }
+
+  function validateStep(step) {
+    let valid = true
+
+    const require = (id, errorId, test) => {
+      const el = document.getElementById(id)
+      const err = document.getElementById(errorId)
+      const ok = test ? test(el) : el.value.trim().length > 0
+      err.classList.toggle('show', !ok)
+      if (!ok) valid = false
+    }
+
+    if (step === 1) {
+      require('businessName', 'err-businessName')
+      // Check radio
+      const typeSelected = document.querySelector('input[name="businessType"]:checked')
+      document.getElementById('err-businessType').classList.toggle('show', !typeSelected)
+      if (!typeSelected) valid = false
+      require('businessDesc', 'err-businessDesc', el => el.value.trim().length >= 20)
+      require('slug', 'err-slug', el => /^[a-z0-9]{3,30}$/.test(el.value.trim()))
+    }
+    if (step === 2) {
+      require('ageRange', 'err-ageRange')
+      require('visitFreq', 'err-visitFreq')
+      require('customerLoves', 'err-customerLoves')
+      require('returnReasons', 'err-returnReasons')
+    }
+    if (step === 3) {
+      const challengeSelected = document.querySelector('input[name="challenge"]:checked')
+      document.getElementById('err-challenge').classList.toggle('show', !challengeSelected)
+      if (!challengeSelected) valid = false
+      require('idealCustomer', 'err-idealCustomer')
+    }
+    if (step === 4) {
+      require('contactEmail', 'err-contactEmail', el => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()))
+    }
+
+    return valid
+  }
+
+  function nextStep(from) {
+    if (!validateStep(from)) return
+    if (from < totalSteps) {
+      showPanel(from + 1)
+      if (from + 1 === 4) {
+        document.getElementById('slugConfirm').value = document.getElementById('slug').value
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  function prevStep(from) {
+    if (from > 1) {
+      showPanel(from - 1)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  function animatePipelineSteps() {
+    const steps = [1, 2, 3, 4, 5]
+    const delays = [0, 45000, 90000, 135000, 180000]
+    steps.forEach((s, i) => {
+      setTimeout(() => {
+        if (i > 0) document.getElementById('dot' + s).classList.remove('running')
+        document.getElementById('dot' + s).classList.add('running')
+        if (i > 0) document.getElementById('dot' + (s-1)).classList.remove('running')
+        if (i > 0) document.getElementById('dot' + (s-1)).classList.add('done')
+      }, delays[i])
+    })
+    setTimeout(() => {
+      document.getElementById('dot5').classList.remove('running')
+      document.getElementById('dot5').classList.add('done')
+    }, 225000)
+  }
+
+  function resetForm() {
+    document.getElementById('errorState').classList.remove('show')
+    document.getElementById('formContent').style.display = 'block'
+    showPanel(1)
+  }
+
+  document.getElementById('onboardForm').addEventListener('submit', async function(e) {
+    e.preventDefault()
+    if (!validateStep(4)) return
+
+    const submitBtn = document.getElementById('submitBtn')
+    submitBtn.disabled = true
+    submitBtn.textContent = 'Submitting...'
+
+    const slug = document.getElementById('slug').value.trim()
+    const typeEl = document.querySelector('input[name="businessType"]:checked')
+    const challengeEl = document.querySelector('input[name="challenge"]:checked')
+
+    const payload = {
+      business_name: document.getElementById('businessName').value.trim(),
+      business_type: typeEl ? typeEl.value : '',
+      business_description: [
+        document.getElementById('businessDesc').value.trim(),
+        'Primary customers: ' + document.getElementById('ageRange').value + ', visit ' + document.getElementById('visitFreq').value + '.',
+        'What customers love: ' + document.getElementById('customerLoves').value.trim(),
+        'Why they return: ' + document.getElementById('returnReasons').value.trim(),
+        'Main challenge: ' + (challengeEl ? challengeEl.value : ''),
+        'Ideal loyal customer: ' + document.getElementById('idealCustomer').value.trim(),
+        document.getElementById('extraContext').value.trim()
+          ? 'Additional context: ' + document.getElementById('extraContext').value.trim()
+          : ''
+      ].filter(Boolean).join(' '),
+      slug: slug,
+      contact_email: document.getElementById('contactEmail').value.trim()
+    }
+
+    try {
+      const res = await fetch(ONBOARD_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        throw new Error(err.error || 'Server error ' + res.status)
+      }
+
+      // Show success
+      document.getElementById('formContent').style.display = 'none'
+      document.getElementById('successUrl').textContent = 'loyaltyos.vercel.app/' + slug
+      document.getElementById('successState').classList.add('show')
+      animatePipelineSteps()
+
+    } catch (err) {
+      submitBtn.disabled = false
+      submitBtn.textContent = 'Build my loyalty app →'
+      document.getElementById('formContent').style.display = 'none'
+      document.getElementById('errorMsg').textContent = 'Something went wrong: ' + err.message + '. Please try again.'
+      document.getElementById('errorState').classList.add('show')
+    }
+  })
+</script>
+</body>
+</html>

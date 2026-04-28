@@ -1,6 +1,7 @@
 import { BusinessConfig } from '@/types'
+import dynamicConfigs from './dynamicConfigs.json'
 
-export const BUSINESS_CONFIGS: Record<string, BusinessConfig> = {
+const STATIC_CONFIGS: Record<string, BusinessConfig> = {
   pixelpub: {
     id: 'pixelpub',
     name: 'PixelPub',
@@ -58,4 +59,9 @@ export const BUSINESS_CONFIGS: Record<string, BusinessConfig> = {
     ],
     aiPersonalisationEnabled: true,
   },
+}
+
+export const BUSINESS_CONFIGS: Record<string, BusinessConfig> = {
+  ...STATIC_CONFIGS,
+  ...(dynamicConfigs as Record<string, BusinessConfig>),
 }

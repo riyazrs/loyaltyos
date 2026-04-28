@@ -1,0 +1,95 @@
+name: Run LoyaltyOS Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      business_name:
+        description: 'Business name'
+        required: true
+      business_type:
+        description: 'Business type'
+        required: true
+      business_description:
+        description: 'Business description'
+        required: true
+      slug:
+        description: 'URL slug (lowercase, no spaces)'
+        required: true
+      contact_email:
+        description: 'Contact email'
+        required: false
+        default: ''
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Create .env file
+        run: echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > pipeline/.env
+
+      - name: Run LoyaltyOS pipeline
+        working-directory: pipeline
+        run: |
+          python run.py \
+            --name "${{ github.event.inputs.business_name }}" \
+            --type "${{ github.event.inputs.business_type }}" \
+            --description "${{ github.event.inputs.business_description }}" \
+            --slug "${{ github.event.inputs.slug }}" \
+            --email "${{ github.event.inputs.contact_email }}"
+
+      - name: Generate BusinessConfig JSON
+        working-directory: pipeline
+        run: |
+          python generate_config.py \
+            --slug "${{ github.event.inputs.slug }}" \
+            --name "${{ github.event.inputs.business_name }}" \
+            --type "${{ github.event.inputs.business_type }}"
+
+      - name: Inject config into Next.js app
+        run: |
+          python - <<'EOF'
+          import json, sys
+
+          slug = "${{ github.event.inputs.slug }}"
+          config_path = "pipeline/outputs/business_config.json"
+          dynamic_path = "app/src/lib/dynamicConfigs.json"
+
+          with open(config_path, "r") as f:
+              new_config = json.load(f)
+
+          with open(dynamic_path, "r") as f:
+              dynamic = json.load(f)
+
+          dynamic[slug] = new_config
+
+          with open(dynamic_path, "w") as f:
+              json.dump(dynamic, f, indent=2)
+
+          print(f"Injected config for '{slug}' into dynamicConfigs.json")
+          EOF
+
+      - name: Copy pipeline outputs to docs
+        run: |
+          mkdir -p docs/outputs/${{ github.event.inputs.slug }}
+          cp pipeline/outputs/*.md docs/outputs/${{ github.event.inputs.slug }}/ 2>/dev/null || true
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "LoyaltyOS Bot"
+          git config user.email "bot@loyaltyos.app"
+          git add app/src/lib/dynamicConfigs.json docs/outputs/
+          git diff --staged --quiet || git commit -m "feat: add loyalty app for ${{ github.event.inputs.business_name }} (/${{ github.event.inputs.slug }})"
+          git push

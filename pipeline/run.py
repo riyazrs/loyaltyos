@@ -1,4 +1,5 @@
 import sys
+import argparse
 from pipeline import build_pipeline
 
 DEMO_BUSINESSES = {
@@ -16,8 +17,27 @@ DEMO_BUSINESSES = {
 
 
 def main():
-    business_key = sys.argv[1] if len(sys.argv) > 1 else "gaming_pub"
-    business = DEMO_BUSINESSES.get(business_key, DEMO_BUSINESSES["gaming_pub"])
+    parser = argparse.ArgumentParser(description="LoyaltyOS Pipeline")
+    parser.add_argument("business_key", nargs="?", default=None,
+                        help="Demo business key: gaming_pub | dental_clinic")
+    parser.add_argument("--name", help="Business name")
+    parser.add_argument("--type", dest="btype", help="Business type")
+    parser.add_argument("--description", help="Business description")
+    parser.add_argument("--slug", help="URL slug for the app", default="")
+    parser.add_argument("--email", help="Contact email", default="")
+    args = parser.parse_args()
+
+    # Custom business via --name / --type / --description flags
+    if args.name and args.btype and args.description:
+        business = {
+            "business_name": args.name,
+            "business_type": args.btype,
+            "business_description": args.description,
+        }
+    elif args.business_key:
+        business = DEMO_BUSINESSES.get(args.business_key, DEMO_BUSINESSES["gaming_pub"])
+    else:
+        business = DEMO_BUSINESSES["gaming_pub"]
 
     pipeline = build_pipeline()
 
@@ -41,6 +61,8 @@ def main():
             print(f"   - {err}")
     else:
         print(f"\n[COMPLETE] Pipeline complete. All outputs saved to /outputs\n")
+
+    return final_state
 
 
 if __name__ == "__main__":

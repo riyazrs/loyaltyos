@@ -103,6 +103,40 @@ Sections 1–6 are your internal management report. Section 7 is the customer-fa
 You are accountable for what this pipeline produces. Act like it."""
 
 
+GOVERNANCE_SYSTEM_PROMPT = """You are the Manager agent for LoyaltyOS. You have already completed your internal management report (sections 1-6). Now write Section 7 only: the Customer Governance Report.
+
+Write this as a standalone document addressed directly to the business owner.
+Use plain English. No technical terms.
+
+Structure it exactly as follows:
+
+## 7. CUSTOMER GOVERNANCE REPORT
+
+## Your LoyaltyOS Governance Report
+### What Was Built For You
+Describe the loyalty programme in plain English: the currency, the tiers, the activities, the rewards. Write it as if explaining to someone who has never heard of a loyalty app.
+
+### How the AI Works
+Explain what the AI does in this system — what it decides, what it recommends, what data it uses. Use an analogy if helpful. Be transparent, not technical.
+
+### Data We Collect and Why
+A simple bullet list. For each item: what is collected, why it is collected, and how long it is kept.
+
+### Your Customers' Rights
+Plain English explanation of the four key rights: access, rectification, erasure, and objection to automated processing (Article 22). Include a simple instruction for how a customer exercises each right.
+
+### EU AI Act — Our Position
+One clear paragraph: what classification this system holds, what that means for how AI must be disclosed to customers, and the one sentence that must appear in the app's privacy notice.
+
+### Our Ethics Commitments
+Three specific, named commitments about how LoyaltyOS will NOT exploit or manipulate customers. Each must reference a specific design decision.
+
+### Before You Go Live — Your Checklist
+Five numbered actions the business owner must complete before launching to customers. Be specific to this business type.
+
+Write this as a polished, standalone report. The business owner will read this directly."""
+
+
 def manager_node(state: PipelineState) -> PipelineState:
     print("[MANAGER] Manager agent running...")
 
@@ -111,7 +145,7 @@ def manager_node(state: PipelineState) -> PipelineState:
     prototype_plan = state.get("prototype_plan", "")
     marketing_copy = state.get("marketing_copy", "")
 
-    user_message = f"""Here are all four pipeline outputs for your synthesis:
+    pipeline_context = f"""Here are all four pipeline outputs for your synthesis:
 
 ## RESEARCH BRIEF (Researcher Agent)
 {research_brief}
@@ -123,34 +157,40 @@ def manager_node(state: PipelineState) -> PipelineState:
 {prototype_plan}
 
 ## MARKETING COPY (Communicator Agent)
-{marketing_copy}
-
-Produce your executive summary and operational plan now."""
+{marketing_copy}"""
 
     try:
-        response = client.messages.create(
+        os.makedirs("outputs", exist_ok=True)
+
+        # Call 1: Internal management report (sections 1-6)
+        print("[MANAGER] Generating internal management report (sections 1-6)...")
+        response1 = client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=8192,
             system=MANAGER_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_message}]
+            messages=[{"role": "user", "content": pipeline_context + "\n\nProduce sections 1-6 of your report now. Do NOT write section 7 yet."}]
         )
+        executive_summary = response1.content[0].text
 
-        executive_summary = response.content[0].text
-
-        os.makedirs("outputs", exist_ok=True)
         with open("outputs/05_executive_summary.md", "w", encoding="utf-8") as f:
             f.write(executive_summary)
+        print("[DONE] Internal report saved to outputs/05_executive_summary.md")
 
-        # Extract Section 7 (Customer Governance Report) as a standalone file
-        marker = "## 7."
-        customer_report = None
-        if marker in executive_summary:
-            customer_report = executive_summary[executive_summary.index(marker):]
-            with open("outputs/06_customer_report.md", "w", encoding="utf-8") as f:
-                f.write(customer_report)
-            print("[DONE] Customer governance report saved to outputs/06_customer_report.md")
+        # Call 2: Customer governance report (section 7 only)
+        print("[MANAGER] Generating customer governance report (section 7)...")
+        response2 = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=8192,
+            system=GOVERNANCE_SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": pipeline_context + "\n\nWrite the Customer Governance Report (Section 7) now."}]
+        )
+        customer_report = response2.content[0].text
 
-        print("[DONE] Manager complete. Summary saved to outputs/05_executive_summary.md")
+        with open("outputs/06_customer_report.md", "w", encoding="utf-8") as f:
+            f.write(customer_report)
+        print("[DONE] Customer governance report saved to outputs/06_customer_report.md")
+
+        print("[DONE] Manager complete.")
         return {**state, "executive_summary": executive_summary, "current_agent": "done"}
 
     except Exception as e:

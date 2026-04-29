@@ -402,6 +402,7 @@
       color: rgba(255,255,255,0.2);
       border-top: 1px solid rgba(255,255,255,0.05);
     }
+
   </style>
 </head>
 <body>
@@ -757,6 +758,7 @@
 
 <script>
   const ONBOARD_URL = 'https://loyaltyos.vercel.app/api/onboard'
+
   let currentStep = 1
   const totalSteps = 4
   let selectedTheme = 'dark'
@@ -926,7 +928,6 @@
         throw new Error(err.error || 'Server error ' + res.status)
       }
 
-      // Show success
       document.getElementById('formContent').style.display = 'none'
       document.getElementById('successUrl').textContent = 'loyaltyos.vercel.app/' + slug
       document.getElementById('reportLink').href = 'report.html?slug=' + slug

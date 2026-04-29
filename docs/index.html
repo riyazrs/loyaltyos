@@ -450,7 +450,16 @@
         <div class="pipeline-step"><div class="ps-dot" id="dot2"></div> Designer — designing your loyalty experience</div>
         <div class="pipeline-step"><div class="ps-dot" id="dot3"></div> Maker — building the technical specification</div>
         <div class="pipeline-step"><div class="ps-dot" id="dot4"></div> Communicator — writing your customer copy</div>
-        <div class="pipeline-step"><div class="ps-dot" id="dot5"></div> Manager — synthesising the final strategy</div>
+        <div class="pipeline-step"><div class="ps-dot" id="dot5"></div> Manager — producing executive summary &amp; governance report</div>
+      </div>
+      <div style="margin-top:1.75rem;padding:1.25rem 1.5rem;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:12px;text-align:left;">
+        <p style="font-size:0.8rem;font-weight:600;color:#a78bfa;margin-bottom:0.3rem;">Governance Report</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5;margin-bottom:0.85rem;">
+          Once the pipeline completes, your AI governance and compliance report will be ready — covering data rights, EU AI Act position, ethics commitments, and your pre-launch checklist.
+        </p>
+        <a id="reportLink" href="#" target="_blank" style="display:inline-block;padding:0.55rem 1.1rem;background:#7C3AED;color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">
+          View Governance Report &rarr;
+        </a>
       </div>
     </div>
 
@@ -920,6 +929,7 @@
       // Show success
       document.getElementById('formContent').style.display = 'none'
       document.getElementById('successUrl').textContent = 'loyaltyos.vercel.app/' + slug
+      document.getElementById('reportLink').href = 'report.html?slug=' + slug
       document.getElementById('successState').classList.add('show')
       animatePipelineSteps()
 

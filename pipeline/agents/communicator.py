@@ -60,11 +60,17 @@ def communicator_node(state: PipelineState) -> PipelineState:
         print(f"[ERROR] {error_msg}")
         return {**state, "errors": state.get("errors", []) + [error_msg], "current_agent": "manager"}
 
-    user_message = f"""Here is the prototype plan from the Maker agent:
+    research_brief = state.get("research_brief", "")
+
+    user_message = f"""Here is the research brief from the Researcher agent (contains the 3 customer personas you must target):
+
+{research_brief}
+
+Here is the prototype plan from the Maker agent (the system you are writing copy for):
 
 {prototype_plan}
 
-Produce your marketing copy and communications now."""
+Produce your marketing copy and communications now. Every piece of copy must speak directly to one of the three personas the Researcher defined. Name the persona each piece targets."""
 
     try:
         response = client.messages.create(

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoyaltyOS — Governance Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0f;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,15,0.97);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .logo span { color: #7C3AED; }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-size: 0.85rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .nav-link:hover { color: #fff; }
+    .nav-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: #a78bfa;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    /* LOADING STATE */
+    .state-loading {
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid rgba(124,58,237,0.2);
+      border-top-color: #7C3AED;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1.5rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .state-loading p { color: rgba(255,255,255,0.45); font-size: 0.9rem; }
+
+    /* NOT FOUND STATE */
+    .state-error {
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .state-error .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .state-error h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .state-error p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #7C3AED;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #6d28d9; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6);
+    }
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.3); background: transparent; }
+
+    /* REPORT HEADER */
+    .report-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .report-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.25);
+      color: #a78bfa;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .report-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #7C3AED;
+    }
+    .report-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .report-header h1 span { color: #7C3AED; }
+    .report-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .meta-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* MARKDOWN CONTENT */
+    .report-body { display: none; }
+    .report-body.show { display: block; }
+
+    .md-content h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 2.5rem 0 1rem;
+      color: #fff;
+    }
+    .md-content h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 2.5rem 0 0.85rem;
+      color: #fff;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .md-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.6rem;
+      color: #a78bfa;
+    }
+    .md-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .md-content p {
+      font-size: 0.925rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1rem;
+    }
+    .md-content ul, .md-content ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .md-content li {
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.35rem;
+    }
+    .md-content li strong { color: #fff; }
+    .md-content strong { color: #fff; font-weight: 600; }
+    .md-content em { color: rgba(255,255,255,0.6); }
+    .md-content hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 2.5rem 0;
+    }
+    .md-content code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.82rem;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      color: #a78bfa;
+    }
+    .md-content pre {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+    }
+    .md-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+    }
+    .md-content blockquote {
+      border-left: 3px solid #7C3AED;
+      padding: 0.75rem 1.25rem;
+      background: rgba(124,58,237,0.06);
+      border-radius: 0 8px 8px 0;
+      margin: 1.25rem 0;
+    }
+    .md-content blockquote p {
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+    }
+    .md-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.875rem;
+    }
+    .md-content th {
+      text-align: left;
+      padding: 0.6rem 0.85rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .md-content td {
+      padding: 0.6rem 0.85rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+    }
+    .md-content tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* SECTION CARD WRAPPER for key sections */
+    .section-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    /* ACTIONS BAR */
+    .actions-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      margin-bottom: 2.5rem;
+    }
+    .actions-bar p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .actions-right { display: flex; gap: 0.75rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Loyalty<span>OS</span></div>
+  <div class="nav-right">
+    <span class="nav-badge">Governance Report</span>
+    <a href="https://riyazrs.github.io/loyaltyos/" class="nav-link">← Back to onboarding</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- LOADING -->
+  <div id="stateLoading" class="state-loading">
+    <div class="spinner"></div>
+    <p>Loading your governance report...</p>
+  </div>
+
+  <!-- ERROR / NOT READY -->
+  <div id="stateError" class="state-error" style="display:none;">
+    <div class="icon">⏳</div>
+    <h2 id="errorTitle">Report not ready yet</h2>
+    <p id="errorBody">
+      The pipeline is still running. Governance reports are generated by the Manager agent
+      at the end of the pipeline — this usually takes 3–5 minutes after submission.
+      Come back shortly and refresh the page.
+    </p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn" onclick="window.location.reload()">Refresh page</button>
+      <a href="https://riyazrs.github.io/loyaltyos/" class="btn btn-ghost">← Back to onboarding</a>
+    </div>
+  </div>
+
+  <!-- REPORT CONTENT -->
+  <div id="stateReport" style="display:none;">
+
+    <div class="report-header">
+      <div class="report-tag">AI Governance Report</div>
+      <h1>Your <span id="reportBusinessName">Loyalty Programme</span><br>Governance Report</h1>
+      <div class="report-meta">
+        <div class="meta-item">Generated by LoyaltyOS Manager Agent</div>
+        <div class="meta-dot"></div>
+        <div class="meta-item">Powered by Claude AI</div>
+        <div class="meta-dot"></div>
+        <div class="meta-item" id="reportSlugMeta"></div>
+      </div>
+    </div>
+
+    <div class="actions-bar">
+      <p>This report covers what was built, how the AI works, your data obligations, and your pre-launch checklist.</p>
+      <div class="actions-right">
+        <button class="btn btn-ghost" onclick="window.print()">Print / Save PDF</button>
+        <a id="appLink" href="#" target="_blank" class="btn">View your app →</a>
+      </div>
+    </div>
+
+    <div id="reportBody" class="report-body show">
+      <div id="mdContent" class="md-content"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  LoyaltyOS &mdash; NCI MSc AI for Business &mdash; CEAI Final Project &mdash;
+  <a href="https://github.com/riyazrs/loyaltyos" target="_blank" style="color:rgba(255,255,255,0.35)">GitHub</a>
+</footer>
+
+<script>
+  function getSlug() {
+    const params = new URLSearchParams(window.location.search)
+    return (params.get('slug') || '').toLowerCase().replace(/[^a-z0-9]/g, '')
+  }
+
+  async function loadReport() {
+    const slug = getSlug()
+
+    if (!slug) {
+      document.getElementById('stateLoading').style.display = 'none'
+      document.getElementById('errorTitle').textContent = 'No business slug provided'
+      document.getElementById('errorBody').textContent =
+        'This page requires a ?slug= parameter. Example: report.html?slug=pixelpub'
+      document.getElementById('stateError').style.display = 'block'
+      return
+    }
+
+    document.getElementById('reportSlugMeta').textContent = 'loyaltyos.vercel.app/' + slug
+    document.getElementById('appLink').href = 'https://loyaltyos.vercel.app/' + slug
+
+    const reportUrl = 'outputs/' + slug + '/06_customer_report.md'
+
+    try {
+      const res = await fetch(reportUrl)
+
+      if (!res.ok) {
+        throw new Error('not_found')
+      }
+
+      const markdown = await res.text()
+
+      if (!markdown || markdown.trim().length < 50) {
+        throw new Error('empty')
+      }
+
+      // Extract business name from first H2 if present
+      const nameMatch = markdown.match(/##\s+Your\s+(.+?)\s+Governance Report/i)
+        || markdown.match(/##\s+(.+?)\n/)
+      if (nameMatch) {
+        const name = nameMatch[1].replace(/Loyalty(OS)?/i, '').trim()
+        if (name) document.getElementById('reportBusinessName').textContent = name
+      }
+
+      // Strip the "## 7." prefix line if present (it's the section marker from the manager)
+      const cleanedMarkdown = markdown
+        .replace(/^##\s*7\.\s*CUSTOMER GOVERNANCE REPORT\s*\n/im, '')
+        .trim()
+
+      document.getElementById('mdContent').innerHTML = marked.parse(cleanedMarkdown)
+
+      document.getElementById('stateLoading').style.display = 'none'
+      document.getElementById('stateReport').style.display = 'block'
+
+    } catch (err) {
+      document.getElementById('stateLoading').style.display = 'none'
+      if (err.message === 'not_found' || err.message === 'empty') {
+        document.getElementById('errorTitle').textContent = 'Report not ready yet'
+        document.getElementById('errorBody').textContent =
+          'The pipeline for "' + slug + '" is still running or hasn\'t been submitted yet. ' +
+          'Governance reports are generated at the end of the pipeline — usually 3–5 minutes after submission. ' +
+          'Refresh this page once the pipeline completes.'
+      } else {
+        document.getElementById('errorTitle').textContent = 'Could not load report'
+        document.getElementById('errorBody').textContent =
+          'An unexpected error occurred: ' + err.message + '. Please try refreshing.'
+      }
+      document.getElementById('stateError').style.display = 'block'
+    }
+  }
+
+  loadReport()
+</script>
+</body>
+</html>

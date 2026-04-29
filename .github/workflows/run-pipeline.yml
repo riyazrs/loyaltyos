@@ -105,3 +105,6 @@ jobs:
           git add app/src/lib/dynamicConfigs.json docs/outputs/
           git diff --staged --quiet || git commit -m "feat: add loyalty app for ${{ github.event.inputs.business_name }} (/${{ github.event.inputs.slug }})"
           git push
+
+      - name: Trigger Vercel redeploy
+        run: curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

@@ -24,6 +24,9 @@ on:
         required: false
         default: 'dark'
 
+permissions:
+  contents: write
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest

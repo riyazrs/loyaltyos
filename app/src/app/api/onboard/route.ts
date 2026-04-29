@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       slug,
-      url: `https://loyaltyos.vercel.app/${slug}`,
+      url: `https://loyaltyos-wheat.vercel.app/${slug}`,
       message: 'Pipeline triggered. Your app will be live in ~5 minutes.',
     }, { headers: CORS_HEADERS })
   } catch (err) {

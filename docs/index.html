@@ -409,7 +409,7 @@
 
 <nav>
   <div class="logo">Loyalty<span>OS</span></div>
-  <a href="https://loyaltyos.vercel.app" class="nav-link" target="_blank">View live app →</a>
+  <a href="https://loyaltyos-wheat.vercel.app" class="nav-link" target="_blank">View live app →</a>
 </nav>
 
 <section class="hero">
@@ -444,7 +444,7 @@
         building the tech spec, writing your copy, and generating your executive summary.
         Your app will be live at:
       </p>
-      <div class="success-url" id="successUrl">loyaltyos.vercel.app/...</div>
+      <div class="success-url" id="successUrl">loyaltyos-wheat.vercel.app/...</div>
       <p class="success-body">This usually takes 3–5 minutes. Bookmark the URL above.</p>
       <div class="pipeline-steps">
         <div class="pipeline-step"><div class="ps-dot running" id="dot1"></div> Researcher — analysing your market & customers</div>
@@ -549,7 +549,7 @@
           <div class="field">
             <label>Your app URL <span class="req">*</span></label>
             <div class="slug-wrap">
-              <span class="slug-prefix">loyaltyos.vercel.app/</span>
+              <span class="slug-prefix">loyaltyos-wheat.vercel.app/</span>
               <input type="text" id="slug" placeholder="mybusiness" autocomplete="off" />
             </div>
             <div class="field-error" id="err-slug">URL must be 3-30 characters, letters and numbers only.</div>
@@ -730,7 +730,7 @@
           <div class="field">
             <label>Your app URL <span class="hint">auto-filled from step 1</span></label>
             <div class="slug-wrap" style="opacity:0.6; pointer-events:none;">
-              <span class="slug-prefix">loyaltyos.vercel.app/</span>
+              <span class="slug-prefix">loyaltyos-wheat.vercel.app/</span>
               <input type="text" id="slugConfirm" readonly />
             </div>
           </div>
@@ -757,7 +757,7 @@
 </footer>
 
 <script>
-  const ONBOARD_URL = 'https://loyaltyos.vercel.app/api/onboard'
+  const ONBOARD_URL = 'https://loyaltyos-wheat.vercel.app/api/onboard'
 
   let currentStep = 1
   const totalSteps = 4
@@ -929,7 +929,7 @@
       }
 
       document.getElementById('formContent').style.display = 'none'
-      document.getElementById('successUrl').textContent = 'loyaltyos.vercel.app/' + slug
+      document.getElementById('successUrl').textContent = 'loyaltyos-wheat.vercel.app/' + slug
       document.getElementById('reportLink').href = 'report.html?slug=' + slug
       document.getElementById('successState').classList.add('show')
       animatePipelineSteps()

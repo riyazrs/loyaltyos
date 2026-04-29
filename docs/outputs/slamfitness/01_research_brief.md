@@ -1,5 +1,5 @@
 # LoyaltyOS Research Brief
-## Slam Fitness — Boutique Strength & Performance Studio, Stoneybatter, Dublin 7
+## Client: Slam Fitness | Boutique Strength & Performance Studio | Stoneybatter, Dublin 7
 
 ---
 
@@ -7,119 +7,126 @@
 
 ### The Structural Diagnosis
 
-Slam Fitness does not have a marketing problem. It has a **progress plateau vulnerability** combined with a **social dependency risk**.
+Slam Fitness does not have a marketing problem. It has a **progress plateau retention problem** compounded by a **social dependency cliff**.
 
-Customers join and stay because of two things: measurable physical progress and community belonging. Both are self-limiting by nature. Progress slows after 3–6 months (the body adapts), and community bonds, while powerful, are fragile — one key training partner leaves, one coach changes shift, and the gravitational pull collapses. The business has no systematic mechanism to detect either of these collapses early, and no designed response when they occur. The coaches know members by name, but that knowledge lives in coaches' heads, not in a retention system. When a coach is off sick, that relationship intelligence disappears entirely.
+Here is the uncomfortable truth: the very thing that makes Slam Fitness compelling — personalised coaching, measurable progress, tight community bonds — is also the architecture of its churn risk. When a member stops *feeling* progress (whether real or perceived), the premium justification for a boutique studio over a €30/month commercial gym collapses overnight. And when a member's social anchor — a training partner, a favourite coach, a regular class crew — is disrupted, the belonging that kept them accountable disappears with it.
 
-The secondary problem is the **quiet day footfall gap**. Peak hours are self-sustaining through social energy. Quiet periods are not — and members who only ever train in peak slots associate the gym with a specific social context. Remove that context (holidays, schedule change, summer slowdown) and they have no secondary anchor to bring them back.
+Quiet day footfall is not a scheduling problem. It is a **perceived-value erosion signal**. Members on quiet days are members whose habit loop has weakened. They are 6–10 weeks from cancellation.
 
-### Behavioural Churn Signals — Specific Predictors
+### Behavioural Churn Signals (Specific)
 
-1. **A member who trained 4+ times per week drops below 2 sessions in a single week without a prior booking pattern change** — this is not "being busy," this is the first crack in habit.
-2. **No class booking made within 5 days of their last session** — at Slam, booking behaviour predicts attendance more reliably than attendance itself. A member who stops booking has mentally already left.
-3. **Attendance shifts from group boot camp to solo gym floor use** — social withdrawal precedes physical withdrawal. When a member stops showing up for group classes and starts lone-ranger sessions, the community hook is gone.
-4. **A member skips their "anchor session"** — everyone has one. The Tuesday 6am. The Thursday 7pm. First time they miss it without rescheduling is a red flag.
-5. **No engagement with a coach check-in for 14+ days** — at a studio where coach interaction is the product differentiator, silence from a previously engaged member signals emotional disengagement before physical absence arrives.
+1. **The Frequency Drop**: A member who visited 4–5x per week drops to 2x per week for two consecutive weeks without an explained absence (holiday, illness). This is the single most predictive early churn signal.
+2. **The Class Switch**: A member who attended the same class slot for 6+ weeks suddenly books a different time or class type — social anchor disruption. They've lost their crew or their coach availability has changed.
+3. **The Quiet Day Slide**: A member begins attending only during off-peak hours (mid-morning weekdays) after previously attending peak sessions. They are disengaging from the community without cancelling.
+4. **The Ghost Booking**: A member books sessions 3+ times in a two-week window but no-shows or late-cancels. Ambivalence is materialising. They want to want to come. They're not coming.
+5. **The Progress Silence**: A member who previously engaged with coaching feedback, logged PRs, or participated in gym challenges goes quiet for 21+ days. They've stopped measuring. When members stop tracking progress, they stop believing in it.
 
 ---
 
 ## 2. MARKET OPPORTUNITY
 
-### Why a Stamp Card Fails Here
+### Why a Stamp Card Fails Slam Fitness Completely
 
-A stamp card rewards *showing up*. Slam Fitness needs to reward *not stopping*. Those are fundamentally different problems. A stamp card cannot detect a progress plateau. It cannot notice that someone has stopped booking before they stop attending. It cannot distinguish between the member who needs a challenge escalation and the one who needs a social nudge. A stamp card gives everyone the same signal at the same interval. Slam's retention problem is precisely that every member's inflection point is different.
+A stamp card rewards *transactions*. Slam Fitness sells *transformation*. These are categorically different value propositions.
 
-AI-powered loyalty at Slam is not about gamification — it's about **early warning + personalised intervention at scale**, which a boutique studio cannot otherwise afford to build manually across 200+ members.
+A stamp card for a boutique gym says: "Come 10 times, get a free session." It treats attendance as the product. But the member who comes 10 times and feels no stronger, looks no different, and has made no friends will leave regardless of the free session. Worse, it commoditises the experience — which is exactly what Slam Fitness is not.
+
+What Slam Fitness needs is a loyalty system that **rewards identity formation**, not transaction volume. The member needs to feel like a *Slam Fitness athlete*, not a points collector.
+
+AI-powered loyalty can detect the ghost booking pattern before the member consciously knows they're disengaging and trigger a human coach intervention — not a discount voucher, but a personal message. That is not possible with a stamp card.
 
 ### Analogous Programmes
 
-**Barry's Bootcamp (global)** — built strong community loyalty through class streaks, instructor shoutouts, and a cult identity. Members who hit streak milestones get recognition. Effective at reinforcing the habit loop. Weakness: entirely broadcast-based. Every member gets the same nudge at the same milestone. Barry's has no mechanism to identify *which* member is about to fall off and intervene before it happens.
+**1. Peloton's Milestone & Streak System**
+Peloton rewards output-based milestones (100th ride, personal output records) and streaks, building identity around the number. Members celebrate milestones publicly. It works because it ties loyalty mechanics to *measurable progress*, not just attendance.
+*What LoyaltyOS does that Peloton doesn't:* Peloton's system is self-reported and app-driven in isolation. LoyaltyOS integrates coach awareness — so the intervention when a streak breaks is a *human* message from someone who knows your name, not an automated push notification from an algorithm.
 
-**Peloton's Connected Fitness Model** — uses output data (output watts, personal records, class history) to personalise achievement recognition and surface the right challenge at the right time. Extremely effective at sustaining engagement through progress visibility. Weakness: digital-only, requires hardware, and loses entirely when the social layer weakens (see: post-pandemic Peloton collapse).
-
-**What LoyaltyOS does that neither does:** Predictive churn intervention triggered by *behavioural absence signals*, not milestone achievement. LoyaltyOS acts before the member disappears — not after they hit a target. That asymmetry is the entire value proposition for a business like Slam.
+**2. Barry's Bootcamp Community Leaderboards**
+Barry's uses class energy, branded community language ("Barry's Baby," "Barry's Regular"), and social identity markers to create belonging. Members wear the identity.
+*What LoyaltyOS does that Barry's doesn't:* Barry's community mechanics are uniform — everyone gets the same experience. LoyaltyOS segments by persona and personalises the trigger. A competitive member gets a leaderboard nudge. A progress-motivated member gets a PR reminder. A community-driven member gets a "your crew misses you" prompt. One system, three different interventions.
 
 ---
 
 ## 3. CUSTOMER SEGMENTS
 
-### Persona 1: "The Anchor" — Síofra
+### Persona 1: "The Competitor" — Ciarán
 
-**Behaviour Pattern:** 35, HR manager, trains 5x per week, always books in advance, attends 6am slots before work, has been a member for 18+ months. Knows three coaches by first name. Participates in boot camps and occasionally posts progress photos. Her training log would be the most consistent in the building.
+**Behaviour Pattern:** Male, 28–36, attends 5x per week, predominantly strength sessions, tracks his lifts obsessively, compares himself to others without admitting it. Shows up early to set up. Stays late to ask the coach about programming. Volunteers for every challenge, event, or benchmark workout.
 
-**Loyalty Trigger:** Measurable performance progress and coach recognition. Síofra stays because she is *seen*. The coach who notices her deadlift PR is not incidental — it is the product. She also derives identity from being "a Slam person."
+**Loyalty Trigger:** Public recognition of measurable performance. Ciarán needs to *rank*. A leaderboard, a PR board on the wall, a callout in the group chat — these are not vanity metrics to him, they are proof that the investment is working.
 
-**The ONE thing that causes disengagement:** Her primary coach leaves or changes shift pattern. Síofra's loyalty is partially coach-transferred, not fully brand-transferred. If that relationship breaks without a designed handover, she is exposed. Secondary risk: she hits a genuine plateau and no one in the system notices or responds.
-
----
-
-### Persona 2: "The Performer" — Ciarán
-
-**Behaviour Pattern:** 29, software engineer, trains 3–4x per week, primarily evening sessions, highly goal-oriented (currently bulking, tracks macros, attends for specific programming). Signs up for 8-week challenges. Refers friends occasionally when directly asked. Vocal in class, competitive but not aggressive.
-
-**Loyalty Trigger:** Programme quality and visible results. Ciarán is not coming for the vibes — he is coming because Slam's coaching is genuinely better than what he can design himself. His loyalty is **rational**, not emotional, which means it is also auditable. He will leave the moment he believes he has extracted the value or found a superior alternative.
-
-**The ONE thing that causes disengagement:** Programme stagnation. If Ciarán's programme hasn't meaningfully evolved in 10 weeks, he starts Googling other studios. He needs to feel like the coaching is ahead of him, not catching up to him.
+**The ONE thing that causes disengagement:** He plateaus for 4+ weeks with no programme adjustment and no acknowledgement from coaching staff. When progress stalls and no one addresses it, Ciarán starts researching other gyms. He will not tell you he's leaving. He'll just stop showing up.
 
 ---
 
-### Persona 3: "The Community Floater" — Aoife
+### Persona 2: "The Transformer" — Aoife
 
-**Behaviour Pattern:** 31, teacher, trains 2x per week, always group boot camp, never solo floor sessions. Her consistency is socially mediated — she comes because her friend Niamh comes. Engaging on Instagram, has tagged Slam twice. Enthusiastic in class but does not engage with coaching outside sessions. Joined 7 months ago.
+**Behaviour Pattern:** Female, 25–33, joined with a specific goal (lose weight, get stronger, prepare for an event). Attends 3–4x per week. Highly coachable, responds emotionally to encouragement, shares progress on Instagram stories. Her attendance correlates directly with how confident she feels about her progress.
 
-**Loyalty Trigger:** Social belonging and low-friction fun. Aoife is not primarily buying fitness — she is buying a social ritual with a fitness outcome. The coaching quality is a reassurance, not a driver.
+**Loyalty Trigger:** Visible, documented, emotionally-validated progress milestones. Aoife needs someone to notice. When the coach says "Aoife, your deadlift has gone up 15kg in three months" in front of the group, she posts about it. She refers two friends the following week.
 
-**The ONE thing that causes disengagement:** Niamh leaves, or Niamh shifts to a different time slot. Without that social anchor, Aoife has no individual relationship with the gym strong enough to sustain solo attendance. She will ghost within 3 weeks of losing her training partner.
+**The ONE thing that causes disengagement:** A life disruption (work stress, illness, bad week) breaks her 3-week streak and nobody reaches out. Aoife's inner narrative turns negative ("I've fallen off, I've wasted their time, I'll restart in January"). She does not restart in January.
+
+---
+
+### Persona 3: "The Anchor" — Declan
+
+**Behaviour Pattern:** Male or female, 35–45, been a member for 18+ months, attends 3x per week like clockwork, always the same sessions, always greets newer members, knows everyone. Does not care about leaderboards. Does not post on social media. Comes because Tuesday at 7am is simply what he does.
+
+**Loyalty Trigger:** Community belonging and routine preservation. Declan is not motivated by rewards. He is retained by *friction removal* — the gym must make it effortless to maintain his routine. His loyalty is entirely habitual and social.
+
+**The ONE thing that causes disengagement:** His class time is discontinued, his favourite coach leaves, or a cohort of his "Tuesday crew" all cancel around the same period. Declan's gym is his third place — disrupt the social geography and the habit collapses. He won't be angry. He'll just quietly stop renewing.
 
 ---
 
 ## 4. ENGAGEMENT MECHANICS
 
-### Rewardable Activities and Their Retention Mechanisms
-
 | Activity | Retention Mechanism |
 |---|---|
-| **Booking a session 48+ hours in advance** | *Commitment device* — pre-commitment reduces no-show probability by ~40%. Rewarding the booking, not just the attendance, reinforces the planning behaviour that sustains streaks. |
-| **Attending a session outside peak hours (quiet day fill)** | *Variable reward + community norm shifting* — directly addresses the quiet footfall problem. Bonus points for off-peak sessions create a behaviour pattern that reduces Slam's revenue volatility and member schedule rigidity simultaneously. |
-| **Completing a personal record in a coached lift** | *Progress loop reinforcement* — surfacing and rewarding PRs makes progress visible at the exact moment a plateau threat is highest. The reward is secondary; the *acknowledgement* is the retention mechanism. |
-| **Attending with a referred friend (first visit)** | *Social proof activation* — turns the referral from a passive favour into a rewarded behaviour. The referrer gains status; the new member arrives with a social anchor already in place (critical for Aoife-type personas). |
-| **Tagging Slam in a progress post** | *Identity reinforcement* — rewarding social posting amplifies the "I am a Slam person" identity signal. Members who publicly claim the identity are statistically harder to retain. This is not vanity marketing — it is identity-based retention. |
-| **Completing a full programme cycle (e.g., 8-week block)** | *Loss aversion trigger* — milestone completion rewards create a sunk-cost-positive dynamic. Members approaching week 7 of an 8-week programme are far less likely to cancel. The reward at completion anchors the next enrolment. |
-| **Consecutive weekly attendance (7, 14, 30-day streaks)** | *Habit loop compounding* — streak mechanics exploit the psychological cost of breaking a visible streak. Critically: streaks should reset weekly, not daily, to avoid punishing members for legitimate rest days. |
-| **Coach check-in engagement (completing a goal review session)** | *Relationship deepening* — rewarding deliberate coach interaction creates a structured touchpoint that generates the data needed for personalisation, while reinforcing the coach-member bond that is Slam's primary differentiator. |
+| **Logging a Personal Record (PR)** | **Progress loop reinforcement.** Every logged PR is evidence that the membership is working. LoyaltyOS surfaces this historically ("You've hit 7 PRs since joining"). Prevents the "I'm not getting anywhere" narrative that kills memberships silently. |
+| **Attending during a Quiet Period (off-peak weekday)** | **Loss aversion + variable reward.** Members earn bonus points for attending Tuesday 11am or Thursday 2pm. This directly addresses Slam Fitness's stated footfall problem. Frame it as an exclusive "Off-Peak Athlete" benefit, not a discount bribe. |
+| **Referring a Friend Who Joins** | **Social identity amplification.** The referring member becomes a *founding member of someone else's journey* — this deepens their own commitment. A referral is not just a business transaction; it is a public declaration of belief in the gym. Reward both parties. |
+| **Completing a Full Programme Cycle** | **Sunk cost positivity + milestone identity.** Completing an 8 or 12-week programme is a behavioural commitment signal. Reward it with a badge, a coach callout, and an automatic re-enrolment prompt with a personalised next-phase recommendation. |
+| **Tagging Slam Fitness in a Social Post** | **Social proof + identity investment.** When Aoife posts her deadlift video tagging Slam Fitness, she has publicly committed to her identity as a Slam athlete. LoyaltyOS rewards this and surfaces it internally so coaches can acknowledge it. The post makes it harder to quietly cancel. |
+| **Attending a Streak (7, 14, 30 days without missing a scheduled session)** | **Habit loop solidification + loss aversion.** Streaks work because breaking them *costs something*. The reward is secondary to the psychological weight of the streak itself. Alert members at day 5 ("You're 2 days from a 7-day streak") to activate loss aversion before the streak, not after it breaks. |
+| **Participating in a Gym Challenge or Event** | **Community anchoring.** Challenges (a 4-week strength block, a team bootcamp competition) create temporary but powerful social bonds. Members who complete a challenge together have a shared narrative. LoyaltyOS tracks participation and uses it to identify natural community clusters. |
+| **Leaving a Coach Review or Feedback** | **Reciprocity + relationship deepening.** When a member takes time to acknowledge a coach, they articulate what they value — which deepens their own perceived investment in the relationship. This data is also gold for LoyaltyOS personalisation. |
 
 ---
 
 ## 5. DATA AND PERSONALISATION OPPORTUNITIES
 
-### Ethical Data Collection at Slam
+### Ethically Collectible Behavioural Signals
 
-The following signals can be collected with explicit member consent and a clear value exchange (better coaching, relevant rewards):
+- **Session attendance timestamps** — which days, which times, how frequently
+- **Class type selection** — strength vs. conditioning vs. bootcamp preferences
+- **Booking behaviour** — advance booking vs. same-day, cancellation patterns, no-show frequency
+- **PR and progress logs** — if integrated with coaching software or manually logged
+- **Referral activity** — who referred whom, and how active referrals become
+- **Social engagement** — tagged posts, shares (opt-in, not scraped)
+- **Streak and milestone data** — streaks started, broken, resumed
+- **Coach interaction frequency** — direct messages, feedback submissions, challenge participation
 
-- **Session booking patterns** — time of day, day of week, class type, advance booking window
-- **Attendance vs. booking ratio** — no-show frequency, late cancellations
-- **Class type preferences** — boot camp vs. open floor vs. specific programmes
-- **Coach interaction frequency** — check-ins logged, programme reviews completed
-- **Streak and attendance consistency data** — week-on-week visit rate, anchor session regularity
-- **Referral activity** — who referred whom, social connection map within the member base
-- **Opt-in progress metrics** — weight lifted, programme milestones (shared voluntarily via coach log or app input)
-- **Social engagement signals** — tagged posts, story mentions (public data, opt-in linking)
+All of this is first-party, consent-based, and tied to explicit value exchange (they share, they earn). Nothing passive. Nothing inferred from data they didn't choose to give.
 
-### AI Personalisation by Persona
+### How AI Personalises for Each Persona
 
-**Síofra (The Anchor):** AI monitors her anchor session attendance and coach interaction frequency. If either drops, it triggers a coach notification *before* she misses a second session. When her coach is unavailable, the system proactively introduces her to a secondary coach via a warm check-in prompt. It surfaces her 12-month progress data at the point she is most likely to plateau (months 4–6 of a training block) to reignite motivation with evidence rather than encouragement.
+**Ciarán (The Competitor):**
+AI detects a 3-week PR plateau. It does not send him a discount. It triggers a coach prompt: *"Ciarán hasn't logged a new lift PR in 21 days — consider a programming check-in this week."* The coach reaches out. Ciarán feels seen. The plateau is addressed before it becomes a disengagement narrative. AI also surfaces his ranking on any active leaderboard the moment he logs in.
 
-**Ciarán (The Performer):** AI tracks programme evolution — specifically whether his logged activities have materially changed in 8 weeks. If stagnation is detected, it triggers a programme refresh prompt from his coach. It surfaces his performance data comparatively (his own historical bests, not peer comparison) and pre-emptively enrols him in challenge events before he goes looking for them elsewhere. Rewards are framed in performance currency (unlock advanced programming, access to performance testing sessions) not discounts.
+**Aoife (The Transformer):**
+AI detects a broken 3-session-per-week streak following two consecutive missed sessions. It surfaces a personalised milestone recap: *"In the last 90 days, you've attended 34 sessions and added 12kg to your back squat."* This is sent not as a win-back email but as a progress celebration — timed to arrive 48 hours after the second missed session, before the negative self-narrative calcifies. It also prompts her coach with a soft check-in flag.
 
-**Aoife (The Community Floater):** AI maps her social connection to Niamh. If Niamh's attendance drops, Aoife receives a proactive class invitation or social challenge within 48 hours — before her attendance pattern is affected. The system gradually introduces her to a second social anchor (another boot camp regular) through structured class challenges and group rewards, reducing her single-point-of-failure dependency. Rewards are socially framed ("bring a friend for free" rather than "10% off next month").
+**Declan (The Anchor):**
+AI never pushes Declan with progress metrics — he doesn't care. Instead, it monitors his social cluster. If two of his regular Tuesday classmates cancel memberships in the same week, AI flags this to management *before* Declan's renewal date. It also ensures his routine is never disrupted without a personal communication from staff. His loyalty programme experience is frictionless and quiet — which is exactly what he wants.
 
-### Single Highest-Value Personalisation Intervention
+### The Single Highest-Value Personalisation Intervention
 
-**The Coach Alert System for Pre-Churn Signals.**
+**The 48-Hour Streak-Break Rescue.**
 
-When a member's booking frequency drops below their personal baseline for 5 consecutive days, the system sends the member's assigned coach a contextual alert: *"Síofra hasn't booked since Tuesday — her usual pattern is 5x this week. Last coach note: deadlift plateau flagged."* The coach sends a personal message. Not a marketing email. A message from a person who knows her name.
+When a member breaks a streak or misses two consecutive scheduled sessions, LoyaltyOS triggers a coach-attributed (not automated-feeling) message within 48 hours that references something specific: their last PR, their current programme week, or their personal goal. Not: *"We miss you! Here's 10% off."* But: *"Hey Aoife — Coach Rían here. Noticed you missed Tuesday and Thursday. You're 3 weeks into the strength block and your numbers have been brilliant. Don't let this week derail it. See you Monday?"*
 
-This is the intervention Slam cannot currently scale manually. This is what AI makes possible. And it is precisely the kind of high-touch behaviour that defines Slam's brand — the system doesn't replace the coach relationship, it operationalises it.
+This intervention, delivered at the right moment with genuine specificity, converts the most recoverable churn. It is impossible to automate with authenticity using a stamp card. It is entirely possible with LoyaltyOS.
 
 ---
 
@@ -127,20 +134,20 @@ This is the intervention Slam cannot currently scale manually. This is what AI m
 
 ### GDPR Risk
 
-**Specific concern:** Slam is collecting fitness and health-related behavioural data. Under GDPR, data concerning physical health and fitness progression may qualify as **special category data** (Article 9) depending on how granularly it is recorded and linked to identifiable individuals. A member's deadlift progression linked to their name and medical history (even informally held by coaches) creates compliance exposure if not handled under explicit consent frameworks. The referral social graph also creates an implicit data relationship between members who have not individually consented to being mapped.
+**Specific concern:** Slam Fitness collects health and fitness data — session attendance, performance metrics, and potentially body composition or injury history through coaching interactions. Under GDPR, fitness and health data may qualify as **special category data (Article 9)**, requiring explicit consent, a clear legal basis, and stricter handling protocols. Dublin-based businesses fall under Irish DPC jurisdiction, which has been active in enforcement.
 
-**Mitigation:** Implement a layered consent model at onboarding — separate consent for (a) operational data, (b) personalisation data, and (c) social/referral data. Appoint a data processor agreement with LoyaltyOS as the platform provider. Store health-adjacent metrics only in aggregated or anonymised form unless member explicitly opts into progress tracking. Review under Ireland's Data Protection Commission guidance for fitness operators.
+Additionally, any social media monitoring (even opt-in) for tagged posts creates a data trail that must be governed under a clear retention and deletion policy.
+
+**Mitigation:** LoyaltyOS must implement a **tiered consent model at onboarding** — members explicitly opt into each data category (attendance tracking, progress logging, social recognition) as separate consent actions, not buried in T&Cs. Data collected must be limited to what is functionally necessary for loyalty personalisation, with a clear retention period (e.g., 24 months post-cancellation maximum). A privacy dashboard where members can view and delete their data is non-negotiable.
 
 ---
 
 ### Trust Risk
 
-**Specific concern:** The churn prediction system — specifically the pre-churn coach alert — risks feeling like surveillance if members become aware of it without understanding it. Aoife receiving a "coincidental" coach message the day after she misses a session three times is warm and personal. Aoife *knowing* that an algorithm flagged her absence and triggered that message may feel instrumentalised. The "no-ego" brand positioning is entirely incompatible with a loyalty programme that feels like it is optimising members rather than serving them.
+**Specific concern:** The streak mechanic and the 48-hour rescue intervention carry a real manipulation risk. If Ciarán or Aoife ever *realise* the personal message from Coach Rían was algorithmically triggered — that the coach didn't notice on their own, but was prompted by a system — the trust collapse is catastrophic. Boutique gyms sell authentic human relationships. The moment the relationship feels engineered, the premium justification evaporates. This is not theoretical. It is the exact failure mode of loyalty programmes in high-touch service businesses.
 
-The second trust risk is **reward devaluation**: if Ciarán perceives that points and rewards are a mechanism to extract more sessions from him rather than recognise his commitment, his rational-consumer instinct will reject the programme entirely. Performers spot incentive structures.
-
-**Mitigation:** Radical transparency in framing. The loyalty programme should be introduced not as a rewards scheme but as a **"coaching intelligence layer"** — *"We use your data to make sure your coach always knows where you are in your journey."* Tell members the system flags absence to coaches. Most members, at a community gym with this culture, will find that *reassuring*, not creepy — but only if told upfront. For Ciarán-types, frame rewards as unlocking capability, not accumulating points. Never let the mechanics show more than the intent.
+**Mitigation:** The rule is: **AI flags, humans decide**. LoyaltyOS surfaces the insight to the coach — it never auto-sends on the coach's behalf. The coach reads the flag, decides whether it's relevant, and sends their own message in their own words. The authenticity is preserved because the action is genuinely human. The efficiency is preserved because the prompt is intelligently timed. This boundary must be hard-coded into the product design — coaches receive recommendations, never auto-sent communications.
 
 ---
 
-*Brief prepared for Designer handoff. All personas, signals, and intervention triggers are specific to Slam Fitness's described context and should be treated as design constraints, not suggestions.*
+*Brief prepared for the LoyaltyOS Designer. Diagnosis is confirmed: this is a progress-plateau and social-anchor retention problem, not a marketing problem. Build accordingly.*

@@ -3,205 +3,205 @@
     "id": "slamfitness",
     "name": "Slam Fitness",
     "type": "gym",
-    "tagline": "Every rep remembered.",
+    "tagline": "Every rep remembered. Every milestone earned.",
     "currency": {
-      "name": "Reps",
-      "symbol": "REP"
+      "name": "Forge Points",
+      "symbol": "FP"
     },
-    "primaryColor": "#E8321A",
-    "accentColor": "#F5A623",
+    "primaryColor": "#DC2626",
+    "accentColor": "#F97316",
     "activities": [
       {
-        "id": "show_up",
-        "name": "Show Up",
-        "points": 10,
+        "id": "session_complete",
+        "name": "Session Complete",
+        "points": 15,
         "category": "Visit",
         "icon": "\ud83c\udfcb\ufe0f",
-        "description": "Attend any session \u2014 the base earn, no conditions attached."
+        "description": "Attend any scheduled class or open gym session to earn your base Forge Points."
       },
       {
-        "id": "plan_ahead",
-        "name": "Plan Ahead",
-        "points": 15,
-        "category": "Visit",
-        "icon": "\ud83d\udcc5",
-        "description": "Book a session 48 or more hours in advance to reward commitment over impulse."
-      },
-      {
-        "id": "off_peak_pioneer",
-        "name": "Off-Peak Pioneer",
-        "points": 20,
-        "category": "Visit",
-        "icon": "\ud83c\udf05",
-        "description": "Attend a session during designated quiet hours between 10am and 4pm on weekdays."
-      },
-      {
-        "id": "pr_unlocked",
-        "name": "PR Unlocked",
-        "points": 75,
-        "category": "Special",
-        "icon": "\ud83d\udd25",
-        "description": "Log a personal record on a coached lift, verified by a Slam coach on the floor."
-      },
-      {
-        "id": "block_complete",
-        "name": "Block Complete",
-        "points": 150,
-        "category": "Competitive",
-        "icon": "\ud83c\udfc6",
-        "description": "Finish a full programme cycle such as an 8-week strength block from start to finish."
-      },
-      {
-        "id": "coach_connect",
-        "name": "Coach Connect",
+        "id": "off_peak_athlete",
+        "name": "Off-Peak Athlete",
         "points": 25,
-        "category": "Visit",
-        "icon": "\ud83e\udd1d",
-        "description": "Complete a scheduled goal review or check-in session with your assigned coach."
-      },
-      {
-        "id": "slam_form_post",
-        "name": "Slam Form Post",
-        "points": 40,
-        "category": "Social",
-        "icon": "\ud83d\udcf8",
-        "description": "Tag @SlamFitness in a progress post on social media, verified via linked account once per week."
-      },
-      {
-        "id": "bring_your_crew",
-        "name": "Bring Your Crew",
-        "points": 100,
-        "category": "Social",
-        "icon": "\ud83d\udc65",
-        "description": "Earn Reps when a friend completes their first session using your personal Crew referral code."
-      },
-      {
-        "id": "boot_camp_regular",
-        "name": "Boot Camp Regular",
-        "points": 15,
-        "category": "Visit",
+        "category": "Special",
         "icon": "\u26a1",
-        "description": "Attend a group boot camp session, earning additional Reps on top of your standard Show Up earn."
+        "description": "Attend a session during a designated quiet period (Tuesday or Thursday, 10am\u20133pm)."
+      },
+      {
+        "id": "new_personal_record",
+        "name": "New Personal Record",
+        "points": 50,
+        "category": "Competitive",
+        "icon": "\ud83d\udd25",
+        "description": "Log a verified lift PR with coach confirmation to claim your achievement points."
       },
       {
         "id": "seven_day_streak",
         "name": "7-Day Streak",
-        "points": 50,
-        "category": "Special",
-        "icon": "\ud83d\udd11",
-        "description": "Attend at least one session across seven consecutive days, with rest days counted as permitted."
+        "points": 75,
+        "category": "Daily",
+        "icon": "\ud83d\udcc5",
+        "description": "Complete all scheduled sessions across a full 7-day window without missing a single one."
       },
       {
         "id": "thirty_day_streak",
         "name": "30-Day Streak",
         "points": 200,
+        "category": "Daily",
+        "icon": "\ud83d\udd31",
+        "description": "Complete all scheduled sessions across a 30-day window \u2014 a rare feat celebrated publicly in the gym."
+      },
+      {
+        "id": "challenge_enrolled",
+        "name": "Challenge Enrolled",
+        "points": 10,
         "category": "Special",
-        "icon": "\ud83d\udd25",
-        "description": "Maintain consistent weekly attendance across thirty consecutive days without missing a week."
-      },
-      {
-        "id": "challenge_accepted",
-        "name": "Challenge Accepted",
-        "points": 30,
-        "category": "Competitive",
         "icon": "\u2694\ufe0f",
-        "description": "Enrol in a studio challenge event such as a seasonal competition or an 8-week block."
+        "description": "Sign up for any gym challenge or programme block to earn your enrolment points."
       },
       {
-        "id": "solid_week",
-        "name": "Solid Week",
-        "points": 20,
+        "id": "challenge_completed",
+        "name": "Challenge Completed",
+        "points": 100,
         "category": "Competitive",
-        "icon": "\ud83d\udcca",
-        "description": "Complete four or more training sessions within a single calendar week."
+        "icon": "\ud83c\udfc6",
+        "description": "See a full gym challenge or 8\u201312 week programme cycle through to completion."
       },
       {
-        "id": "early_bird",
-        "name": "Early Bird",
+        "id": "refer_a_friend",
+        "name": "Refer a Friend",
+        "points": 150,
+        "category": "Social",
+        "icon": "\ud83e\udd1d",
+        "description": "Earn points when a friend you referred completes their first full paid month of membership."
+      },
+      {
+        "id": "social_tag",
+        "name": "Social Tag",
+        "points": 20,
+        "category": "Social",
+        "icon": "\ud83d\udcf8",
+        "description": "Tag @SlamFitness in a public training post \u2014 opt-in only, maximum once per week."
+      },
+      {
+        "id": "coach_feedback",
+        "name": "Coach Feedback",
+        "points": 10,
+        "category": "Social",
+        "icon": "\ud83d\udcac",
+        "description": "Submit a coach or session review to help improve the programme \u2014 maximum twice per month."
+      },
+      {
+        "id": "programme_week_complete",
+        "name": "Programme Week Complete",
+        "points": 30,
+        "category": "Visit",
+        "icon": "\ud83d\udccb",
+        "description": "Log all prescribed sessions within a given programme week to earn your consistency bonus."
+      },
+      {
+        "id": "first_session_of_month",
+        "name": "First Session of the Month",
         "points": 5,
         "category": "Daily",
-        "icon": "\ud83c\udf04",
-        "description": "Attend any session that starts at or before 7am for a stackable daily bonus on top of regular earns."
+        "icon": "\ud83c\udf05",
+        "description": "Attend your first session in any calendar month to trigger this low-friction re-engagement reward."
+      },
+      {
+        "id": "bring_a_guest",
+        "name": "Bring a Guest",
+        "points": 40,
+        "category": "Social",
+        "icon": "\ud83d\udc65",
+        "description": "Bring a non-member guest along to a guest pass session and introduce them to the floor."
+      },
+      {
+        "id": "milestone_anniversary",
+        "name": "Milestone Anniversary",
+        "points": 100,
+        "category": "Special",
+        "icon": "\ud83c\udf96\ufe0f",
+        "description": "Awarded automatically on your 3-month, 6-month, and 12-month membership anniversaries."
       }
     ],
     "rewards": [
       {
-        "id": "protein_bar_bundle",
-        "name": "Protein Bar Bundle",
+        "id": "protein_shake",
+        "name": "Protein Shake",
+        "cost": 75,
+        "icon": "\ud83e\udd64",
+        "description": "Redeem for one post-session shake from the Slam Fitness bar \u2014 your recovery, covered."
+      },
+      {
+        "id": "priority_class_booking",
+        "name": "Priority Class Booking",
+        "cost": 100,
+        "icon": "\ud83d\udd13",
+        "description": "Unlock a 48-hour early booking window for one full week of classes, beating the standard 24-hour window."
+      },
+      {
+        "id": "guest_day_pass",
+        "name": "Guest Day Pass",
         "cost": 150,
-        "icon": "\ud83c\udf6b",
-        "description": "Receive a week's supply of Slam-stocked nutrition products as a low-bar, high-frequency treat."
-      },
-      {
-        "id": "guest_pass",
-        "name": "Guest Pass",
-        "cost": 200,
         "icon": "\ud83c\udf9f\ufe0f",
-        "description": "Bring a friend for one free session \u2014 socially framed as an invite, never as a discount."
+        "description": "Bring a friend for a free single session \u2014 a genuine try-before-you-buy that doubles as a referral seed."
       },
       {
-        "id": "recovery_session",
-        "name": "Recovery Session",
-        "cost": 300,
-        "icon": "\ud83d\udc86",
-        "description": "Enjoy a 45-minute foam rolling and mobility session with a coach in a premium quiet-hours slot."
+        "id": "slam_kit_water_bottle",
+        "name": "Slam Kit \u2014 Water Bottle",
+        "cost": 250,
+        "icon": "\ud83d\udca7",
+        "description": "Claim a branded Slam Fitness stainless steel bottle to carry your training identity off the floor."
       },
       {
-        "id": "slam_kit_credit",
-        "name": "Slam Kit Credit",
-        "cost": 350,
-        "icon": "\ud83d\udc55",
-        "description": "Redeem \u20ac10 credit toward Slam-branded apparel or accessories from the studio store."
-      },
-      {
-        "id": "programme_upgrade",
-        "name": "Programme Upgrade",
+        "id": "one_on_one_programming",
+        "name": "1-on-1 Programming Session",
         "cost": 400,
-        "icon": "\ud83d\udccb",
-        "description": "Unlock a bespoke 4-week advanced programme block designed personally by a senior Slam coach."
+        "icon": "\ud83d\udcca",
+        "description": "Book a 30-minute private session with a coach to design your next personalised training block."
       },
       {
-        "id": "performance_test_session",
-        "name": "Performance Test Session",
+        "id": "slam_kit_training_tee",
+        "name": "Slam Kit \u2014 Training Tee",
         "cost": 500,
-        "icon": "\ud83e\uddea",
-        "description": "Complete a one-on-one coach-led session covering 1RM assessment, movement screen, or performance benchmarking."
+        "icon": "\ud83d\udc55",
+        "description": "Earn a premium Slam Fitness training top \u2014 identity wear that marks you as part of the community."
       },
       {
-        "id": "wall_of_form_feature",
-        "name": "Wall of Form Feature",
-        "cost": 600,
+        "id": "one_month_membership_credit",
+        "name": "One Month Membership Credit",
+        "cost": 800,
         "icon": "\ud83c\udfc5",
-        "description": "Have your name and a PR milestone posted to Slam's physical Wall of Form in the studio and on social channels."
+        "description": "Have one full month knocked off your membership \u2014 a reward reserved for the gym's highest-tier members."
       },
       {
-        "id": "month_free",
-        "name": "Month Free",
-        "cost": 1500,
-        "icon": "\ud83c\udf81",
-        "description": "Receive one full month of membership credited to your account \u2014 the aspirational anchor reward every member trains toward."
+        "id": "iron_record_plaque",
+        "name": "The IRON RECORD Plaque",
+        "cost": 1200,
+        "icon": "\ud83e\udea8",
+        "description": "Receive a physical custom-engraved plaque recording your top 5 all-time PRs \u2014 the ultimate proof of who you've become."
       }
     ],
     "tiers": [
       {
-        "name": "Foundation",
+        "name": "Rookie",
         "minPoints": 0,
-        "color": "#8C8C8C"
+        "color": "#6B7280"
       },
       {
-        "name": "Conditioning",
-        "minPoints": 500,
-        "color": "#4A90D9"
+        "name": "Lifter",
+        "minPoints": 300,
+        "color": "#0EA5E9"
       },
       {
-        "name": "Performance",
+        "name": "Competitor",
+        "minPoints": 750,
+        "color": "#F59E0B"
+      },
+      {
+        "name": "Iron",
         "minPoints": 1500,
-        "color": "#E8321A"
-      },
-      {
-        "name": "Elite Form",
-        "minPoints": 3500,
-        "color": "#F5A623"
+        "color": "#DC2626"
       }
     ],
     "aiPersonalisationEnabled": true,

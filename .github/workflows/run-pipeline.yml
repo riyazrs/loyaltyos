@@ -19,6 +19,10 @@ on:
         description: 'Contact email'
         required: false
         default: ''
+      theme:
+        description: 'App colour mode (dark / light / rich)'
+        required: false
+        default: 'dark'
 
 jobs:
   run-pipeline:

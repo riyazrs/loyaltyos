@@ -545,6 +545,46 @@
             <div class="field-error" id="err-slug">URL must be 3-30 characters, letters and numbers only.</div>
           </div>
 
+          <div class="field">
+            <label>App colour mode <span class="req">*</span></label>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-bottom:12px;">Choose the visual theme for your loyalty app. You can see how each looks in the preview below.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;" id="themeGrid">
+              <div onclick="selectTheme('dark')" id="theme-dark" class="theme-card theme-selected" style="cursor:pointer;border-radius:12px;border:2px solid #7C3AED;overflow:hidden;transition:all 0.2s;">
+                <div style="background:#0a0a0f;padding:12px 10px;">
+                  <div style="width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,0.08);margin-bottom:6px;"><div style="width:65%;height:6px;border-radius:3px;background:#7C3AED;"></div></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.05);margin-bottom:4px;"></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.05);width:80%;"></div>
+                </div>
+                <div style="background:#0a0a0f;padding:6px 10px 10px;border-top:1px solid rgba(255,255,255,0.08);">
+                  <p style="font-size:11px;font-weight:700;color:#fff;margin-bottom:2px;">Dark</p>
+                  <p style="font-size:9px;color:rgba(255,255,255,0.4);">Near-black · neon glows</p>
+                </div>
+              </div>
+              <div onclick="selectTheme('light')" id="theme-light" class="theme-card" style="cursor:pointer;border-radius:12px;border:2px solid rgba(255,255,255,0.12);overflow:hidden;transition:all 0.2s;">
+                <div style="background:#F8F7F4;padding:12px 10px;">
+                  <div style="width:100%;height:6px;border-radius:3px;background:rgba(0,0,0,0.08);margin-bottom:6px;"><div style="width:65%;height:6px;border-radius:3px;background:#0EA5E9;"></div></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(0,0,0,0.06);margin-bottom:4px;"></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(0,0,0,0.06);width:80%;"></div>
+                </div>
+                <div style="background:#F8F7F4;padding:6px 10px 10px;border-top:1px solid rgba(0,0,0,0.07);">
+                  <p style="font-size:11px;font-weight:700;color:#111;margin-bottom:2px;">Light</p>
+                  <p style="font-size:9px;color:rgba(0,0,0,0.45);">Clean · minimal · bright</p>
+                </div>
+              </div>
+              <div onclick="selectTheme('rich')" id="theme-rich" class="theme-card" style="cursor:pointer;border-radius:12px;border:2px solid rgba(255,255,255,0.12);overflow:hidden;transition:all 0.2s;">
+                <div style="background:linear-gradient(135deg,#7C3AEDcc,#1a0a2e);padding:12px 10px;">
+                  <div style="width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,0.12);margin-bottom:6px;"><div style="width:65%;height:6px;border-radius:3px;background:#F59E0B;"></div></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.1);margin-bottom:4px;"></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.1);width:80%;"></div>
+                </div>
+                <div style="background:rgba(26,10,46,0.95);padding:6px 10px 10px;border-top:1px solid rgba(255,255,255,0.12);">
+                  <p style="font-size:11px;font-weight:700;color:#fff;margin-bottom:2px;">Rich</p>
+                  <p style="font-size:9px;color:rgba(255,255,255,0.55);">Gradient · glass · luxury</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="btn-row">
             <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
           </div>
@@ -710,6 +750,16 @@
   const ONBOARD_URL = 'https://loyaltyos.vercel.app/api/onboard'
   let currentStep = 1
   const totalSteps = 4
+  let selectedTheme = 'dark'
+
+  function selectTheme(mode) {
+    selectedTheme = mode
+    const accent = { dark: '#7C3AED', light: '#0EA5E9', rich: '#7C3AED' }
+    ;['dark', 'light', 'rich'].forEach(m => {
+      const el = document.getElementById('theme-' + m)
+      el.style.border = m === mode ? `2px solid ${accent[m]}` : '2px solid rgba(255,255,255,0.12)'
+    })
+  }
 
   // Auto-generate slug from business name
   document.getElementById('businessName').addEventListener('input', function() {
@@ -851,7 +901,8 @@
           : ''
       ].filter(Boolean).join(' '),
       slug: slug,
-      contact_email: document.getElementById('contactEmail').value.trim()
+      contact_email: document.getElementById('contactEmail').value.trim(),
+      theme: selectedTheme
     }
 
     try {

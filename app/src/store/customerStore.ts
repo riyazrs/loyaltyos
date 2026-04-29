@@ -5,6 +5,7 @@ interface CustomerStore {
   customer: Customer
   completeActivity: (activityId: string, points: number) => void
   redeemReward: (rewardId: string, cost: number) => void
+  setName: (name: string) => void
   reset: () => void
 }
 
@@ -44,6 +45,9 @@ export const useCustomerStore = create<CustomerStore>((set) => ({
         ],
       },
     })),
+
+  setName: (name) =>
+    set((state) => ({ customer: { ...state.customer, name } })),
 
   reset: () => set({ customer: defaultCustomer }),
 }))

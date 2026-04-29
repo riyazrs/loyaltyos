@@ -41,7 +41,15 @@ Your design specification must cover:
    - Reward redemption flow: how does spending points work?
    - Business admin panel: what controls does the business owner have?
 
-6. TRUST AND TRANSPARENCY DESIGN
+6. COLOUR MODE AND VISUAL THEME
+   Choose one of three visual themes based on the business's character:
+   - "dark"  — near-black background (#0a0a0f), white text, neon glows. Best for gaming, nightlife, entertainment.
+   - "light" — warm off-white background (#F8F7F4), dark text, clean and minimal. Best for health, wellness, dental, family.
+   - "rich"  — full-bleed gradient background using the primary colour, glass-effect cards. Best for luxury, hospitality, salons, premium brands.
+
+   State your theme choice and justify it. The generated config must include a "theme" field with this value.
+
+7. TRUST AND TRANSPARENCY DESIGN
    - How does the UI communicate data usage to the customer?
    - How does the system avoid feeling manipulative?
 

@@ -1,3 +1,16 @@
+export type ThemeMode = 'dark' | 'light' | 'rich'
+
+export interface Coupon {
+  id: string
+  code: string
+  discount: number
+  description: string
+  expiresAt: string
+  minPoints: number
+  active: boolean
+  createdAt: string
+}
+
 export interface Activity {
   id: string
   name: string
@@ -55,6 +68,8 @@ export interface BusinessConfig {
   rewards: Reward[]
   tiers: Tier[]
   aiPersonalisationEnabled: boolean
+  theme?: ThemeMode
+  adminPassword?: string
 }
 
 export interface PersonaliseSuggestion {

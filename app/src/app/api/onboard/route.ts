@@ -7,7 +7,7 @@ const WORKFLOW_FILE = 'run-pipeline.yml'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { business_name, business_type, business_description, slug, contact_email } = body
+    const { business_name, business_type, business_description, slug, contact_email, theme } = body
 
     if (!business_name || !business_type || !business_description || !slug) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
             business_description,
             slug,
             contact_email: contact_email ?? '',
+            theme: theme ?? 'dark',
           },
         }),
       }

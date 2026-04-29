@@ -52,7 +52,9 @@ The interface is:
   "tiers": [                  // Exactly 4 tiers, ascending minPoints
     { "name": string, "minPoints": number, "color": string }
   ],
-  "aiPersonalisationEnabled": true
+  "aiPersonalisationEnabled": true,
+  "theme": string,            // One of: "dark", "light", "rich"
+  "adminPassword": "admin123" // Default admin password
 }
 
 Rules:
@@ -63,6 +65,8 @@ Rules:
 - Tier names must be thematic to the business type (NOT Bronze/Silver/Gold/Platinum)
 - All activities must have icon, category, and description fields — this is required
 - All rewards must have icon and description fields — this is required
+- theme must be exactly "dark", "light", or "rich" — choose based on the business character
+- adminPassword must be exactly "admin123"
 - Output ONLY the JSON object, nothing else."""
 
 

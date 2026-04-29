@@ -85,6 +85,11 @@ jobs:
           print(f"Injected config for '{slug}' into dynamicConfigs.json")
           EOF
 
+      - name: Collect pipeline outputs into single report
+        working-directory: pipeline
+        run: |
+          python collect_outputs.py --slug "${{ github.event.inputs.slug }}"
+
       - name: Copy pipeline outputs to docs
         run: |
           mkdir -p docs/outputs/${{ github.event.inputs.slug }}

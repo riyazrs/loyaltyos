@@ -99,6 +99,10 @@
       flex-shrink: 0;
     }
     .step-arrow { color: rgba(255,255,255,0.2); font-size: 0.7rem; }
+    .step.done { color: rgba(255,255,255,0.7); }
+    .step.done .step-num { background: #10b981; border-color: #10b981; color: #fff; }
+    .step.active { color: rgba(255,255,255,0.7); }
+    .step.active .step-num { background: #7C3AED; border-color: #7C3AED; color: #fff; animation: pulse 1s infinite; }
 
     /* FORM CARD */
     .form-wrap {
@@ -384,6 +388,31 @@
     .ps-dot.running { background: #7C3AED; animation: pulse 1s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
+    .live-banner {
+      display: none;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.25);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .live-banner.show { display: block; }
+    .live-banner h3 { color: #6ee7b7; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .live-banner p { color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.5; margin-bottom: 1rem; }
+    .live-banner .btn-live {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #10b981;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .live-banner .btn-live:hover { background: #059669; }
+
     /* ERROR STATE */
     .error-state { display: none; text-align: center; padding: 1.5rem 0; }
     .error-state.show { display: block; }
@@ -423,13 +452,13 @@
 </section>
 
 <div class="steps">
-  <div class="step"><div class="step-num">1</div> Fill in your business details</div>
+  <div class="step" id="topStep1"><div class="step-num">1</div> Fill in your business details</div>
   <div class="step-arrow">→</div>
-  <div class="step"><div class="step-num">2</div> AI pipeline runs (5 agents)</div>
+  <div class="step" id="topStep2"><div class="step-num">2</div> AI pipeline runs (5 agents)</div>
   <div class="step-arrow">→</div>
-  <div class="step"><div class="step-num">3</div> Your app goes live</div>
+  <div class="step" id="topStep3"><div class="step-num">3</div> Your app goes live</div>
   <div class="step-arrow">→</div>
-  <div class="step"><div class="step-num">4</div> Customers start earning</div>
+  <div class="step" id="topStep4"><div class="step-num">4</div> Customers start earning</div>
 </div>
 
 <div class="form-wrap">
@@ -461,6 +490,13 @@
         <a id="reportLink" href="#" target="_blank" style="display:inline-block;padding:0.55rem 1.1rem;background:#7C3AED;color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">
           View Governance Report &rarr;
         </a>
+      </div>
+
+      <!-- LIVE BANNER — shown when polling detects the app is live -->
+      <div class="live-banner" id="liveBanner">
+        <h3>Your app is live!</h3>
+        <p>All five agents completed. Your loyalty programme is ready for customers.</p>
+        <a id="appLink" href="#" target="_blank" class="btn-live">Visit your app &rarr;</a>
       </div>
     </div>
 
@@ -885,6 +921,55 @@
     showPanel(1)
   }
 
+  let pollTimer = null
+
+  function pollForApp(slug) {
+    const statusUrl = ONBOARD_URL.replace('/api/onboard', '/api/status') + '?slug=' + slug
+    const appUrl = 'https://loyaltyos-wheat.vercel.app/' + slug
+
+    // Start polling after 60s (pipeline takes ~5 min, no point checking early)
+    setTimeout(() => {
+      pollTimer = setInterval(async () => {
+        try {
+          const res = await fetch(statusUrl)
+          if (!res.ok) return
+          const data = await res.json()
+          if (data.live) {
+            clearInterval(pollTimer)
+            onAppLive(slug, appUrl)
+          }
+        } catch (e) { /* retry next interval */ }
+      }, 20000)
+    }, 60000)
+  }
+
+  function onAppLive(slug, appUrl) {
+    // Update top step indicators
+    document.getElementById('topStep1').className = 'step done'
+    document.getElementById('topStep2').className = 'step done'
+    document.getElementById('topStep3').className = 'step done'
+    document.getElementById('topStep4').className = 'step done'
+
+    // Mark all pipeline dots as done
+    for (let i = 1; i <= 5; i++) {
+      const dot = document.getElementById('dot' + i)
+      dot.classList.remove('running')
+      dot.classList.add('done')
+    }
+
+    // Update title and icon
+    document.querySelector('.success-title').textContent = 'Your app is live!'
+    const icon = document.querySelector('.success-icon')
+    icon.style.background = 'rgba(16,185,129,0.15)'
+    icon.style.borderColor = 'rgba(16,185,129,0.4)'
+
+    // Show live banner with link
+    document.getElementById('appLink').href = appUrl
+    document.getElementById('liveBanner').classList.add('show')
+
+    window.scrollTo({ top: document.getElementById('liveBanner').offsetTop - 100, behavior: 'smooth' })
+  }
+
   document.getElementById('onboardForm').addEventListener('submit', async function(e) {
     e.preventDefault()
     if (!validateStep(4)) return
@@ -931,8 +1016,15 @@
       document.getElementById('formContent').style.display = 'none'
       document.getElementById('successUrl').textContent = 'loyaltyos-wheat.vercel.app/' + slug
       document.getElementById('reportLink').href = 'report.html?slug=' + slug
+      document.getElementById('appLink').href = 'https://loyaltyos-wheat.vercel.app/' + slug
       document.getElementById('successState').classList.add('show')
+
+      // Highlight top steps
+      document.getElementById('topStep1').className = 'step done'
+      document.getElementById('topStep2').className = 'step active'
+
       animatePipelineSteps()
+      pollForApp(slug)
 
     } catch (err) {
       submitBtn.disabled = false

@@ -1,5 +1,7 @@
-# LoyaltyOS Communications Package
-## Client: Slam Fitness | IRON CIRCLE Programme
+# LoyaltyOS × Slam Fitness — Communications Package
+
+**Prepared by:** Communicator Agent · LoyaltyOS Platform
+**Client:** Slam Fitness, Stoneybatter, Dublin 7
 
 ---
 
@@ -7,56 +9,62 @@
 
 ---
 
-### One-Line Value Proposition *(for businesses)*
+### One-Line Value Proposition (LoyaltyOS selling to businesses)
 
-> **LoyaltyOS turns the relationships your coaches already have into a retention system that works while they're coaching.**
+> **LoyaltyOS turns the relationships your best coaches already have into a retention system that works even when they're not in the room.**
 
 ---
 
-### Programme Tagline *(for Slam Fitness members)*
+### Tagline for Slam Fitness's Loyalty Programme
 
-> **IRON CIRCLE: Earned in the gym. Built in the community.**
+> **SLAM FORM — Every session counts. Especially the one you almost skipped.**
+
+*Design note: "SLAM FORM" works as a double meaning — the platform name and a genuine coaching cue. It positions the programme as part of training culture, not a marketing layer on top of it.*
 
 ---
 
 ### Key Messages by Persona
 
-#### Persona 1 — Committed Cliona
+---
 
-> 🏋️ *"Your progress has a memory now."*
-Your PRs don't disappear into a notebook. They're logged, named, and celebrated — by the programme and by the people around you.
+#### Síofra — The Anchor
 
-> 🏋️ *"You've built something here. We're not going to let that disappear quietly."*
-When your routine gets disrupted, your coaches know before you've had time to drift. Because they're paying attention, and now they have the tools to show it.
+1. **"Your progress is visible here, even on the days it doesn't feel like it."**
+*Speaks to her identity investment and the plateau vulnerability. Data makes invisible progress tangible.*
 
-> 🏋️ *"You're not just a member at this point. You're part of how this place works."*
-The leaderboard isn't vanity. It's a record of who shows up. Your name belongs near the top of it.
+2. **"Your coaches know where you've been. Now the platform does too."**
+*Reassures her that the relationship intelligence she depends on isn't fragile anymore — it's systematic.*
+
+3. **"You've built something real at Slam. SLAM FORM makes sure no one loses track of it."**
+*Addresses her risk of coach-dependency by positioning the system as a continuity mechanism, not a replacement.*
 
 ---
 
-#### Persona 2 — Inconsistent Ian
+#### Ciarán — The Performer
 
-> 💪 *"Life gets complicated. This programme doesn't punish you for that."*
-Missed a week? Your streak doesn't disappear — it waits. Come back, and we'll pick up where you left off. No guilt, no penalties, just points for returning.
+1. **"Your programme should be ahead of you — not catching up."**
+*Speaks directly to his stagnation trigger. Positions the system as proactively serving his development, not just recording it.*
 
-> 💪 *"When you go quiet, someone notices."*
-Not a marketing email. Not a chatbot. Your coach — with a message that's actually about you, not about filling a class.
+2. **"Points are fine. Unlocking your next performance block is better."**
+*Signals that rewards at Slam aren't discounts and supermarket stamps. They're capabilities. Appeals to his rational, results-first outlook.*
 
-> 💪 *"You don't have to earn your place back. You never lost it."*
-Re-entry bonuses, welcome-back points, no questions asked. The programme is designed for real life, not a perfect attendance record.
+3. **"SLAM FORM tracks what matters: where you are now vs. where you were. Nothing else."**
+*Speaks to his auditable loyalty — he needs to see that the system is built around performance data, not engagement manipulation.*
 
 ---
 
-#### Persona 3 — Social Síle
+#### Aoife — The Community Floater
 
-> 🤝 *"You didn't just join a gym. You helped build one."*
-Every person you've brought here made this place more itself. Your referrals aren't transactions — they're on the leaderboard, right next to your name.
+1. **"Training is more fun when you're in it together. SLAM FORM is built for that."**
+*Centres the social ritual, not the fitness outcome. Meets her where she actually is.*
 
-> 🤝 *"Your crew is part of the programme now."*
-Group challenges, community spotlights, shared milestones. The things that make Tuesday night great aren't accidental — they're built in.
+2. **"Bring Niamh. Earn together. It's literally more rewarding when you come as a pair."**
+*Directly protects against her single-point-of-failure risk by making the social bond part of the reward structure.*
 
-> 🤝 *"The gym needs people like you more than you know."*
-You're not just a member. You're a reason other people stay. IRON CIRCLE recognises that, with rewards that match the energy you bring.
+3. **"You don't have to be obsessed with the gym to belong here. You just have to show up."**
+*Low-pressure framing that respects her 2x-per-week reality and validates it without pushing her toward Síofra's commitment level.*
+
+---
 
 ---
 
@@ -66,76 +74,134 @@ You're not just a member. You're a reason other people stay. IRON CIRCLE recogni
 
 ### a) Welcome Message — First App Open
 
-**Target persona:** All three, but tonal centre of gravity is Ian — the person most likely to feel like a visitor rather than a member.
+**Targets:** All three personas, with Síofra's identity investment as the emotional anchor
 
 ---
 
-> **Welcome to IRON CIRCLE.**
->
-> This is Slam's loyalty programme — but it's not a points card dressed up with an app.
->
-> Here's what it actually is: a way for your coaches to stay close to what's going on with you, even on the weeks when life gets loud. A way to track how far you've come, not just how many times you've shown up. And a way to make sure the community here sees your name, your milestones, and your progress — because you've earned that.
->
-> You don't need to be a five-days-a-week person for this to work for you. You just need to keep coming back.
->
-> Start by logging your first session. Everything else follows from there.
->
-> **— The Slam Team**
+```
+WELCOME TO SLAM FORM
 
-*CTA button: Log my first session →*
+Hey [First Name] — you're in.
+
+This is how Slam keeps track of your journey, 
+makes sure your coaches know where you're at, 
+and (occasionally) gives you something back for 
+the work you're putting in.
+
+No gimmicks. No "spin the wheel for a free 
+protein bar." Just your training, made visible.
+
+You earn Reps for the things you're probably 
+already doing — showing up, booking ahead, 
+hitting personal bests, bringing friends along.
+
+Your coaches can see your progress. You can 
+see your progress. And we'll flag it when 
+something worth celebrating happens.
+
+That's it.
+
+→ Let's set up your profile
+   (takes 90 seconds, makes everything better)
+```
+
+---
+
+**Tone notes:** Direct, no fluff, treats the member as an adult. "No spin the wheel" pre-empts Ciarán's scepticism. "Your coaches can see your progress" signals transparency upfront — crucial for trust architecture.
 
 ---
 
 ### b) First Reward Earned Notification
 
-**Target persona:** Ian — this is the moment the programme needs to feel like recognition, not mechanics.
+**Primary persona targeted: Aoife — The Community Floater**
+*(First rewards are most likely triggered by attendance or a booking action — the lowest-friction activities. Aoife is most at risk of not returning after session 1–2, so this message does the most work here.)*
 
 ---
 
-> **Push notification:**
-> 🔥 First Iron earned, [First Name]. Seriously — this is how it starts.
+```
+Push notification:
+"You just earned your first Reps at Slam 💪"
 
-> **In-app message (on open):**
->
-> **You just earned your first Iron.**
->
-> That might sound small, but the people who've been here longest all started with exactly this.
->
-> [X] Iron landed in your account for today's session. Keep that going and you'll hit your first milestone sooner than you think.
->
-> Your coaches can see your progress from here. So can you.
->
-> *Next up: book your next session and keep the streak alive. Or just show up when you can — either works.*
+───────────────────────────────────────
 
-*CTA button: See what you can earn →*
+In-app message (on tap):
+
+FIRST REPS. GOOD START.
+
+You've just picked up [X] Reps for [Activity Name].
+
+Not a big deal yet — but these add up fast, 
+especially when you're training with someone 
+else. Bring a mate next session and you'll both 
+earn bonus Reps just for showing up together.
+
+Your balance: [X] Reps
+Next milestone: [Y] Reps — [Tier Name]
+
+The [Tier Name] tier unlocks [specific benefit]. 
+You're [Z] sessions away if you keep the 
+current pace.
+
+See you on the floor.
+— The Slam team
+```
 
 ---
 
-### c) 7-Day Streak Congratulation Message
-
-**Target persona:** Cliona — she's the one most likely to have hit this, and she responds to specific, earned acknowledgement.
+**Tone notes:** "Not a big deal yet" is intentional — it avoids the hollow over-celebration of most loyalty apps that treats a first click like a moon landing. It respects Ciarán's BS detector while still being warm for Aoife. The friend nudge is embedded naturally, not as a pushy referral ask.
 
 ---
 
-> **Push notification:**
-> 💪 Seven days straight, [First Name]. That's not luck — that's a habit.
+### c) 7-Day (1-Week) Streak Congratulation Message
 
-> **In-app message (on open):**
->
-> **Seven sessions. Seven days. All you.**
->
-> You've attended every day this week, and your coaches have noticed — not because an alert told them, but because you're hard to miss when you're that consistent.
->
-> Here's where you stand:
-> 🔥 Current streak: 7 days
-> ⚡ Iron earned this week: [X]
-> 🏆 Your tier: [Current Tier]
->
-> Keep going and you hit the 30-day milestone. That one comes with a reward worth having — and a moment on the community leaderboard that the rest of Slam will actually see.
->
-> You're building something. Don't stop now.
+**Primary persona targeted: Síofra — The Anchor**
+*(Streak mechanics resonate most with members who have existing consistency. Síofra's training log is the most consistent in the building — this message rewards her identity, not just her behaviour.)*
 
-*CTA button: See my progress →*
+---
+
+```
+Push notification:
+"One full week. Every single session. 🔥"
+
+───────────────────────────────────────
+
+In-app message (on tap):
+
+SEVEN DAYS.
+
+That's a full week without a reason good 
+enough to skip.
+
+You've trained [X] times this week. You've 
+earned [Y] Reps. And your streak is alive.
+
+We know you're not doing this for the points.
+But the points notice.
+
+Here's what stood out this week:
+✓ [Most recent activity — e.g. "Deadlift 
+   session, Thursday 6am"]
+✓ [Streak bonus — e.g. "+25 bonus Reps 
+   for 7-day streak"]
+✓ [Progress note if available — e.g. 
+   "Coaches have flagged progress on your 
+   programme this week"]
+
+Your streak is protected by a Streak Shield 
+this week — one missed week won't break it.
+
+Keep going.
+— The Slam team
+
+P.S. Your coach [Name] has been watching 
+your form. Literally. (That's their job.)
+```
+
+---
+
+**Tone notes:** "We know you're not doing this for the points. But the points notice." — this line is specifically for Síofra. It acknowledges her intrinsic motivation while giving the extrinsic reward its rightful place: secondary, not primary. The PS humanises the coach relationship without being sentimental.
+
+---
 
 ---
 
@@ -143,166 +209,240 @@ You're not just a member. You're a reason other people stay. IRON CIRCLE recogni
 
 ---
 
-### Offer 1 — Low-Turnover Day Promotion (Midweek Off-Peak)
+### Offer 1 — Low Turnover Day Promotion (Tuesday Night)
 
-**Target persona:** Ian — he has flexibility in his schedule but hasn't built the mental model of Slam as an off-peak option.
+**Primary persona targeted: Ciarán — The Performer**
+*(He trains evenings. He's goal-oriented. A quieter floor is a feature for him, not a consolation.)*
 
 ---
 
-**HEADLINE:**
-> Tuesday afternoon. No queue. No crowd. Double Iron.
+```
+HEADLINE:
+Tuesday nights hit different.
 
-**BODY COPY:**
-> The floor is yours between 10am and 3pm every Tuesday and Wednesday. And for this week, every session you book in that window earns you double Iron — no code needed, no catch.
->
-> We know most people come in for the 6am or the evening sessions. But if your week has shifted, or you want an extra session without the rush, this is the window. The coaches are there. The equipment is there. The points are doubled.
->
-> Try it once. You might start preferring it.
+BODY COPY:
+Quieter floor. Same coaches. More time under 
+the bar.
 
-**CTA:**
-> Book a midweek session →
+Train at Slam this Tuesday between 7pm–9pm 
+and earn double Reps on every activity you 
+log. That means your session, your 
+post-session coach check-in, your early 
+booking — all of it counts twice.
 
-**URGENCY HOOK:**
-> Double Iron runs this week only — Tuesday and Wednesday, 10am–3pm. After that, normal points apply.
+Peak hours are great for energy. Off-peak 
+is great for work.
+
+TUESDAY DOUBLE REP NIGHT
+This Tuesday · 7pm–9pm · Slam Fitness
+
+CTA:
+→ Book Tuesday's session (takes 30 seconds)
+
+URGENCY HOOK:
+Double Reps are capped at the first 20 
+members who book. Slots are already moving.
+```
+
+---
+
+**Design note:** "More time under the bar" is a direct speak to Ciarán's programming focus. The cap creates genuine urgency without manufactured scarcity — it's operationally real (quiet sessions have capacity limits).
 
 ---
 
 ### Offer 2 — Tier Upgrade Celebration Offer
 
-**Target persona:** Cliona — she's the member most likely to have just crossed a tier threshold through consistent effort.
+**Primary persona targeted: Síofra — The Anchor**
+*(Tier progression is most meaningful to members with long tenure and identity investment. This is Síofra's moment.)*
 
 ---
 
-**HEADLINE:**
-> You just hit [New Tier Name]. That took real work.
+```
+HEADLINE:
+You've just become a [New Tier Name].
 
-**BODY COPY:**
-> You've been showing up consistently enough that the programme has moved you up to [New Tier Name] status. That's not automatic — it's a reflection of how you've been training.
->
-> To mark it, we've dropped a reward into your account: [Specific Reward — e.g. a free guest pass / one complimentary session / a protein supplement from our partners]. It's yours for the next 14 days.
->
-> At [New Tier Name], you also unlock [Tier Benefit — e.g. early access to new programmes / priority class booking / a monthly check-in with your coach]. That starts today.
->
-> Welcome to the next level. Genuinely.
+BODY COPY:
+This didn't happen overnight.
 
-**CTA:**
-> Claim your reward →
+You've put in [X] sessions, logged [Y] Reps, 
+and according to [Coach Name], you've been 
+one of the most consistent people on this 
+floor for the past [Z] months.
 
-**URGENCY HOOK:**
-> Your [Specific Reward] expires in 14 days — it's in your rewards wallet now.
+[New Tier] means [specific benefit — e.g. 
+"priority booking on all peak slots"]. It 
+also means a one-off celebration offer, 
+because you've earned something that's 
+actually worth celebrating.
+
+This week only: bring a friend to any class 
+for free. No strings. They don't need to 
+join. They just need to show up with you.
+
+Because that's how you got here.
+
+CTA:
+→ Claim your guest pass now
+
+URGENCY HOOK:
+Your guest pass expires in 7 days. After 
+that, it's gone — your next tier is a 
+long way off, so use this one.
+```
 
 ---
 
-### Offer 3 — Win-Back Offer (14-Day Absence)
-
-**Target persona:** Ian — the most likely to have gone quiet without communicating why, and the most likely to respond to being seen rather than marketed to.
+**Tone notes:** "This didn't happen overnight" is the emotional core. It validates the work, not just the milestone. The friend invite is positioned as a reward Síofra shares, which reinforces her social identity at Slam. The urgency hook is honest — tier upgrades are genuinely infrequent events.
 
 ---
 
-**HEADLINE:**
-> You've been away for a bit. Your deadlift isn't going anywhere.
+### Offer 3 — Win-Back Offer (14 Days Inactive)
 
-**BODY COPY:**
-> It's been a couple of weeks, [First Name]. No lecture — life happens, we know that.
->
-> Your last session was [Date]. Your coaches remember it. And your progress hasn't gone anywhere while you've been away — it's sitting right here in your account, waiting.
->
-> Come back this week and you'll earn double Iron on your first session back, automatically. No code. No awkward "where have you been" conversation. Just points for walking back through the door — which is the hardest part, and we know it.
->
-> Your account is still active. Your streak can start again. And [Coach Name] is around if you want to pick up where you left off.
+**Primary persona targeted: Aoife — The Community Floater**
+*(14 days of absence is most dangerous for Aoife — she has no individual relationship with the gym to pull her back. This message needs to re-establish that social hook fast.)*
 
-**CTA:**
-> Book my comeback session →
+---
 
-**URGENCY HOOK:**
-> The double-Iron welcome-back bonus is live for 7 days from today. After that, standard points apply.
+```
+HEADLINE:
+The Tuesday crew has been asking about you.
+
+BODY COPY:
+Not in a weird way. Just — you haven't been 
+in a while, and these things get noticed.
+
+Life gets in the way. We know. No lecture.
+
+But here's the thing: your [X]-week streak is 
+still sitting there. Your Reps haven't gone 
+anywhere. And Niamh's [or: a few of your 
+regular crew are] still showing up on 
+Thursdays.
+
+Come back this week and we'll add 50 bonus 
+Reps to your account. No conditions. 
+Just book a class, show up, and they're yours.
+
+It's genuinely good to have you here.
+
+CTA:
+→ Book a class this week
+
+URGENCY HOOK:
+The 50 bonus Reps are available until 
+[Date — 5 days from send]. After that, 
+they expire. But your spot in the class 
+doesn't — we always have room for you.
+```
+
+---
+
+**Tone notes:** "Not in a weird way" disarms the surveillance concern. "No lecture" is critical — Aoife is the most likely to feel guilty after absence, and guilt is the enemy of re-engagement. Using Niamh's name (if available in social graph data) makes this feel like a message from a person, not a system. The final line — "we always have room for you" — is specifically crafted to counter the social anxiety of returning after absence.
+
+---
 
 ---
 
 ## 4. BUSINESS SALES PITCH
 
----
-
-*This is the pitch LoyaltyOS uses when talking to boutique fitness studios like Slam.*
+**LoyaltyOS selling to boutique fitness studios like Slam**
 
 ---
 
-**THE PROBLEM**
+### The Problem
 
-Boutique fitness studios are built on something most gyms can't manufacture: genuine coach relationships, a real community, and the feeling that your progress actually matters to someone. That's the product. But it's also the fragility. When a member starts to drift — their routine disrupted, a favourite coach leaving, a training buddy stopping coming — there's no system underneath to catch them. The cancellation email says "budget." The real reason is almost always "I stopped feeling like it was working, and nobody noticed." Most studios only find out a member was at risk when the cancellation request arrives. By then, the relationship has been fading for weeks.
-
----
-
-**THE SOLUTION**
-
-LoyaltyOS is a white-label loyalty platform designed specifically for businesses where the human relationship is the product. We don't replace your coaches — we give them information at exactly the right moment. When a member goes quiet for ten days, your coach gets a specific, named prompt: who it is, when they were last in, what they were working on. The coach sends a human message. The member feels seen, not marketed to. On top of that, the member-facing app tracks real progress milestones, manages streaks with built-in grace periods for real life, rewards the behaviours that actually predict retention (off-peak attendance, referrals, coach-set challenges), and gives your best community members the recognition that makes them stay. The result is a loyalty programme that feels like your studio built it — because the config, the copy, the tier names, and the currency are all yours.
+Every good gym owner knows their members by name, and at first that feels like the whole job. But somewhere around 150–200 members, knowing names isn't enough. You start losing people you never saw coming — the ones who were training five days a week and then, quietly, weren't. You find out three weeks after they cancelled. You find out when your coach mentions it in passing, or when you notice the direct debit has stopped. By then, the decision was made weeks ago, probably when their training partner left or their programme started to feel like it was going nowhere. There was a moment — a specific, predictable moment — when they were still yours to keep. You just didn't have a system that could see it.
 
 ---
 
-**SOCIAL PROOF** *(placeholder — replace with live data at launch)*
+### The Solution
 
-Studios using LoyaltyOS have seen measurable shifts in the metrics that matter most: [X]% reduction in member churn in the first 90 days, [X]% increase in off-peak session bookings within 60 days of launch, and an average of [X] additional sessions per member per month in the first programme quarter. The coach-triggered re-engagement intervention alone — that specific moment when a named member gets a personal message instead of an automated email — has recovered members who were, by their own admission, already mentally cancelled. *[Insert named studio testimonial here when available.]*
+SLAM FORM is a loyalty and retention platform built specifically for studios where the coach relationship is the product. It doesn't replace what you already do well — it operationalises it. The system watches for the behavioural signals that precede cancellation: a member stops booking ahead, misses their anchor session, drifts from group classes to solo sessions. When those signals appear, the right coach gets a contextual alert — not a generic email report, but a specific message: *"Síofra hasn't booked since Tuesday. Her usual pattern is 5x this week. Last note: deadlift plateau flagged."* The coach sends a message. The member feels seen. That's not automation replacing a human relationship — that's automation making human relationships scalable. On top of that, the member-facing app rewards the behaviours that build the habits you need: early booking, consistency, coach engagement, bringing friends. And because it's built on LoyaltyOS's white-label infrastructure, the whole thing carries your brand, your name, and your voice — not ours.
 
 ---
 
-**CALL TO ACTION**
+### Social Proof
 
-If your retention strategy currently relies on your coaches remembering who hasn't been in lately, you already know the problem. Let's show you what LoyaltyOS looks like configured for your studio — your branding, your community, your language. The demo takes 30 minutes. Book one at [loyaltyos.io/demo], or reply directly to this message.
+Studios like Slam that implement LoyaltyOS typically see a measurable shift in two areas within the first 90 days: a reduction in silent churn — members who leave without a conversation — and an increase in off-peak attendance driven by targeted incentives. *(Client case study to be inserted here: e.g. "One Dublin studio reduced 90-day churn by 23% after deploying pre-churn coach alerts in their first quarter. Their head coach described it as 'the thing I always wanted to do manually, finally running itself.'")* The studios that see the strongest results are those where coaches adopt the alert system quickly — because the technology is only as good as the human on the other end of it.
+
+---
+
+### Call to Action
+
+> **Book a 30-minute walkthrough. We'll show you exactly what SLAM FORM would look like for your studio — your branding, your member data model, your coach workflow. No deck. No demo theatre. Just the real thing.**
+>
+> → [Schedule a call with the LoyaltyOS team]
+
+---
 
 ---
 
 ## 5. TRUST AND ETHICS MESSAGING
 
----
-
-*In-app privacy notice — written for members, not lawyers. Appears at onboarding and accessible any time via Settings → Privacy.*
+**In-app privacy notice — plain language**
 
 ---
 
-### What We Collect and Why
+```
+YOUR DATA AT SLAM FORM
+─────────────────────────────────────
 
-> **Here's what IRON CIRCLE tracks — and why.**
->
-> We keep it simple: the programme collects information about your activity at Slam Fitness. That means when you attend sessions, which class formats you go to, how often you book and whether you cancel, how long your current streak is, and whether you've referred friends.
->
-> We also track the things you do inside the app: which rewards you redeem, which challenges you complete, and whether you've logged a personal record.
->
-> That's it. We don't collect health data. We don't track what you eat, how much you sleep, or anything from your phone's health app. We don't monitor your location outside of session check-ins.
->
-> **Why we collect it:** so the programme can respond to your actual behaviour rather than sending you the same generic message it sends everyone. It means your coaches know when you've had a strong week and when you've gone quiet — so they can reach out like a person, not a marketing email.
+WHAT WE COLLECT AND WHY
 
----
+We collect three types of information, and 
+we want to be clear about each one:
 
-### How to Delete Your Data
+1. HOW YOU USE THE GYM
+   Things like when you book sessions, 
+   whether you attend, what class types 
+   you prefer, and how often you train. 
+   We use this to make sure your rewards 
+   are relevant and to help your coaches 
+   understand your training patterns.
 
-> **You're in control of your data. Always.**
->
-> If you want to delete your account and all the data we hold about you, you can do it in two ways:
->
-> 1. Go to **Settings → Privacy → Delete My Account**. Your data is permanently deleted within 30 days. You'll receive a confirmation email when it's done.
->
-> 2. Email us directly at **[privacy@slamfitness.ie]**. We'll handle it manually and confirm deletion within 30 days, in line with GDPR requirements.
->
-> When you delete your account, we remove everything: your session history, your points balance, your streak data, and any personal information we hold. The only exception is financial transaction records, which we're required to keep for a limited period by law — and we'll tell you exactly what those are if you ask.
->
-> You can also request a copy of all the data we hold about you at any time, using the same contact details above.
+2. YOUR PROGRESS (if you choose to share it)
+   Things like personal bests, programme 
+   milestones, and goal check-ins. This is 
+   entirely opt-in. You can use SLAM FORM 
+   fully without sharing any of this. If you 
+   do share it, your coaches can use it to 
+   give you better support — and the app 
+   uses it to surface the right challenges 
+   and rewards for where you actually are 
+   in your training.
 
----
+3. YOUR CONNECTIONS
+   If you refer friends or train as a crew, 
+   we track those connections to enable 
+   crew challenges and referral rewards. 
+   We only create this social map with 
+   explicit consent from everyone involved.
 
-### How the AI Personalisation Works
+We do not sell your data.
+We do not share it with advertisers.
+We do not use it for any purpose outside 
+making your experience at Slam better.
 
-> **Here's how the "smart" parts of this programme actually work — no mystery.**
->
-> IRON CIRCLE uses AI to look at your activity patterns and suggest things that are relevant to you. If you've been coming in mostly at peak times, it might suggest an off-peak session with a bonus reward attached. If you've been going to the same class format every week, it might highlight a different one worth trying.
->
-> The AI also helps your coaches stay connected at scale. If you haven't been in for a while — specifically, around 10 days with no upcoming booking — the system sends your coach a prompt. Not an automated email to you. A note to your coach that says something like: *"[Your name] hasn't been in since [date] — last session was a strong one."* Then your coach decides whether to reach out, and if they do, that message comes from them. The AI flags; the human responds.
->
-> The system does not make inferences about your health, your mood, or your personal circumstances. It only works from what you've actually done — sessions attended, classes booked, challenges completed.
->
-> If you'd prefer not to have your data used for personalisation, you can opt out at any time under **Settings → Privacy → Personalisation Preferences**. You'll still earn Iron and access all rewards — you just won't receive AI-generated suggestions or contribute to coach prompts.
->
-> We think being upfront about this matters. If you have questions about how any of it works, email **[privacy@slamfitness.ie]** and a real person will answer.
 
----
+HOW THE AI WORKS
 
-*Communications Package v1.0 | Prepared by LoyaltyOS Communicator Agent | For Slam Fitness IRON CIRCLE Launch*
+SLAM FORM uses AI to do two things:
+
+First, it suggests activities and offers 
+that are relevant to how you actually 
+train — not generic promotions sent to 
+everyone. If you always train in the 
+evenings, you won't get 6am offers.
+
+Second — and we want to be upfront about 
+this — it watches for patterns that might 
+suggest you're losing momentum. Things 
+like a drop in your usual booking 
+frequency, or missing a session you 
+almost never skip. When that happens, 
+the system flags it to your coach, who 
+may reach out personally.
+
+We're telling you this because we think 
+you should know how it works. Most 
+members find it reassuring — it

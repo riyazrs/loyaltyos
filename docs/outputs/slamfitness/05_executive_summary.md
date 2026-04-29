@@ -1,6 +1,6 @@
 # LoyaltyOS Internal Management Report & Customer Governance Document
-## Client: Slam Fitness | IRON CIRCLE Programme
-### Manager Agent Synthesis — v1.0
+## Slam Fitness — SLAM FORM Programme
+### Manager Agent Synthesis
 
 ---
 
@@ -10,35 +10,38 @@
 
 ## 1. EXECUTIVE SUMMARY
 
-Slam Fitness is a boutique strength studio in Stoneybatter, Dublin 7. What has been built for them is a branded loyalty programme called **IRON CIRCLE** — a member-facing app and a coach-facing intelligence layer working together.
+Slam Fitness has a retention problem that no stamp card can solve. Members don't leave because they stop caring — they leave because the studio can't detect the early warning signs of disengagement fast enough to intervene. A coach who knows every member by name is a competitive advantage, but it's also a single point of failure: one schedule change and that relationship intelligence disappears.
 
-In plain English: members earn a currency called Iron by attending sessions, logging personal records, referring friends, and completing coach-set challenges. They progress through four tiers — Form, Load, Strength, and Iron Circle — and redeem Iron for rewards ranging from guest passes to bespoke training programmes. Behind the scenes, an AI layer monitors attendance patterns and, when a member goes quiet, prompts their coach to reach out personally. The system does not replace coach relationships; it protects them by ensuring no at-risk member falls through the cracks unnoticed.
+What has been built is a coaching memory system with rewards attached. Called SLAM FORM, it earns members points ("Reps") for behaviours that genuinely matter — booking in advance, completing programme blocks, engaging with coaches, training with friends. It uses AI to watch for the quiet signals that precede cancellation and alerts the right coach before the member has mentally left. It rewards consistency rather than just attendance, and it makes the coach-member relationship scalable beyond what any individual coach can hold in their head.
 
-The problem this solves is specific: Slam loses members not because they stop liking the gym, but because life disrupts their routine, nobody notices in time, and they rationalise cancellation as a budget decision. IRON CIRCLE is a detection and response system dressed as a loyalty programme.
+Three retention problems are directly addressed: the progress plateau vulnerability (AI surfaces evidence of progress at exactly the moment doubt sets in), the social dependency risk (crew mechanics reduce single-partner dependency), and the quiet-hours footfall gap (targeted off-peak incentives create new attendance patterns).
 
-**The single most important thing the business owner must do before launch:** commission a GDPR-reviewed Privacy Notice specific to this programme from an Irish data protection practitioner, and implement a layered consent mechanism at onboarding that separates session management data (necessary) from behavioural personalisation data (opt-in). Without this, the programme cannot legally deploy its AI personalisation layer to Irish members.
+**The single most important thing the business owner must do before launch:** Complete a GDPR-compliant consent framework and Data Protection Impact Assessment. The system processes behavioural and potentially health-adjacent data. Without this in place, the programme cannot legally operate in Ireland.
 
 ---
 
 ## 2. PIPELINE QUALITY REVIEW
 
-**Researcher: 9/10** — The research is the strongest output in this pipeline; the persona work is specific, the behavioural churn signals are operationally useful and grounded in the actual mechanics of boutique fitness psychology, and the GDPR flag around health-adjacent inference is exactly the right risk to surface. The one gap is that no actual Slam member data was available for calibration — all thresholds are directional. — **APPROVED**
+**Researcher: 9/10** — Exceptional diagnostic specificity; the five named churn signals, three sharply differentiated personas, and the distinction between "rewarding showing up" versus "rewarding not stopping" are genuine strategic contributions that correctly anchor every downstream decision. Minor gap: the GDPR special category data concern (Article 9) is raised but not fully resolved — the recommendation to store health-adjacent data "in aggregated or anonymised form" is underspecified and may conflict with the personalisation model's need for individual-level data. — **APPROVED**
 
-**Designer: 8/10** — The IRON CIRCLE concept is coherent, on-brand, and directly responsive to the research brief; the tier naming convention (Form → Load → Strength → Iron Circle) is genuinely clever and the surprise-and-delight mechanics (Century Ceremony, Cold Day Bonus) show real craft. The design specification was cut off mid-sentence in the churn prediction table (the "Group class drop" row is incomplete), which is a minor but real gap that must be resolved before the engineer builds against it. — **APPROVED** with one correction required (see below).
+**Designer: 8/10** — The SLAM FORM concept is coherent, the "Reps" currency earns its keep linguistically, and the tier naming is genuinely on-brand rather than generic. The emotional journey mapping across retention stages is the strongest design work in the pipeline. Two concerns: (1) the `DynamicOfferBanner` countdown timer on offer expiry is a potential EU AI Act red flag — the Researcher explicitly warned against mechanics that exploit loss aversion, and a visible countdown is precisely that mechanic; this requires a design decision before launch. (2) The Design Spec is truncated — Section 5 (UI Flows) ends mid-sentence. Whether this reflects an incomplete handoff or an editing artefact, it creates a gap the Maker had to bridge without confirmed specification. — **APPROVED with noted caveat on countdown timer**
 
-**Maker: 7/10** — The component inventory is thorough and the TypeScript interfaces are well-structured and directly traceable to the design spec. However, the Maker output was also truncated — the Claude AI integration section, the mini-game spec, and the deployment checklist are referenced in the table of contents but not delivered. This is a meaningful gap: the two API routes (`/api/personalise` and `/api/offers`) that carry the most regulatory exposure are the least documented. — **APPROVED** conditionally — the missing sections must be completed before any compliance review of the AI layer can be finalised.
+**Maker: 8/10** — The component inventory is technically thorough and well-typed. The white-label architecture is correctly implemented via the `BusinessConfig` injection pattern. The `CrewPanel` component's `isAtRisk` flag — which exposes one member's attendance data to other crew members — is a GDPR concern that the Maker has not flagged and the Designer did not specify. This must be resolved before launch. The `CoachAlertBadge` contextual messages are described as "AI-generated" but the privacy notice does not adequately address the Article 22 automated decision-making implications of the churn prediction system. The build spec is otherwise internally consistent with the design spec. — **APPROVED with named GDPR flag on CrewPanel**
 
-**Communicator: 9/10** — The copy is the best work in the pipeline in terms of craft. The persona targeting is precise — Ian's win-back sequence in particular is exactly the right tone — and the in-app privacy notice is unusually good for a marketing output: plain English, complete, and trust-building rather than defensive. The placeholder social proof metrics `[X]%` in the business pitch must be replaced with real data before any external use; deploying fabricated statistics would be both a legal and reputational risk. — **APPROVED** with one condition (replace placeholders before any external deployment).
+**Communicator: 9/10** — The persona-specific copy is the strongest in the pipeline. "We know you're not doing this for the points. But the points notice" is the best line in the entire output — it handles Síofra's intrinsic motivation and Ciarán's scepticism simultaneously. The win-back message for Aoife is correctly calibrated against her guilt-avoidance psychology. One material concern: the in-app privacy notice is truncated — it ends mid-sentence ("Most members find it reassuring — it"). This is not a cosmetic issue; a partial privacy notice is a compliance failure, not a copywriting note. It must be completed before the programme goes live. — **APPROVED, with privacy notice completion as a pre-launch blocker**
 
 ---
 
-### FLAGS REQUIRING CORRECTION BEFORE LAUNCH
+### Verdict Summary
 
-1. **Designer output truncated:** The churn prediction table row for "Group class drop" ends without completing the AI Action column. The Engineer cannot build the correct trigger logic without the full specification. **Resolution required: Designer to complete the table.**
+| Agent | Score | Status |
+|---|---|---|
+| Researcher | 9/10 | APPROVED |
+| Designer | 8/10 | APPROVED — countdown timer design decision required |
+| Maker | 8/10 | APPROVED — CrewPanel data exposure must be resolved |
+| Communicator | 9/10 | APPROVED — privacy notice must be completed |
 
-2. **Maker output truncated:** Claude AI integration section (`claudeClient.ts`), mini-game spec, and deployment checklist are missing. The `/api/personalise` and `/api/offers` routes are the highest-compliance-risk components in the system and they have no documented implementation. **Resolution required: Maker to deliver the missing sections before any AI layer build begins.**
-
-3. **Marketing social proof placeholders:** `[X]%` metrics in the business sales pitch must not be used externally until replaced with verified data. **Resolution required: replace or remove before any external pitch use.**
+**No agent is FLAGGED AS BLOCKER.** However, three specific pre-launch corrections are required and are listed in Section 4.
 
 ---
 
@@ -46,39 +49,47 @@ The problem this solves is specific: Slam loses members not because they stop li
 
 ### Does the loyalty design directly address the specific retention problem the Researcher named?
 
-**Substantially yes, with one partial miss.**
+**Yes — with one alignment gap.**
 
-The Researcher's primary finding was: *"The moment a member stops feeling like they're getting stronger, faster, or leaner — or the moment their life disrupts their routine and the social thread snaps — they rationalise cancellation as a financial decision rather than a behavioural one."*
+The Researcher's central finding: *"Slam Fitness does not have a marketing problem. It has a progress plateau vulnerability combined with a social dependency risk... The business has no systematic mechanism to detect either of these collapses early, and no designed response when they occur."*
 
-The design responds to this directly through: PR logging mechanics and milestone recognition (addressing the progress plateau problem), the coach-triggered re-engagement prompt at 10-day silence (addressing the social thread snap), and the grace period and Welcome Back bonus (addressing routine disruption without shame). These are precise, not generic.
+The Designer's Emotional Journey Map directly addresses the plateau vulnerability at exactly the right stage: *"Plateau Risk (Month 3–6): AI surfaces progress evidence. Coach alerts fire. New challenges unlock. The system acts before the member articulates the doubt."* The Churn Prediction Signal Stack translates all five of the Researcher's named behavioural signals into operational triggers. The Crew Challenge and social graph mechanics directly address social dependency risk for Aoife-type members.
 
-The partial miss: the Researcher identified **"quiet day atrophy"** as a structural problem and recommended off-peak incentives as a direct fix. The design does include an Off-Peak Power Hour activity (25 Iron) and the Off-Peak Explorer challenge, and the AI nudging spec explicitly addresses this. However, the churn prediction table does not include off-peak avoidance as a monitored signal — a member who has *never* attended off-peak is not flagged as structurally at risk, even though the research identifies this mental model as a precursor to full dropout. **This is a gap.** The AI layer should include a signal for "peak-only attendance pattern with no off-peak history" as a background retention risk, not just an offer-targeting opportunity.
+**Alignment gap:** The Researcher's highest-priority finding — the Coach Alert System — is correctly implemented in the `CoachAlertBadge` component, but this component is coach-facing only. There is no member-facing transparency mechanism that tells members the system is watching for these signals on their behalf. The Researcher explicitly recommended radical transparency: *"Tell members the system flags absence to coaches. Most members, at a community gym with this culture, will find that reassuring, not creepy — but only if told upfront."* The Communicator's privacy notice addresses this, but it is truncated. Until that notice is complete and surfaced at onboarding, the Researcher's core trust recommendation is unimplemented.
 
 ---
 
 ### Does the prototype plan implement all key features from the design spec?
 
-The component inventory maps cleanly to the design spec's core features: tier system, Iron currency, progress ring, journey stage, streak mechanics, reward grid, leaderboard, and AI suggestions. The mapping is direct and traceable.
+**Largely yes. Two features require confirmation.**
 
-**Missing or incomplete features in the prototype plan:**
+The Maker's component inventory implements:
+- ✅ All 14 earnable activities (ActivityGrid with ActivityDefinition model)
+- ✅ All 8 redeemable rewards (RewardsWallet + RewardCard)
+- ✅ All 4 tier levels (TierLevel type, tier-conditional rendering in HeaderStrip and RepBalanceCard)
+- ✅ All 5 challenge cadences (ChallengeCard with daily/weekly/monthly cadence)
+- ✅ All 3 Surprise and Delight triggers (SurpriseDelightToast with trigger union type)
+- ✅ Crew mechanics (CrewPanel with CrewChallenge)
+- ✅ Coach alert system (CoachAlertBadge)
+- ✅ AI personalisation endpoints (/api/personalise via PersonalisedSuggestions, /api/offers via DynamicOfferBanner)
 
-- **The Century Ceremony** is listed as a component (`CenturyCelebration.tsx`) but has no implementation spec — no trigger logic, no API call, no physical card notification to staff.
-- **The Cold Day Bonus** (Met Éireann API integration) is in the design spec but does not appear anywhere in the Maker's component inventory or file structure. This feature requires an external API integration that has not been planned.
-- **Coach notification system** — the entire coach-facing intelligence layer (prompts to coaches when members go quiet) is referenced in the design spec and is the Researcher's single highest-value intervention, but there is no corresponding component, API route, or data model in the Maker's output. This is the most significant missing feature. A dashboard or notification mechanism for coaches must be scoped and built.
-- **Chain Bonus referral mechanic** (50 Iron when a referred friend themselves refers someone) has no data model or tracking logic specified.
-- **Community Leaderboard studio display** — the design specifies a physical dashboard display inside the studio; the Maker has built the in-app leaderboard but there is no spec for the studio-facing display output.
+**Missing or unconfirmed:**
+1. **The "Wall of Form" physical integration** — the Designer specified this as a reward (600 Reps: name and PR milestone posted to Slam's physical studio wall and social channels). The Maker has no component or API endpoint for this. It may be an out-of-app workflow, but it needs an explicit owner — either a manual admin process or a notification to the studio owner.
+2. **The Design Spec Section 5 UI Flows** — the specification was truncated before completion. The Maker has built components without a confirmed UI flow spec for the full dashboard. The components are internally consistent, but layout decisions (particularly the home screen below the Rep Balance Card) were made without confirmed design direction.
 
 ---
 
 ### Does the marketing copy target the exact three personas the Researcher defined?
 
-**Yes, with one nuance to note.**
+**Yes — with strong fidelity.**
 
-- **Committed Cliona** — Confirmed. The copy correctly centres her on progress acknowledgement, milestone recognition, and the fear of losing something she has built. The tier upgrade offer copy is clearly written for her profile.
-- **Inconsistent Ian** — Confirmed and strongest. The win-back copy, the welcome sequence tonal centre of gravity, and the guilt-free re-entry framing are precisely calibrated to the Researcher's finding that Ian *"responds to being seen, not marketed to"* and cancels quietly when *"nobody noticed."*
-- **Social Síle** — Confirmed. The community recognition messaging, referral leaderboard framing, and the line *"you're a reason other people stay"* directly address her loyalty trigger. 
+| Persona | Researcher Definition | Communicator Targeting | Assessment |
+|---|---|---|---|
+| **Síofra — The Anchor** | Coach-bonded, high-frequency, identity-invested, plateau-vulnerable | "Your progress is visible here, even on the days it doesn't feel like it." Streak messaging directly addresses her identity investment. Tier upgrade copy validates tenure, not just behaviour. | ✅ Correctly targeted |
+| **Ciarán — The Performer** | Goal-rational, programme-sensitive, sceptical of manipulation, will leave when value is extracted | "Points are fine. Unlocking your next performance block is better." Low-turnover copy frames quiet floor as a feature, not a consolation. Welcome message pre-empts his BS detector with "No gimmicks." | ✅ Correctly targeted |
+| **Aoife — The Community Floater** | Socially mediated, single-point-of-failure dependency, guilt-avoidant, low individual gym bond | Win-back message leads with "The Tuesday crew has been asking about you" and explicitly avoids lecturing. First reward message embeds the friend nudge naturally. | ✅ Correctly targeted |
 
-**Nuance:** The Communicator correctly identifies Ian as the tonal centre of gravity for the welcome sequence. This is the right call — Ian is the highest churn risk in the first 60 days and the hardest to re-engage. However, the onboarding sequence only has three messages. The Researcher flagged that members who have *not* referred anyone or posted anything by day 60 are "transactional, not tribal." There is no onboarding message specifically designed to convert Síle-type members into community participants during that critical window. A day-45 community activation prompt should be added to the sequence.
+**One naming misalignment to flag:** The Communicator's win-back message references "Niamh" by name as Aoife's training partner. This is correct as a copywriting template, but it requires the live system to dynamically substitute the actual connected crew member's name from the social graph. If that data is unavailable (e.g., new member, no crew linked), the fallback must be tested. The Maker's `CrewPanel` component has the data model to support this, but the dynamic substitution logic in the offer template is not confirmed in the build spec.
 
 ---
 
@@ -86,103 +97,70 @@ The component inventory maps cleanly to the design spec's core features: tier sy
 
 ### GDPR
 
-**Data Collected — Every Category This System Processes:**
+**Data collected — every category this system processes:**
 
-1. **Identity data:** Name, email address, membership ID
-2. **Transactional/behavioural data:** Session booking timestamps, attendance records, class format selections, cancellation patterns, booking lead times
-3. **Programme activity data:** Points balance, tier level, streak length, challenge completions, reward redemptions
-4. **Progress data:** Coach-logged or member-logged personal records (PRs) in specific lifts
-5. **Social/referral data:** Referral link generation and conversion, opted-in social media tag confirmations
-6. **Communication response data:** Push notification open rates and response patterns
-7. **Coach interaction data:** Timestamps of coach touchpoints (in-app or session floor)
-8. **Temporal pattern data:** Peak vs. off-peak attendance distribution, day-of-week patterns, time-of-day patterns
-9. **Inferred behavioural profiles:** AI-generated risk scores and persona classifications (Cliona-type / Ian-type / Síle-type signals) — **this is the most legally sensitive category**
+| Data Category | Examples | GDPR Classification |
+|---|---|---|
+| Identity data | Name, email, phone number, member ID | Personal data |
+| Behavioural/attendance data | Session bookings, attendance records, class type preferences, booking advance window, no-show frequency | Personal data |
+| Programme and progress data | Coach notes, programme phase, lift logs, personal records | Potentially special category — see Article 9 analysis below |
+| Social graph data | Referral relationships, crew membership, training partner linkage | Personal data (third-party relational) |
+| Engagement data | App opens, notification interactions, streak data, Reps balance | Personal data |
+| AI-generated inferences | Churn risk score, persona classification, personalised offer targeting | Derived personal data |
+| Social media signals | Tagged posts, Instagram mentions (opt-in linking) | Personal data (third-party sourced) |
 
-**Note on health-adjacent data:** The Researcher correctly flagged that gym attendance data combined with session type, frequency changes, and progress logging sits close to Article 9 health data, particularly when the AI infers possible injury or health disruption from absence patterns. The system as designed does *not* store explicit health inferences — coach prompts reference behavioural signals only ("hasn't booked in 10 days") not health conclusions ("may be injured"). This boundary must be enforced by design constraint in the AI prompt engineering for both `/api/personalise` and `/api/offers`, and must be documented.
+**Article 9 — Special Category Data Assessment:**
 
----
+The Researcher correctly flagged this risk. The system collects lift progression data, programme phase data, and coach notes that, when linked to an identifiable individual, may constitute data concerning a person's physical health or physical condition under Article 9(1) GDPR. The critical threshold is granularity and purpose: a raw attendance count is not special category data. A record that a named member's deadlift has stalled, linked to a coach note about a potential injury plateau, combined with programme modification data, is materially closer to health data. **Conservative position: treat all progress metrics and coach notes as potentially special category data and apply Article 9(2)(a) — explicit consent — as the lawful basis for processing them.** This means a separate, granular consent at onboarding, not a bundled terms acceptance.
 
-**Lawful Basis:**
+**Lawful basis:**
 
-Two distinct bases apply, and they must not be conflated at onboarding:
-
-- **Session management and attendance data (categories 1–3 above):** **Legitimate interest** applies. Processing this data is necessary for the operation of the membership contract and the loyalty programme functionality the member has signed up for. A Legitimate Interest Assessment (LIA) should be documented.
-
-- **AI personalisation, behavioural profiling, coach prompt generation, and communication pattern tracking (categories 7–9 above):** **Consent** is required. This processing goes beyond what a member would reasonably expect as part of a session booking system. It involves profiling their behaviour to influence what content, rewards, and coach interactions they receive. Consent must be specific, informed, and separately obtained at onboarding — not bundled into general terms. The Communicator's in-app privacy notice includes an opt-out mechanism (`Settings → Privacy → Personalisation Preferences`), which is the correct design, but opt-out is not the same as opt-in consent. **The system must require affirmative opt-in for personalisation at onboarding, not assume consent.**
-
----
+| Data Type | Recommended Lawful Basis | Justification |
+|---|---|---|
+| Attendance and booking data | Article 6(1)(b) — Contract performance | Processing attendance is necessary to deliver the loyalty programme the member has contracted for |
+| Streak, Reps, tier data | Article 6(1)(b) — Contract performance | Core programme mechanics |
+| AI churn prediction inferences | Article 6(1)(f) — Legitimate interests | The studio has a legitimate interest in understanding retention risk; the member has a corresponding interest in receiving proactive support. Requires legitimate interest assessment (LIA) documenting the balance test |
+| Progress and coach notes | Article 9(2)(a) — Explicit consent | Health-adjacent data requires the higher standard; legitimate interest does not satisfy Article 9 |
+| Social graph / referral data | Article 6(1)(a) — Consent | Affects third parties (referred friends, crew members) who must separately consent to being mapped |
+| Social media signal linking | Article 6(1)(a) — Consent | Opt-in only; cannot be inferred from public posting |
+| AI-generated personalisation inferences | Article 6(1)(f) — Legitimate interests (with Article 22 safeguards — see below) | Subject to the automated decision-making analysis below |
 
 **Article 22 GDPR — Automated Decision-Making:**
 
-Article 22 applies here and must be addressed directly. The system makes two categories of automated decisions that affect what a member sees and receives:
+Article 22 applies where a decision is based solely on automated processing and produces legal or similarly significant effects on the individual. The relevant question for SLAM FORM is whether tier upgrades and personalised offer targeting meet this threshold.
 
-1. **Tier upgrades:** Automatic promotion through Form → Load → Strength → Iron Circle based on lifetime Iron accumulation. This determines access to tier-specific benefits (priority booking, early programme access).
+**Assessment:** Tier upgrades produce tangible effects — access to priority booking windows, challenge early access, Rep multipliers. These are not merely cosmetic; they materially affect what services a member can access and at what cost. The churn prediction system, while not making a decision about membership termination, generates AI inferences that trigger coach interventions — and the member's subsequent experience (receiving or not receiving a personalised check-in, being surfaced or not surfaced specific challenges) is meaningfully shaped by that inference.
 
-2. **Personalised offer and content targeting:** The `/api/personalise` and `/api/offers` endpoints use AI to determine which activities are surfaced to which members, which offers are deployed, and which churn signals trigger which interventions.
+**Conclusion:** Article 22 is engaged for tier progression decisions and for the churn prediction trigger mechanism. The right to not be subject to solely automated decisions applies unless one of the Article 22(2) exceptions applies. Exception (a) — necessary for contract — is arguable for tier progression (it is a core programme mechanic). Exception (c) — explicit consent — is the safer basis for churn prediction inferences.
 
-Both of these produce decisions that have a legal-or-similarly-significant effect on what the member receives. Tier upgrades affect access to material benefits (discounts, priority booking). Personalised offer targeting affects what financial and experiential rewards a member is exposed to.
+**Required safeguard:** Members must be informed (a) that automated processing is used in tier and offer decisions, (b) that the churn prediction system generates inferences about their engagement, and (c) that they have the right to request human review of any automated decision that materially affects their programme experience. A simple in-app mechanism — "Request a coach review of my programme status" — satisfies this requirement and is on-brand for a studio that leads with coach relationships.
 
-**Obligations that follow:** Members must be informed that these automated decisions occur (satisfied partially by the Communicator's privacy notice but not sufficiently explicitly). Members must have the right to request human review of any automated decision — specifically, if a member believes a tier classification or a withheld offer is incorrect, they must have a clear mechanism to contest it. **The app must include a "Review My Profile" or equivalent human-review request mechanism, accessible from Settings.** This does not currently exist in the prototype plan.
+**Retention periods — recommended:**
 
----
-
-**Retention Periods (recommended):**
-
-| Data Category | Recommended Retention Period | Rationale |
+| Data Category | Recommended Retention Period | Justification |
 |---|---|---|
-| Identity data (name, email) | Duration of active membership + 12 months | Re-engagement window post-cancellation |
-| Session and attendance data | Duration of active membership + 24 months | Retention analysis and dispute resolution |
-| Programme activity data (points, tiers, streaks) | Duration of active membership | No legitimate purpose post-cancellation |
-| PR and progress data | Duration of active membership + 12 months | Member may request their own record |
-| Social/referral data | Duration of active membership + 6 months | Referral commission resolution window |
-| AI-generated behavioural profiles and risk scores | 90 days rolling maximum | No legitimate basis for long-term retention of inferred profiles |
-| Financial transaction records | 7 years | Irish Revenue / Companies Act obligations |
-| Communication response data | 6 months rolling | Campaign analysis only |
+| Active membership data (bookings, attendance, Reps) | Duration of membership + 12 months | Dispute resolution, programme continuity |
+| AI-generated inferences (churn scores, persona tags) | 90 days rolling, overwritten on refresh | Inferences become stale and should not persist longer than they are operationally useful |
+| Progress and coach notes (special category) | Duration of active coaching relationship + 6 months | Only retained as long as the coaching purpose is active |
+| Social graph / referral data | Duration of both parties' memberships | Cannot maintain a referral relationship record after either party has left |
+| Post-cancellation data | 12 months maximum, then deletion | Win-back window; no legitimate purpose beyond that |
 
----
+**Erasure — exact mechanism:**
 
-**Erasure — Exact Process:**
+A member exercising their Article 17 right to erasure must be able to:
+1. Submit a deletion request via an in-app "Delete my data" button (Settings → Privacy → Delete my account and data)
+2. Receive confirmation of the request within 72 hours
+3. Receive confirmation of completed deletion within 30 days
+4. The deletion must cover: all personal data, all AI inferences, all Reps and tier history, and removal from any crew social graph (with notification to connected crew members that a member has left, without disclosing the reason)
+5. **Exception:** Anonymised, aggregated data (e.g., "Studio had 47 session completions in Week 12") may be retained as it no longer constitutes personal data
+6. **Business record exception:** If a redemption creates a financial transaction record (e.g., Month Free reward), the record of that transaction may be retained for 7 years under Irish tax and accounting law — but personal identifiers should be pseudonymised
 
-The Communicator has correctly specified two erasure pathways:
-1. In-app: **Settings → Privacy → Delete My Account** — permanent deletion within 30 days, confirmation email sent
-2. Email: **privacy@slamfitness.ie** — manual processing within 30 days, confirmation sent
-
-**What must additionally be specified in the system design (currently absent):**
-- Erasure must cascade to AI-generated profiles and risk scores held in any separate datastore, not just the member-facing database
-- Coach notification logs that reference a specific member must be purged
-- Any data passed to the Claude API must not be retained by Anthropic under the terms of the API agreement — this must be confirmed and documented
-- A deletion audit log (recording that deletion occurred, without retaining the deleted data itself) must be maintained for compliance evidence
-
----
-
-**DPIA — Is One Required?**
+**DPIA — is one required?**
 
 **Yes. A DPIA is required and should be completed before launch.**
 
-The case for requirement:
-
-Under Article 35 GDPR, a DPIA is mandatory when processing is likely to result in a high risk to individuals' rights and freedoms, particularly where it involves: (a) systematic and extensive profiling; (b) processing of sensitive data on a large scale; or (c) systematic monitoring of publicly accessible areas.
-
-This system engages (a) directly. It profiles member behaviour systematically — attendance patterns, class format preferences, response to communications, booking habits — and uses those profiles to make automated decisions about what rewards, content, and coach interactions each member receives. The profiling is not incidental; it is the core function of the AI layer.
-
-The health-data adjacency risk identified by the Researcher strengthens the case further. While the system is designed to avoid explicit health inferences, the combination of absence pattern monitoring, session type tracking, and frequency analysis creates a dataset that, in aggregate, could constitute health-adjacent profiling under a regulator's reading of Article 9.
-
-The DPC (Ireland's supervisory authority) has published guidance indicating that AI-driven profiling in consumer contexts requires a DPIA where decisions affecting individuals are automated. This system meets that threshold.
-
-**The DPIA must be completed before the personalisation layer goes live.** It can be scoped to the AI functions specifically and need not delay the basic points-and-rewards functionality.
-
----
-
-### EU AI Act
-
-**Article 5 — Prohibited Practices Assessment:**
-
-This requires an honest answer, and the honest answer is: **the system approaches the boundary but does not, as designed, cross it — provided specific safeguards are maintained.**
-
-The practices the EU AI Act prohibits under Article 5 include AI systems that deploy subliminal techniques to distort behaviour in ways individuals are not aware of, and systems that exploit psychological vulnerabilities to influence behaviour in a harmful way.
-
-Loyalty programmes, by design, use psychological mechanisms — streak loss aversion, milestone anticipation, social recognition, tier identity — to create habitual behaviour. The Researcher explicitly references these: *"the psychological cost of breaking a visible streak is disproportionate to the effort of continuing it."* The Designer builds in "surprise and delight" moments designed to feel organic rather than engineered. The off-peak offer uses time-limited availability (expiry at 10:30am) alongside personalisation and reward to drive urgent behaviour.
-
-None of these, individually or in combination as currently designed, cross into Article 5 prohibition — **provided** the following safeguards hold:
-
-1.
+The threshold under Article 35 GDPR is met on multiple grounds:
+- **Systematic profiling:** The system profiles individual members' behavioural patterns to influence their purchasing decisions (session attendance, programme enrolment, membership renewal) — this is the definition of profiling under Article 4(4)
+- **Potentially special category data:** Progress and health-adjacent data is processed
+- **Innovative technology:** AI-driven churn prediction and personalised offer generation constitutes a new form of processing for this business context
+- **Vulnerable data subjects:** While gym members are not a formally protected vulnerable group, the system is specifically designed to target individuals showing disengagement signals — a state that may correlate with mental health pressures, life stress,

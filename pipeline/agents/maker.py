@@ -79,7 +79,7 @@ Produce your technical prototype plan now."""
     try:
         response = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=4096,
+            max_tokens=8192,
             system=MAKER_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_message}]
         )

@@ -30,13 +30,26 @@ The interface is:
   },
   "primaryColor": string,     // Hex colour — main brand colour
   "accentColor": string,      // Hex colour — highlight/reward colour
-  "activities": [             // 5-7 earnable activities
-    { "id": string, "name": string, "points": number }
+  "activities": [             // 12-15 earnable activities
+    {
+      "id": string,           // snake_case unique id
+      "name": string,         // Short activity name
+      "points": number,       // Point value
+      "category": string,     // One of: Daily, Visit, Social, Learning, Special, Competitive, Family, Clinic, Gaming
+      "icon": string,         // Single emoji representing the activity
+      "description": string   // One sentence explaining what the customer does
+    }
   ],
-  "rewards": [                // 4-6 redeemable rewards
-    { "id": string, "name": string, "cost": number }
+  "rewards": [                // 7-9 redeemable rewards
+    {
+      "id": string,           // snake_case unique id
+      "name": string,         // Reward name
+      "cost": number,         // Point cost
+      "icon": string,         // Single emoji representing the reward
+      "description": string   // One sentence describing what the customer receives
+    }
   ],
-  "tiers": [                  // 4 tiers, ascending minPoints
+  "tiers": [                  // Exactly 4 tiers, ascending minPoints
     { "name": string, "minPoints": number, "color": string }
   ],
   "aiPersonalisationEnabled": true
@@ -45,9 +58,11 @@ The interface is:
 Rules:
 - id must be the slug passed to you (lowercase, alphanumeric only)
 - Choose colours that feel right for the business type
-- Activity point values: low-effort = 5-15, medium = 20-50, high = 75-150
-- Reward costs: should feel achievable — first reward accessible within 2-3 sessions
-- Tier names must be thematic to the business (not just Bronze/Silver/Gold)
+- Activity point values: low-effort daily = 5-10, medium engagement = 15-30, high-effort or social = 40-100, rare/special = 75-200
+- Reward costs: first reward achievable in 2-3 sessions; scale up progressively to a premium reward
+- Tier names must be thematic to the business type (NOT Bronze/Silver/Gold/Platinum)
+- All activities must have icon, category, and description fields — this is required
+- All rewards must have icon and description fields — this is required
 - Output ONLY the JSON object, nothing else."""
 
 
@@ -80,7 +95,7 @@ Generate the BusinessConfig JSON now."""
 
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=2000,
+        max_tokens=4096,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user_message}]
     )

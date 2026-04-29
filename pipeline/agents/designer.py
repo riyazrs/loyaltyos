@@ -19,9 +19,10 @@ Your design specification must cover:
 
 2. POINTS AND REWARDS SYSTEM
    - Define the points currency (give it a name, e.g. "Tokens", "SmilePoints")
-   - List 5-8 earnable activities with exact point values
-   - List 5-8 redeemable rewards with point costs
-   - Define tier levels (Bronze → Silver → Gold → Platinum or equivalent)
+   - List 12-15 earnable activities. For each: give it a name, an emoji icon, a category label (e.g. Daily, Visit, Social, Learning, Special), a point value, and a one-line description
+   - List 7-9 redeemable rewards. For each: give it a name, an emoji icon, a point cost, and a one-line description
+   - Define tier levels (4 tiers — name them thematically to the business, not generic Bronze/Silver/Gold)
+   - Activity point values: low-effort daily = 5-10, medium engagement = 15-30, high-effort or social = 40-100, rare/special = 75-200
 
 3. ENGAGEMENT MECHANICS
    - Daily/weekly challenges: list 3-5 with point values

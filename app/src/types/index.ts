@@ -3,6 +3,8 @@ export interface Activity {
   name: string
   points: number
   category?: string
+  icon?: string
+  description?: string
   completedAt?: string
 }
 
@@ -11,6 +13,8 @@ export interface Reward {
   name: string
   cost: number
   category?: string
+  icon?: string
+  description?: string
   redeemedAt?: string
 }
 

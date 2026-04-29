@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoyaltyOS — Industry Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="design-canvas.jsx" type="text/babel"></script>
+  <script src="loyaltyos-data.js"></script>
+  <script src="loyaltyos-screens.jsx" type="text/babel"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0e0e14; font-family: 'DM Sans', 'Helvetica Neue', sans-serif; }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+const SCREENS = [
+  { key: 'dashboard', label: 'Dashboard', Component: (p) => <DashboardScreen {...p} /> },
+  { key: 'activities', label: 'Activities', Component: (p) => <ActivitiesScreen {...p} /> },
+  { key: 'rewards',    label: 'Rewards',    Component: (p) => <RewardsScreen {...p} /> },
+  { key: 'admin',      label: 'Admin',      Component: (p) => <AdminScreen {...p} /> },
+];
+
+function StaticPhone({ ind, themeKey, Screen }) {
+  const t = THEMES[themeKey];
+  const W = 320, H = 660;
+  const getBg = (ind, k) => k === 'rich'
+    ? `linear-gradient(148deg,${ind.primary}f0 0%,${ind.primary}88 45%,#0d0a1a 100%)`
+    : k === 'light' ? '#F5F4F0' : '#0a0a0f';
+
+  return (
+    <div style={{ width: W, height: H, fontFamily: "'DM Sans','Helvetica Neue',sans-serif", background: getBg(ind, themeKey), borderRadius: 24, overflow: 'hidden', position: 'relative' }}>
+      {themeKey !== 'light' && (
+        <div style={{ position: 'absolute', top: -80, right: -60, width: 240, height: 240, borderRadius: '50%', background: ind.accent, opacity: 0.10, filter: 'blur(70px)', pointerEvents: 'none' }} />
+      )}
+      {/* Status bar */}
+      <div style={{ height: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', position: 'relative', zIndex: 2 }}>
+        <span style={{ fontSize: 10, fontWeight: 700, color: t.text, opacity: 0.5 }}>9:41</span>
+        <span style={{ fontSize: 9, color: t.text, opacity: 0.4 }}>▮▮▮ ▶ ▮▮▮▮</span>
+      </div>
+      {/* Content */}
+      <div style={{ height: H - 32 - 60, overflowY: 'auto', overflowX: 'hidden', position: 'relative', zIndex: 1 }}
+        className="hide-scroll">
+        <Screen ind={ind} themeKey={themeKey} />
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <DesignCanvas title="LoyaltyOS — Industry Templates">
+      {INDUSTRIES.map(ind => (
+        <DCSection key={ind.id} id={ind.id} title={`${ind.icon}  ${ind.label}`}>
+          {SCREENS.map(screen =>
+            Object.keys(THEMES).map(themeKey => (
+              <DCArtboard
+                key={`${screen.key}-${themeKey}`}
+                id={`${ind.id}-${screen.key}-${themeKey}`}
+                label={`${screen.label} · ${THEMES[themeKey].label}`}
+                width={320}
+                height={660}
+              >
+                <StaticPhone ind={ind} themeKey={themeKey} Screen={screen.Component} />
+              </DCArtboard>
+            ))
+          )}
+        </DCSection>
+      ))}
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

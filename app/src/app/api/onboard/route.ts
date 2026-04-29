@@ -4,22 +4,32 @@ const GITHUB_OWNER = 'riyazrs'
 const GITHUB_REPO = 'loyaltyos'
 const WORKFLOW_FILE = 'run-pipeline.yml'
 
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS })
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { business_name, business_type, business_description, slug, contact_email, theme } = body
 
     if (!business_name || !business_type || !business_description || !slug) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400, headers: CORS_HEADERS })
     }
 
     if (!/^[a-z0-9]{3,30}$/.test(slug)) {
-      return NextResponse.json({ error: 'Invalid slug format' }, { status: 400 })
+      return NextResponse.json({ error: 'Invalid slug format' }, { status: 400, headers: CORS_HEADERS })
     }
 
     const githubPat = process.env.GITHUB_PAT
     if (!githubPat) {
-      return NextResponse.json({ error: 'Pipeline not configured' }, { status: 503 })
+      return NextResponse.json({ error: 'Pipeline not configured' }, { status: 503, headers: CORS_HEADERS })
     }
 
     const workflowRes = await fetch(
@@ -49,7 +59,7 @@ export async function POST(req: NextRequest) {
     if (!workflowRes.ok) {
       const err = await workflowRes.text()
       console.error('GitHub dispatch failed:', err)
-      return NextResponse.json({ error: 'Failed to trigger pipeline' }, { status: 502 })
+      return NextResponse.json({ error: 'Failed to trigger pipeline' }, { status: 502, headers: CORS_HEADERS })
     }
 
     return NextResponse.json({
@@ -57,9 +67,9 @@ export async function POST(req: NextRequest) {
       slug,
       url: `https://loyaltyos.vercel.app/${slug}`,
       message: 'Pipeline triggered. Your app will be live in ~5 minutes.',
-    })
+    }, { headers: CORS_HEADERS })
   } catch (err) {
     console.error('Onboard error:', err)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500, headers: CORS_HEADERS })
   }
 }

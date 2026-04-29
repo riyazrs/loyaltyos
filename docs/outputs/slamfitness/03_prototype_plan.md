@@ -1,293 +1,341 @@
-# LoyaltyOS — Technical Build Specification
-## Client: Slam Fitness | Programme: IRON RECORD
-### Maker Agent Output v1.0
+# LoyaltyOS — FORGED Technical Build Specification
+## Slam Fitness, Stoneybatter, Dublin 7
+
+*Build specification for Next.js implementation. Prepared from Designer agent handoff.*
 
 ---
 
-## PREAMBLE
+## SECTION 1: COMPONENT INVENTORY
 
-This document is the authoritative build specification for the IRON RECORD loyalty platform. It translates the Designer agent's specification into implementable technical decisions. Every section maps directly to a design spec section. Where the design spec makes an implicit technical requirement, this document makes it explicit.
-
-**Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion, Claude API (Anthropic SDK), Prisma ORM, PostgreSQL (Supabase), Vercel deployment.
+### 1.1 Layout & Shell Components
 
 ---
 
-## 1. COMPONENT INVENTORY
-
-### 1.1 Layout Components
-
----
-
-#### `RootLayout`
-**File:** `app/layout.tsx`
+#### `AppShell`
+**File:** `src/components/layout/AppShell.tsx`
 
 ```typescript
-interface RootLayoutProps {
+interface AppShellProps {
   children: React.ReactNode;
-  businessConfig: BusinessConfig; // injected at build/request time
+  businessConfig: BusinessConfig;
+  customer: Customer;
 }
 ```
 
-**Core behaviour:** Injects CSS custom properties from `BusinessConfig.tokens` into `:root`, sets dark/light mode class, loads brand fonts. All colour tokens become CSS variables consumed by every child component — this is the white-label switching mechanism. No component hardcodes a colour value; all reference `var(--primary)`, `var(--bg)`, etc.
+**Behaviour & State:**
+- Renders the global navigation bar, glow blob background element, and main content slot
+- Injects CSS custom properties from `businessConfig.theme` tokens onto `:root` at mount
+- Maintains `navActiveTab` state (Home | Progress | Rewards | Community | Profile)
+- The glow blob is a fixed, non-interactive `div` with `pointer-events: none` — always renders behind content
 
-**Design spec:** Section 6, Token Configuration.
+**Implements:** Design spec §6 — Navigation bar tokens, glow blob, backdrop-blur nav
 
 ---
 
-#### `NavBar`
-**File:** `components/layout/NavBar.tsx`
+#### `BottomNav`
+**File:** `src/components/layout/BottomNav.tsx`
 
 ```typescript
-interface NavBarProps {
-  activePath: 'home' | 'activity' | 'rewards' | 'record';
-  memberName: string;
+interface BottomNavProps {
+  activeTab: NavTab;
+  onTabChange: (tab: NavTab) => void;
+  theme: ThemeTokens;
+}
+
+type NavTab = 'home' | 'progress' | 'rewards' | 'community' | 'profile';
+```
+
+**Behaviour & State:**
+- Five tabs: Home, Progress, Rewards, Community, Profile
+- Active tab icon renders in `theme.primary` (`#DC2626`); inactive in `theme.subtext`
+- Uses Next.js `useRouter` for programmatic navigation — tabs map to `/`, `/progress`, `/rewards`, `/community`, `/profile`
+- `backdrop-filter: blur(16px)` applied via Tailwind `backdrop-blur-2xl`
+- Fixed to viewport bottom; safe area inset applied for iOS home indicator
+
+**Implements:** Design spec §6 — Navigation bar visual language
+
+---
+
+#### `IronPointsHeader`
+**File:** `src/components/layout/IronPointsHeader.tsx`
+
+```typescript
+interface IronPointsHeaderProps {
+  balance: number;
   tier: TierLevel;
-  unreadCount?: number;
+  customerName: string;
 }
 ```
 
-**Core behaviour:** Fixed bottom navigation on mobile, sidebar on desktop breakpoint. Renders four tabs: Home / Activity Feed / Rewards / My Record. Active state uses `var(--primary)` fill. Background uses `navBg` token with `backdrop-filter: blur(12px)`. Tab icons are SVG inline — no icon library dependency, allows per-client icon swaps.
+**Behaviour & State:**
+- Sticky top header strip showing the ⬡ IP balance and tier badge pill
+- Balance animates (count-up) when the value changes — uses `useEffect` with `requestAnimationFrame`
+- Tier badge pill renders using the tier-specific styling from the badge map (see §3)
 
-**Design spec:** Section 5, Bottom Navigation.
+**Implements:** Design spec §5 — "Iron Points balance always visible in top-right header"
 
 ---
 
-#### `GlowBlob`
-**File:** `components/layout/GlowBlob.tsx`
+### 1.2 Dashboard Components
+
+---
+
+#### `IronRing`
+**File:** `src/components/dashboard/IronRing.tsx`
 
 ```typescript
-interface GlowBlobProps {
-  state: 'idle' | 'pr-active';
-  primaryColor: string;
-  accentColor: string;
+interface IronRingProps {
+  currentPoints: number;
+  tierFloor: number;
+  tierCeiling: number;
+  tierName: string;
+  nextTierName: string;
+  theme: ThemeTokens;
 }
 ```
 
-**Core behaviour:** Absolutely positioned 200px radial gradient element at top-centre of home screen. In `idle` state: `primaryColor` at 15% opacity. When `state === 'pr-active'`: Framer Motion animates opacity to 25% and transitions colour to `accentColor`, holds for 3 seconds, returns to idle. This is a pure CSS/Framer element — no canvas.
+**Behaviour & State:**
+- SVG-based circular progress indicator, rendered server-side safe (no canvas)
+- Two concentric circles: muted track (`theme.muted` = `rgba(255,255,255,0.06)`) and progress stroke (`theme.primary` = `#DC2626`)
+- `strokeDasharray` and `strokeDashoffset` calculated from `(currentPoints - tierFloor) / (tierCeiling - tierFloor)`
+- Within 100 IP of tier ceiling: adds `filter: drop-shadow(0 0 12px #DC262699)` to the SVG stroke element — the "quietly burning ring" effect
+- Central text: current IP balance (large, bold, `#DC2626`) with tier name below (small, `theme.subtext`)
+- Progress animates on mount using a CSS transition on `strokeDashoffset` (600ms ease-out)
+- Displays "X IP to [NextTier]" below the ring in `theme.subtext`
 
-**Design spec:** Section 6, Glow Blob directive.
-
----
-
-### 1.2 Member Dashboard Components
-
----
-
-#### `IdentityBar`
-**File:** `components/dashboard/IdentityBar.tsx`
-
-```typescript
-interface IdentityBarProps {
-  memberName: string;
-  tier: TierLevel;
-  forgePoints: number;
-  streakDays: number;
-  streakState: 'cold' | 'warm' | 'hot'; // <7, 7-29, 30+
-}
-```
-
-**Core behaviour:** Three-element horizontal bar. Left: member name + `TierBadge`. Centre: Forge Points total rendered in bold, larger weight, colour `var(--text)`. Right: `StreakCounter`. Points value uses a Framer Motion number counter that animates upward on first render and on point-earning events (subscribe to a Zustand store action).
-
-**Design spec:** Section 5, Top Section — The Identity Bar.
-
----
-
-#### `TierBadge`
-**File:** `components/dashboard/TierBadge.tsx`
-
-```typescript
-interface TierBadgeProps {
-  tier: TierLevel;
-  size: 'sm' | 'md' | 'lg';
-  showLabel: boolean;
-}
-
-type TierLevel = 'Rookie' | 'Lifter' | 'Competitor' | 'Iron';
-
-const TIER_VISUAL_CONFIG: Record<TierLevel, {
-  color: string;
-  glowColor: string;
-  glowIntensity: string;
-  icon: string;
-}> = {
-  Rookie:     { color: '#6B7280', glowColor: 'transparent', glowIntensity: 'none',                    icon: '🥋' },
-  Lifter:     { color: '#0EA5E9', glowColor: '#0EA5E940',   glowIntensity: '0 0 8px #0EA5E940',       icon: '⚡' },
-  Competitor: { color: '#F59E0B', glowColor: '#F59E0B60',   glowIntensity: '0 0 12px #F59E0B60',      icon: '⚔️' },
-  Iron:       { color: '#DC2626', glowColor: '#DC2626CC',   glowIntensity: '0 0 16px #DC2626CC',      icon: '🔱' },
-};
-```
-
-**Core behaviour:** Renders a pill-shaped badge with tier icon, tier name, and an ambient glow via `box-shadow`. Glow intensity is applied inline from `TIER_VISUAL_CONFIG`. For `Iron` tier, a subtle pulse animation (Framer Motion keyframes, 3s loop, opacity 0.8→1.0→0.8) keeps the badge alive without being distracting.
-
-**Design spec:** Section 2, Tier Levels; Section 6, Tier Badge Visual.
+**Implements:** Design spec §5 — Iron Ring, §6 — Iron Ring visual language
 
 ---
 
 #### `StreakCounter`
-**File:** `components/dashboard/StreakCounter.tsx`
+**File:** `src/components/dashboard/StreakCounter.tsx`
 
 ```typescript
 interface StreakCounterProps {
-  currentStreak: number;
-  targetStreak: 7 | 30;
-  hasFreezeAvailable: boolean;
-  onActivateFreeze: () => void;
+  currentStreakWeeks: number;
+  isActive: boolean;
+  hasStreakShield: boolean;
+  shieldUsedThisPeriod: boolean;
 }
 ```
 
-**Core behaviour:** Circular progress ring (SVG-based, not CSS border-radius trick — SVG gives clean control over stroke dash offset for animation). Ring stroke colour transitions from `#DC2626` (0%) to `#F97316` (100%) via an SVG linearGradient that updates its stops dynamically based on `currentStreak / targetStreak`. The flame emoji inside the ring grows in size from 14px to 22px proportionally. Tapping the counter opens a bottom sheet showing streak history and the Streak Freeze button if available.
+**Behaviour & State:**
+- Renders 🔥 flame icon (SVG, `#F97316`) with current streak week count
+- When `isActive === true`: flame SVG has a CSS animation applied via a `data-active` attribute — `@keyframes flamePulse { 0%,100% { opacity: 1 } 50% { opacity: 0.7 } }` on 2-second infinite loop
+- When `isActive === false`: flame renders at full opacity but static, with a subtle grey overlay — streak broken state
+- Shield badge: if `hasStreakShield && !shieldUsedThisPeriod`, renders a small ⚡ icon beside the flame — indicating the streak shield is available
+- Tap/click expands a tooltip explaining the streak shield mechanic (inline, no modal)
 
-**Design spec:** Section 3, Streak Mechanics; Section 6, Progress Rings.
-
----
-
-#### `ProgressCard`
-**File:** `components/dashboard/ProgressCard.tsx`
-
-```typescript
-interface ProgressCardProps {
-  personaType: 'competitor' | 'transformer' | 'anchor' | 'default';
-  memberData: Customer;
-  leaderboardRank?: number;       // competitor only
-  cohortsAttending?: string[];    // anchor only — names of classmates
-  sessionStats?: {                // transformer only
-    totalSessions: number;
-    squat1RMGain?: number;
-    ohpGain?: number;
-    prCount: number;
-  };
-  nextSession?: {
-    time: string;
-    dayName: string;
-    attendeeCount: number;
-  };
-}
-```
-
-**Core behaviour:** Single dominant card in mid-section. Conditionally renders one of three sub-templates based on `personaType`. Sub-templates are separate named exports in the same file: `<CompetitorCard />`, `<TransformerCard />`, `<AnchorCard />`. The `personaType` is derived from the AI personalisation API response and stored in the customer record. Card animates in with a subtle upward slide on dashboard load (Framer Motion, 300ms, ease-out).
-
-**Design spec:** Section 5, Mid Section — The Progress Card.
+**Implements:** Design spec §3 — Streak mechanics, §6 — Streak flame visual, §7 — Streak shield transparency
 
 ---
 
-#### `ChallengeCard`
-**File:** `components/dashboard/ChallengeCard.tsx`
+#### `WeeklyChallengeCard`
+**File:** `src/components/dashboard/WeeklyChallengeCard.tsx`
 
 ```typescript
-interface ChallengeCardProps {
+interface WeeklyChallengeCardProps {
   challenge: ActiveChallenge;
-  memberProgress: number;       // 0–1 float
-  isEnrolled: boolean;
-  onEnroll: (challengeId: string) => void;
+  onExpand: () => void;
+  theme: ThemeTokens;
 }
 
 interface ActiveChallenge {
   id: string;
   name: string;
   description: string;
-  forgePointsReward: number;
+  pointsAtStake: number;
+  expiresAt: Date;
+  currentProgress: number;
+  totalRequired: number;
   category: ActivityCategory;
-  durationDays: number;
-  endsAt: Date;
-  requiredCompletions: number;
-  currentCompletions: number;
 }
 ```
 
-**Core behaviour:** Card with a left-border accent strip (4px, colour derived from `CATEGORY_COLOURS` map). Progress bar fills in `var(--primary)` colour. Points reward badge in top-right corner. Enroll CTA only visible if `!isEnrolled`. On enroll, optimistic UI update — shows enrolled state immediately, API call in background, reverts on error.
+**Behaviour & State:**
+- Glass card (`cardBg`, `cardBorder` tokens) with a 2px `#F97316` accent line at the top edge when challenge is the "active bonus" state
+- Progress bar: `#DC2626` fill, muted track, `border-radius: 4px`
+- Countdown timer renders as "Xh Ym remaining" — updates every 60 seconds via `useEffect` interval
+- `onExpand` fires a sheet/drawer from the bottom with full challenge criteria and progress history
+- Category chip rendered using `ActivityCategoryChip` component (see §1.5)
 
-**Design spec:** Section 3, Daily/Weekly Challenges; Section 5, Lower Section.
-
-```typescript
-const CATEGORY_COLOURS: Record<ActivityCategory, string> = {
-  Workout:   '#EF4444',
-  Streak:    '#F97316',
-  Challenge: '#F59E0B',
-  Achievement: '#D4AF37',
-  Referral:  '#A78BFA',
-  Community: '#34D399',
-  Training:  '#EF4444',
-  Special:   '#0EA5E9',
-  Service:   '#94A3B8',
-};
-```
+**Implements:** Design spec §5 — "This week's challenge card", §6 — Active card border styling
 
 ---
 
-#### `QuickActionBar`
-**File:** `components/dashboard/QuickActionBar.tsx`
+#### `RecentActivityFeed`
+**File:** `src/components/dashboard/RecentActivityFeed.tsx`
 
 ```typescript
-interface QuickActionBarProps {
-  onLogPR: () => void;
-  onBookSession: () => void;
-  nextSessionInfo?: { time: string; spotsLeft: number };
+interface RecentActivityFeedProps {
+  activities: ActivityLogEntry[];
+  maxDisplay?: number; // defaults to 3 per design spec
 }
-```
 
-**Core behaviour:** Two CTA buttons side by side. "Log a PR" is primary (`var(--primary)` fill, white text, hover transitions to `var(--accent)`). "Book Next Session" is outlined (transparent fill, `var(--primary)` border and text). If `spotsLeft` is ≤ 5, shows authentic capacity indicator alongside the booking button. Both buttons have a 150ms press-down scale transform (Framer Motion `whileTap={{ scale: 0.97 }}`).
-
-**Design spec:** Section 5, Lower Section — Quick Actions; Section 7, Rule 3 (authentic capacity).
-
----
-
-### 1.3 Point-Earning Flow Components
-
----
-
-#### `PointEarnOverlay`
-**File:** `components/earn/PointEarnOverlay.tsx`
-
-```typescript
-interface PointEarnOverlayProps {
+interface ActivityLogEntry {
+  activity: Activity;
+  earnedAt: Date;
   pointsEarned: number;
+  isStreak?: boolean;
+  isMilestone?: boolean;
+}
+```
+
+**Behaviour & State:**
+- Renders the last `maxDisplay` (default: 3) activity log entries
+- Each entry: activity emoji, name, timestamp ("Today 6:15am" / "Yesterday"), and points earned in `#DC2626`
+- Streak and milestone entries get a subtle left-border accent in `#F97316`
+- No scroll within the feed — it's a summary; "View all" links to `/progress`
+- Entries animate in on mount with a staggered fade-up (50ms delay between each)
+
+**Implements:** Design spec §5 — "Recent activity feed"
+
+---
+
+#### `QuickActionsRow`
+**File:** `src/components/dashboard/QuickActionsRow.tsx`
+
+```typescript
+interface QuickActionsRowProps {
+  onBookSession: () => void;
+  onLogPB: () => void;
+  onCoachCheckIn: () => void;
+}
+```
+
+**Behaviour & State:**
+- Three pill buttons in a horizontal row: "Book Session", "Log a PB", "Check In with Coach"
+- Each button has an icon (calendar, barbell, clipboard), label, and a subtle `#DC2626` border on hover/focus
+- Each fires its respective `onXxx` callback — actual navigation/modal handled by parent
+- Always visible — no conditional rendering
+
+**Implements:** Design spec §5 — "Quick actions row — Book a Session / Log a PB / Check In with Coach"
+
+---
+
+#### `PersonalisedPromptCard`
+**File:** `src/components/dashboard/PersonalisedPromptCard.tsx`
+
+```typescript
+interface PersonalisedPromptCardProps {
+  prompt: PersonalisedPrompt | null;
+  isLoading: boolean;
+  onDismiss: () => void;
+}
+
+interface PersonalisedPrompt {
+  type: 'streak_nudge' | 'challenge_reminder' | 'off_peak_bonus' | 'milestone_celebration';
+  message: string;
+  ctaLabel?: string;
+  ctaAction?: string; // route path
+  expiresAt?: Date;   // present for off_peak_bonus type
+  pointsAttached?: number;
+}
+```
+
+**Behaviour & State:**
+- Renders below the Quick Actions row
+- Loading state: skeleton card with shimmer animation (`#DC262611` cycling)
+- `off_peak_bonus` type: card border brightens to `rgba(255,255,255,0.22)`, gains `#F97316` top accent line, and shows a countdown if `expiresAt` is set — this is the "glowing Bonus Active card" from the spec
+- `milestone_celebration` type: renders with a subtle pulse animation on the card border
+- Dismiss button (×) top-right; dismissed state stored in `localStorage` per prompt ID so it doesn't re-appear on reload
+- If `prompt === null` and `!isLoading`, component renders nothing (no empty state)
+
+**Implements:** Design spec §3 — Cold Day Bonus, §4 — AI personalisation, §5 — Personalised prompt card
+
+---
+
+### 1.3 Point Earning Flow Components
+
+---
+
+#### `PointEarnConfirmation`
+**File:** `src/components/earn/PointEarnConfirmation.tsx`
+
+```typescript
+interface PointEarnConfirmationProps {
+  primaryEarn: EarnEvent;
+  bonusEarns: EarnEvent[]; // triggered overlays (streak, challenge, surprise)
+  onComplete: () => void;
+}
+
+interface EarnEvent {
   activityName: string;
-  progressToNextMilestone: {
-    label: string;       // e.g. "7-day streak bonus"
-    currentFP: number;
-    targetFP: number;
-  };
-  showPRPrompt: boolean; // true for strength sessions
-  onLogPR: () => void;
+  pointsEarned: number;
+  emoji: string;
+  isMilestone: boolean;
+  milestoneLabel?: string; // e.g. "Streak Keeper — Week 3"
+}
+```
+
+**Behaviour & State:**
+- Full-screen overlay component, `z-index: 50`, dark background
+- **Phase 1 (0–1500ms):** Point value animates in from 0 using `requestAnimationFrame` count-up. The Iron Ring SVG (embedded, miniature) visually fills by the corresponding amount — the fill transition runs over 1200ms
+- **Phase 2 (1500ms+, if `bonusEarns.length > 0`):** Primary screen fades slightly, bonus earn card slides up from bottom — larger, celebratory variant. Each bonus earn cycles if there are multiple (800ms between)
+- **Exit:** After all phases complete OR user taps anywhere, `onComplete()` fires, overlay unmounts
+- Point values always render in `#DC2626` bold, 48px
+
+**Implements:** Design spec §5 — Activity Completion Flow (steps 2–4), "most important micro-moment"
+
+---
+
+#### `MilestoneGhostScreen`
+**File:** `src/components/earn/MilestoneGhostScreen.tsx`
+
+```typescript
+interface MilestoneGhostScreenProps {
+  sessionCount: number; // e.g. 50 or 100
+  sessionHeatmapData: HeatmapEntry[];
+  bestLifts: BestLift[];
+  pointsAwarded: number;
+  onDismiss: () => void;
+}
+
+interface HeatmapEntry {
+  date: string; // ISO date
+  attended: boolean;
+}
+
+interface BestLift {
+  exerciseName: string;
+  value: string; // e.g. "120kg" or "4:45/km"
+  achievedAt: Date;
+}
+```
+
+**Behaviour & State:**
+- Full-screen "quiet milestone" display — no confetti, no particles
+- Header: `"${sessionCount} sessions."` — large, white, all-caps, 32px
+- Subheader: `"Here's what you've built."` — `theme.subtext`, 16px
+- Session heatmap: rendered as a CSS Grid of small squares (7 columns for days of week, N rows for weeks). Attended days: `#DC2626` fill. Not-attended: `theme.muted`. No labels — the pattern speaks for itself
+- Best lifts list beneath, each entry styled as a minimal data row
+- Points awarded card at bottom: "+200 IP — 100-Session Marker" in the earn card style
+- Dismiss: tap anywhere or a subtle "Close" text link at very bottom
+
+**Implements:** Design spec §3 — Surprise and Delight: "The Milestone Ghost"
+
+---
+
+#### `ReturnCelebrationScreen`
+**File:** `src/components/earn/ReturnCelebrationScreen.tsx`
+
+```typescript
+interface ReturnCelebrationScreenProps {
+  daysAbsent: number;
+  pointsAwarded: number; // 40 IP
   onDismiss: () => void;
 }
 ```
 
-**Core behaviour:** Full-screen overlay triggered on session check-in confirmation. Sequence (Framer Motion, orchestrated with `staggerChildren`):
-1. **0ms:** Background fades to `rgba(0,0,0,0.85)`
-2. **100ms:** Forge-hammer SVG animation — a simplified hammer SVG drops from top, impact at centre triggers an ember particle burst (12–16 CSS-animated `<div>` elements in orange/amber colours, physics approximated with CSS keyframes varying `translateX/Y` and `opacity`)
-3. **400ms:** Points value appears: `+{pointsEarned} Forge Points` in 48px bold white, with a brief scale-in (0.5→1.0)
-4. **600ms:** Progress bar slides in from left showing milestone progress
-5. **800ms:** PR prompt card appears if `showPRPrompt`
-6. **2500ms:** Auto-dismiss if no interaction; points total on underlying dashboard pulses once
+**Behaviour & State:**
+- Full-screen overlay, simpler than `MilestoneGhostScreen`
+- Single line of copy: `"You're back. That's the hardest rep."` — white, 24px, centred
+- No stats, no history — this is a moment of acknowledgement, not analysis
+- Points card: "+40 IP — Come Back Stronger"
+- Brief entry animation: text fades in from `opacity: 0` over 600ms
+- Auto-dismisses after 4 seconds OR on tap
 
-**Design spec:** Section 5, Activity Completion Flow.
-
----
-
-#### `PRLogModal`
-**File:** `components/earn/PRLogModal.tsx`
-
-```typescript
-interface PRLogModalProps {
-  memberId: string;
-  sessionId: string;
-  onSubmit: (pr: PRSubmission) => void;
-  onClose: () => void;
-}
-
-interface PRSubmission {
-  exercise: string;
-  weight: number;
-  weightUnit: 'kg' | 'lb';
-  reps: number;
-  notes?: string;
-}
-```
-
-**Core behaviour:** Bottom sheet modal. Three fields only — `exercise` (autocomplete from a predefined exercise list stored in business config), `weight` (numeric input with kg/lb toggle), `reps` (numeric stepper). Submit sends to `POST /api/prs` which creates a pending PR record and notifies coach dashboard. Points are NOT awarded until coach confirms. Member sees: *"PR logged — waiting for coach confirmation."* in a pending state indicator.
-
-**Design spec:** Section 5, Activity Completion Flow (step 4); Section 2, PR confirmation flow.
+**Implements:** Design spec §3 — Surprise and Delight: "The Return Celebration"
 
 ---
 
@@ -295,117 +343,230 @@ interface PRSubmission {
 
 ---
 
-#### `RewardsCatalogue`
-**File:** `components/rewards/RewardsCatalogue.tsx`
+#### `RewardsGrid`
+**File:** `src/components/rewards/RewardsGrid.tsx`
 
 ```typescript
-interface RewardsCatalogueProps {
+interface RewardsGridProps {
   rewards: Reward[];
-  memberFP: number;
-  memberTier: TierLevel;
-  onRedeem: (rewardId: string) => void;
+  customerBalance: number;
+  onSelectReward: (reward: Reward) => void;
 }
 ```
 
-**Core behaviour:** Two-tab layout: "Available Now" (rewards where `memberFP >= reward.pointCost && tierRequirementMet(memberTier, reward)`) and "Coming Up" (all others, sorted by distance from current FP). Tab switching uses a sliding indicator (CSS, no JS animation needed). Rewards in "Coming Up" are not greyed out — they are full colour with a progress bar showing `(memberFP / reward.pointCost * 100)%` filled. The aspiration must feel achievable.
+**Behaviour & State:**
+- CSS Grid, 2 columns on mobile, 3 on tablet+
+- Affordable rewards (`reward.pointCost <= customerBalance`): full colour, full opacity
+- Unaffordable rewards: `opacity: 0.55`, greyscale filter `saturate(0.3)`, "You need X more IP" label in `theme.subtext` — **not** locked, **not** hidden
+- Rewards sorted: affordable first, then by ascending cost
+- Tapping any reward fires `onSelectReward`
 
-**Design spec:** Section 5, Reward Redemption Flow, step 1.
-
----
-
-#### `RewardCard`
-**File:** `components/rewards/RewardCard.tsx`
-
-```typescript
-interface RewardCardProps {
-  reward: Reward;
-  memberFP: number;
-  memberTier: TierLevel;
-  isAvailable: boolean;
-  onSelect: (reward: Reward) => void;
-}
-```
-
-**Core behaviour:** Tap expands to `RewardDetailSheet`. Shows reward emoji, name, cost in FP, and category. If `!isAvailable`, shows progress bar with `{reward.pointCost - memberFP} FP to go`. No lock icons, no greyed-out states — the framing is always forward motion, not exclusion.
-
-**Design spec:** Section 5, Reward Redemption Flow, steps 1–2.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 1), "'faded but visible' approach"
 
 ---
 
 #### `RewardDetailSheet`
-**File:** `components/rewards/RewardDetailSheet.tsx`
+**File:** `src/components/rewards/RewardDetailSheet.tsx`
 
 ```typescript
 interface RewardDetailSheetProps {
   reward: Reward;
-  memberFP: number;
-  onConfirmRedeem: () => void;
+  customerBalance: number;
+  onRedeem: (rewardId: string) => Promise<void>;
   onClose: () => void;
 }
 ```
 
-**Core behaviour:** Full-screen bottom sheet. Shows reward name, emoji (large, 64px), description, cost, and member's current FP balance. Single CTA: "Redeem for {X} Forge Points". Below the CTA: remaining balance preview — *"After redemption: {memberFP - reward.pointCost} FP remaining."* On confirm: transitions to `RedemptionConfirmScreen`.
+**Behaviour & State:**
+- Bottom sheet (slides up), `border-radius: 16px 16px 0 0`, glass card background
+- Shows: emoji, name, full description, exact IP cost, redemption method (in-gym / online / via coach), expiry if applicable
+- "Redeem" button: active when affordable, disabled with tooltip "X more IP needed" when not
+- On "Redeem" tap: triggers `RedemptionConfirmModal`
 
-**Design spec:** Section 5, Reward Redemption Flow, step 2.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 2)
 
 ---
 
-#### `RedemptionConfirmScreen`
-**File:** `components/rewards/RedemptionConfirmScreen.tsx`
+#### `RedemptionConfirmModal`
+**File:** `src/components/rewards/RedemptionConfirmModal.tsx`
 
 ```typescript
-interface RedemptionConfirmScreenProps {
+interface RedemptionConfirmModalProps {
   reward: Reward;
-  redemptionCode?: string;  // for physical rewards — single-use QR
-  remainingFP: number;
-  fulfilmentMethod: 'qr-code' | 'admin-notification' | 'automatic';
-  onDone: () => void;
+  currentBalance: number;
+  onConfirm: () => Promise<void>;
+  onCancel: () => void;
+  isProcessing: boolean;
 }
 ```
 
-**Core behaviour:** Renders appropriate fulfilment UI based on `fulfilmentMethod`. For `qr-code`: generates a QR code (using `qrcode.react`) from `redemptionCode`, displays it at full width, shows 7-day expiry. For `admin-notification`: shows *"Your coach has been notified. They'll confirm your booking."* For `automatic`: shows confirmation with updated FP balance. All variants show the new FP total and the "next aspirational reward" progress bar.
+**Behaviour & State:**
+- Centred modal, backdrop blur
+- Copy: `"Spend ${reward.pointCost} IP for ${reward.name}?"` — current balance shown below in `theme.subtext`
+- Two buttons: "Confirm" (primary, `#DC2626` background) and "Cancel" (ghost)
+- `isProcessing` state: "Confirm" button shows a spinner, both buttons disabled
+- On success: unmounts modal, parent triggers `RedemptionCodeScreen`
 
-**Design spec:** Section 5, Reward Redemption Flow, steps 3–5.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 3)
 
 ---
 
-### 1.5 PR History / My Record Components
-
----
-
-#### `MyRecordView`
-**File:** `components/record/MyRecordView.tsx`
+#### `RedemptionCodeScreen`
+**File:** `src/components/rewards/RedemptionCodeScreen.tsx`
 
 ```typescript
-interface MyRecordViewProps {
-  memberId: string;
-  prHistory: PRRecord[];
-  milestones: Milestone[];
-  memberSince: Date;
-  totalSessions: number;
+interface RedemptionCodeScreenProps {
+  reward: Reward;
+  redemptionCode: string;
+  qrCodeData: string; // URL-encoded string for QR generation
+  redeemedAt: Date;
+  onClose: () => void;
 }
 ```
 
-**Core behaviour:** The "My Record" tab. Four sections: PR History (sortable by lift, date, or weight), Milestone Timeline (visual, chronological), Session Count (large number, prominent — the headline statistic), and the PR Anniversary Card when applicable. This view is the "permanent visible history" concept — designed to feel like a document, not a feed. Typography is heavier here; the numbers are the content.
+**Behaviour & State:**
+- Full-screen (not overlay) page at `/rewards/redemption/[code]`
+- QR code rendered using `qrcode.react` library — white on dark background, centred
+- Redemption code displayed as large monospaced text below QR
+- Instruction copy from `reward.redemptionInstructions`
+- Confirmation strip at top: `"Redeemed — ${reward.name}."` in `#DC2626`
+- Screen lock prevention: calls `navigator.wakeLock.request('screen')` so the QR doesn't disappear while member is at reception
 
-**Design spec:** Section 1, Emotional Journey ("12-month PR history"); Section 4, PR Anniversary surprise moment.
+**Implements:** Design spec §5 — Reward Redemption Flow (steps 4–5)
 
 ---
 
-#### `PRHistoryChart`
-**File:** `components/record/PRHistoryChart.tsx`
+### 1.5 Shared / Utility Components
+
+---
+
+#### `TierBadge`
+**File:** `src/components/shared/TierBadge.tsx`
 
 ```typescript
-interface PRHistoryChartProps {
-  exercise: string;
-  records: Array<{ date: Date; weight: number; reps: number }>;
-  unit: 'kg' | 'lb';
+interface TierBadgeProps {
+  tier: TierLevel;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+type TierLevel = 'raw' | 'tempered' | 'forged' | 'ironclad';
+```
+
+**Behaviour & State:**
+- Pill badge, border-radius full
+- Tier-specific styles:
+  - `raw`: `background: rgba(255,255,255,0.15)`, white text
+  - `tempered`: `#F97316` text, `#F9731620` background, subtle orange glow
+  - `forged`: `#DC2626` text, `#DC262620` background, `box-shadow: 0 0 8px #DC262688`
+  - `ironclad`: gradient text `linear-gradient(90deg, #DC2626, #F97316)`, persistent low glow, animated shimmer pass every 8 seconds
+- `size` prop controls padding and font-size
+
+**Implements:** Design spec §6 — Tier badge visual language
+
+---
+
+#### `ActivityCategoryChip`
+**File:** `src/components/shared/ActivityCategoryChip.tsx`
+
+```typescript
+interface ActivityCategoryChipProps {
+  category: ActivityCategory;
+  size?: 'sm' | 'md';
+}
+
+type ActivityCategory = 
+  | 'workout' 
+  | 'training' 
+  | 'streak' 
+  | 'achievement' 
+  | 'challenge' 
+  | 'referral' 
+  | 'community' 
+  | 'class' 
+  | 'special';
+```
+
+**Behaviour & State:**
+- Rounded label chip, no interaction
+- Colour map (background is 15% opacity version of text colour):
+  - `workout`, `training`, `streak`, `class`: `#EF4444` (red — Training family)
+  - `achievement`, `special`: `#D4AF37` (gold — Achievement family)
+  - `referral`: `#EC4899` (pink — Referral)
+  - `community`: `#A78BFA` (purple — Community)
+  - `challenge`: `#F97316` (orange — Challenge)
+
+**Implements:** Design spec §6 — "Activity category colour chips"
+
+---
+
+#### `GlassCard`
+**File:** `src/components/shared/GlassCard.tsx`
+
+```typescript
+interface GlassCardProps {
+  children: React.ReactNode;
+  isActive?: boolean;       // brightens border, adds F97316 top accent
+  isBonus?: boolean;        // alias for isActive — off-peak bonus state
+  className?: string;
+  onClick?: () => void;
 }
 ```
 
-**Core behaviour:** Line chart showing PR progression over time for a single exercise. Uses `recharts` (lightweight, React-native, no D3 dependency). Line colour `#DC2626`. Points on the line are dots; hovering/tapping shows the exact weight, reps, and date. The most recent PR is marked with a distinct filled circle + annotation. The chart's x-axis only shows dates where a PR was logged — not continuous time — to keep the visual reading as an achievement record, not a gap-revealing timeline.
+**Behaviour & State:**
+- Base: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.10)`
+- `isActive || isBonus`: border becomes `rgba(255,255,255,0.22)`, `::before` pseudo-element adds 2px `#F97316` line at top
+- `onClick` present: cursor pointer, subtle brightness increase on hover (`filter: brightness(1.08)`)
 
-**Design spec:** Section 1, "12-month PR history" moment; Section 5, My Record tab.
+**Implements:** Design spec §6 — Card visual language, active card state
+
+---
+
+#### `ConsentScreen`
+**File:** `src/components/onboarding/ConsentScreen.tsx`
+
+```typescript
+interface ConsentScreenProps {
+  businessName: string;
+  programmeName: string;
+  onConsent: (preference: ConsentPreference) => void;
+}
+
+type ConsentPreference = 
+  | 'full'           // "Yes — use my data to personalise my coaching"
+  | 'app_only';      // "Personalise my app only — no proactive outreach"
+```
+
+**Behaviour & State:**
+- Standalone full-screen onboarding step
+- Renders the three plain-language sentences verbatim from the design spec — no legalese, no scroll
+- Two large tappable option cards (not checkboxes, not radio buttons — full-width cards with a selected state border in `#DC2626`)
+- "Continue" button activates only when one option is selected
+- No "skip" option, no back button — consent must be given before proceeding
+- Selected preference stored server-side via `POST /api/customer/consent` on "Continue"
+
+**Implements:** Design spec §7 — Trust and Transparency, onboarding consent
+
+---
+
+#### `DataTransparencyPage`
+**File:** `src/components/profile/DataTransparencyPage.tsx`
+
+```typescript
+interface DataTransparencyPageProps {
+  customer: Customer;
+  currentConsent: ConsentPreference;
+  onUpdateConsent: (preference: ConsentPreference) => Promise<void>;
+}
+```
+
+**Behaviour & State:**
+- Route: `/profile/data`
+- Replicates the three plain-language consent sentences from onboarding
+- Live toggle: "Proactive coaching outreach" — single toggle, immediate effect, no confirmation loop
+- Toggle state updates optimistically in UI, then syncs to server; on error, reverts with a toast
+- Data inventory section: bulleted list of what data is collected, sourced from `businessConfig.dataInventory`
+
+**Implements:** Design spec §7 — "permanently accessible page" in Profile > Settings
 
 ---
 
@@ -413,358 +574,199 @@ interface PRHistoryChartProps {
 
 ---
 
-#### `AdminLayout`
-**File:** `app/admin/layout.tsx`
+#### `AdminDashboard`
+**File:** `src/components/admin/AdminDashboard.tsx`
 
 ```typescript
-interface AdminLayoutProps {
-  role: 'owner' | 'coach';
-  children: React.ReactNode;
+interface AdminDashboardProps {
+  businessId: string;
+  liveOccupancy: OccupancyData;
+  engagementHealth: EngagementHealthSummary;
+  pointsEconomy: PointsEconomySummary;
+}
+
+interface OccupancyData {
+  currentAttendance: number;
+  thirtyDayAverage: number;
+  percentageOfAverage: number;
+  nextClass: { name: string; startTime: Date; bookedCount: number; capacity: number };
+}
+
+interface EngagementHealthSummary {
+  activeStreaksCount: number;
+  churnFlaggedCount: { yellow: number; orange: number; red: number };
+  newReferralsThisWeek: number;
+}
+
+interface PointsEconomySummary {
+  ipIssuedThisMonth: number;
+  ipRedeemedThisMonth: number;
+  redemptionRatio: number; // redeemed/issued — flag if >0.8
 }
 ```
 
-**Core behaviour:** Separate layout from member-facing app. Role determines which nav items are visible. Owner sees: Overview, Members, Challenges, Churn Risk, Referrals, Settings. Coach sees: Today's Actions, Sessions, PR Queue, Member Profiles, Shoutout Queue. Both views use a light variant of the dark theme — `#111318` background — to signal "this is the back office" without abandoning the brand identity.
+**Implements:** Design spec §5 — Business Admin Panel, Dashboard Overview
 
 ---
 
-#### `ChurnRiskRegister`
-**File:** `components/admin/ChurnRiskRegister.tsx`
+#### `CoachInterventionQueue`
+**File:** `src/components/admin/CoachInterventionQueue.tsx`
 
 ```typescript
-interface ChurnRiskRegisterProps {
-  riskMembers: ChurnRiskMember[];
-  onViewBrief: (memberId: string) => void;
-  onDismissFlag: (memberId: string) => void;
-  onMarkActioned: (memberId: string) => void;
+interface CoachInterventionQueueProps {
+  interventions: CoachIntervention[];
+  onMarkActioned: (interventionId: string) => Promise<void>;
+  filterBy?: { severity?: FlagSeverity; coachId?: string; tier?: TierLevel };
 }
 
-interface ChurnRiskMember {
-  customer: Customer;
-  riskScore: number;           // 1–6, matching signal count
-  activeSignals: ChurnSignal[];
-  aiInterventionBrief: string; // generated by Claude
-  flaggedAt: Date;
-  coachActionDue: Date;        // flaggedAt + 72 hours
-  isEscalated: boolean;        // true if 72hrs passed without action
-}
-```
-
-**Core behaviour:** Sorted by risk score descending. Each row shows member name, tier, last session date, signal count, and a "View Brief" button. Clicking "View Brief" opens a side panel with the full AI-generated intervention brief, labelled prominently: *"IRON RECORD AI Suggestion — coach discretion applies."* An action timestamp is recorded when coach marks as actioned. If `isEscalated`, row is highlighted in amber with an owner-visible alert badge.
-
-**Design spec:** Section 5, Owner Dashboard — Churn Risk Register; Section 7, Rule 5 (coach owns relationship, 72-hour escalation).
-
----
-
-#### `CoachActionList`
-**File:** `components/admin/CoachActionList.tsx`
-
-```typescript
-interface CoachActionListProps {
-  date: Date;
-  checkInConfirmations: SessionAttendance[];
-  prConfirmations: PRSubmission[];
-  memberCheckIns: ChurnRiskMember[];
-  shoutoutQueue: MilestoneShoutout[];
-}
-
-interface MilestoneShoutout {
-  member: Customer;
-  milestoneType: 'session-50' | 'session-100' | 'tier-upgrade' | 'streak-30' | 'streak-7';
-  suggestedAcknowledgement: string; // AI-generated suggestion
+interface CoachIntervention {
+  id: string;
+  customer: Pick<Customer, 'id' | 'name' | 'tier'>;
+  flagType: FlagSeverity;
+  flagReason: string;
+  daysSinceLastSession: number;
+  lastLoggedPB?: Date;
+  aiGeneratedBrief: string;      // AI-written context
+  suggestedOutreachHook: string; // AI-written conversation starter
+  assignedCoachId: string;
   isActioned: boolean;
+  createdAt: Date;
 }
+
+type FlagSeverity = 'yellow' | 'orange' | 'red';
 ```
 
-**Core behaviour:** The coach's daily view — a prioritised list of human actions required. Ordered: Escalated churn flags → PR confirmations → Check-in confirmations → Soft check-in nudges → Shoutout queue. Each item is a card with a primary action button (Confirm / Send / Dismiss). PR confirmations have two options: "Confirm ✓" and "Flag for Review ⚑". Confirming releases the 50 FP reward. Flagging opens a notes field.
+**Behaviour & State:**
+- List ordered by flag severity (red first), then by `createdAt` descending
+- Each entry: colour-coded left border (yellow/orange/red), member name + tier badge, days absent, AI brief in a collapsible section
+- "Mark as Actioned" button per entry — fires `onMarkActioned`, optimistically removes from queue
+- Filter bar: by severity, by assigned coach, by tier
+- Red flag entries have a pulsing border animation (subtle, 3s cycle) to draw attention
 
-**Design spec:** Section 5, Coach Dashboard; Section 5, Coach PR Confirmation flow; Section 3, Quiet Milestone surprise moment.
-
----
-
-#### `FootfallHeatmap`
-**File:** `components/admin/FootfallHeatmap.tsx`
-
-```typescript
-interface FootfallHeatmapProps {
-  data: Array<{
-    dayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-    hour: number;        // 0–23
-    attendanceRate: number; // 0–1
-    offPeakTarget: boolean;
-  }>;
-  weeks: number;         // how many weeks of data shown
-}
-```
-
-**Core behaviour:** 7×24 grid (days × hours). Each cell's background opacity maps to `attendanceRate`. Off-peak target cells (Tue/Thu 10am–3pm) are outlined in `var(--accent)` to make the business objective legible at a glance. Hovering/tapping shows exact count and rate. This is a pure CSS grid — no charting library needed.
-
-**Design spec:** Section 5, Owner Dashboard — Footfall heatmap.
+**Implements:** Design spec §5 — Coach Intervention Queue, §4 — Churn Prediction and Intervention
 
 ---
 
-### 1.7 Onboarding Components
-
----
-
-#### `OnboardingConsent`
-**File:** `components/onboarding/OnboardingConsent.tsx`
-
-```typescript
-interface OnboardingConsentProps {
-  onComplete: (consents: ConsentRecord) => void;
-}
-
-interface ConsentRecord {
-  attendanceTracking: boolean;
-  progressLogging: boolean;
-  coachingAlerts: boolean;
-  socialRecognition: boolean;
-  agreedAt: Date;
-}
-```
-
-**Core behaviour:** Four-screen stepper (not a single form). Each screen: one toggle, one benefit statement, one "Why we need this" expandable (initially collapsed). All toggles default to `false`. Progress indicator (dots) at top. On each screen, "Continue" button is always active — consent is never required to proceed. Final screen summarises chosen consents and shows the reduced-personalisation notice if any are off: *"With coaching alerts off, we won't share your activity patterns with coaches. You'll still earn Forge Points for everything you do."* This copy is hardcoded per the design spec.
-
-**Design spec:** Section 7, Onboarding Consent Flow.
-
----
-
-## 2. DATA MODELS
+## SECTION 2: DATA MODELS
 
 ```typescript
 // ============================================================
-// CORE ENUMS
+// CORE ENUMS AND PRIMITIVES
 // ============================================================
 
-type TierLevel = 'Rookie' | 'Lifter' | 'Competitor' | 'Iron';
+type TierLevel = 'raw' | 'tempered' | 'forged' | 'ironclad';
 
-type ActivityCategory =
-  | 'Workout'
-  | 'Training'
-  | 'Achievement'
-  | 'Streak'
-  | 'Challenge'
-  | 'Referral'
-  | 'Community'
-  | 'Service'
-  | 'Special';
+type ActivityCategory = 
+  | 'workout' 
+  | 'training' 
+  | 'streak' 
+  | 'achievement' 
+  | 'challenge'
+  | 'referral'
+  | 'community'
+  | 'class'
+  | 'special';
 
-type PersonaType = 'competitor' | 'transformer' | 'anchor' | 'default';
+type RewardCategory = 
+  | 'access'
+  | 'merchandise'
+  | 'coaching'
+  | 'booking_privilege'
+  | 'education'
+  | 'recovery'
+  | 'membership'
+  | 'prestige';
 
-type ChurnSignal =
-  | 'frequency-drop'
-  | 'class-switch'
-  | 'ghost-bookings'
-  | 'pr-silence'
-  | 'streak-break'
-  | 'social-cluster-disruption';
+type ConsentPreference = 'full' | 'app_only';
+
+type FlagSeverity = 'yellow' | 'orange' | 'red';
 
 // ============================================================
 // CUSTOMER
 // ============================================================
 
 interface Customer {
-  id: string;
-  businessId: string;
-
-  // Identity
+  id: string;                        // UUID
+  businessId: string;                // Which business they're a member of
   name: string;
   email: string;
   phone?: string;
-  avatarUrl?: string;
-  memberSince: Date;
-
-  // Loyalty State
+  joinedAt: Date;
   tier: TierLevel;
-  forgePoints: number;            // current redeemable balance
-  lifetimePoints: number;         // total ever earned (for tier calc)
-  personaType: PersonaType;       // AI-assigned, updated monthly
+  
+  points: {
+    lifetime: number;                // Never decreases — used for tier calculation
+    current: number;                 // Spendable balance (lifetime minus redeemed)
+    thisMonth: number;               // For admin economy health tracking
+  };
 
-  // Streak State
-  currentStreak: number;          // days
-  longestStreak: number;
-  lastSessionDate: Date | null;
-  streakFreezeUsedThisQuarter: boolean;
-  streakFreezeActive: boolean;
+  streaks: {
+    currentWeeklyStreak: number;     // Consecutive weeks with 3+ sessions
+    longestStreak: number;           // All-time best
+    isActive: boolean;               // True if current week is on track
+    lastStreakBreakDate?: Date;
+    shieldAvailable: boolean;        // One per 60-day period, earned via coach check-in
+    shieldUsedAt?: Date;
+  };
 
-  // Session Metrics
-  totalSessions: number;
-  sessionsThisMonth: number;
-  averageSessionsPerWeek: number; // rolling 8-week average
-  lastSessionBaseline: number;    // for churn detection (avg sessions/week)
+  activityHistory: ActivityLogEntry[];
 
-  // Churn Risk
-  churnSignals: ChurnSignal[];
-  churnScore: number;             // 0–6, count of active signals
-  lastChurnCheck: Date;
+  sessionStats: {
+    totalLifetime: number;           // For milestone triggers (50th, 100th)
+    thisMonth: number;
+    lastSessionDate?: Date;
+    averageSessionsPerWeek: number;  // Rolling 8-week average
+    preferredTimeSlots: string[];    // e.g. ["06:00", "06:15"] — for AI targeting
+    scheduleFlexibilityScore: number; // 0–1, derived from booking variance
+  };
 
-  // Consent
-  consents: ConsentRecord;
+  churnSignals: {
+    flags: ChurnFlag[];
+    engagementTemperature: number;   // 0–100 score, AI-computed
+    lastComputedAt: Date;
+  };
 
-  // Activity History
-  activityHistory: Activity[];
-  prHistory: PRRecord[];
-  milestones: Milestone[];
-  redeemedRewards: RedeemedReward[];
+  referrals: {
+    referredByCustomerId?: string;
+    referredCustomerIds: string[];
+    successfulReferrals: number;     // Friend completed trial
+    convertedReferrals: number;      // Friend became paid member
+  };
 
-  // Referral
-  referralCode: string;
-  referredByMemberId?: string;
-  referredMemberIds: string[];
+  assignedCoachId?: string;
 
-  // Metadata
-  createdAt: Date;
-  updatedAt: Date;
+  consent: {
+    preference: ConsentPreference;
+    givenAt: Date;
+    lastUpdatedAt: Date;
+  };
+
+  profile: {
+    avatarUrl?: string;
+    bio?: string;                    // Optional — used in social mechanics
+  };
 }
 
-// ============================================================
-// ACTIVITY
-// ============================================================
-
-interface Activity {
+interface ChurnFlag {
   id: string;
-  businessId: string;
+  severity: FlagSeverity;
+  reason: string;
+  triggeredAt: Date;
+  isActioned: boolean;
+  actionedAt?: Date;
+  actionedByCoachId?: string;
+}
+
+interface ActivityLogEntry {
+  id: string;
   customerId: string;
-
-  name: string;
-  emoji: string;
-  pointValue: number;
-  category: ActivityCategory;
-  description: string;
-
+  activityId: string;
+  activity: Activity;               // Populated via join
+  pointsEarned: number;
   completedAt: Date;
-  sessionId?: string;             // links to class booking system
-  confirmedByCoachId?: string;    // required for PR activities
-  isConfirmed: boolean;
-
-  // For streak calculation
-  countsTowardStreak: boolean;
-}
-
-// ============================================================
-// PR RECORD
-// ============================================================
-
-interface PRRecord {
-  id: string;
-  customerId: string;
-  sessionId?: string;
-
-  exercise: string;
-  weight: number;
-  weightUnit: 'kg' | 'lb';
-  reps: number;
+  confirmedByCoach: boolean;        // Required for PB, Programme Milestone
+  sessionTimeSlot?: string;         // e.g. "06:15" — for flexibility score calculation
   notes?: string;
-
-  status: 'pending' | 'confirmed' | 'flagged';
-  submittedAt: Date;
-  confirmedAt?: Date;
-  confirmedByCoachId?: string;
-
-  // For PR Anniversary feature
-  firstPRForExercise: boolean;
-  previousBest?: number;          // weight in same unit
-  improvement?: number;           // calculated field
-}
-
-// ============================================================
-// MILESTONE
-// ============================================================
-
-interface Milestone {
-  id: string;
-  customerId: string;
-
-  type:
-    | 'session-count'       // 50th, 100th session
-    | 'tier-upgrade'
-    | 'streak-7'
-    | 'streak-30'
-    | 'anniversary'         // 3, 6, 12 month membership
-    | 'pr-anniversary'      // 1 year since first PR
-    | 'challenge-complete';
-
-  value?: number;           // e.g. session number, streak length, months
-  pointsAwarded: number;
-  achievedAt: Date;
-
-  // Human acknowledgement tracking
-  coachAcknowledged: boolean;
-  coachAcknowledgedAt?: Date;
-  publiclyAcknowledged: boolean;  // for 30-day streak community post
-}
-
-// ============================================================
-// REWARD
-// ============================================================
-
-interface Reward {
-  id: string;
-  businessId: string;
-
-  name: string;
-  emoji: string;
-  description: string;
-  pointCost: number;
-  category: 'physical' | 'experiential' | 'access' | 'identity';
-
-  fulfilmentMethod: 'qr-code' | 'admin-notification' | 'automatic';
-  qrCodeValidDays?: number;       // 7 for physical rewards
-
-  // Tier gating
-  minimumTier?: TierLevel;        // e.g. 'Iron' for Membership Credit
-
-  isActive: boolean;
-  stockLimited: boolean;
-  stockRemaining?: number;
-
-  createdAt: Date;
-}
-
-interface RedeemedReward {
-  id: string;
-  customerId: string;
-  rewardId: string;
-  reward: Reward;
-
-  pointsSpent: number;
-  redeemedAt: Date;
-  fulfilledAt?: Date;
-
-  qrCode?: string;                // single-use token
-  qrCodeExpiresAt?: Date;
-  isQrCodeUsed: boolean;
-
-  adminNotified: boolean;
-  notes?: string;
-}
-
-// ============================================================
-// OFFER (AI-generated)
-// ============================================================
-
-interface Offer {
-  id: string;
-  businessId: string;
-
-  title: string;
-  description: string;
-  ctaLabel: string;
-  ctaAction: 'enroll-challenge' | 'book-session' | 'view-rewards' | 'log-pr';
-
-  validFrom: Date;
-  validUntil: Date;
-
-  targetSegment: PersonaType | 'all' | 'at-risk' | 'off-peak-eligible';
-  pointsIncentive?: number;
-
-  // Generation metadata
-  generatedByAI: boolean;
-  aiPromptContext?: string;       // stores the trigger condition for audit
-  isLowFootfallOffer: boolean;
-
-  impressions: number;
-  conversions: number;
 }
 
 // ============================================================
@@ -774,74 +776,87 @@ interface Offer {
 interface Business {
   id: string;
   name: string;
-  type: BusinessType;
-  slug: string;                   // URL namespace: /[slug]/dashboard
-
-  config: BusinessConfig;
-  activities: ActivityDefinition[];
+  type: BusinessVertical;
+  slug: string;                     // URL slug — e.g. "slam-fitness"
+  
+  config: BusinessConfig;           // Full white-label config (see Section 3)
+  
+  activities: Activity[];
   rewards: Reward[];
-  challenges: ChallengeDefinition[];
+  challenges: Challenge[];
+  
+  coaches: Coach[];
+  
+  operatingHours: {
+    [day: string]: { open: string; close: string } | null; // null = closed
+  };
 
-  // Integration config
-  bookingSystemWebhookUrl?: string;
-  weatherApiEnabled: boolean;
-  weatherLocationId?: string;
+  integrations: {
+    bookingSystemUrl?: string;      // e.g. Mindbody, Glofox webhook endpoint
+    webhookSecret?: string;
+  };
 
   createdAt: Date;
-  subscriptionTier: 'starter' | 'growth' | 'enterprise';
+  updatedAt: Date;
 }
 
-type BusinessType =
-  | 'fitness-strength'
-  | 'fitness-yoga'
-  | 'food-beverage'
-  | 'retail'
-  | 'health-dental'
-  | 'gaming-entertainment';
+type BusinessVertical = 
+  | 'fitness_boutique'
+  | 'gaming_pub'
+  | 'dental'
+  | 'restaurant'
+  | 'retail';
+
+interface Coach {
+  id: string;
+  businessId: string;
+  name: string;
+  email: string;
+  role: 'head_coach' | 'coach' | 'admin';
+  assignedMemberIds: string[];
+}
 
 // ============================================================
-// ACTIVITY DEFINITION (business-level template)
+// ACTIVITY
 // ============================================================
 
-interface ActivityDefinition {
+interface Activity {
   id: string;
   businessId: string;
   name: string;
   emoji: string;
-  category: ActivityCategory;
+  description: string;
   pointValue: number;
-  description: string;
-  requiresCoachConfirmation: boolean;
-  maxPerDay?: number;
-  maxPerWeek?: number;
-  maxPerMonth?: number;
+  category: ActivityCategory;
+  
+  completionRules: {
+    requiresCoachConfirmation: boolean;
+    maxPerDay?: number;
+    maxPerWeek?: number;
+    maxPerMonth?: number;
+    maxLifetime?: number;           // For 100-Session Marker (1 only)
+    eligibilityWindowStart?: string; // "06:00" — for Morning Iron time-gating
+    eligibilityWindowEnd?: string;   // "09:00"
+  };
+
   isActive: boolean;
+  isBonusActive: boolean;           // For Cold Day Bonus activation
+  bonusPointValue?: number;         // Overrides pointValue when isBonusActive
+
+  createdAt: Date;
 }
 
 // ============================================================
-// CHALLENGE DEFINITION
+// REWARD
 // ============================================================
 
-interface ChallengeDefinition {
+interface Reward {
   id: string;
   businessId: string;
   name: string;
-  description: string;
   emoji: string;
-  category: ActivityCategory;
-  pointsReward: number;
-  enrollmentPoints: number;       // points for signing up (e.g. 10 FP)
-  durationDays: number;
-  requiredCompletions: number;
-  completionActivityIds: string[]; // which ActivityDefinition IDs count
-  isRecurring: boolean;
-  recurrencePeriod?: 'weekly' | 'monthly';
-  isActive: boolean;
-}
-```
-
----
-
-## 3. BUSINESS CONFIG SYSTEM
-
-### 3.1 White-Label Switching Architecture
+  description: string;
+  pointCost: number;
+  category: RewardCategory;
+  
+  redemptionMethod: 'in_gym' | 

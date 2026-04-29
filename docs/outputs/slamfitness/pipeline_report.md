@@ -1,20 +1,20 @@
 # LoyaltyOS — Full Pipeline Report
 
 **Business slug:** `slamfitness`  
-**Generated:** 29 April 2026, 23:24
+**Generated:** 29 April 2026, 23:54
 **Agents completed:** 5/5
-**Total words:** 19,000
+**Total words:** 19,416
 
 This document contains the raw output of every agent in the LoyaltyOS pipeline,
 in handoff order. Each agent received the previous agent's output as its input.
 
 | # | Agent | Role | Words |
 |---|-------|------|-------|
-| 1 | **Researcher** | Identify the opportunity | 2,314 |
-| 2 | **Designer** | Create the solution | 4,373 |
-| 3 | **Maker** | Build the product | 3,226 |
-| 4 | **Communicator** | Get the customers | 3,654 |
-| 5 | **Manager** | Run the business | 5,433 |
+| 1 | **Researcher** | Identify the opportunity | 2,531 |
+| 2 | **Designer** | Create the solution | 4,323 |
+| 3 | **Maker** | Build the product | 3,230 |
+| 4 | **Communicator** | Get the customers | 3,675 |
+| 5 | **Manager** | Run the business | 5,657 |
 
 ---
 
@@ -26,10 +26,10 @@ in handoff order. Each agent received the previous agent's output as its input.
 
 **Role:** Identify the opportunity — deep analysis and pattern recognition
 **Output file:** `01_research_brief.md`
-**Word count:** 2,314
+**Word count:** 2,531
 
 # LoyaltyOS Research Brief
-## Client: Slam Fitness | Boutique Strength & Performance Studio | Stoneybatter, Dublin 7
+## Slam Fitness — Boutique Strength & Performance Studio, Stoneybatter, Dublin 7
 
 ---
 
@@ -37,150 +37,161 @@ in handoff order. Each agent received the previous agent's output as its input.
 
 ### The Structural Diagnosis
 
-Slam Fitness does not have a marketing problem. It has a **progress plateau retention problem** compounded by a **social dependency cliff**.
+**Slam Fitness does not have a marketing problem. It has a progress plateau problem compounded by a social dependency risk.**
 
-Here is the uncomfortable truth: the very thing that makes Slam Fitness compelling — personalised coaching, measurable progress, tight community bonds — is also the architecture of its churn risk. When a member stops *feeling* progress (whether real or perceived), the premium justification for a boutique studio over a €30/month commercial gym collapses overnight. And when a member's social anchor — a training partner, a favourite coach, a regular class crew — is disrupted, the belonging that kept them accountable disappears with it.
+The retention engine at Slam Fitness is built on two pillars: **measurable progress** and **social belonging**. This is actually a strength — but it creates a precise and predictable failure mode. When members stop seeing visible progress (typically around weeks 8–12 of a consistent programme), the primary reason they showed up begins to erode. If their social anchor — the friend they train with, the coach who knows their name — simultaneously becomes less available or less salient, both pillars weaken at once. The member doesn't dramatically quit. They just... drift. They miss one Monday. Then two. Then they're gone.
 
-Quiet day footfall is not a scheduling problem. It is a **perceived-value erosion signal**. Members on quiet days are members whose habit loop has weakened. They are 6–10 weeks from cancellation.
+The secondary structural problem is **quiet day concentration risk**. With footfall clustering around early mornings and post-work slots, the gym has dead hours that feel low-energy to any member who attends off-peak. A member who shifts their schedule — new job, new commute, new baby — suddenly experiences a different, less vibrant version of the gym they fell in love with. That version doesn't retain them.
 
-### Behavioural Churn Signals (Specific)
+**The plain truth:** Slam Fitness loses members not because they stop caring about fitness, but because the *experience of progress* becomes invisible to them, and the *community* that made skipping feel socially costly becomes thinner.
 
-1. **The Frequency Drop**: A member who visited 4–5x per week drops to 2x per week for two consecutive weeks without an explained absence (holiday, illness). This is the single most predictive early churn signal.
-2. **The Class Switch**: A member who attended the same class slot for 6+ weeks suddenly books a different time or class type — social anchor disruption. They've lost their crew or their coach availability has changed.
-3. **The Quiet Day Slide**: A member begins attending only during off-peak hours (mid-morning weekdays) after previously attending peak sessions. They are disengaging from the community without cancelling.
-4. **The Ghost Booking**: A member books sessions 3+ times in a two-week window but no-shows or late-cancels. Ambivalence is materialising. They want to want to come. They're not coming.
-5. **The Progress Silence**: A member who previously engaged with coaching feedback, logged PRs, or participated in gym challenges goes quiet for 21+ days. They've stopped measuring. When members stop tracking progress, they stop believing in it.
+---
+
+### Behavioural Signals That Predict Churn
+
+These are the five canary-in-the-coalmine indicators, ranked by predictive weight:
+
+1. **Session frequency drops from 4+/week to 2/week for two consecutive weeks** — not a blip, a shift. The member is renegotiating their commitment without telling anyone.
+2. **First missed booking with no reschedule within 48 hours** — at Slam Fitness, where regulars have habitual slots, an unreschedule signals a broken routine, not a busy day.
+3. **No attendance during a previously consistent time slot for 10+ days** — if someone always trained at 6:30am Tuesday and hasn't in nearly two weeks, their habit loop is broken.
+4. **Member stops booking into group boot camps but continues solo or open gym use** — social withdrawal before physical withdrawal. They're pulling away from community before they pull away from the gym.
+5. **No engagement with any coach-initiated check-in or progress note within 21 days** — the coach relationship is the stickiest element. When a member stops responding to it, they've emotionally checked out.
 
 ---
 
 ## 2. MARKET OPPORTUNITY
 
-### Why a Stamp Card Fails Slam Fitness Completely
+### Why Slam Fitness Needs AI-Powered Loyalty, Not a Stamp Card
 
-A stamp card rewards *transactions*. Slam Fitness sells *transformation*. These are categorically different value propositions.
+A stamp card rewards *presence*. Slam Fitness needs to reward *progress, community contribution, and consistency patterns that vary by individual*. A stamp card cannot distinguish between a member who attends 5 times in a panic week before a holiday and a member who has maintained a calm, consistent 3-sessions-per-week discipline for four months. One of those members is about to churn. A stamp card treats them identically.
 
-A stamp card for a boutique gym says: "Come 10 times, get a free session." It treats attendance as the product. But the member who comes 10 times and feels no stronger, looks no different, and has made no friends will leave regardless of the free session. Worse, it commoditises the experience — which is exactly what Slam Fitness is not.
+Slam Fitness's value proposition is **personalisation at scale** — the boutique experience, the coach who knows your name. A loyalty programme that is generic and transactional actively undermines that brand promise. AI-powered loyalty extends the personalised coaching relationship into the spaces between sessions.
 
-What Slam Fitness needs is a loyalty system that **rewards identity formation**, not transaction volume. The member needs to feel like a *Slam Fitness athlete*, not a points collector.
+The specific opportunity: **quiet day footfall**. AI can identify which members have schedule flexibility (based on historical visit variance) and offer targeted, time-sensitive incentives to attend off-peak slots — without offering those incentives to members who would have come anyway. A stamp card cannot do this.
 
-AI-powered loyalty can detect the ghost booking pattern before the member consciously knows they're disengaging and trigger a human coach intervention — not a discount voucher, but a personal message. That is not possible with a stamp card.
+---
 
 ### Analogous Programmes
 
-**1. Peloton's Milestone & Streak System**
-Peloton rewards output-based milestones (100th ride, personal output records) and streaks, building identity around the number. Members celebrate milestones publicly. It works because it ties loyalty mechanics to *measurable progress*, not just attendance.
-*What LoyaltyOS does that Peloton doesn't:* Peloton's system is self-reported and app-driven in isolation. LoyaltyOS integrates coach awareness — so the intervention when a streak breaks is a *human* message from someone who knows your name, not an automated push notification from an algorithm.
+**Peloton's streak and milestone system** — Peloton rewards consecutive days, personal records, and output milestones with badges and leaderboard recognition. It is extraordinarily effective at habit reinforcement. Its weakness: it is entirely individual. It does not reward community contribution, referral behaviour, or the social fabric that Slam Fitness is built on. LoyaltyOS rewards the *relational* layer Peloton ignores.
 
-**2. Barry's Bootcamp Community Leaderboards**
-Barry's uses class energy, branded community language ("Barry's Baby," "Barry's Regular"), and social identity markers to create belonging. Members wear the identity.
-*What LoyaltyOS does that Barry's doesn't:* Barry's community mechanics are uniform — everyone gets the same experience. LoyaltyOS segments by persona and personalises the trigger. A competitive member gets a leaderboard nudge. A progress-motivated member gets a PR reminder. A community-driven member gets a "your crew misses you" prompt. One system, three different interventions.
+**Gympass / Wellhub** — aggregates gym access and tracks multi-venue engagement for corporate wellness. Sophisticated data infrastructure. Its weakness: it serves the employer, not the member relationship. It creates no emotional bond between the member and the specific gym. LoyaltyOS builds loyalty *to Slam Fitness specifically*, not to fitness as a category.
+
+**The one thing LoyaltyOS does that neither does:** LoyaltyOS can identify a member who is three behavioural signals into a churn spiral and trigger a human coach intervention *before* the member has consciously decided to leave — combining AI pattern recognition with the human relationship that is Slam Fitness's actual product.
 
 ---
 
 ## 3. CUSTOMER SEGMENTS
 
-### Persona 1: "The Competitor" — Ciarán
+### Persona 1: "The Grafter" — Ciarán, 31
 
-**Behaviour Pattern:** Male, 28–36, attends 5x per week, predominantly strength sessions, tracks his lifts obsessively, compares himself to others without admitting it. Shows up early to set up. Stays late to ask the coach about programming. Volunteers for every challenge, event, or benchmark workout.
+**Behaviour Pattern:** Trains 5 mornings a week, 6:15am slot. Never misses unless sick. Has been a member for 14 months. Doesn't post on social media but will tell every colleague who mentions getting fit that Slam Fitness is the only place worth going. Tracks his own lifts in a notebook. Books boot camp on Saturdays as a social event, not a workout.
 
-**Loyalty Trigger:** Public recognition of measurable performance. Ciarán needs to *rank*. A leaderboard, a PR board on the wall, a callout in the group chat — these are not vanity metrics to him, they are proof that the investment is working.
+**Loyalty Trigger:** Visible, measurable progress. Ciarán needs to see the numbers move — weight lifted, time improved, body composition shifted. If the programme gives him that, he is an almost-unchurnable member.
 
-**The ONE thing that causes disengagement:** He plateaus for 4+ weeks with no programme adjustment and no acknowledgement from coaching staff. When progress stalls and no one addresses it, Ciarán starts researching other gyms. He will not tell you he's leaving. He'll just stop showing up.
-
----
-
-### Persona 2: "The Transformer" — Aoife
-
-**Behaviour Pattern:** Female, 25–33, joined with a specific goal (lose weight, get stronger, prepare for an event). Attends 3–4x per week. Highly coachable, responds emotionally to encouragement, shares progress on Instagram stories. Her attendance correlates directly with how confident she feels about her progress.
-
-**Loyalty Trigger:** Visible, documented, emotionally-validated progress milestones. Aoife needs someone to notice. When the coach says "Aoife, your deadlift has gone up 15kg in three months" in front of the group, she posts about it. She refers two friends the following week.
-
-**The ONE thing that causes disengagement:** A life disruption (work stress, illness, bad week) breaks her 3-week streak and nobody reaches out. Aoife's inner narrative turns negative ("I've fallen off, I've wasted their time, I'll restart in January"). She does not restart in January.
+**The One Thing That Causes Disengagement:** His coach leaves or changes. Ciarán's loyalty is to the coaching relationship first, the gym second. If the person who knows his back injury history and can read when he's undertrained is replaced without careful transition, Ciarán re-evaluates everything.
 
 ---
 
-### Persona 3: "The Anchor" — Declan
+### Persona 2: "The Social Achiever" — Aoife, 28
 
-**Behaviour Pattern:** Male or female, 35–45, been a member for 18+ months, attends 3x per week like clockwork, always the same sessions, always greets newer members, knows everyone. Does not care about leaderboards. Does not post on social media. Comes because Tuesday at 7am is simply what he does.
+**Behaviour Pattern:** Trains 3–4 times per week, primarily group boot camps and conditioning classes. Her attendance correlates directly with whether her friend group is going. Has tagged Slam Fitness in 11 Instagram stories in the last six months. Tried three other gyms in the two years before Slam Fitness. Buys gym merchandise. Signs up for challenges immediately.
 
-**Loyalty Trigger:** Community belonging and routine preservation. Declan is not motivated by rewards. He is retained by *friction removal* — the gym must make it effortless to maintain his routine. His loyalty is entirely habitual and social.
+**Loyalty Trigger:** Social visibility and identity. Aoife stays because being a Slam Fitness member is part of who she is publicly. She wants the community to witness her progress, and she wants to be seen as someone who *does this*.
 
-**The ONE thing that causes disengagement:** His class time is discontinued, his favourite coach leaves, or a cohort of his "Tuesday crew" all cancel around the same period. Declan's gym is his third place — disrupt the social geography and the habit collapses. He won't be angry. He'll just quietly stop renewing.
+**The One Thing That Causes Disengagement:** Her friend stops coming. If Aoife's primary training partner churns, her own attendance drops within three weeks. She does not have the intrinsic motivation structure of Ciarán — she is powered by social fuel, and when it runs low, so does she.
+
+---
+
+### Persona 3: "The Optimiser" — David, 38
+
+**Behaviour Pattern:** Trains 3 times per week, plans sessions around work travel. Researches programming, asks coaches about periodisation, reads about nutrition. Considers Slam Fitness a premium service and evaluates it as such — not emotionally, but rationally. Quieter in group sessions, strong in one-to-ones. Occasionally brings a colleague for a trial.
+
+**Loyalty Trigger:** Perceived value integrity. David stays as long as he believes Slam Fitness is genuinely the best use of his fitness time and budget. He has done the comparison. He is paying for expertise, not atmosphere.
+
+**The One Thing That Causes Disengagement:** A perceived drop in programme quality or coaching expertise. One session that feels generic, one coach who doesn't know his programme, one month where he doesn't feel he's been challenged appropriately — and David is already browsing alternatives. He won't complain. He'll just leave.
 
 ---
 
 ## 4. ENGAGEMENT MECHANICS
 
-| Activity | Retention Mechanism |
-|---|---|
-| **Logging a Personal Record (PR)** | **Progress loop reinforcement.** Every logged PR is evidence that the membership is working. LoyaltyOS surfaces this historically ("You've hit 7 PRs since joining"). Prevents the "I'm not getting anywhere" narrative that kills memberships silently. |
-| **Attending during a Quiet Period (off-peak weekday)** | **Loss aversion + variable reward.** Members earn bonus points for attending Tuesday 11am or Thursday 2pm. This directly addresses Slam Fitness's stated footfall problem. Frame it as an exclusive "Off-Peak Athlete" benefit, not a discount bribe. |
-| **Referring a Friend Who Joins** | **Social identity amplification.** The referring member becomes a *founding member of someone else's journey* — this deepens their own commitment. A referral is not just a business transaction; it is a public declaration of belief in the gym. Reward both parties. |
-| **Completing a Full Programme Cycle** | **Sunk cost positivity + milestone identity.** Completing an 8 or 12-week programme is a behavioural commitment signal. Reward it with a badge, a coach callout, and an automatic re-enrolment prompt with a personalised next-phase recommendation. |
-| **Tagging Slam Fitness in a Social Post** | **Social proof + identity investment.** When Aoife posts her deadlift video tagging Slam Fitness, she has publicly committed to her identity as a Slam athlete. LoyaltyOS rewards this and surfaces it internally so coaches can acknowledge it. The post makes it harder to quietly cancel. |
-| **Attending a Streak (7, 14, 30 days without missing a scheduled session)** | **Habit loop solidification + loss aversion.** Streaks work because breaking them *costs something*. The reward is secondary to the psychological weight of the streak itself. Alert members at day 5 ("You're 2 days from a 7-day streak") to activate loss aversion before the streak, not after it breaks. |
-| **Participating in a Gym Challenge or Event** | **Community anchoring.** Challenges (a 4-week strength block, a team bootcamp competition) create temporary but powerful social bonds. Members who complete a challenge together have a shared narrative. LoyaltyOS tracks participation and uses it to identify natural community clusters. |
-| **Leaving a Coach Review or Feedback** | **Reciprocity + relationship deepening.** When a member takes time to acknowledge a coach, they articulate what they value — which deepens their own perceived investment in the relationship. This data is also gold for LoyaltyOS personalisation. |
+### Rewardable Activities and Their Retention Mechanisms
+
+| Activity | Retention Mechanism | Why It Works at Slam Fitness |
+|---|---|---|
+| **Maintaining a 4-week attendance streak** | Habit loop reinforcement + loss aversion | Streaks make missing a session feel costly. At a gym where routine is the product, protecting the streak protects the habit. |
+| **Attending during off-peak hours (10am–4pm weekdays)** | Variable reward + community building | Solves the quiet day problem. AI identifies which members have flex schedules and offers time-limited incentives. Builds a daytime community that didn't exist. |
+| **Logging a new personal best (via coach verification or app input)** | Progress salience + identity reinforcement | Makes visible the progress that is the primary retention driver. Ciarán stays because he sees the numbers. This mechanic ensures he *always* sees the numbers. |
+| **Referring a friend who completes a trial session** | Social network integration + accountability pairing | Aoife's churn risk is social. If her loyalty programme rewards her for bringing friends, she builds her own retention safety net. |
+| **Completing a monthly challenge or programme milestone** | Completion mechanics + belonging signal | Challenges create shared experience across the member base. Completing one signals group membership, not just gym membership. |
+| **Engaging in a coach check-in (progress photo, goal review)** | Relational reinforcement + early churn detection | The coach relationship is Slam Fitness's core product. Rewarding check-in engagement keeps the relationship warm *and* generates behavioural data that predicts churn. |
+| **Writing a review or sharing a social post tagging the gym** | Social proof + identity lock-in | Aoife already does this. Rewarding it amplifies it. Crucially, members who publicly identify with a brand are statistically less likely to leave it. |
+| **Booking and attending a session after a 7+ day absence** | Re-engagement + loss aversion recovery | Targets the most critical churn window. A member who returns after a lapse and is rewarded for doing so has a materially higher 90-day retention rate than one who returns to silence. |
 
 ---
 
 ## 5. DATA AND PERSONALISATION OPPORTUNITIES
 
-### Ethically Collectible Behavioural Signals
+### Ethically Collectable Behavioural Signals
 
-- **Session attendance timestamps** — which days, which times, how frequently
-- **Class type selection** — strength vs. conditioning vs. bootcamp preferences
-- **Booking behaviour** — advance booking vs. same-day, cancellation patterns, no-show frequency
-- **PR and progress logs** — if integrated with coaching software or manually logged
-- **Referral activity** — who referred whom, and how active referrals become
-- **Social engagement** — tagged posts, shares (opt-in, not scraped)
-- **Streak and milestone data** — streaks started, broken, resumed
-- **Coach interaction frequency** — direct messages, feedback submissions, challenge participation
+- **Session booking and attendance timestamps** — reveals habitual time slots, schedule consistency, and variance
+- **Class type preference** — boot camp vs. strength vs. conditioning reveals social vs. individual orientation
+- **Booking lead time** — planned members (David) book days ahead; social members (Aoife) book same-day; disruption to this pattern signals churn risk
+- **Cancellation and no-show frequency and timing** — not just that they cancelled, but *when* they cancelled relative to session start
+- **Referral activity** — who referred whom, and whether referred members are retained (social network mapping)
+- **Coach interaction frequency** — logins to progress notes, response to check-ins, direct messages
+- **Challenge and event participation** — opt-in signals high engagement; opt-out signals cooling
+- **Off-peak attendance willingness** — historical evidence of schedule flexibility for targeted incentive deployment
 
-All of this is first-party, consent-based, and tied to explicit value exchange (they share, they earn). Nothing passive. Nothing inferred from data they didn't choose to give.
+**No biometric data, health records, or financial behaviour beyond membership tier is required or appropriate.**
 
-### How AI Personalises for Each Persona
+---
 
-**Ciarán (The Competitor):**
-AI detects a 3-week PR plateau. It does not send him a discount. It triggers a coach prompt: *"Ciarán hasn't logged a new lift PR in 21 days — consider a programming check-in this week."* The coach reaches out. Ciarán feels seen. The plateau is addressed before it becomes a disengagement narrative. AI also surfaces his ranking on any active leaderboard the moment he logs in.
+### AI Personalisation by Persona
 
-**Aoife (The Transformer):**
-AI detects a broken 3-session-per-week streak following two consecutive missed sessions. It surfaces a personalised milestone recap: *"In the last 90 days, you've attended 34 sessions and added 12kg to your back squat."* This is sent not as a win-back email but as a progress celebration — timed to arrive 48 hours after the second missed session, before the negative self-narrative calcifies. It also prompts her coach with a soft check-in flag.
+**Ciarán (The Grafter):** AI monitors his lift progression data and streak length. When his streak hits a milestone (30 days, 60 days, 100 sessions), it triggers a personalised acknowledgement from his coach — not a generic notification, a specific one referencing his actual progress. If his attendance drops below 3x/week for two consecutive weeks, the system flags this to his coach for a human outreach, framed as a programming check-in, not a retention call.
 
-**Declan (The Anchor):**
-AI never pushes Declan with progress metrics — he doesn't care. Instead, it monitors his social cluster. If two of his regular Tuesday classmates cancel memberships in the same week, AI flags this to management *before* Declan's renewal date. It also ensures his routine is never disrupted without a personal communication from staff. His loyalty programme experience is frictionless and quiet — which is exactly what he wants.
+**Aoife (The Social Achiever):** AI maps Aoife's attendance correlation with her friend's attendance. If her friend's bookings drop, Aoife receives a challenge invitation or a group event notification within 48 hours — something that gives her a social reason to come that doesn't depend on her friend. The system also surfaces her referral rewards prominently, incentivising her to build a wider social network within the gym, reducing her single-point-of-failure dependency.
+
+**David (The Optimiser):** AI tracks his programme completion rate and personal best frequency. If three weeks pass without a logged PB or a coach interaction, the system surfaces a programme review prompt — framed as an upgrade, not a check-in. David responds to expertise signals. The AI delivers his loyalty rewards in the form of early access to new programming, specialist workshops, or performance analytics — not discounts. Discounts tell David the product is worth less than he's paying.
+
+---
 
 ### The Single Highest-Value Personalisation Intervention
 
-**The 48-Hour Streak-Break Rescue.**
+**The Pre-Lapse Coach Trigger.**
 
-When a member breaks a streak or misses two consecutive scheduled sessions, LoyaltyOS triggers a coach-attributed (not automated-feeling) message within 48 hours that references something specific: their last PR, their current programme week, or their personal goal. Not: *"We miss you! Here's 10% off."* But: *"Hey Aoife — Coach Rían here. Noticed you missed Tuesday and Thursday. You're 3 weeks into the strength block and your numbers have been brilliant. Don't let this week derail it. See you Monday?"*
+When a member crosses two simultaneous churn signals — a broken time-slot pattern plus a 10+ day absence — the system automatically generates a personalised, coach-attributed outreach message that references something specific about that member's programme or progress. Not "we miss you." Not a discount code. Something like: *"Ciarán — I've been thinking about your deadlift programme and I think we're close to a breakthrough. Are you around this week?"*
 
-This intervention, delivered at the right moment with genuine specificity, converts the most recoverable churn. It is impossible to automate with authenticity using a stamp card. It is entirely possible with LoyaltyOS.
+This is not automated wellness spam. It is the AI using behavioural pattern recognition to tell the coach: *this person is about to leave, and here's the context you need to bring them back.* The human delivers the intervention. The AI makes it possible at scale.
+
+This single mechanic, correctly implemented, is worth more than the entire points economy.
 
 ---
 
 ## 6. KEY RISKS
 
-### GDPR Risk
+### GDPR Concerns
 
-**Specific concern:** Slam Fitness collects health and fitness data — session attendance, performance metrics, and potentially body composition or injury history through coaching interactions. Under GDPR, fitness and health data may qualify as **special category data (Article 9)**, requiring explicit consent, a clear legal basis, and stricter handling protocols. Dublin-based businesses fall under Irish DPC jurisdiction, which has been active in enforcement.
+**Risk:** Slam Fitness operates in the EU under GDPR. Collecting and processing behavioural data — attendance patterns, social activity, coach interaction history — requires a lawful basis. The risk is not malicious misuse; it is *inadequate consent architecture*. Members may not understand that their booking behaviour is being used to predict churn and trigger outreach. If this feels like surveillance rather than service, trust collapses instantly in a community-driven business where reputation is everything.
 
-Additionally, any social media monitoring (even opt-in) for tagged posts creates a data trail that must be governed under a clear retention and deletion policy.
-
-**Mitigation:** LoyaltyOS must implement a **tiered consent model at onboarding** — members explicitly opt into each data category (attendance tracking, progress logging, social recognition) as separate consent actions, not buried in T&Cs. Data collected must be limited to what is functionally necessary for loyalty personalisation, with a clear retention period (e.g., 24 months post-cancellation maximum). A privacy dashboard where members can view and delete their data is non-negotiable.
+**Mitigation:** Implement explicit, plain-language consent at onboarding that describes exactly what data is collected and how it is used — specifically naming the AI-assisted personalisation and coach alert functions. Frame it as a benefit: *"We use your attendance history to help your coach support you better."* Give members a visible, frictionless opt-down option (not opt-out entirely, but "don't use my data for proactive outreach"). Appoint a data lead, even if informal, and conduct a basic Data Protection Impact Assessment before launch. Do not rely on buried terms and conditions.
 
 ---
 
-### Trust Risk
+### Trust Risk: Where This Feels Manipulative
 
-**Specific concern:** The streak mechanic and the 48-hour rescue intervention carry a real manipulation risk. If Ciarán or Aoife ever *realise* the personal message from Coach Rían was algorithmically triggered — that the coach didn't notice on their own, but was prompted by a system — the trust collapse is catastrophic. Boutique gyms sell authentic human relationships. The moment the relationship feels engineered, the premium justification evaporates. This is not theoretical. It is the exact failure mode of loyalty programmes in high-touch service businesses.
+**Risk:** The pre-lapse coach trigger — Slam Fitness's highest-value intervention — is also its highest-trust risk. If a member receives a personalised message from their coach and later realises it was AI-generated or system-prompted, they may feel the authenticity of the coaching relationship was fabricated. In a gym whose entire value proposition is *genuine human connection*, a loyalty programme that industrialises that connection is existentially dangerous to the brand.
 
-**Mitigation:** The rule is: **AI flags, humans decide**. LoyaltyOS surfaces the insight to the coach — it never auto-sends on the coach's behalf. The coach reads the flag, decides whether it's relevant, and sends their own message in their own words. The authenticity is preserved because the action is genuinely human. The efficiency is preserved because the prompt is intelligently timed. This boundary must be hard-coded into the product design — coaches receive recommendations, never auto-sent communications.
+The secondary trust risk is **points-for-reviews**. Incentivising members to post social content in exchange for loyalty points blurs the line between genuine advocacy and paid promotion, which creates both an ethical issue and a legal one under Irish and EU consumer protection guidelines on undisclosed incentivised endorsement.
+
+**Mitigation for the trigger risk:** The coach trigger must be positioned internally as an *alert to the coach*, not a message generator. The coach writes the message. The AI identifies the moment and provides the context. The human relationship remains human — the AI is the intelligence layer behind it, not the voice of it. This distinction must be designed into the product, not just stated in policy.
+
+**Mitigation for the social proof risk:** Reward *the act of sharing* (e.g., tagging the gym) rather than *the content* (e.g., a positive review). Frame it as "we celebrate members who share their journey" rather than "earn points for reviews." Ensure that any incentivised content is disclosed per standard influencer/endorsement guidelines, even at micro-scale.
 
 ---
 
-*Brief prepared for the LoyaltyOS Designer. Diagnosis is confirmed: this is a progress-plateau and social-anchor retention problem, not a marketing problem. Build accordingly.*
+*Brief prepared for Designer handoff. All personas, signals, and mechanics are specific to Slam Fitness's operating context and should not be generalised to other gym clients without re-diagnosis.*
 
 
 ---
@@ -190,66 +201,66 @@ Additionally, any social media monitoring (even opt-in) for tagged posts creates
 
 **Role:** Create the solution — creative problem-solving and design thinking
 **Output file:** `02_design_spec.md`
-**Word count:** 4,373
+**Word count:** 4,323
 
 # LoyaltyOS Design Specification
-## Client: Slam Fitness | Boutique Strength & Performance Studio | Stoneybatter, Dublin 7
+## Slam Fitness — Boutique Strength & Performance Studio, Stoneybatter, Dublin 7
 
 ---
 
 ## 1. LOYALTY EXPERIENCE CONCEPT
 
-### Programme Name: **IRON RECORD**
-### Tagline: *"Every rep remembered. Every milestone earned."*
+### Programme Name: **FORGED**
+### Tagline: *"Every rep. Every show-up. Every breakthrough."*
 
-The name does double work: "Iron" is the material of the barbell — the literal tool of transformation — and "Record" carries both personal records (PRs) and the act of documenting progress. It signals that this programme is not about collecting stamps. It is about building a permanent, visible history of becoming stronger.
+The name is deliberate. Forged connotes metallurgy — something made strong through repeated application of heat and pressure. It speaks to Ciarán's notebook full of lift numbers, to Aoife's Saturday boot camp ritual, to David's periodisation research. It is not soft. It is not corporate. It is earned.
 
 ---
 
-### The Core Emotional Journey
+### The Emotional Journey
 
-The IRON RECORD experience is designed around a single emotional truth: **the feeling that your effort is being witnessed and remembered.** Not by an app. By a system that reflects your actual progress back at you in a way a commercial gym never could.
+**Stage 1 — Initiation (Day 0–14): "I belong here."**
+The new member receives an onboarding experience that immediately signals this gym knows who they are. The app shows their first session logged, their first points earned, and a personalised welcome message from their assigned coach. The emotion target is *legitimacy* — the feeling that joining was the right call, that this place takes them seriously.
 
-| Stage | Moment | Target Emotion |
-|---|---|---|
-| **Onboarding** | Member scans their QR code for the first time after their intro session | *"This gym actually knows who I am"* — belonging, not novelty |
-| **First Week** | First logged PR or first class attendance earns Forge Points | *"Something is being counted that matters"* — validation |
-| **First Month** | Dashboard shows "11 sessions, 3 PRs, 1 challenge completed" | *"I can see myself getting stronger"* — pride with proof |
-| **Streak Building** | Day 5 notification: "You're 2 sessions from your first 7-day streak" | *"I don't want to break this"* — purposeful loss aversion |
-| **Tier Progression** | Member hits Competitor tier — coach shouts it out in class | *"I've earned my place here"* — identity confirmation |
-| **Churn Risk Moment** | Coach message referencing their specific numbers after a missed week | *"Someone actually noticed I was gone"* — re-anchoring to relationship |
-| **Long-Term** | Member sees their full 12-month PR history | *"This is the record of who I've become"* — legacy and ownership |
+**Stage 2 — Habit Formation (Weeks 2–8): "I'm building something."**
+The programme surfaces streak counters, early milestone badges, and progress markers. Points accumulate visibly. The dashboard celebrates consistency, not just effort. The emotion target is *momentum* — the satisfying sense of a thing being constructed, day by day.
+
+**Stage 3 — Identity Lock-In (Weeks 8–16): "This is who I am."**
+Tier progression begins to feel real. The member has a Forged tier identity — not just a gym membership. Challenges and social mechanics activate community belonging. Coach interactions are rewarded and visible. The emotion target is *belonging* — the gym is no longer a service they use, it is a community they are part of.
+
+**Stage 4 — Advocacy (Month 4+): "I want to bring people into this."**
+Referral mechanics become prominent. The member has enough progress history that sharing it feels authentic, not performative. The emotion target is *pride* — the quiet satisfaction of having built something worth showing others.
+
+**Stage 5 — Recovery (Any point): "They noticed I was gone."**
+When a member lapses, the system's response is warm and specific, not generic. The re-engagement trigger feels like a coach reaching out, not a CRM campaign. The emotion target is *being seen* — the knowledge that their absence was noticed by a person who cares about their programme.
 
 ---
 
 ## 2. POINTS AND REWARDS SYSTEM
 
-### Points Currency: **Forge Points** (FP)
-
-*"You forge them every session. You spend them when you're ready."*
-
-The name connects to the metallurgical identity of the programme — iron, forge, records cast in metal. It avoids the gamification clichés of "coins" or "gems" while feeling earned rather than given.
+### Points Currency: **Iron Points**
+Symbol: **⬡ IP**
+*Iron Points accumulate with every session, every milestone, every moment of showing up. They can't be bought. They can only be earned.*
 
 ---
 
-### Earnable Activities (14 Activities)
+### Earnable Activities (13 Activities)
 
-| # | Activity Name | Emoji | Category | Forge Points | Description |
+| # | Activity Name | Emoji | Category | Points | Description |
 |---|---|---|---|---|---|
-| 1 | **Session Complete** | 🏋️ | Workout | 15 FP | Attend any scheduled class or open gym session |
-| 2 | **Off-Peak Athlete** | ⚡ | Training | 25 FP | Attend a session during a designated quiet period (Tue/Thu 10am–3pm) |
-| 3 | **New Personal Record** | 🔥 | Achievement | 50 FP | Log a verified lift PR with coach confirmation |
-| 4 | **7-Day Streak** | 📅 | Streak | 75 FP | Complete all scheduled sessions across a 7-day window without a miss |
-| 5 | **30-Day Streak** | 🔱 | Streak | 200 FP | Complete all scheduled sessions across a 30-day window — rare, celebrated publicly |
-| 6 | **Challenge Enrolled** | ⚔️ | Challenge | 10 FP | Sign up for any gym challenge or programme block |
-| 7 | **Challenge Completed** | 🏆 | Challenge | 100 FP | Complete a full gym challenge or 8–12 week programme cycle |
-| 8 | **Refer a Friend (joins)** | 🤝 | Referral | 150 FP | A referred friend completes their first paid month |
-| 9 | **Social Tag** | 📸 | Community | 20 FP | Tag @SlamFitness in a public training post (opt-in, max 1x per week) |
-| 10 | **Coach Feedback** | 💬 | Service | 10 FP | Submit a coach or session review (max 2x per month) |
-| 11 | **Programme Week Complete** | 📋 | Training | 30 FP | Log all prescribed sessions in a given programme week |
-| 12 | **First Session of the Month** | 🌅 | Special | 5 FP | Attend your first session in any calendar month — low-friction re-engagement reward |
-| 13 | **Bring a Guest** | 👥 | Community | 40 FP | Bring a non-member guest to a guest pass session |
-| 14 | **Milestone Anniversary** | 🎖️ | Achievement | 100 FP | Awarded automatically on 3-month, 6-month, and 12-month membership anniversaries |
+| 1 | **Morning Iron** | 🌅 | Workout | 10 IP | Attend any session in the 6am–9am slot — the Slam Fitness heartbeat. |
+| 2 | **Off-Peak Pioneer** | 🕐 | Training | 20 IP | Attend a session between 10am–4pm on a weekday. Builds the daytime community. |
+| 3 | **Streak Keeper** | 🔥 | Streak | 15 IP | Attend at least 3 sessions in a calendar week. Awarded on Sunday night. |
+| 4 | **Personal Best** | 🏋️ | Achievement | 75 IP | Log a verified new personal best — lift, time, or output. Coach-confirmed. |
+| 5 | **Come Back Stronger** | 💪 | Workout | 40 IP | Book and attend a session after a 7+ day absence. Re-engagement reward. |
+| 6 | **Coach Check-In** | 📋 | Training | 25 IP | Complete a coach-led progress review — goal update, form feedback, or programme adjustment. |
+| 7 | **Boot Camp Crew** | 🤝 | Class | 15 IP | Attend a group boot camp or conditioning class. Social session, not just a workout. |
+| 8 | **Challenge Completed** | 🎯 | Challenge | 100 IP | Finish a monthly Slam Fitness challenge in full. High-effort, high-reward. |
+| 9 | **Bring a Lifer** | 🧲 | Referral | 150 IP | Refer a friend who completes a full trial session. Awarded on trial completion. |
+| 10 | **Journey Share** | 📸 | Community | 30 IP | Tag @SlamFitnessDublin in a post or story documenting your training. Once per week max. |
+| 11 | **100-Session Marker** | 🏆 | Achievement | 200 IP | Attend your 100th lifetime session at Slam Fitness. Rare, significant, celebrated. |
+| 12 | **Programme Milestone** | 📈 | Training | 50 IP | Complete a full 4-week training block as prescribed by your coach. |
+| 13 | **New Member Welcome** | ⭐ | Special | 75 IP | Complete your first week with 3 or more sessions. Onboarding accelerator. |
 
 ---
 
@@ -257,130 +268,130 @@ The name connects to the metallurgical identity of the programme — iron, forge
 
 | # | Reward Name | Emoji | Cost | Description |
 |---|---|---|---|---|
-| 1 | **Protein Shake** | 🥤 | 75 FP | One post-session shake from the Slam Fitness bar |
-| 2 | **Guest Day Pass** | 🎟️ | 150 FP | Bring a friend for a free single session — doubles as a referral seed |
-| 3 | **Slam Kit — Water Bottle** | 💧 | 250 FP | Branded Slam Fitness stainless steel bottle |
-| 4 | **Priority Class Booking** | 🔓 | 100 FP | 48-hour early booking window for one week's classes (beats the standard 24-hr window) |
-| 5 | **1-on-1 Programming Session** | 📊 | 400 FP | 30-minute private session with a coach to design your next training block |
-| 6 | **Slam Kit — Training Tee** | 👕 | 500 FP | Premium Slam Fitness training top — identity wear, walking billboard |
-| 7 | **One Month Membership Credit** | 🏅 | 800 FP | One month knocked off membership — reserved for highest-tier members only |
-| 8 | **The IRON RECORD Plaque** | 🪨 | 1200 FP | Physical custom-engraved plaque recording member's top 5 all-time PRs — the ultimate identity reward |
-
-> **Design Note on the Plaque:** This reward exists to do one thing — make leaving unthinkable. A member who has earned a physical artefact with their name and numbers on it does not cancel their membership quietly. It is not cost-effective to offer freely; it is designed to be aspirational for the top 5% of members and celebrated publicly when awarded.
+| 1 | **Guest Pass** | 🎟️ | 150 IP | One complimentary trial session for a friend. Aligns with referral mechanic. |
+| 2 | **Slam Kit Credit** | 👕 | 250 IP | €15 credit toward Slam Fitness branded merchandise. |
+| 3 | **Coach Session Upgrade** | 🧑‍🏫 | 400 IP | One free 30-minute one-to-one coaching or programme review session. |
+| 4 | **Priority Class Booking** | ⚡ | 200 IP | 48-hour early access to book the following week's classes before general release. |
+| 5 | **Nutrition Workshop Access** | 🥗 | 350 IP | Free entry to a Slam Fitness nutrition or performance workshop. |
+| 6 | **Recovery Session** | 🧘 | 300 IP | One free mobility, recovery, or stretch session. Serves the David persona. |
+| 7 | **Slam Month** | 🎁 | 600 IP | €20 off next month's membership. Reserved for high-engagement members. |
+| 8 | **Hall of Iron Entry** | 🪙 | 500 IP | Permanent entry in the in-gym and in-app Slam Fitness Hall of Iron leaderboard. Prestige reward. |
 
 ---
 
-### Tier Levels (4 Tiers — Strength-Identity Naming)
+### Tier Levels (4 Tiers)
 
-| Tier | Name | Entry Threshold | Identity Statement | Unlocks |
-|---|---|---|---|---|
-| 1 | **Rookie** | 0 FP | "You've started. That's the hardest part." | Access to standard rewards catalogue |
-| 2 | **Lifter** | 300 FP | "Your habits are forming. Your numbers are moving." | Priority class booking reward unlocked; monthly FP bonus of +5 FP per session |
-| 3 | **Competitor** | 750 FP | "You've earned your place in this gym." | Access to 1-on-1 programming reward; coach shoutout on tier achievement; +10 FP per session |
-| 4 | **Iron** | 1,500 FP | "You are what this gym is built on." | Membership credit and plaque rewards unlocked; permanent name on the IRON RECORD Wall (physical display in gym); +15 FP per session; invited to beta-test new programme blocks |
+| Tier | Name | Entry Threshold | Identity |
+|---|---|---|---|
+| 1 | **Raw** | 0–499 IP lifetime | You're in. You're showing up. The work has begun. |
+| 2 | **Tempered** | 500–1,499 IP lifetime | Consistency is becoming habit. The programme is taking hold. |
+| 3 | **Forged** | 1,500–3,499 IP lifetime | You are the product of sustained work. The gym knows your name. |
+| 4 | **Ironclad** | 3,500+ IP lifetime | Unchurnable. Irreplaceable. A Slam Fitness original. |
 
-> **Tier Design Note:** Tier names map to a genuine athletic identity arc — you don't start as "Bronze", you start as a Rookie with authentic beginner dignity. Reaching "Iron" is not a loyalty programme milestone. It is a statement about who you are as an athlete.
+*Tier badges appear on the member's dashboard, on the in-gym kiosk display, and are referenced by coaches in check-ins.*
 
 ---
 
 ## 3. ENGAGEMENT MECHANICS
 
-### Daily/Weekly Challenges (Rotating)
+### Daily / Weekly Challenges
 
-| Challenge | Duration | Forge Points | Mechanic |
+| Challenge | Cadence | Points | Mechanic |
 |---|---|---|---|
-| **"Early Iron"** — Attend 3 sessions before 8am this week | Weekly | 40 FP | Targets morning slot utilisation; appeals to Ciarán's discipline identity |
-| **"Off-Peak Beast"** — Attend 2 quiet-period sessions this week | Weekly | 50 FP | Directly addresses Slam's footfall problem; reframed as exclusive access, not discount |
-| **"PR Hunt"** — Log a new PR in any lift this week | Weekly | 60 FP | Progress reinforcement loop; only valid with coach confirmation to prevent inflation |
-| **"Crew Builder"** — Attend the same class as someone you referred | Monthly | 75 FP | Social anchor strengthening; community cluster formation |
-| **"Full Block"** — Complete all 4 prescribed sessions in a programme week | Weekly | 45 FP | Habit completion loop; prevents the "I'll skip one, it won't matter" rationalisation |
+| **Five in Five** | Weekly | 80 IP | Attend 5 sessions in a single calendar week. Targets Ciarán's 5x habit. |
+| **Off-Peak Double** | Weekly | 50 IP | Attend two off-peak sessions (10am–4pm) in one week. Solves the quiet-day problem. |
+| **PB or Nothing** | Monthly | 100 IP | Log one verified personal best this month. Forces progress tracking. |
+| **Full Block** | Monthly | 120 IP | Complete the current monthly programme block without a missed session. |
+| **Social Proof Sprint** | Weekly | 45 IP | Share two training posts tagging Slam Fitness in one week. Caps at once per challenge cycle. |
 
 ---
 
 ### Streak Mechanics
 
-**7-Day Streak:**
-- Award: 75 FP + a coach-flagged notification (human, not automated) — *"Ciarán hit his 7-day streak this week"* sent to coaching dashboard
-- Pre-streak alert at Day 5: *"You're 2 sessions away from your 7-day streak. Don't let it go."*
-- UI: Streak flame counter visible on dashboard homepage; increases in intensity visually with each consecutive day
+**7-Day Active Streak (attends 3+ sessions in each of 2 consecutive weeks):**
+- Earns a **Streak Keeper** bonus of 30 IP (double the standard weekly value)
+- Unlocks a "Week 2 Warrior" badge displayed on dashboard
+- Coach receives a passive notification: *"[Member] has hit a 2-week streak — no action needed, worth acknowledging."*
 
-**30-Day Streak:**
-- Award: 200 FP + automatic tier points boost + public acknowledgement in the gym's weekly community update (opt-in)
-- The 30-day streak should feel like an event, not a notification. Coaches are briefed to mention it in class.
-- Pre-streak alert at Day 25 and Day 28: escalating urgency in copy
-- If streak is broken: 48-hour grace window for "streak freeze" (one per quarter) — prevents the catastrophic abandonment that follows a broken streak
+**30-Day Active Streak (attends 3+ sessions per week for 4 consecutive weeks):**
+- Earns **100 IP bonus**
+- Unlocks **"Forged in Four"** badge — permanent profile decoration
+- Triggers a personalised in-app message from their assigned coach (coach-written, AI-prompted with their recent progress data)
+- Name appears on the in-gym monthly streak board
 
-**Streak Freeze mechanic:** A member can protect one streak break per quarter using a Streak Freeze (costs 25 FP to activate). This converts a psychological failure into a strategic decision — they're spending something to protect something, which reinforces the value of the streak rather than zeroing out the investment.
-
----
-
-### Social and Referral Mechanics
-
-**Referral Architecture:**
-- Member shares a personal referral link or QR code
-- Referred friend receives a **free 2-week trial** (not a discount — a genuine try-before-you-buy)
-- When the referred friend completes their **first paid month**: referring member earns **150 FP**; referred friend earns **50 FP** as a joining bonus
-- Additional **50 FP** awarded to the referring member if the referred friend reaches the Lifter tier within 90 days — long-term social investment, not a quick grab
-
-**Why structured this way:** Awarding on the first *paid* month (not the first visit) eliminates low-quality referrals. Awarding a bonus at tier progression makes the referring member invested in the success of their referral — creating a natural mentorship dynamic that deepens both members' commitment.
+**Streak Break Protection:** Members retain their streak if they use one "Comeback" credit per 60-day period — earned by completing a Coach Check-In. This reduces panic-missing and avoids the punishing rigidity that causes disengagement. The mechanic must be clearly communicated: *"Your coach check-in earns you a streak shield."*
 
 ---
 
-### Surprise and Delight Moments (3 Triggers)
+### Social / Referral Mechanics
 
-**1. The Quiet Milestone**
-When a member hits their 50th lifetime session (or 100th), LoyaltyOS triggers a reward of 100 FP — but delivers it *through a coach*, not an app notification. The coach receives: *"Declan just hit 50 sessions — great moment to mention it in class this week."* The points appear in the member's app after the coach has acknowledged it in person. The digital confirmation follows the human moment.
+**Bring a Lifer Programme:**
+- Member earns 150 IP when a referred friend completes a trial session
+- If the referred friend converts to a paid membership, the referrer earns a bonus 100 IP
+- The referred friend receives 75 IP as a **New Member Welcome** accelerator — seeding their own journey
+- Both members' connection is visible in the app: *"Referred by Aoife — training together since March."* This creates a social accountability link
 
-**2. The PR Anniversary**
-Exactly one year after a member logs their first PR, LoyaltyOS surfaces a comparison: *"One year ago today, your deadlift was 80kg. Last week it was 120kg. That's a 40kg increase. That's IRON RECORD stuff."* This arrives as an in-app card, earns 25 FP, and includes a share prompt. The emotion: legacy, proof, pride.
+**Community Contribution Board:**
+- Members who make 5+ referrals in a 12-month period receive an **"Inner Circle"** badge and are given a named callout in the monthly Slam Fitness newsletter
+- Aoife persona: this is social currency. She will work for this.
 
-**3. The Weather Day Bonus**
-On days where Dublin weather is genuinely miserable (API-triggered rain/wind threshold), any member who attends a session earns a surprise 15 FP bonus with the message: *"You showed up in that? Legendary. 15 bonus Forge Points — because iron doesn't rust."* This is the low-effort surprise moment that builds affection for the brand voice. It is unexpected, slightly absurd, and completely on-brand.
+---
+
+### Surprise and Delight Moments
+
+**1. The Milestone Ghost:** When a member logs their 50th session with zero fanfare — just quietly, on a Tuesday morning — the app recognises it and surfaces a full-screen moment: their session history as a visual heatmap, overlaid with their best lifts logged since joining. No confetti. Just data, beautiful and undeniable. *"50 sessions. Here's what you've built."* Points awarded: 100 IP. Emotional effect: this is what Ciarán lives for.
+
+**2. The Cold Day Bonus:** On any weekday where live attendance is tracking below 40% of average (AI-monitored in real time), the app sends a time-limited push to members with demonstrated schedule flexibility: *"Quiet morning at Slam — 30 bonus IP if you train before 2pm today."* Appears in-app as a glowing "Bonus Active" card. Expires at 2pm. No explanation needed. Creates urgency, rewards flex members, fills the floor.
+
+**3. The Return Celebration:** When a member who has been absent for 10+ days books and attends a session, the app plays a brief full-screen animation on entry confirmation: *"You're back. That's the hardest rep."* No lecture. No "we missed you." Just acknowledgement. 40 IP awarded automatically. Coach receives a flag: *"[Member] returned today after [N] days — consider acknowledging in person."*
 
 ---
 
 ## 4. AI PERSONALISATION LAYER
 
-### Persona-Based Activity Recommendations
+### Activity Recommendations by Persona
 
-**Ciarán (The Competitor):**
-The AI monitors his lift log frequency. When no PR has been logged in 18+ days, it surfaces the "PR Hunt" weekly challenge at the top of his dashboard — not as a generic challenge, but framed as: *"You haven't logged a new PR in 18 days. Time to hunt."* The AI also maintains a personal leaderboard card on his home screen showing his rank in the current challenge among all active members. Every session login surfaces his rank first — because that is what he opens the app to see.
+**Ciarán (The Grafter — high frequency, progress-driven):**
+The AI monitors his session frequency, lift data trend, and streak continuity. His home screen surfaces progress-focused prompts: his current streak count, days since last logged PB, and proximity to the next tier threshold. When his 6:15am booking pattern is unbroken, the AI does nothing — consistency is its own reward for Ciarán and should not be interrupted with noise. The AI activates only when a signal breaks: *"Your Tuesday hasn't been booked this week — you're 1 session from your streak bonus."* Challenges surfaced to Ciarán are performance-oriented: Five in Five, PB or Nothing, Full Block.
 
-**Aoife (The Transformer):**
-The AI monitors her session cadence. When two consecutive scheduled sessions are missed, it generates a **Progress Recap Card** — not a push notification, but a visually rich in-app card that surfaces on her next login: *"34 sessions in 90 days. +12kg on your back squat. +8kg on your overhead press. Your programme is working."* The AI simultaneously flags her coach dashboard: *"Aoife — 2 sessions missed, consider a soft check-in before her next scheduled session."* The coach acts. The AI does not.
+**Aoife (The Social Achiever — group-dependent, identity-driven):**
+The AI maps Aoife's attendance correlation with her known training partner's booking data. When her partner's booking frequency drops, Aoife's home screen proactively surfaces group challenges and boot camp schedules — providing a social gravity pull that doesn't depend on one person. Referral rewards are always visible in her top reward slots. When she shares a post, the app immediately confirms the points and displays her Community Contribution count. Challenges surfaced to Aoife are social and visible: Social Proof Sprint, Bring a Lifer, Boot Camp Crew streaks. Her tier badge is displayed prominently in her app profile — because for Aoife, being seen as *Forged* or *Ironclad* is itself a loyalty driver.
 
-**Declan (The Anchor):**
-The AI never pushes Declan with performance metrics. His home screen is streamlined — his streak counter, his next scheduled session, and a community card showing who else is attending his Tuesday 7am class that week. The AI monitors his social cluster silently: if two or more of his regular classmates cancel memberships within a 3-week window, management receives an alert: *"Declan's Tuesday cohort has lost 2 members. Renewal is in 6 weeks. Consider a direct relationship check-in."* Declan never sees any of this working. He just notices that his gym seems to always run smoothly.
+**David (The Optimiser — analytical, value-sensitive):**
+The AI tracks his programme completion rate, PB frequency, and coach interaction recency. His home screen is information-dense: lifetime stats, performance trend lines, challenge completion rates. Rewards surfaced to David are expertise-oriented — Coach Session Upgrades, Nutrition Workshop Access, Recovery Sessions — never discounts. When David's PB frequency stalls or his coach interaction drops below once per 21 days, the system prompts the admin panel: *"David: no PB logged in 18 days, no coach interaction in 16 days — consider a programme challenge suggestion."* The AI frames this to the coach as an expertise opportunity, not a retention intervention. David must never feel managed.
 
 ---
 
 ### AI-Generated Personalised Offers
 
-**Low-Footfall Day Promotions:**
-When LoyaltyOS detects that Tuesday and Thursday 10am–3pm slots are below 40% capacity, it generates a targeted push to members who have attended off-peak sessions before (or whose booking history shows flexibility) — not a discount, but a challenge activation: *"Off-Peak Beast challenge is live this week. 50 FP for 2 quiet sessions. Tuesday 11am has 6 spots open."* The framing is always access and reward, never desperation.
+The AI generates dynamic offers using three inputs:
+1. **Live footfall data** — real-time session occupancy vs. historical average
+2. **Member schedule flexibility score** — derived from historical variance in booking times
+3. **Current engagement temperature** — streak status, days since last session, challenge progress
 
-**Re-engagement Offers:**
-When a member hasn't booked in 10 days (below their personal baseline), AI generates a personalised re-entry nudge tied to their live programme status: *"You're in Week 6 of the 12-week strength block. The back half is where the gains are. Next session: Thursday 6pm — 3 spots left."* Urgency is genuine (real capacity), not manufactured.
+When footfall drops below threshold on a given slot, the AI cross-references the flexibility score of all active members and generates a time-limited offer visible only to members with a demonstrated history of off-peak attendance or high booking variance. Members who always attend 6:15am and have never varied receive no such offer — targeting them would feel intrusive rather than generous, and they'd have come anyway.
+
+Offer copy is dynamically generated to reflect the member's current programme context: *"Quiet floor this afternoon — great window to work on your squat depth. 30 bonus IP before 2pm."* Not generic. Not a discount. A relevant training nudge with a reward attached.
 
 ---
 
-### Churn Prediction and Intervention Signals
+### Churn Prediction and Intervention
 
-The AI monitors a composite churn score using the following signals, weighted by persona type:
+**Signals monitored (in order of predictive weight):**
 
-| Signal | Weight | Trigger Threshold |
-|---|---|---|
-| Frequency drop (vs. personal baseline) | High | 40% drop over 2 consecutive weeks |
-| Class switch (away from habitual slot) | Medium | 2+ deviations from regular booking pattern |
-| Ghost bookings (book + no-show) | High | 3+ no-shows in a 2-week window |
-| PR silence (for progress-motivated personas) | Medium | 21+ days without a logged milestone |
-| Streak break (combined with frequency drop) | High | Streak broken + no rebooking within 5 days |
-| Social cluster disruption | High (for Anchor persona) | 2+ cohort members cancel within 3-week window |
+1. Session frequency drops from 4+/week to ≤2/week for two consecutive weeks → **Yellow flag**
+2. First missed booking with no reschedule within 48 hours → **Yellow flag**
+3. Absence from previously consistent time slot for 10+ days → **Yellow flag**
+4. Member stops booking group classes but continues solo use → **Orange flag** (social withdrawal)
+5. No coach interaction response within 21 days → **Red flag**
 
-**Intervention Protocol:**
-- **Score 1–2 signals:** AI adds a soft prompt to coach dashboard ("Keep an eye on this member this week")
-- **Score 3+ signals:** AI generates a full intervention brief for the coach: member name, last session, current programme week, most recent PR, suggested personal message tone — and flags it as a priority action
-- **Hard rule:** The AI generates the brief. The coach sends the message. Always. No automated outreach, ever.
+**Flag escalation logic:**
+- **1 Yellow flag:** AI increases frequency of progress-related prompts and surfaces the next closest challenge as a re-engagement nudge. No human intervention.
+- **2 Yellow flags:** Admin panel shows a passive coaching prompt: *"[Member] may be drifting — their [slot] hasn't been booked in [N] days."* Optional action.
+- **1 Orange flag OR 2+ Yellow flags simultaneously:** Admin panel generates a coach intervention brief: member name, last session, their current streak status, last logged PB, and a suggested outreach hook drawn from their programme data. **The coach writes the message. The AI writes the brief.**
+- **Red flag:** Urgent coach prompt. Outreach must happen within 48 hours. Brief includes the full behavioural pattern and a specific programme-relevant conversation starter.
+
+**The rule that must never be broken:** The AI generates the intelligence. The human delivers the relationship. This is not a technicality — it is the product's integrity and the brand's survival.
 
 ---
 
@@ -388,75 +399,78 @@ The AI monitors a composite churn score using the following signals, weighted by
 
 ### Customer Dashboard — Home Screen
 
-The home screen is built around **three information hierarchies** that speak directly to the three personas without customisation:
+The home screen is built around one primary visual: **the Iron Ring** — a circular progress indicator showing progress toward the next tier threshold. It sits at the top-centre of the screen, large and legible.
 
-**Top Section — The Identity Bar:**
-- Member name + current tier badge (e.g., "⚔️ Competitor")
-- Current Forge Points total (large, prominent)
-- Streak flame counter with day number
+Beneath the ring:
 
-**Mid Section — The Progress Card (primary real estate):**
-A single, visually dominant card that rotates based on AI persona signal:
-- For Ciarán: Live leaderboard rank in current challenge
-- For Aoife: Progress recap ("34 sessions · +12kg squat · 6 PRs")
-- For Declan: "Tuesday 7am · 8 members attending · Your streak: 23 days"
+- **Streak counter** — displayed as a flame icon with the current streak number. If the streak is active, it pulses with a subtle glow animation.
+- **This week's challenge card** — one active challenge, progress bar, points at stake, expiry. Tappable to expand.
+- **Recent activity feed** — last 3 sessions logged, with points earned per session and cumulative this week.
+- **Quick actions row** — Book a Session / Log a PB / Check In with Coach. Three taps, always visible.
+- **Personalised prompt** (AI-generated, contextually relevant) — appears as a small card below the quick actions. Rotates based on engagement state: streak nudge, challenge reminder, off-peak bonus alert, or celebration of recent milestone.
+- **Current Iron Points balance** — always visible in the top-right header, alongside tier badge icon.
 
-**Lower Section — Active Challenges + Quick Actions:**
-- 2–3 currently active challenges with FP values and completion progress bars
-- "Log a PR" CTA button (prominent — this is the highest-value action for the platform)
-- "Book Next Session" button pulling from class schedule integration
-
-**Bottom Navigation:**
-- Home / Activity Feed / Rewards / My Record (PR history + milestone archive)
+**Design principle:** The dashboard shows *progress*, not just points. Ciarán should be able to open this app and immediately see that he's building something.
 
 ---
 
 ### Activity Completion Flow — Earning Points
 
-The moment of earning should feel like a physical sensation, not a database update.
+1. **Session ends.** Member taps "Log Session" or session is confirmed via booking system integration.
+2. **Confirmation screen:** Full-screen moment. Large point value animates in (e.g., *+10 IP — Morning Iron*). Behind it, the Iron Ring visually fills by the corresponding amount. Duration: 1.5 seconds.
+3. **Contextual overlay (if triggered):** If the session completes a streak, hits a challenge milestone, or triggers a surprise reward, a second screen appears — larger, more celebratory. The overlay names the specific achievement: *"Streak Keeper — Week 3. +15 IP."*
+4. **Return to dashboard.** Updated ring, updated balance, updated streak counter. The change is visible and permanent. The member sees the cumulative effect of this session immediately.
 
-1. **Trigger:** Member checks into a session (QR scan at the door or coach confirms attendance)
-2. **Immediate feedback:** Full-screen micro-animation — a forge-hammer strike effect, orange-to-amber ember burst, with the points value appearing: *"+15 Forge Points"*
-3. **Contextual overlay:** Below the animation, a progress bar shows progress toward the next challenge or tier milestone — *"You're 35 FP from your next 7-day streak bonus"*
-4. **PR Log prompt:** If it's a strength session, a single-tap prompt appears: *"Hit anything new today? Log a PR →"* — one tap to open the PR logging screen, three fields only (exercise, weight, reps)
-5. **Return to dashboard:** After 2.5 seconds, member is back on their home screen with updated totals — the new FP figure pulses once to confirm
-
-**Coach PR Confirmation flow:** When a member logs a PR, the coach receives a one-tap confirmation request in their admin panel: *"Aoife logged: Deadlift 95kg × 3. Confirm?"* — Yes / Flag for Review. PR points only release on confirmation, preserving integrity.
+**Design principle:** Every point earned should feel like it matters. The animation is not gratuitous — it is *confirmation that this session counted*. This is the app's most important micro-moment.
 
 ---
 
 ### Reward Redemption Flow — Spending Points
 
-Redemption should feel deliberate and satisfying — not frictionless. Spending earned Forge Points should carry weight.
+1. **Rewards tab.** Member sees a grid of available rewards, organised by cost. Rewards they can afford now are displayed in full colour. Rewards they can't yet afford are faded with a "You need X more IP" label — not locked out, but visibly proximate. This is deliberate: faded isn't failed, it's *almost*.
+2. **Reward detail screen.** Tap any reward to see: full description, exact cost, redemption method (in-gym, online, via coach), and expiry if applicable.
+3. **Redemption confirmation.** Member taps "Redeem." A confirmation modal appears: *"Spend 400 IP for a Coach Session Upgrade?"* with their current balance shown. They confirm.
+4. **Redemption code / QR screen.** Immediately generates an in-app QR code or short redemption code. Member shows this to staff at reception or in-app during check-in.
+5. **Post-redemption state.** Points deducted. Balance updates. A brief confirmation: *"Redeemed — Coach Session Upgrade. Show this to your coach to book."* No friction, no waiting, no email required.
 
-1. **Rewards Catalogue:** Organised into two tabs — "Available Now" (within current FP balance) and "Coming Up" (aspirational, shows FP needed and a progress bar)
-2. **Reward Selection:** Member taps a reward. Full-screen card expands showing: reward name, cost in FP, current FP balance, and a single CTA: *"Redeem for [X] Forge Points"*
-3. **Confirmation screen:** Shows remaining FP balance after redemption. Copy: *"[Reward name] unlocked. Show this screen at the desk / Your coach has been notified."*
-4. **Redemption method:** Physical rewards (shakes, kit) generate a single-use QR code valid for 7 days. Experiential rewards (1-on-1 session, priority booking) trigger a direct notification to the admin panel for fulfilment.
-5. **Post-redemption:** Dashboard reflects updated FP total. A small "Redeemed" tag appears on the reward card. The "Coming Up" tab updates to show the next aspirational goal.
+**Design principle:** Redemption should feel like unlocking something earned, not like a transaction. The faded-but-visible approach for unaffordable rewards keeps members goal-oriented rather than frustrated.
 
 ---
 
-### Business Admin Panel — Owner and Coach Views
+### Business Admin Panel — Owner / Coach Controls
 
-**Two distinct role views:**
+**Dashboard Overview:**
+- Live session occupancy (today vs. 30-day average)
+- Member engagement health: active streaks count, members flagged for churn risk (colour-coded by flag severity), new referrals this week
+- Points economy health: IP issued vs. IP redeemed this month (balance should stay healthy — over-redemption signals programme miscalibration)
 
-**Owner Dashboard:**
-- Total active members / tier distribution chart
-- Monthly Forge Points issued vs. redeemed (balance health indicator — ensures rewards liability is manageable)
-- Footfall heatmap by day/time (showing the impact of Off-Peak Athlete incentives on quiet sessions)
-- Churn risk register: members with a composite churn score of 3+ signals, listed with their last activity and AI-suggested intervention brief
-- Challenge performance: completion rates, FP distributed, which challenges drive the most re-engagement
-- Referral pipeline: referred members, conversion rate, referring member activity correlation
+**Coach Intervention Queue:**
+- Ordered list of members with active churn flags
+- Each entry shows: member name, flag type, days since last session, last logged PB, suggested outreach hook (AI-generated brief)
+- Coach can mark as "Actioned" once outreach is made — this closes the flag and resets the monitoring window
+- Filter by flag severity, by coach assigned, by membership tier
 
-**Coach Dashboard:**
-- Daily action list: members flagged for check-in (AI-generated, coach-reviewed)
-- Session attendance confirmations + PR confirmation queue
-- Individual member profile: full attendance history, PR log, current streak, tier, and AI persona tag
-- Challenge participation view: who's enrolled, who's close to completing, who dropped off
-- "Shoutout Queue": members approaching milestones (50th session, tier upgrade, 30-day streak) so coaches can acknowledge in class before the system does
+**Points and Rewards Management:**
+- Set and adjust point values per activity (with guardrails: system warns if a value change would make the programme economically unviable)
+- Create time-limited bonus point events (e.g., "Double points on Boot Camp this Saturday")
+- Add, edit, or retire rewards — with inventory cap controls for redeemable items
+- View redemption history and reward popularity ranking
 
-> **Design Principle for Admin:** The admin panel exists to make coaches faster, not to replace their judgment. Every AI recommendation is labelled *"Suggested by IRON RECORD AI — coach discretion applies."* The UI should feel like a well-organised briefing, not a management surveillance tool.
+**Challenge Builder:**
+- Create custom challenges with defined criteria, duration, point reward, and target segment (all members / specific tier / specific coach group)
+- Preview how the challenge will display on member home screens before publishing
+
+**Personalisation Settings:**
+- Toggle AI-driven off-peak offers on/off
+- Set the footfall threshold that triggers the off-peak bonus
+- Configure which churn signals trigger which alert levels
+- View the AI's current engagement temperature scores for any member (without surfacing this to members themselves)
+
+**Consent and Data Control:**
+- View each member's current data consent status
+- See which members have opted down from proactive outreach
+- Export member data on request (GDPR compliance tool)
+- Data retention policy settings — how long behavioural data is held
 
 ---
 
@@ -464,109 +478,85 @@ Redemption should feel deliberate and satisfying — not frictionless. Spending 
 
 ### Selected Theme: **`dark`**
 
-**Justification:** Slam Fitness is a performance and strength studio — the visual language of iron, forge, and intensity belongs to the dark theme's world of energy, contrast, and neon-on-black drama, not the clean wellness aesthetic of a dental practice or coffee shop.
+**Justification:** Slam Fitness is a performance studio with a 6am culture, an intensity-first brand, and a member base that self-identifies as serious athletes — the dark theme's neon-on-black aesthetic signals strength, focus, and premium energy rather than the approachable lightness of a wellness or family gym.
 
 ---
 
-### Exact Token Configuration
+### Applied Token Values
 
 ```json
 {
-  "programme": "IRON RECORD",
-  "client": "Slam Fitness",
   "theme": "dark",
   "primary": "#DC2626",
   "accent": "#F97316",
-  "tokens": {
-    "bg": "#0a0a0f",
-    "cardBg": "rgba(255,255,255,0.05)",
-    "cardBorder": "rgba(255,255,255,0.10)",
-    "text": "#ffffff",
-    "subtext": "rgba(255,255,255,0.4)",
-    "muted": "rgba(255,255,255,0.06)",
-    "navBg": "rgba(10,10,15,0.97)",
-    "navBorder": "rgba(255,255,255,0.08)"
-  }
+  "bg": "#0a0a0f",
+  "cardBg": "rgba(255,255,255,0.05)",
+  "cardBorder": "rgba(255,255,255,0.10)",
+  "text": "#ffffff",
+  "subtext": "rgba(255,255,255,0.4)",
+  "muted": "rgba(255,255,255,0.06)",
+  "navBg": "rgba(10,10,15,0.97)",
+  "navBorder": "rgba(255,255,255,0.08)"
 }
 ```
 
 ---
 
-### Visual Language Directives for the Maker Agent
+### Visual Language in Practice
 
-**Background:** `#0a0a0f` — near-black, not pure black. Feels like a weightroom at 6am, not a void.
+**Iron Ring progress indicator:** Rendered with the `#DC2626` red stroke on a `rgba(255,255,255,0.06)` muted track. At tier threshold proximity (within 100 IP), the stroke gains a glow: `box-shadow: 0 0 12px #DC262699`. The effect is a quietly burning ring — contained intensity.
 
-**Glow Blob:** A 200px radial gradient in `#DC2626` at 15% opacity sits at the top-centre of the home screen. On sessions where a PR is logged, it pulses to `#F97316` for 3 seconds. This is the single most important micro-animation — the forge fires up when you set a record.
+**Cards (session log, challenge, rewards):** Glass-effect with `rgba(255,255,255,0.05)` background and `rgba(255,255,255,0.10)` border. Drop shadow: none — the border is the definition. On active/highlighted cards (e.g., a live bonus offer), border brightens to `rgba(255,255,255,0.22)` and the card gains a subtle `#F97316` accent line at the top edge (2px, full width).
 
-**Cards:** `rgba(255,255,255,0.05)` background with `rgba(255,255,255,0.10)` border. The glass effect should feel industrial, not delicate — heavier border weight than a default glass card, 6px border radius (not the soft 12px of lifestyle apps).
+**Streak flame:** Rendered in `#F97316` accent. Active streak pulses with a 2-second CSS animation — opacity cycling between 100% and 70% — simulating a live flame without being garish.
 
-**Progress Rings:** Ring-style progress bars in `#DC2626` with `box-shadow: 0 0 12px #DC262699` — the neon glow effect from the dark theme spec. For streak counters, the ring transitions from red (`#DC2626`) to amber (`#F97316`) as it fills, simulating a forge heating up.
+**Tier badges:** Each tier rendered as a small pill badge. Raw: `rgba(255,255,255,0.15)` with white text. Tempered: `#F97316` text with matching glow. Forged: `#DC2626` text with `box-shadow: 0 0 8px #DC262688`. Ironclad: gradient text `#DC2626` → `#F97316`, with persistent low glow.
 
-**Tier Badge Visual:**
-- Rookie: `#6B7280` (cool grey) with no glow — understated, not dismissive
-- Lifter: `#0EA5E9` (steel blue) with subtle glow — getting sharper
-- Competitor: `#F59E0B` (gold-amber) with medium glow — earning status
-- Iron: `#DC2626` (primary red) with full neon glow effect — `box-shadow: 0 0 16px #DC2626CC` — the top tier burns
+**Activity category colour chips:** Applied per the ACTIVITY CATEGORY → COLOUR MAP. Workout activities (sessions, streaks) use `#EF4444` Training chips. Achievement activities (PBs, milestones) use `#D4AF37`. Social/referral use `#A78BFA` and `#EC4899` respectively. These chips appear as small rounded labels on activity cards and the feed — not overwhelming, but instantly scannable.
 
-**Typography:** White (`#ffffff`) for primary values (points, names, tier). `rgba(255,255,255,0.4)` for secondary labels. All numbers — Forge Points totals, PR values, streak counts — should render in a slightly heavier weight than surrounding text. The number is the hero.
+**Navigation bar:** `rgba(10,10,15,0.97)` with `backdrop-blur: 16px` and `rgba(255,255,255,0.08)` top border. Tabs: Home, Progress, Rewards, Community, Profile. Active tab icon uses `#DC2626`. Inactive: `rgba(255,255,255,0.4)`.
 
-**CTA Buttons:** `#DC2626` fill with white text. Hover/press state transitions to `#F97316` — the forge accent activates on interaction.
+**Glow blob:** A 200px radial gradient at the top-centre of the home screen: `radial-gradient(200px circle at 50% 0%, #DC262622, transparent)`. Subtle. Present. Creates depth without distraction.
 
-**Navigation:** `rgba(10,10,15,0.97)` with `backdrop-filter: blur(12px)`. Near-opaque but not fully solid — depth is visible beneath. Border: `rgba(255,255,255,0.08)`.
-
-**Activity category colours** (from spec — applied to challenge and activity cards as left-border accent strips):
-- Workout sessions: `#EF4444` (Training)
-- Streak activities: `#F97316` (Streak)
-- Challenge activities: `#F59E0B` (Challenge)
-- Achievement / PRs: `#D4AF37` (Achievement)
-- Community / Social / Referral: `#A78BFA` (Referral) / `#34D399` (Community)
+**Typography:** All-caps section headers at 11px `letter-spacing: 0.12em` in `rgba(255,255,255,0.4)` — the visual grammar of a gym whiteboard. Body text in white at 15px, line-height 1.5. Point values always in `#DC2626` bold.
 
 ---
 
 ## 7. TRUST AND TRANSPARENCY DESIGN
 
-### Communicating Data Usage to Members
+### Communicating Data Usage
 
-**Onboarding Consent Flow (tiered, not buried):**
+**At onboarding (not buried):** A dedicated, single-purpose screen appears before the member activates their account. It is not a terms scroll. It is three plain sentences:
 
-The IRON RECORD onboarding is a 4-screen consent experience — not a wall of text, but a series of single-question opt-ins, each explained with a concrete benefit statement:
+> *"FORGED uses your booking history, session attendance, and coach interactions to personalise your experience and help your coaches support you better.*
+>
+> *We track what sessions you attend, when you book, and how often you interact with your programme. We do not collect health records, financial data beyond your membership, or anything you haven't given us.*
+>
+> *You can choose whether your data is used for proactive coaching outreach. You can change this at any time in Settings."*
 
-| Screen | Consent Ask | Benefit Statement Shown |
-|---|---|---|
-| 1 | Attendance tracking | *"We track which sessions you attend so we can show you your full training history and calculate your streak."* |
-| 2 | Progress logging | *"We store your logged PRs and milestones so your IRON RECORD grows over time. You can delete it anytime."* |
-| 3 | Personalised coaching alerts | *"We share your progress signals with your coach so they can check in at the right moments — not randomly."* |
-| 4 | Social recognition | *"If you tag us in a post, we'll surface it internally so your coach sees it. We never scrape public posts without your permission."* |
+Two choices, clearly labelled: **"Yes — use my data to personalise my coaching"** or **"Personalise my app only — no proactive outreach."** Not opt-out from data collection entirely (which would break the programme), but a meaningful, respected choice about how that data is *used*.
 
-Each consent is a binary opt-in toggle. All four default to **off**. The member turns them on by choice. The system works with whatever subset they consent to — reduced personalisation is acknowledged honestly: *"With coaching alerts off, we won't share your activity patterns with coaches. You'll still earn Forge Points for everything you do."*
+**In-app transparency:** In the Profile > Settings section, a permanently accessible page titled **"How FORGED uses your data"** replicates the onboarding screen in plain language, shows what data is currently being collected, and allows the member to change their outreach preference at any time with a single toggle. No dark patterns. No "are you sure?" confirmation loops. One toggle, one change, immediate effect.
 
-**In-App Privacy Card:**
-Accessible from the profile screen at all times: a single-tap view showing exactly what data is currently being collected, when it was last used, and a **"Delete My Data"** button that triggers a 30-day erasure workflow (with a 30-day cancellation window in case of error). This is not hidden in settings. It is a first-class UI element.
+**When AI-driven outreach occurs:** If a member receives a coach message triggered by the AI intervention system, the coach's message is human-written and human-sent. The AI's role is never disclosed in the message itself — because the AI's role is to inform the *coach*, not to *be* the coach. The transparency lives in the consent screen: *"We use your attendance history to help your coach support you better."* That sentence is the disclosure. The coach message is the human act.
 
 ---
 
-### Avoiding Manipulation — Design Rules
+### Avoiding Manipulative Design
 
-**Rule 1: The AI Never Pretends to Be Human.**
-All AI-generated suggestions in the coach dashboard are labelled *"IRON RECORD AI Suggestion."* All member-facing nudges that are algorithmically triggered carry a subtle footer: *"This reminder was generated by IRON RECORD based on your activity."* Transparency costs almost nothing and protects everything.
+**No dark patterns in the points economy.** Points never expire without 12 months of inactivity (communicated clearly). Rewards are never bait-and-switched. The "faded but visible" approach for unaffordable rewards shows aspiration, not deprivation — the design intent must be aspiration, and the UX must be reviewed against this regularly.
 
-**Rule 2: Streak Breaks Are Not Punished — They Are Acknowledged.**
-When a streak breaks, the app does not say "You broke your streak." It says: *"Streak paused at [X] days. That's [X] days of consistent training. Ready to start a new one?"* The history is preserved. The member's effort is not erased. Loss aversion is used to *build* habits, not to shame members into return visits.
+**No manufactured urgency without genuine scarcity.** The off-peak bonus offer is time-limited because the offer *is genuinely time-limited* — the floor is quiet now, not in six hours. The expiry is real. This distinguishes it from a false countdown timer, which would be manipulative. The system must never deploy urgency language on rewards with no genuine constraint.
 
-**Rule 3: The Rewards Are Real, Not Manufactured Urgency.**
-Class availability shown in re-engagement nudges reflects actual live capacity from the booking system. The number *"3 spots left"* is never a dark pattern — it is a real integration with the class schedule. If there are 12 spots available, the nudge says *"Plenty of space — see you there."* Authenticity is a design constraint, not a nice-to-have.
+**Streak mechanics must have a recovery mechanism.** A streak that breaks and cannot be recovered creates anxiety, not motivation. The streak shield mechanic (earned via a coach check-in) ensures that the streak system rewards *engagement* rather than punishing *life*. Missing a session because of work travel or illness should feel recoverable — not catastrophic.
 
-**Rule 4: Members Can See Their Own Score.**
-Any member can tap their profile and see their current "engagement health" indicators — streak, visit frequency, active challenges. They cannot see their churn risk score (this lives only in the coach view). But they can see all the inputs, which means they understand what the system is tracking and why. The system is legible to its users.
+**Social sharing is never required.** Journey Share earns points but is always optional, always presented as *"if you want to share your journey"* — not surfaced as a default prompt after every session. The app does not nag members to share. It celebrates sharing when it happens. This is the difference between community and coercion.
 
-**Rule 5: The Coach Owns the Relationship. Always.**
-The hardest design rule to maintain under pressure to scale: no automated outreach is ever sent on behalf of a named coach. If the platform ever sends a message as "Coach Rían," it was written and sent by Coach Rían. The AI brief sits in a queue until a human acts on it or dismisses it. If no coach acts within 72 hours, the flag is escalated to the owner — not auto-sent to the member. The relationship is the product. The system protects it.
+**Progress-shaming is never allowed.** The AI churn intervention system must never surface negative framing to the member. The member never sees *"You're at risk of losing your streak"* or *"Your engagement has dropped."* The app only surfaces positive pulls: opportunities, challenges, rewards proximate to reach. The negative signal is for the coach and the admin panel only. The member experiences encouragement; the operator experiences intelligence.
 
 ---
 
-*Design specification complete. Ready for the Maker agent.*
-
-*IRON RECORD — Every rep remembered. Every milestone earned.*
+*Design specification prepared for Maker agent handoff. All visual tokens, flow descriptions, and system logic are implementation-ready. Points economy values, tier thresholds, and AI signal logic are configured for Slam Fitness's specific operating context and member personas.*
 
 
 ---
@@ -576,298 +566,346 @@ The hardest design rule to maintain under pressure to scale: no automated outrea
 
 **Role:** Build the product — technical craftsmanship and rapid prototyping
 **Output file:** `03_prototype_plan.md`
-**Word count:** 3,226
+**Word count:** 3,230
 
-# LoyaltyOS — Technical Build Specification
-## Client: Slam Fitness | Programme: IRON RECORD
-### Maker Agent Output v1.0
+# LoyaltyOS — FORGED Technical Build Specification
+## Slam Fitness, Stoneybatter, Dublin 7
 
----
-
-## PREAMBLE
-
-This document is the authoritative build specification for the IRON RECORD loyalty platform. It translates the Designer agent's specification into implementable technical decisions. Every section maps directly to a design spec section. Where the design spec makes an implicit technical requirement, this document makes it explicit.
-
-**Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion, Claude API (Anthropic SDK), Prisma ORM, PostgreSQL (Supabase), Vercel deployment.
+*Build specification for Next.js implementation. Prepared from Designer agent handoff.*
 
 ---
 
-## 1. COMPONENT INVENTORY
+## SECTION 1: COMPONENT INVENTORY
 
-### 1.1 Layout Components
+### 1.1 Layout & Shell Components
 
 ---
 
-#### `RootLayout`
-**File:** `app/layout.tsx`
+#### `AppShell`
+**File:** `src/components/layout/AppShell.tsx`
 
 ```typescript
-interface RootLayoutProps {
+interface AppShellProps {
   children: React.ReactNode;
-  businessConfig: BusinessConfig; // injected at build/request time
+  businessConfig: BusinessConfig;
+  customer: Customer;
 }
 ```
 
-**Core behaviour:** Injects CSS custom properties from `BusinessConfig.tokens` into `:root`, sets dark/light mode class, loads brand fonts. All colour tokens become CSS variables consumed by every child component — this is the white-label switching mechanism. No component hardcodes a colour value; all reference `var(--primary)`, `var(--bg)`, etc.
+**Behaviour & State:**
+- Renders the global navigation bar, glow blob background element, and main content slot
+- Injects CSS custom properties from `businessConfig.theme` tokens onto `:root` at mount
+- Maintains `navActiveTab` state (Home | Progress | Rewards | Community | Profile)
+- The glow blob is a fixed, non-interactive `div` with `pointer-events: none` — always renders behind content
 
-**Design spec:** Section 6, Token Configuration.
+**Implements:** Design spec §6 — Navigation bar tokens, glow blob, backdrop-blur nav
 
 ---
 
-#### `NavBar`
-**File:** `components/layout/NavBar.tsx`
+#### `BottomNav`
+**File:** `src/components/layout/BottomNav.tsx`
 
 ```typescript
-interface NavBarProps {
-  activePath: 'home' | 'activity' | 'rewards' | 'record';
-  memberName: string;
+interface BottomNavProps {
+  activeTab: NavTab;
+  onTabChange: (tab: NavTab) => void;
+  theme: ThemeTokens;
+}
+
+type NavTab = 'home' | 'progress' | 'rewards' | 'community' | 'profile';
+```
+
+**Behaviour & State:**
+- Five tabs: Home, Progress, Rewards, Community, Profile
+- Active tab icon renders in `theme.primary` (`#DC2626`); inactive in `theme.subtext`
+- Uses Next.js `useRouter` for programmatic navigation — tabs map to `/`, `/progress`, `/rewards`, `/community`, `/profile`
+- `backdrop-filter: blur(16px)` applied via Tailwind `backdrop-blur-2xl`
+- Fixed to viewport bottom; safe area inset applied for iOS home indicator
+
+**Implements:** Design spec §6 — Navigation bar visual language
+
+---
+
+#### `IronPointsHeader`
+**File:** `src/components/layout/IronPointsHeader.tsx`
+
+```typescript
+interface IronPointsHeaderProps {
+  balance: number;
   tier: TierLevel;
-  unreadCount?: number;
+  customerName: string;
 }
 ```
 
-**Core behaviour:** Fixed bottom navigation on mobile, sidebar on desktop breakpoint. Renders four tabs: Home / Activity Feed / Rewards / My Record. Active state uses `var(--primary)` fill. Background uses `navBg` token with `backdrop-filter: blur(12px)`. Tab icons are SVG inline — no icon library dependency, allows per-client icon swaps.
+**Behaviour & State:**
+- Sticky top header strip showing the ⬡ IP balance and tier badge pill
+- Balance animates (count-up) when the value changes — uses `useEffect` with `requestAnimationFrame`
+- Tier badge pill renders using the tier-specific styling from the badge map (see §3)
 
-**Design spec:** Section 5, Bottom Navigation.
+**Implements:** Design spec §5 — "Iron Points balance always visible in top-right header"
 
 ---
 
-#### `GlowBlob`
-**File:** `components/layout/GlowBlob.tsx`
+### 1.2 Dashboard Components
+
+---
+
+#### `IronRing`
+**File:** `src/components/dashboard/IronRing.tsx`
 
 ```typescript
-interface GlowBlobProps {
-  state: 'idle' | 'pr-active';
-  primaryColor: string;
-  accentColor: string;
+interface IronRingProps {
+  currentPoints: number;
+  tierFloor: number;
+  tierCeiling: number;
+  tierName: string;
+  nextTierName: string;
+  theme: ThemeTokens;
 }
 ```
 
-**Core behaviour:** Absolutely positioned 200px radial gradient element at top-centre of home screen. In `idle` state: `primaryColor` at 15% opacity. When `state === 'pr-active'`: Framer Motion animates opacity to 25% and transitions colour to `accentColor`, holds for 3 seconds, returns to idle. This is a pure CSS/Framer element — no canvas.
+**Behaviour & State:**
+- SVG-based circular progress indicator, rendered server-side safe (no canvas)
+- Two concentric circles: muted track (`theme.muted` = `rgba(255,255,255,0.06)`) and progress stroke (`theme.primary` = `#DC2626`)
+- `strokeDasharray` and `strokeDashoffset` calculated from `(currentPoints - tierFloor) / (tierCeiling - tierFloor)`
+- Within 100 IP of tier ceiling: adds `filter: drop-shadow(0 0 12px #DC262699)` to the SVG stroke element — the "quietly burning ring" effect
+- Central text: current IP balance (large, bold, `#DC2626`) with tier name below (small, `theme.subtext`)
+- Progress animates on mount using a CSS transition on `strokeDashoffset` (600ms ease-out)
+- Displays "X IP to [NextTier]" below the ring in `theme.subtext`
 
-**Design spec:** Section 6, Glow Blob directive.
-
----
-
-### 1.2 Member Dashboard Components
-
----
-
-#### `IdentityBar`
-**File:** `components/dashboard/IdentityBar.tsx`
-
-```typescript
-interface IdentityBarProps {
-  memberName: string;
-  tier: TierLevel;
-  forgePoints: number;
-  streakDays: number;
-  streakState: 'cold' | 'warm' | 'hot'; // <7, 7-29, 30+
-}
-```
-
-**Core behaviour:** Three-element horizontal bar. Left: member name + `TierBadge`. Centre: Forge Points total rendered in bold, larger weight, colour `var(--text)`. Right: `StreakCounter`. Points value uses a Framer Motion number counter that animates upward on first render and on point-earning events (subscribe to a Zustand store action).
-
-**Design spec:** Section 5, Top Section — The Identity Bar.
-
----
-
-#### `TierBadge`
-**File:** `components/dashboard/TierBadge.tsx`
-
-```typescript
-interface TierBadgeProps {
-  tier: TierLevel;
-  size: 'sm' | 'md' | 'lg';
-  showLabel: boolean;
-}
-
-type TierLevel = 'Rookie' | 'Lifter' | 'Competitor' | 'Iron';
-
-const TIER_VISUAL_CONFIG: Record<TierLevel, {
-  color: string;
-  glowColor: string;
-  glowIntensity: string;
-  icon: string;
-}> = {
-  Rookie:     { color: '#6B7280', glowColor: 'transparent', glowIntensity: 'none',                    icon: '🥋' },
-  Lifter:     { color: '#0EA5E9', glowColor: '#0EA5E940',   glowIntensity: '0 0 8px #0EA5E940',       icon: '⚡' },
-  Competitor: { color: '#F59E0B', glowColor: '#F59E0B60',   glowIntensity: '0 0 12px #F59E0B60',      icon: '⚔️' },
-  Iron:       { color: '#DC2626', glowColor: '#DC2626CC',   glowIntensity: '0 0 16px #DC2626CC',      icon: '🔱' },
-};
-```
-
-**Core behaviour:** Renders a pill-shaped badge with tier icon, tier name, and an ambient glow via `box-shadow`. Glow intensity is applied inline from `TIER_VISUAL_CONFIG`. For `Iron` tier, a subtle pulse animation (Framer Motion keyframes, 3s loop, opacity 0.8→1.0→0.8) keeps the badge alive without being distracting.
-
-**Design spec:** Section 2, Tier Levels; Section 6, Tier Badge Visual.
+**Implements:** Design spec §5 — Iron Ring, §6 — Iron Ring visual language
 
 ---
 
 #### `StreakCounter`
-**File:** `components/dashboard/StreakCounter.tsx`
+**File:** `src/components/dashboard/StreakCounter.tsx`
 
 ```typescript
 interface StreakCounterProps {
-  currentStreak: number;
-  targetStreak: 7 | 30;
-  hasFreezeAvailable: boolean;
-  onActivateFreeze: () => void;
+  currentStreakWeeks: number;
+  isActive: boolean;
+  hasStreakShield: boolean;
+  shieldUsedThisPeriod: boolean;
 }
 ```
 
-**Core behaviour:** Circular progress ring (SVG-based, not CSS border-radius trick — SVG gives clean control over stroke dash offset for animation). Ring stroke colour transitions from `#DC2626` (0%) to `#F97316` (100%) via an SVG linearGradient that updates its stops dynamically based on `currentStreak / targetStreak`. The flame emoji inside the ring grows in size from 14px to 22px proportionally. Tapping the counter opens a bottom sheet showing streak history and the Streak Freeze button if available.
+**Behaviour & State:**
+- Renders 🔥 flame icon (SVG, `#F97316`) with current streak week count
+- When `isActive === true`: flame SVG has a CSS animation applied via a `data-active` attribute — `@keyframes flamePulse { 0%,100% { opacity: 1 } 50% { opacity: 0.7 } }` on 2-second infinite loop
+- When `isActive === false`: flame renders at full opacity but static, with a subtle grey overlay — streak broken state
+- Shield badge: if `hasStreakShield && !shieldUsedThisPeriod`, renders a small ⚡ icon beside the flame — indicating the streak shield is available
+- Tap/click expands a tooltip explaining the streak shield mechanic (inline, no modal)
 
-**Design spec:** Section 3, Streak Mechanics; Section 6, Progress Rings.
-
----
-
-#### `ProgressCard`
-**File:** `components/dashboard/ProgressCard.tsx`
-
-```typescript
-interface ProgressCardProps {
-  personaType: 'competitor' | 'transformer' | 'anchor' | 'default';
-  memberData: Customer;
-  leaderboardRank?: number;       // competitor only
-  cohortsAttending?: string[];    // anchor only — names of classmates
-  sessionStats?: {                // transformer only
-    totalSessions: number;
-    squat1RMGain?: number;
-    ohpGain?: number;
-    prCount: number;
-  };
-  nextSession?: {
-    time: string;
-    dayName: string;
-    attendeeCount: number;
-  };
-}
-```
-
-**Core behaviour:** Single dominant card in mid-section. Conditionally renders one of three sub-templates based on `personaType`. Sub-templates are separate named exports in the same file: `<CompetitorCard />`, `<TransformerCard />`, `<AnchorCard />`. The `personaType` is derived from the AI personalisation API response and stored in the customer record. Card animates in with a subtle upward slide on dashboard load (Framer Motion, 300ms, ease-out).
-
-**Design spec:** Section 5, Mid Section — The Progress Card.
+**Implements:** Design spec §3 — Streak mechanics, §6 — Streak flame visual, §7 — Streak shield transparency
 
 ---
 
-#### `ChallengeCard`
-**File:** `components/dashboard/ChallengeCard.tsx`
+#### `WeeklyChallengeCard`
+**File:** `src/components/dashboard/WeeklyChallengeCard.tsx`
 
 ```typescript
-interface ChallengeCardProps {
+interface WeeklyChallengeCardProps {
   challenge: ActiveChallenge;
-  memberProgress: number;       // 0–1 float
-  isEnrolled: boolean;
-  onEnroll: (challengeId: string) => void;
+  onExpand: () => void;
+  theme: ThemeTokens;
 }
 
 interface ActiveChallenge {
   id: string;
   name: string;
   description: string;
-  forgePointsReward: number;
+  pointsAtStake: number;
+  expiresAt: Date;
+  currentProgress: number;
+  totalRequired: number;
   category: ActivityCategory;
-  durationDays: number;
-  endsAt: Date;
-  requiredCompletions: number;
-  currentCompletions: number;
 }
 ```
 
-**Core behaviour:** Card with a left-border accent strip (4px, colour derived from `CATEGORY_COLOURS` map). Progress bar fills in `var(--primary)` colour. Points reward badge in top-right corner. Enroll CTA only visible if `!isEnrolled`. On enroll, optimistic UI update — shows enrolled state immediately, API call in background, reverts on error.
+**Behaviour & State:**
+- Glass card (`cardBg`, `cardBorder` tokens) with a 2px `#F97316` accent line at the top edge when challenge is the "active bonus" state
+- Progress bar: `#DC2626` fill, muted track, `border-radius: 4px`
+- Countdown timer renders as "Xh Ym remaining" — updates every 60 seconds via `useEffect` interval
+- `onExpand` fires a sheet/drawer from the bottom with full challenge criteria and progress history
+- Category chip rendered using `ActivityCategoryChip` component (see §1.5)
 
-**Design spec:** Section 3, Daily/Weekly Challenges; Section 5, Lower Section.
-
-```typescript
-const CATEGORY_COLOURS: Record<ActivityCategory, string> = {
-  Workout:   '#EF4444',
-  Streak:    '#F97316',
-  Challenge: '#F59E0B',
-  Achievement: '#D4AF37',
-  Referral:  '#A78BFA',
-  Community: '#34D399',
-  Training:  '#EF4444',
-  Special:   '#0EA5E9',
-  Service:   '#94A3B8',
-};
-```
+**Implements:** Design spec §5 — "This week's challenge card", §6 — Active card border styling
 
 ---
 
-#### `QuickActionBar`
-**File:** `components/dashboard/QuickActionBar.tsx`
+#### `RecentActivityFeed`
+**File:** `src/components/dashboard/RecentActivityFeed.tsx`
 
 ```typescript
-interface QuickActionBarProps {
-  onLogPR: () => void;
-  onBookSession: () => void;
-  nextSessionInfo?: { time: string; spotsLeft: number };
+interface RecentActivityFeedProps {
+  activities: ActivityLogEntry[];
+  maxDisplay?: number; // defaults to 3 per design spec
 }
-```
 
-**Core behaviour:** Two CTA buttons side by side. "Log a PR" is primary (`var(--primary)` fill, white text, hover transitions to `var(--accent)`). "Book Next Session" is outlined (transparent fill, `var(--primary)` border and text). If `spotsLeft` is ≤ 5, shows authentic capacity indicator alongside the booking button. Both buttons have a 150ms press-down scale transform (Framer Motion `whileTap={{ scale: 0.97 }}`).
-
-**Design spec:** Section 5, Lower Section — Quick Actions; Section 7, Rule 3 (authentic capacity).
-
----
-
-### 1.3 Point-Earning Flow Components
-
----
-
-#### `PointEarnOverlay`
-**File:** `components/earn/PointEarnOverlay.tsx`
-
-```typescript
-interface PointEarnOverlayProps {
+interface ActivityLogEntry {
+  activity: Activity;
+  earnedAt: Date;
   pointsEarned: number;
+  isStreak?: boolean;
+  isMilestone?: boolean;
+}
+```
+
+**Behaviour & State:**
+- Renders the last `maxDisplay` (default: 3) activity log entries
+- Each entry: activity emoji, name, timestamp ("Today 6:15am" / "Yesterday"), and points earned in `#DC2626`
+- Streak and milestone entries get a subtle left-border accent in `#F97316`
+- No scroll within the feed — it's a summary; "View all" links to `/progress`
+- Entries animate in on mount with a staggered fade-up (50ms delay between each)
+
+**Implements:** Design spec §5 — "Recent activity feed"
+
+---
+
+#### `QuickActionsRow`
+**File:** `src/components/dashboard/QuickActionsRow.tsx`
+
+```typescript
+interface QuickActionsRowProps {
+  onBookSession: () => void;
+  onLogPB: () => void;
+  onCoachCheckIn: () => void;
+}
+```
+
+**Behaviour & State:**
+- Three pill buttons in a horizontal row: "Book Session", "Log a PB", "Check In with Coach"
+- Each button has an icon (calendar, barbell, clipboard), label, and a subtle `#DC2626` border on hover/focus
+- Each fires its respective `onXxx` callback — actual navigation/modal handled by parent
+- Always visible — no conditional rendering
+
+**Implements:** Design spec §5 — "Quick actions row — Book a Session / Log a PB / Check In with Coach"
+
+---
+
+#### `PersonalisedPromptCard`
+**File:** `src/components/dashboard/PersonalisedPromptCard.tsx`
+
+```typescript
+interface PersonalisedPromptCardProps {
+  prompt: PersonalisedPrompt | null;
+  isLoading: boolean;
+  onDismiss: () => void;
+}
+
+interface PersonalisedPrompt {
+  type: 'streak_nudge' | 'challenge_reminder' | 'off_peak_bonus' | 'milestone_celebration';
+  message: string;
+  ctaLabel?: string;
+  ctaAction?: string; // route path
+  expiresAt?: Date;   // present for off_peak_bonus type
+  pointsAttached?: number;
+}
+```
+
+**Behaviour & State:**
+- Renders below the Quick Actions row
+- Loading state: skeleton card with shimmer animation (`#DC262611` cycling)
+- `off_peak_bonus` type: card border brightens to `rgba(255,255,255,0.22)`, gains `#F97316` top accent line, and shows a countdown if `expiresAt` is set — this is the "glowing Bonus Active card" from the spec
+- `milestone_celebration` type: renders with a subtle pulse animation on the card border
+- Dismiss button (×) top-right; dismissed state stored in `localStorage` per prompt ID so it doesn't re-appear on reload
+- If `prompt === null` and `!isLoading`, component renders nothing (no empty state)
+
+**Implements:** Design spec §3 — Cold Day Bonus, §4 — AI personalisation, §5 — Personalised prompt card
+
+---
+
+### 1.3 Point Earning Flow Components
+
+---
+
+#### `PointEarnConfirmation`
+**File:** `src/components/earn/PointEarnConfirmation.tsx`
+
+```typescript
+interface PointEarnConfirmationProps {
+  primaryEarn: EarnEvent;
+  bonusEarns: EarnEvent[]; // triggered overlays (streak, challenge, surprise)
+  onComplete: () => void;
+}
+
+interface EarnEvent {
   activityName: string;
-  progressToNextMilestone: {
-    label: string;       // e.g. "7-day streak bonus"
-    currentFP: number;
-    targetFP: number;
-  };
-  showPRPrompt: boolean; // true for strength sessions
-  onLogPR: () => void;
+  pointsEarned: number;
+  emoji: string;
+  isMilestone: boolean;
+  milestoneLabel?: string; // e.g. "Streak Keeper — Week 3"
+}
+```
+
+**Behaviour & State:**
+- Full-screen overlay component, `z-index: 50`, dark background
+- **Phase 1 (0–1500ms):** Point value animates in from 0 using `requestAnimationFrame` count-up. The Iron Ring SVG (embedded, miniature) visually fills by the corresponding amount — the fill transition runs over 1200ms
+- **Phase 2 (1500ms+, if `bonusEarns.length > 0`):** Primary screen fades slightly, bonus earn card slides up from bottom — larger, celebratory variant. Each bonus earn cycles if there are multiple (800ms between)
+- **Exit:** After all phases complete OR user taps anywhere, `onComplete()` fires, overlay unmounts
+- Point values always render in `#DC2626` bold, 48px
+
+**Implements:** Design spec §5 — Activity Completion Flow (steps 2–4), "most important micro-moment"
+
+---
+
+#### `MilestoneGhostScreen`
+**File:** `src/components/earn/MilestoneGhostScreen.tsx`
+
+```typescript
+interface MilestoneGhostScreenProps {
+  sessionCount: number; // e.g. 50 or 100
+  sessionHeatmapData: HeatmapEntry[];
+  bestLifts: BestLift[];
+  pointsAwarded: number;
+  onDismiss: () => void;
+}
+
+interface HeatmapEntry {
+  date: string; // ISO date
+  attended: boolean;
+}
+
+interface BestLift {
+  exerciseName: string;
+  value: string; // e.g. "120kg" or "4:45/km"
+  achievedAt: Date;
+}
+```
+
+**Behaviour & State:**
+- Full-screen "quiet milestone" display — no confetti, no particles
+- Header: `"${sessionCount} sessions."` — large, white, all-caps, 32px
+- Subheader: `"Here's what you've built."` — `theme.subtext`, 16px
+- Session heatmap: rendered as a CSS Grid of small squares (7 columns for days of week, N rows for weeks). Attended days: `#DC2626` fill. Not-attended: `theme.muted`. No labels — the pattern speaks for itself
+- Best lifts list beneath, each entry styled as a minimal data row
+- Points awarded card at bottom: "+200 IP — 100-Session Marker" in the earn card style
+- Dismiss: tap anywhere or a subtle "Close" text link at very bottom
+
+**Implements:** Design spec §3 — Surprise and Delight: "The Milestone Ghost"
+
+---
+
+#### `ReturnCelebrationScreen`
+**File:** `src/components/earn/ReturnCelebrationScreen.tsx`
+
+```typescript
+interface ReturnCelebrationScreenProps {
+  daysAbsent: number;
+  pointsAwarded: number; // 40 IP
   onDismiss: () => void;
 }
 ```
 
-**Core behaviour:** Full-screen overlay triggered on session check-in confirmation. Sequence (Framer Motion, orchestrated with `staggerChildren`):
-1. **0ms:** Background fades to `rgba(0,0,0,0.85)`
-2. **100ms:** Forge-hammer SVG animation — a simplified hammer SVG drops from top, impact at centre triggers an ember particle burst (12–16 CSS-animated `<div>` elements in orange/amber colours, physics approximated with CSS keyframes varying `translateX/Y` and `opacity`)
-3. **400ms:** Points value appears: `+{pointsEarned} Forge Points` in 48px bold white, with a brief scale-in (0.5→1.0)
-4. **600ms:** Progress bar slides in from left showing milestone progress
-5. **800ms:** PR prompt card appears if `showPRPrompt`
-6. **2500ms:** Auto-dismiss if no interaction; points total on underlying dashboard pulses once
+**Behaviour & State:**
+- Full-screen overlay, simpler than `MilestoneGhostScreen`
+- Single line of copy: `"You're back. That's the hardest rep."` — white, 24px, centred
+- No stats, no history — this is a moment of acknowledgement, not analysis
+- Points card: "+40 IP — Come Back Stronger"
+- Brief entry animation: text fades in from `opacity: 0` over 600ms
+- Auto-dismisses after 4 seconds OR on tap
 
-**Design spec:** Section 5, Activity Completion Flow.
-
----
-
-#### `PRLogModal`
-**File:** `components/earn/PRLogModal.tsx`
-
-```typescript
-interface PRLogModalProps {
-  memberId: string;
-  sessionId: string;
-  onSubmit: (pr: PRSubmission) => void;
-  onClose: () => void;
-}
-
-interface PRSubmission {
-  exercise: string;
-  weight: number;
-  weightUnit: 'kg' | 'lb';
-  reps: number;
-  notes?: string;
-}
-```
-
-**Core behaviour:** Bottom sheet modal. Three fields only — `exercise` (autocomplete from a predefined exercise list stored in business config), `weight` (numeric input with kg/lb toggle), `reps` (numeric stepper). Submit sends to `POST /api/prs` which creates a pending PR record and notifies coach dashboard. Points are NOT awarded until coach confirms. Member sees: *"PR logged — waiting for coach confirmation."* in a pending state indicator.
-
-**Design spec:** Section 5, Activity Completion Flow (step 4); Section 2, PR confirmation flow.
+**Implements:** Design spec §3 — Surprise and Delight: "The Return Celebration"
 
 ---
 
@@ -875,117 +913,230 @@ interface PRSubmission {
 
 ---
 
-#### `RewardsCatalogue`
-**File:** `components/rewards/RewardsCatalogue.tsx`
+#### `RewardsGrid`
+**File:** `src/components/rewards/RewardsGrid.tsx`
 
 ```typescript
-interface RewardsCatalogueProps {
+interface RewardsGridProps {
   rewards: Reward[];
-  memberFP: number;
-  memberTier: TierLevel;
-  onRedeem: (rewardId: string) => void;
+  customerBalance: number;
+  onSelectReward: (reward: Reward) => void;
 }
 ```
 
-**Core behaviour:** Two-tab layout: "Available Now" (rewards where `memberFP >= reward.pointCost && tierRequirementMet(memberTier, reward)`) and "Coming Up" (all others, sorted by distance from current FP). Tab switching uses a sliding indicator (CSS, no JS animation needed). Rewards in "Coming Up" are not greyed out — they are full colour with a progress bar showing `(memberFP / reward.pointCost * 100)%` filled. The aspiration must feel achievable.
+**Behaviour & State:**
+- CSS Grid, 2 columns on mobile, 3 on tablet+
+- Affordable rewards (`reward.pointCost <= customerBalance`): full colour, full opacity
+- Unaffordable rewards: `opacity: 0.55`, greyscale filter `saturate(0.3)`, "You need X more IP" label in `theme.subtext` — **not** locked, **not** hidden
+- Rewards sorted: affordable first, then by ascending cost
+- Tapping any reward fires `onSelectReward`
 
-**Design spec:** Section 5, Reward Redemption Flow, step 1.
-
----
-
-#### `RewardCard`
-**File:** `components/rewards/RewardCard.tsx`
-
-```typescript
-interface RewardCardProps {
-  reward: Reward;
-  memberFP: number;
-  memberTier: TierLevel;
-  isAvailable: boolean;
-  onSelect: (reward: Reward) => void;
-}
-```
-
-**Core behaviour:** Tap expands to `RewardDetailSheet`. Shows reward emoji, name, cost in FP, and category. If `!isAvailable`, shows progress bar with `{reward.pointCost - memberFP} FP to go`. No lock icons, no greyed-out states — the framing is always forward motion, not exclusion.
-
-**Design spec:** Section 5, Reward Redemption Flow, steps 1–2.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 1), "'faded but visible' approach"
 
 ---
 
 #### `RewardDetailSheet`
-**File:** `components/rewards/RewardDetailSheet.tsx`
+**File:** `src/components/rewards/RewardDetailSheet.tsx`
 
 ```typescript
 interface RewardDetailSheetProps {
   reward: Reward;
-  memberFP: number;
-  onConfirmRedeem: () => void;
+  customerBalance: number;
+  onRedeem: (rewardId: string) => Promise<void>;
   onClose: () => void;
 }
 ```
 
-**Core behaviour:** Full-screen bottom sheet. Shows reward name, emoji (large, 64px), description, cost, and member's current FP balance. Single CTA: "Redeem for {X} Forge Points". Below the CTA: remaining balance preview — *"After redemption: {memberFP - reward.pointCost} FP remaining."* On confirm: transitions to `RedemptionConfirmScreen`.
+**Behaviour & State:**
+- Bottom sheet (slides up), `border-radius: 16px 16px 0 0`, glass card background
+- Shows: emoji, name, full description, exact IP cost, redemption method (in-gym / online / via coach), expiry if applicable
+- "Redeem" button: active when affordable, disabled with tooltip "X more IP needed" when not
+- On "Redeem" tap: triggers `RedemptionConfirmModal`
 
-**Design spec:** Section 5, Reward Redemption Flow, step 2.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 2)
 
 ---
 
-#### `RedemptionConfirmScreen`
-**File:** `components/rewards/RedemptionConfirmScreen.tsx`
+#### `RedemptionConfirmModal`
+**File:** `src/components/rewards/RedemptionConfirmModal.tsx`
 
 ```typescript
-interface RedemptionConfirmScreenProps {
+interface RedemptionConfirmModalProps {
   reward: Reward;
-  redemptionCode?: string;  // for physical rewards — single-use QR
-  remainingFP: number;
-  fulfilmentMethod: 'qr-code' | 'admin-notification' | 'automatic';
-  onDone: () => void;
+  currentBalance: number;
+  onConfirm: () => Promise<void>;
+  onCancel: () => void;
+  isProcessing: boolean;
 }
 ```
 
-**Core behaviour:** Renders appropriate fulfilment UI based on `fulfilmentMethod`. For `qr-code`: generates a QR code (using `qrcode.react`) from `redemptionCode`, displays it at full width, shows 7-day expiry. For `admin-notification`: shows *"Your coach has been notified. They'll confirm your booking."* For `automatic`: shows confirmation with updated FP balance. All variants show the new FP total and the "next aspirational reward" progress bar.
+**Behaviour & State:**
+- Centred modal, backdrop blur
+- Copy: `"Spend ${reward.pointCost} IP for ${reward.name}?"` — current balance shown below in `theme.subtext`
+- Two buttons: "Confirm" (primary, `#DC2626` background) and "Cancel" (ghost)
+- `isProcessing` state: "Confirm" button shows a spinner, both buttons disabled
+- On success: unmounts modal, parent triggers `RedemptionCodeScreen`
 
-**Design spec:** Section 5, Reward Redemption Flow, steps 3–5.
+**Implements:** Design spec §5 — Reward Redemption Flow (step 3)
 
 ---
 
-### 1.5 PR History / My Record Components
-
----
-
-#### `MyRecordView`
-**File:** `components/record/MyRecordView.tsx`
+#### `RedemptionCodeScreen`
+**File:** `src/components/rewards/RedemptionCodeScreen.tsx`
 
 ```typescript
-interface MyRecordViewProps {
-  memberId: string;
-  prHistory: PRRecord[];
-  milestones: Milestone[];
-  memberSince: Date;
-  totalSessions: number;
+interface RedemptionCodeScreenProps {
+  reward: Reward;
+  redemptionCode: string;
+  qrCodeData: string; // URL-encoded string for QR generation
+  redeemedAt: Date;
+  onClose: () => void;
 }
 ```
 
-**Core behaviour:** The "My Record" tab. Four sections: PR History (sortable by lift, date, or weight), Milestone Timeline (visual, chronological), Session Count (large number, prominent — the headline statistic), and the PR Anniversary Card when applicable. This view is the "permanent visible history" concept — designed to feel like a document, not a feed. Typography is heavier here; the numbers are the content.
+**Behaviour & State:**
+- Full-screen (not overlay) page at `/rewards/redemption/[code]`
+- QR code rendered using `qrcode.react` library — white on dark background, centred
+- Redemption code displayed as large monospaced text below QR
+- Instruction copy from `reward.redemptionInstructions`
+- Confirmation strip at top: `"Redeemed — ${reward.name}."` in `#DC2626`
+- Screen lock prevention: calls `navigator.wakeLock.request('screen')` so the QR doesn't disappear while member is at reception
 
-**Design spec:** Section 1, Emotional Journey ("12-month PR history"); Section 4, PR Anniversary surprise moment.
+**Implements:** Design spec §5 — Reward Redemption Flow (steps 4–5)
 
 ---
 
-#### `PRHistoryChart`
-**File:** `components/record/PRHistoryChart.tsx`
+### 1.5 Shared / Utility Components
+
+---
+
+#### `TierBadge`
+**File:** `src/components/shared/TierBadge.tsx`
 
 ```typescript
-interface PRHistoryChartProps {
-  exercise: string;
-  records: Array<{ date: Date; weight: number; reps: number }>;
-  unit: 'kg' | 'lb';
+interface TierBadgeProps {
+  tier: TierLevel;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+type TierLevel = 'raw' | 'tempered' | 'forged' | 'ironclad';
+```
+
+**Behaviour & State:**
+- Pill badge, border-radius full
+- Tier-specific styles:
+  - `raw`: `background: rgba(255,255,255,0.15)`, white text
+  - `tempered`: `#F97316` text, `#F9731620` background, subtle orange glow
+  - `forged`: `#DC2626` text, `#DC262620` background, `box-shadow: 0 0 8px #DC262688`
+  - `ironclad`: gradient text `linear-gradient(90deg, #DC2626, #F97316)`, persistent low glow, animated shimmer pass every 8 seconds
+- `size` prop controls padding and font-size
+
+**Implements:** Design spec §6 — Tier badge visual language
+
+---
+
+#### `ActivityCategoryChip`
+**File:** `src/components/shared/ActivityCategoryChip.tsx`
+
+```typescript
+interface ActivityCategoryChipProps {
+  category: ActivityCategory;
+  size?: 'sm' | 'md';
+}
+
+type ActivityCategory = 
+  | 'workout' 
+  | 'training' 
+  | 'streak' 
+  | 'achievement' 
+  | 'challenge' 
+  | 'referral' 
+  | 'community' 
+  | 'class' 
+  | 'special';
+```
+
+**Behaviour & State:**
+- Rounded label chip, no interaction
+- Colour map (background is 15% opacity version of text colour):
+  - `workout`, `training`, `streak`, `class`: `#EF4444` (red — Training family)
+  - `achievement`, `special`: `#D4AF37` (gold — Achievement family)
+  - `referral`: `#EC4899` (pink — Referral)
+  - `community`: `#A78BFA` (purple — Community)
+  - `challenge`: `#F97316` (orange — Challenge)
+
+**Implements:** Design spec §6 — "Activity category colour chips"
+
+---
+
+#### `GlassCard`
+**File:** `src/components/shared/GlassCard.tsx`
+
+```typescript
+interface GlassCardProps {
+  children: React.ReactNode;
+  isActive?: boolean;       // brightens border, adds F97316 top accent
+  isBonus?: boolean;        // alias for isActive — off-peak bonus state
+  className?: string;
+  onClick?: () => void;
 }
 ```
 
-**Core behaviour:** Line chart showing PR progression over time for a single exercise. Uses `recharts` (lightweight, React-native, no D3 dependency). Line colour `#DC2626`. Points on the line are dots; hovering/tapping shows the exact weight, reps, and date. The most recent PR is marked with a distinct filled circle + annotation. The chart's x-axis only shows dates where a PR was logged — not continuous time — to keep the visual reading as an achievement record, not a gap-revealing timeline.
+**Behaviour & State:**
+- Base: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.10)`
+- `isActive || isBonus`: border becomes `rgba(255,255,255,0.22)`, `::before` pseudo-element adds 2px `#F97316` line at top
+- `onClick` present: cursor pointer, subtle brightness increase on hover (`filter: brightness(1.08)`)
 
-**Design spec:** Section 1, "12-month PR history" moment; Section 5, My Record tab.
+**Implements:** Design spec §6 — Card visual language, active card state
+
+---
+
+#### `ConsentScreen`
+**File:** `src/components/onboarding/ConsentScreen.tsx`
+
+```typescript
+interface ConsentScreenProps {
+  businessName: string;
+  programmeName: string;
+  onConsent: (preference: ConsentPreference) => void;
+}
+
+type ConsentPreference = 
+  | 'full'           // "Yes — use my data to personalise my coaching"
+  | 'app_only';      // "Personalise my app only — no proactive outreach"
+```
+
+**Behaviour & State:**
+- Standalone full-screen onboarding step
+- Renders the three plain-language sentences verbatim from the design spec — no legalese, no scroll
+- Two large tappable option cards (not checkboxes, not radio buttons — full-width cards with a selected state border in `#DC2626`)
+- "Continue" button activates only when one option is selected
+- No "skip" option, no back button — consent must be given before proceeding
+- Selected preference stored server-side via `POST /api/customer/consent` on "Continue"
+
+**Implements:** Design spec §7 — Trust and Transparency, onboarding consent
+
+---
+
+#### `DataTransparencyPage`
+**File:** `src/components/profile/DataTransparencyPage.tsx`
+
+```typescript
+interface DataTransparencyPageProps {
+  customer: Customer;
+  currentConsent: ConsentPreference;
+  onUpdateConsent: (preference: ConsentPreference) => Promise<void>;
+}
+```
+
+**Behaviour & State:**
+- Route: `/profile/data`
+- Replicates the three plain-language consent sentences from onboarding
+- Live toggle: "Proactive coaching outreach" — single toggle, immediate effect, no confirmation loop
+- Toggle state updates optimistically in UI, then syncs to server; on error, reverts with a toast
+- Data inventory section: bulleted list of what data is collected, sourced from `businessConfig.dataInventory`
+
+**Implements:** Design spec §7 — "permanently accessible page" in Profile > Settings
 
 ---
 
@@ -993,358 +1144,199 @@ interface PRHistoryChartProps {
 
 ---
 
-#### `AdminLayout`
-**File:** `app/admin/layout.tsx`
+#### `AdminDashboard`
+**File:** `src/components/admin/AdminDashboard.tsx`
 
 ```typescript
-interface AdminLayoutProps {
-  role: 'owner' | 'coach';
-  children: React.ReactNode;
+interface AdminDashboardProps {
+  businessId: string;
+  liveOccupancy: OccupancyData;
+  engagementHealth: EngagementHealthSummary;
+  pointsEconomy: PointsEconomySummary;
+}
+
+interface OccupancyData {
+  currentAttendance: number;
+  thirtyDayAverage: number;
+  percentageOfAverage: number;
+  nextClass: { name: string; startTime: Date; bookedCount: number; capacity: number };
+}
+
+interface EngagementHealthSummary {
+  activeStreaksCount: number;
+  churnFlaggedCount: { yellow: number; orange: number; red: number };
+  newReferralsThisWeek: number;
+}
+
+interface PointsEconomySummary {
+  ipIssuedThisMonth: number;
+  ipRedeemedThisMonth: number;
+  redemptionRatio: number; // redeemed/issued — flag if >0.8
 }
 ```
 
-**Core behaviour:** Separate layout from member-facing app. Role determines which nav items are visible. Owner sees: Overview, Members, Challenges, Churn Risk, Referrals, Settings. Coach sees: Today's Actions, Sessions, PR Queue, Member Profiles, Shoutout Queue. Both views use a light variant of the dark theme — `#111318` background — to signal "this is the back office" without abandoning the brand identity.
+**Implements:** Design spec §5 — Business Admin Panel, Dashboard Overview
 
 ---
 
-#### `ChurnRiskRegister`
-**File:** `components/admin/ChurnRiskRegister.tsx`
+#### `CoachInterventionQueue`
+**File:** `src/components/admin/CoachInterventionQueue.tsx`
 
 ```typescript
-interface ChurnRiskRegisterProps {
-  riskMembers: ChurnRiskMember[];
-  onViewBrief: (memberId: string) => void;
-  onDismissFlag: (memberId: string) => void;
-  onMarkActioned: (memberId: string) => void;
+interface CoachInterventionQueueProps {
+  interventions: CoachIntervention[];
+  onMarkActioned: (interventionId: string) => Promise<void>;
+  filterBy?: { severity?: FlagSeverity; coachId?: string; tier?: TierLevel };
 }
 
-interface ChurnRiskMember {
-  customer: Customer;
-  riskScore: number;           // 1–6, matching signal count
-  activeSignals: ChurnSignal[];
-  aiInterventionBrief: string; // generated by Claude
-  flaggedAt: Date;
-  coachActionDue: Date;        // flaggedAt + 72 hours
-  isEscalated: boolean;        // true if 72hrs passed without action
-}
-```
-
-**Core behaviour:** Sorted by risk score descending. Each row shows member name, tier, last session date, signal count, and a "View Brief" button. Clicking "View Brief" opens a side panel with the full AI-generated intervention brief, labelled prominently: *"IRON RECORD AI Suggestion — coach discretion applies."* An action timestamp is recorded when coach marks as actioned. If `isEscalated`, row is highlighted in amber with an owner-visible alert badge.
-
-**Design spec:** Section 5, Owner Dashboard — Churn Risk Register; Section 7, Rule 5 (coach owns relationship, 72-hour escalation).
-
----
-
-#### `CoachActionList`
-**File:** `components/admin/CoachActionList.tsx`
-
-```typescript
-interface CoachActionListProps {
-  date: Date;
-  checkInConfirmations: SessionAttendance[];
-  prConfirmations: PRSubmission[];
-  memberCheckIns: ChurnRiskMember[];
-  shoutoutQueue: MilestoneShoutout[];
-}
-
-interface MilestoneShoutout {
-  member: Customer;
-  milestoneType: 'session-50' | 'session-100' | 'tier-upgrade' | 'streak-30' | 'streak-7';
-  suggestedAcknowledgement: string; // AI-generated suggestion
+interface CoachIntervention {
+  id: string;
+  customer: Pick<Customer, 'id' | 'name' | 'tier'>;
+  flagType: FlagSeverity;
+  flagReason: string;
+  daysSinceLastSession: number;
+  lastLoggedPB?: Date;
+  aiGeneratedBrief: string;      // AI-written context
+  suggestedOutreachHook: string; // AI-written conversation starter
+  assignedCoachId: string;
   isActioned: boolean;
+  createdAt: Date;
 }
+
+type FlagSeverity = 'yellow' | 'orange' | 'red';
 ```
 
-**Core behaviour:** The coach's daily view — a prioritised list of human actions required. Ordered: Escalated churn flags → PR confirmations → Check-in confirmations → Soft check-in nudges → Shoutout queue. Each item is a card with a primary action button (Confirm / Send / Dismiss). PR confirmations have two options: "Confirm ✓" and "Flag for Review ⚑". Confirming releases the 50 FP reward. Flagging opens a notes field.
+**Behaviour & State:**
+- List ordered by flag severity (red first), then by `createdAt` descending
+- Each entry: colour-coded left border (yellow/orange/red), member name + tier badge, days absent, AI brief in a collapsible section
+- "Mark as Actioned" button per entry — fires `onMarkActioned`, optimistically removes from queue
+- Filter bar: by severity, by assigned coach, by tier
+- Red flag entries have a pulsing border animation (subtle, 3s cycle) to draw attention
 
-**Design spec:** Section 5, Coach Dashboard; Section 5, Coach PR Confirmation flow; Section 3, Quiet Milestone surprise moment.
-
----
-
-#### `FootfallHeatmap`
-**File:** `components/admin/FootfallHeatmap.tsx`
-
-```typescript
-interface FootfallHeatmapProps {
-  data: Array<{
-    dayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-    hour: number;        // 0–23
-    attendanceRate: number; // 0–1
-    offPeakTarget: boolean;
-  }>;
-  weeks: number;         // how many weeks of data shown
-}
-```
-
-**Core behaviour:** 7×24 grid (days × hours). Each cell's background opacity maps to `attendanceRate`. Off-peak target cells (Tue/Thu 10am–3pm) are outlined in `var(--accent)` to make the business objective legible at a glance. Hovering/tapping shows exact count and rate. This is a pure CSS grid — no charting library needed.
-
-**Design spec:** Section 5, Owner Dashboard — Footfall heatmap.
+**Implements:** Design spec §5 — Coach Intervention Queue, §4 — Churn Prediction and Intervention
 
 ---
 
-### 1.7 Onboarding Components
-
----
-
-#### `OnboardingConsent`
-**File:** `components/onboarding/OnboardingConsent.tsx`
-
-```typescript
-interface OnboardingConsentProps {
-  onComplete: (consents: ConsentRecord) => void;
-}
-
-interface ConsentRecord {
-  attendanceTracking: boolean;
-  progressLogging: boolean;
-  coachingAlerts: boolean;
-  socialRecognition: boolean;
-  agreedAt: Date;
-}
-```
-
-**Core behaviour:** Four-screen stepper (not a single form). Each screen: one toggle, one benefit statement, one "Why we need this" expandable (initially collapsed). All toggles default to `false`. Progress indicator (dots) at top. On each screen, "Continue" button is always active — consent is never required to proceed. Final screen summarises chosen consents and shows the reduced-personalisation notice if any are off: *"With coaching alerts off, we won't share your activity patterns with coaches. You'll still earn Forge Points for everything you do."* This copy is hardcoded per the design spec.
-
-**Design spec:** Section 7, Onboarding Consent Flow.
-
----
-
-## 2. DATA MODELS
+## SECTION 2: DATA MODELS
 
 ```typescript
 // ============================================================
-// CORE ENUMS
+// CORE ENUMS AND PRIMITIVES
 // ============================================================
 
-type TierLevel = 'Rookie' | 'Lifter' | 'Competitor' | 'Iron';
+type TierLevel = 'raw' | 'tempered' | 'forged' | 'ironclad';
 
-type ActivityCategory =
-  | 'Workout'
-  | 'Training'
-  | 'Achievement'
-  | 'Streak'
-  | 'Challenge'
-  | 'Referral'
-  | 'Community'
-  | 'Service'
-  | 'Special';
+type ActivityCategory = 
+  | 'workout' 
+  | 'training' 
+  | 'streak' 
+  | 'achievement' 
+  | 'challenge'
+  | 'referral'
+  | 'community'
+  | 'class'
+  | 'special';
 
-type PersonaType = 'competitor' | 'transformer' | 'anchor' | 'default';
+type RewardCategory = 
+  | 'access'
+  | 'merchandise'
+  | 'coaching'
+  | 'booking_privilege'
+  | 'education'
+  | 'recovery'
+  | 'membership'
+  | 'prestige';
 
-type ChurnSignal =
-  | 'frequency-drop'
-  | 'class-switch'
-  | 'ghost-bookings'
-  | 'pr-silence'
-  | 'streak-break'
-  | 'social-cluster-disruption';
+type ConsentPreference = 'full' | 'app_only';
+
+type FlagSeverity = 'yellow' | 'orange' | 'red';
 
 // ============================================================
 // CUSTOMER
 // ============================================================
 
 interface Customer {
-  id: string;
-  businessId: string;
-
-  // Identity
+  id: string;                        // UUID
+  businessId: string;                // Which business they're a member of
   name: string;
   email: string;
   phone?: string;
-  avatarUrl?: string;
-  memberSince: Date;
-
-  // Loyalty State
+  joinedAt: Date;
   tier: TierLevel;
-  forgePoints: number;            // current redeemable balance
-  lifetimePoints: number;         // total ever earned (for tier calc)
-  personaType: PersonaType;       // AI-assigned, updated monthly
+  
+  points: {
+    lifetime: number;                // Never decreases — used for tier calculation
+    current: number;                 // Spendable balance (lifetime minus redeemed)
+    thisMonth: number;               // For admin economy health tracking
+  };
 
-  // Streak State
-  currentStreak: number;          // days
-  longestStreak: number;
-  lastSessionDate: Date | null;
-  streakFreezeUsedThisQuarter: boolean;
-  streakFreezeActive: boolean;
+  streaks: {
+    currentWeeklyStreak: number;     // Consecutive weeks with 3+ sessions
+    longestStreak: number;           // All-time best
+    isActive: boolean;               // True if current week is on track
+    lastStreakBreakDate?: Date;
+    shieldAvailable: boolean;        // One per 60-day period, earned via coach check-in
+    shieldUsedAt?: Date;
+  };
 
-  // Session Metrics
-  totalSessions: number;
-  sessionsThisMonth: number;
-  averageSessionsPerWeek: number; // rolling 8-week average
-  lastSessionBaseline: number;    // for churn detection (avg sessions/week)
+  activityHistory: ActivityLogEntry[];
 
-  // Churn Risk
-  churnSignals: ChurnSignal[];
-  churnScore: number;             // 0–6, count of active signals
-  lastChurnCheck: Date;
+  sessionStats: {
+    totalLifetime: number;           // For milestone triggers (50th, 100th)
+    thisMonth: number;
+    lastSessionDate?: Date;
+    averageSessionsPerWeek: number;  // Rolling 8-week average
+    preferredTimeSlots: string[];    // e.g. ["06:00", "06:15"] — for AI targeting
+    scheduleFlexibilityScore: number; // 0–1, derived from booking variance
+  };
 
-  // Consent
-  consents: ConsentRecord;
+  churnSignals: {
+    flags: ChurnFlag[];
+    engagementTemperature: number;   // 0–100 score, AI-computed
+    lastComputedAt: Date;
+  };
 
-  // Activity History
-  activityHistory: Activity[];
-  prHistory: PRRecord[];
-  milestones: Milestone[];
-  redeemedRewards: RedeemedReward[];
+  referrals: {
+    referredByCustomerId?: string;
+    referredCustomerIds: string[];
+    successfulReferrals: number;     // Friend completed trial
+    convertedReferrals: number;      // Friend became paid member
+  };
 
-  // Referral
-  referralCode: string;
-  referredByMemberId?: string;
-  referredMemberIds: string[];
+  assignedCoachId?: string;
 
-  // Metadata
-  createdAt: Date;
-  updatedAt: Date;
+  consent: {
+    preference: ConsentPreference;
+    givenAt: Date;
+    lastUpdatedAt: Date;
+  };
+
+  profile: {
+    avatarUrl?: string;
+    bio?: string;                    // Optional — used in social mechanics
+  };
 }
 
-// ============================================================
-// ACTIVITY
-// ============================================================
-
-interface Activity {
+interface ChurnFlag {
   id: string;
-  businessId: string;
+  severity: FlagSeverity;
+  reason: string;
+  triggeredAt: Date;
+  isActioned: boolean;
+  actionedAt?: Date;
+  actionedByCoachId?: string;
+}
+
+interface ActivityLogEntry {
+  id: string;
   customerId: string;
-
-  name: string;
-  emoji: string;
-  pointValue: number;
-  category: ActivityCategory;
-  description: string;
-
+  activityId: string;
+  activity: Activity;               // Populated via join
+  pointsEarned: number;
   completedAt: Date;
-  sessionId?: string;             // links to class booking system
-  confirmedByCoachId?: string;    // required for PR activities
-  isConfirmed: boolean;
-
-  // For streak calculation
-  countsTowardStreak: boolean;
-}
-
-// ============================================================
-// PR RECORD
-// ============================================================
-
-interface PRRecord {
-  id: string;
-  customerId: string;
-  sessionId?: string;
-
-  exercise: string;
-  weight: number;
-  weightUnit: 'kg' | 'lb';
-  reps: number;
+  confirmedByCoach: boolean;        // Required for PB, Programme Milestone
+  sessionTimeSlot?: string;         // e.g. "06:15" — for flexibility score calculation
   notes?: string;
-
-  status: 'pending' | 'confirmed' | 'flagged';
-  submittedAt: Date;
-  confirmedAt?: Date;
-  confirmedByCoachId?: string;
-
-  // For PR Anniversary feature
-  firstPRForExercise: boolean;
-  previousBest?: number;          // weight in same unit
-  improvement?: number;           // calculated field
-}
-
-// ============================================================
-// MILESTONE
-// ============================================================
-
-interface Milestone {
-  id: string;
-  customerId: string;
-
-  type:
-    | 'session-count'       // 50th, 100th session
-    | 'tier-upgrade'
-    | 'streak-7'
-    | 'streak-30'
-    | 'anniversary'         // 3, 6, 12 month membership
-    | 'pr-anniversary'      // 1 year since first PR
-    | 'challenge-complete';
-
-  value?: number;           // e.g. session number, streak length, months
-  pointsAwarded: number;
-  achievedAt: Date;
-
-  // Human acknowledgement tracking
-  coachAcknowledged: boolean;
-  coachAcknowledgedAt?: Date;
-  publiclyAcknowledged: boolean;  // for 30-day streak community post
-}
-
-// ============================================================
-// REWARD
-// ============================================================
-
-interface Reward {
-  id: string;
-  businessId: string;
-
-  name: string;
-  emoji: string;
-  description: string;
-  pointCost: number;
-  category: 'physical' | 'experiential' | 'access' | 'identity';
-
-  fulfilmentMethod: 'qr-code' | 'admin-notification' | 'automatic';
-  qrCodeValidDays?: number;       // 7 for physical rewards
-
-  // Tier gating
-  minimumTier?: TierLevel;        // e.g. 'Iron' for Membership Credit
-
-  isActive: boolean;
-  stockLimited: boolean;
-  stockRemaining?: number;
-
-  createdAt: Date;
-}
-
-interface RedeemedReward {
-  id: string;
-  customerId: string;
-  rewardId: string;
-  reward: Reward;
-
-  pointsSpent: number;
-  redeemedAt: Date;
-  fulfilledAt?: Date;
-
-  qrCode?: string;                // single-use token
-  qrCodeExpiresAt?: Date;
-  isQrCodeUsed: boolean;
-
-  adminNotified: boolean;
-  notes?: string;
-}
-
-// ============================================================
-// OFFER (AI-generated)
-// ============================================================
-
-interface Offer {
-  id: string;
-  businessId: string;
-
-  title: string;
-  description: string;
-  ctaLabel: string;
-  ctaAction: 'enroll-challenge' | 'book-session' | 'view-rewards' | 'log-pr';
-
-  validFrom: Date;
-  validUntil: Date;
-
-  targetSegment: PersonaType | 'all' | 'at-risk' | 'off-peak-eligible';
-  pointsIncentive?: number;
-
-  // Generation metadata
-  generatedByAI: boolean;
-  aiPromptContext?: string;       // stores the trigger condition for audit
-  isLowFootfallOffer: boolean;
-
-  impressions: number;
-  conversions: number;
 }
 
 // ============================================================
@@ -1354,77 +1346,90 @@ interface Offer {
 interface Business {
   id: string;
   name: string;
-  type: BusinessType;
-  slug: string;                   // URL namespace: /[slug]/dashboard
-
-  config: BusinessConfig;
-  activities: ActivityDefinition[];
+  type: BusinessVertical;
+  slug: string;                     // URL slug — e.g. "slam-fitness"
+  
+  config: BusinessConfig;           // Full white-label config (see Section 3)
+  
+  activities: Activity[];
   rewards: Reward[];
-  challenges: ChallengeDefinition[];
+  challenges: Challenge[];
+  
+  coaches: Coach[];
+  
+  operatingHours: {
+    [day: string]: { open: string; close: string } | null; // null = closed
+  };
 
-  // Integration config
-  bookingSystemWebhookUrl?: string;
-  weatherApiEnabled: boolean;
-  weatherLocationId?: string;
+  integrations: {
+    bookingSystemUrl?: string;      // e.g. Mindbody, Glofox webhook endpoint
+    webhookSecret?: string;
+  };
 
   createdAt: Date;
-  subscriptionTier: 'starter' | 'growth' | 'enterprise';
+  updatedAt: Date;
 }
 
-type BusinessType =
-  | 'fitness-strength'
-  | 'fitness-yoga'
-  | 'food-beverage'
-  | 'retail'
-  | 'health-dental'
-  | 'gaming-entertainment';
+type BusinessVertical = 
+  | 'fitness_boutique'
+  | 'gaming_pub'
+  | 'dental'
+  | 'restaurant'
+  | 'retail';
+
+interface Coach {
+  id: string;
+  businessId: string;
+  name: string;
+  email: string;
+  role: 'head_coach' | 'coach' | 'admin';
+  assignedMemberIds: string[];
+}
 
 // ============================================================
-// ACTIVITY DEFINITION (business-level template)
+// ACTIVITY
 // ============================================================
 
-interface ActivityDefinition {
+interface Activity {
   id: string;
   businessId: string;
   name: string;
   emoji: string;
-  category: ActivityCategory;
+  description: string;
   pointValue: number;
-  description: string;
-  requiresCoachConfirmation: boolean;
-  maxPerDay?: number;
-  maxPerWeek?: number;
-  maxPerMonth?: number;
+  category: ActivityCategory;
+  
+  completionRules: {
+    requiresCoachConfirmation: boolean;
+    maxPerDay?: number;
+    maxPerWeek?: number;
+    maxPerMonth?: number;
+    maxLifetime?: number;           // For 100-Session Marker (1 only)
+    eligibilityWindowStart?: string; // "06:00" — for Morning Iron time-gating
+    eligibilityWindowEnd?: string;   // "09:00"
+  };
+
   isActive: boolean;
+  isBonusActive: boolean;           // For Cold Day Bonus activation
+  bonusPointValue?: number;         // Overrides pointValue when isBonusActive
+
+  createdAt: Date;
 }
 
 // ============================================================
-// CHALLENGE DEFINITION
+// REWARD
 // ============================================================
 
-interface ChallengeDefinition {
+interface Reward {
   id: string;
   businessId: string;
   name: string;
-  description: string;
   emoji: string;
-  category: ActivityCategory;
-  pointsReward: number;
-  enrollmentPoints: number;       // points for signing up (e.g. 10 FP)
-  durationDays: number;
-  requiredCompletions: number;
-  completionActivityIds: string[]; // which ActivityDefinition IDs count
-  isRecurring: boolean;
-  recurrencePeriod?: 'weekly' | 'monthly';
-  isActive: boolean;
-}
-```
-
----
-
-## 3. BUSINESS CONFIG SYSTEM
-
-### 3.1 White-Label Switching Architecture
+  description: string;
+  pointCost: number;
+  category: RewardCategory;
+  
+  redemptionMethod: 'in_gym' |
 
 
 ---
@@ -1434,552 +1439,679 @@ interface ChallengeDefinition {
 
 **Role:** Get the customers — persuasion and storytelling
 **Output file:** `04_marketing_copy.md`
-**Word count:** 3,654
+**Word count:** 3,675
 
-# LoyaltyOS × Slam Fitness — IRON RECORD
-## Communicator Agent Output v1.0
+# LoyaltyOS × Slam Fitness — FORGED
+## Full Marketing & Communications Suite
 
----
-
-# 1. PLATFORM POSITIONING
+*Prepared by LoyaltyOS Communicator Agent*
 
 ---
 
-## LoyaltyOS — One-Line Value Proposition
-*(For selling to gym owners and studio operators)*
-
-> **"LoyaltyOS turns the data your gym already generates into the human conversations that keep members from leaving."**
+## SECTION 1: PLATFORM POSITIONING
 
 ---
 
-## IRON RECORD Programme Tagline
-*(Member-facing — appears in the app, on collateral, on the wall)*
+### 1.1 LoyaltyOS One-Line Value Proposition
+*(Selling to businesses)*
 
-> **"Your record. Built in this room."**
-
----
-
-## Key Messages by Persona
+> **LoyaltyOS gives you the intelligence to see who's about to leave — and the tools to bring them back before they've made the decision.**
 
 ---
 
-### Persona 1: Ciarán — The Competitor
+### 1.2 Programme Tagline
+*(For Slam Fitness members — shown on app, merchandise, and communications)*
 
-> **"Every kilo you add is logged. Every rank you earn is visible. IRON RECORD doesn't just count your sessions — it counts what you achieved in them."**
+> **FORGED. Every session counts.**
 
-> **"You're not here to collect stamps. You're here to hit numbers. IRON RECORD tracks them, remembers them, and makes sure your coaches see them too."**
-
-> **"The leaderboard doesn't lie. Neither does your PR history. IRON RECORD keeps the scorecard so you can keep training."**
-
----
-
-### Persona 2: Aoife — The Transformer
-
-> **"Progress is happening even when it doesn't feel like it. IRON RECORD keeps the receipts — every session, every milestone, every kilo you earned."**
-
-> **"One bad week doesn't erase three great months. IRON RECORD makes sure you remember that, even when you'd rather forget."**
-
-> **"When your coach notices your deadlift went up 15kg, that's not an accident. IRON RECORD makes sure the people who matter see the work you're putting in."**
+*Secondary line for marketing materials:*
+> *You put in the work. We make sure it's never invisible.*
 
 ---
 
-### Persona 3: Declan — The Anchor
+### 1.3 Key Messages by Persona
 
-> **"Tuesday 7am. Thursday 6pm. Same crew, same coaches, same standard. IRON RECORD keeps your routine running smoothly — no fuss, no friction."**
+---
 
-> **"You've been building something here for over a year. IRON RECORD makes sure that counts for something — without you having to do anything differently."**
+#### Persona 1 — Ciarán, "The Grafter"
 
-> **"You're not here for the app. You're here for the training. IRON RECORD stays out of your way and makes sure Slam stays worth showing up for."**
+> **Message 1 — Progress Visibility**
+> "Every kilo you add to the bar lives here. Your numbers don't disappear between sessions — they build. Watch the thing you're actually building."
+
+> **Message 2 — Streak Identity**
+> "You don't miss. That's not a personality trait, it's a record. FORGED tracks it so you never have to explain it to anyone."
+
+> **Message 3 — Coach Continuity**
+> "Your coach knows your left shoulder is a problem. Your programme knows it too. The relationship doesn't reset — it compounds."
+
+---
+
+#### Persona 2 — Aoife, "The Social Achiever"
+
+> **Message 1 — Community Visibility**
+> "You show up. You bring people with you. You make this place what it is. FORGED notices all of that — and rewards it."
+
+> **Message 2 — Social Belonging**
+> "Challenges. Crew streaks. Moments worth sharing. This isn't a loyalty app — it's proof you're part of something."
+
+> **Message 3 — Referral Power**
+> "The person who got you into Slam Fitness changed your life a little bit. Do that for someone else — and earn Iron Points for it."
+
+---
+
+#### Persona 3 — David, "The Optimiser"
+
+> **Message 1 — Value Integrity**
+> "You didn't join Slam Fitness because it was convenient. You joined because it's better. FORGED is how you get more out of a programme that's already working."
+
+> **Message 2 — Performance Intelligence**
+> "Early access to specialist workshops. Programme analytics. Coach reviews on your schedule. This is what a premium membership actually looks like."
+
+> **Message 3 — No Noise**
+> "You'll only hear from us when there's something worth saying. No spam. No generic check-ins. Just relevant, useful signals — when they matter."
 
 ---
 
 ---
 
-# 2. ONBOARDING SEQUENCE
+## SECTION 2: ONBOARDING SEQUENCE
 
 ---
 
-## a) Welcome Message — First App Open
-
-*Shown on first launch, after onboarding consent is complete. Member's first name is pulled from their account.*
-
----
-
-```
-COPY BLOCK: WELCOME MESSAGE
-Target persona: All members (universal)
-Placement: Full-screen welcome card, first app open
-```
-
-**Headline:**
-> Right. Let's build your record.
-
-**Body:**
-> Welcome to IRON RECORD, [First Name].
->
-> This isn't a points collector. It's a record of what you've actually done — every session, every lift, every time you showed up when you didn't feel like it.
->
-> Your coaches can see your progress. You'll be recognised when you hit something real. And when life gets in the way, we'll notice before you disappear.
->
-> Training starts now. The record starts today.
-
-**CTA Button:**
-> Let's go →
-
----
-
-## b) First Reward Earned Notification
-
-*Triggered after the member's first confirmed session check-in earns their first Forge Points. Delivered as an in-app notification and push.*
+### 2a — Welcome Message
+*(Shown on first app open, after consent is given)*
 
 ---
 
 ```
-COPY BLOCK: FIRST REWARD EARNED
-Target persona: All members (universal, with Aoife/Transformer tone)
-Placement: Push notification + in-app toast
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Welcome to FORGED.                                │
+│                                                     │
+│   This is your Slam Fitness loyalty programme.      │
+│   But it's not a stamp card.                        │
+│                                                     │
+│   Every session you show up for, every             │
+│   personal best you log, every friend you          │
+│   bring through the door — it all counts.          │
+│   It always did. Now it's visible.                 │
+│                                                     │
+│   You start as RAW.                                │
+│   You won't stay there long.                       │
+│                                                     │
+│   Let's go.                                        │
+│                                                     │
+│              [ START EARNING ]                      │
+│                                                     │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Push notification (short form):**
-> First session, first points. [First Name], your record just started. 🔥
+**Persona targeting:** All three — but the language of tiers and visible progress speaks most directly to Ciarán (The Grafter) and David (The Optimiser). The "friend you bring through the door" line seeds referral thinking for Aoife (The Social Achiever) from the first moment.
 
-**In-app message (full):**
-
-**Headline:**
-> [First Name], you've earned your first Forge Points.
-
-**Body:**
-> 25 points for showing up. But more importantly — session one is in the books.
->
-> Your coaches have seen it. Your record has it. Twelve months from now, this is the day you'll look back at.
->
-> Keep going. It adds up faster than you think.
-
-**Points display:**
-> **+25 Forge Points** — Session Complete
-
-**CTA:**
-> See what you can earn →
+**Tone notes:** No exclamation marks. No "amazing journey ahead." Short sentences, real words. The word "stamp card" is used deliberately — we're naming the thing we're replacing.
 
 ---
 
-## c) 7-Day Streak Congratulation Message
-
-*Triggered when a member completes their 7-consecutive-session streak. Delivered as an in-app notification and push. Three variants by persona — system selects based on `personaType`.*
+### 2b — First Reward Earned Notification
+*(Push notification + in-app banner, triggered after first Iron Points are confirmed)*
 
 ---
-
-```
-COPY BLOCK: 7-DAY STREAK — CIARÁN VARIANT
-Target persona: Persona 1 — The Competitor
-Placement: PointEarnOverlay + push notification
-```
 
 **Push notification:**
-> 7 days straight, [First Name]. That's not a coincidence — that's a standard. 🔥
 
-**In-app overlay headline:**
-> 7-day streak. That's a number worth defending.
+```
+FORGED · Slam Fitness
 
-**Body:**
-> Seven sessions in a row. You've set a pace most people can't match — now the question is whether you can hold it.
->
-> Your coaches have noticed. Your rank on the current challenge reflects it.
->
-> **+150 Forge Points** added to your record.
+Your first Iron Points just landed. 🔥
+That's not a freebie — you earned it.
+Open to see your balance.
+```
 
-**CTA:**
-> Check your ranking →
+**In-app banner (on next open):**
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   First points. First session tracked.             │
+│                                                     │
+│   From here, every session adds to something       │
+│   you can actually see. Your progress isn't        │
+│   just in your body anymore — it's on the          │
+│   screen in front of you.                          │
+│                                                     │
+│   Keep going. The next milestone is closer         │
+│   than you think.                                  │
+│                                                     │
+│   [ SEE YOUR BALANCE ]   [ WHAT CAN I EARN? ]     │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+**Persona targeting:**
+- **Ciarán (The Grafter):** "Every session adds to something you can actually see" — this is the progress-visibility message that is his primary retention driver.
+- **David (The Optimiser):** "The next milestone is closer than you think" — gives him something to calculate and pursue.
+- **Aoife (The Social Achiever):** The secondary CTA "What can I earn?" sets up discovery of referral rewards.
 
 ---
 
-```
-COPY BLOCK: 7-DAY STREAK — AOIFE VARIANT
-Target persona: Persona 2 — The Transformer
-Placement: PointEarnOverlay + push notification
-```
+### 2c — 7-Day Streak Congratulation Message
+*(Push notification + full in-app celebration screen, triggered on week 1 streak confirmation)*
+
+---
 
 **Push notification:**
-> 7 days in a row. [First Name], you've built something this week. 🔥
-
-**In-app overlay headline:**
-> Seven days straight. You've earned this one.
-
-**Body:**
-> A week of showing up — even when work was mad, even when the couch looked good, even when it would have been very easy to skip.
->
-> You didn't skip. That matters more than you know right now.
->
-> Your coaches have been watching. This streak is officially on your record.
->
-> **+150 Forge Points** — and you've earned a Streak Freeze for when life happens.
-
-**CTA:**
-> See your progress →
-
----
 
 ```
-COPY BLOCK: 7-DAY STREAK — DECLAN VARIANT
-Target persona: Persona 3 — The Anchor
-Placement: PointEarnOverlay + push notification
+FORGED · Slam Fitness
+
+One week straight. 🔥
+That's not nothing, [First Name].
 ```
-
-**Push notification:**
-> 7 sessions, no breaks. Quiet work, [First Name]. The best kind. 🔥
-
-**In-app overlay headline:**
-> Seven days. Consistent as ever.
-
-**Body:**
-> No drama. No missed sessions. Just you, the routine, and the work.
->
-> That consistency is exactly what this place is built on — and exactly why the people you train alongside keep showing up too.
->
-> **+150 Forge Points** added to your record. You've also earned a Streak Freeze — it's there if you ever need it.
-
-**CTA:**
-> Keep going →
-
----
-
----
-
-# 3. OFFER COPY TEMPLATES
-
----
-
-## Offer 1 — Low Footfall Day Promotion
-
-*Targets Tuesday and Thursday off-peak sessions (10am–3pm). Earns double Forge Points. Framed as an insider benefit, not a desperation discount.*
-
----
-
-```
-COPY BLOCK: OFF-PEAK OFFER — "THE QUIET HOUR"
-Target persona: Ciarán (Competitor) — primary; Aoife (Transformer) — secondary
-Campaign trigger: Automated, Tuesday/Thursday, targeted at members who haven't booked that week
-```
-
-**Headline:**
-> Train when the gym is yours.
-
-**Body:**
-> Tuesday and Thursday afternoons, the floor is quieter. The racks are free. Coach attention is yours if you want it.
->
-> This week, sessions between 10am and 3pm on Tuesday and Thursday earn **double Forge Points** — 50 FP instead of 25, plus the best conditions you'll get all week for hitting a new lift.
->
-> Some of our best PRs happen on Tuesday afternoons. There's a reason for that.
-
-**CTA Button:**
-> Book your session →
-
-**Urgency Hook:**
-> Double points available this Tuesday and Thursday only. Spots filling — 6 left at peak-quiet times.
-
----
-
-## Offer 2 — Tier Upgrade Celebration
-
-*Triggered automatically when a member crosses a tier threshold. Personalised by the tier they've just reached. Example below is for Lifter → Competitor upgrade.*
-
----
-
-```
-COPY BLOCK: TIER UPGRADE — COMPETITOR TIER CELEBRATION
-Target persona: Ciarán (Competitor) — primary
-Trigger: Automated on tier-upgrade milestone event
-Placement: PointEarnOverlay → push notification → email follow-up
-```
-
-**Headline:**
-> You're a Competitor now. Act like it.
-
-**Body:**
-> [First Name], you've crossed into **Competitor** tier.
->
-> That's not a badge. It's a record of what you've put in — the sessions, the PRs, the challenges you signed up for and actually finished.
->
-> To mark it: you've unlocked **access to the monthly Competitor Challenge** — a programming block designed for members who've proven they'll show up consistently.
->
-> You also have 500 bonus Forge Points in your account, right now.
-
-**CTA Button:**
-> See what's unlocked →
-
-**Urgency Hook:**
-> Your Competitor Challenge access opens this Monday. First session is on us — redeem your complimentary session from your Rewards page before Friday.
-
----
-
-## Offer 3 — Win-Back Offer (14-Day Lapse)
-
-*Triggered when a member has not attended a session in 14 days, with no recorded absence reason. Three variants. Copy below is Aoife's version — the most emotionally resonant, and the most important to get right.*
-
----
-
-```
-COPY BLOCK: WIN-BACK — AOIFE VARIANT (14-DAY LAPSE)
-Target persona: Persona 2 — The Transformer
-Trigger: 14 days since last confirmed session, no recorded absence
-Delivery: Push notification → in-app message on next app open
-Critical design rule: Coach name appears as sender. This is flagged to coach for awareness BEFORE sending. Coach can edit or suppress.
-```
-
-**Push notification:**
-> Hey [First Name] — Coach [Name] here. You've been quiet. Wanted to check in.
 
 **In-app message:**
 
-**Headline:**
-> Two weeks. Your record is waiting.
-
-**Body (Coach-attributed — sent as message from coach):**
-> Hey [First Name] —
->
-> It's been a couple of weeks since we've seen you, and I wanted to reach out before it turns into a month.
->
-> You're [X weeks] into your current programme. Your back squat is [X kg] — up [X kg] since you started. That didn't happen by accident.
->
-> One session won't undo two weeks away. But two weeks away won't undo three months of work either.
->
-> There's a class on [next available session day] with a few familiar faces in it. Come back and see how it feels. No pressure, no performance — just get back on the floor.
->
-> We've held 200 Forge Points for you. They're waiting whenever you're ready.
->
-> — Coach [Name]
-
-**CTA Button:**
-> Book my comeback session →
-
-**Urgency Hook:**
-> Your 200 welcome-back points are held for 7 days.
-
----
-
 ```
-COPY BLOCK: WIN-BACK — CIARÁN VARIANT (14-DAY LAPSE)
-Target persona: Persona 1 — The Competitor
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   🔥                                               │
+│                                                     │
+│   One week. Every session.                         │
+│                                                     │
+│   A lot of people talk about going to the gym.     │
+│   You went. Seven days in a row.                   │
+│                                                     │
+│   Your streak is alive. Keep feeding it.           │
+│                                                     │
+│   + 25 IP added to your balance                    │
+│   Streak shield unlocked at week 4 — one           │
+│   miss won't break what you're building.           │
+│                                                     │
+│              [ SEE YOUR STREAK ]                   │
+│                                                     │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Push notification:**
-> [First Name] — your PR streak stopped 14 days ago. Let's not let that be the number you remember.
-
-**In-app headline:**
-> The record doesn't pause. You do.
-
-**Body:**
-> You've been away for two weeks, [First Name]. Your current programme is mid-block.
->
-> The strength you've built doesn't disappear in two weeks — but the momentum does. Come back before the gap starts to feel insurmountable.
->
-> There's a morning session on [next available day] with space on the platform. Your programme is exactly where you left it.
->
-> 200 Forge Points added to your account. Your ranking is still live.
-
-**CTA:**
-> Book my session →
-
----
-
-```
-COPY BLOCK: WIN-BACK — DECLAN VARIANT (14-DAY LAPSE)
-Target persona: Persona 3 — The Anchor
-Note: Softer tone. No metrics. Social anchor is the hook.
-```
-
-**Push notification:**
-> [First Name], Tuesday hasn't been the same. Your crew are asking after you.
-
-**In-app headline:**
-> Tuesday misses you.
-
-**Body:**
-> It's been a couple of weeks, [First Name]. Your usual session is running — same crew, same slot.
->
-> No big deal made of it. Just wanted you to know the door's open and the spot is yours whenever you're back.
->
-> Come to [usual session]. That's all.
-
-**CTA:**
-> Book Tuesday →
+**Persona targeting:**
+- **Ciarán (The Grafter):** The direct, no-fluff congratulation is calibrated for someone who doesn't want to be patronised — "that's not nothing" acknowledges effort without gushing. The streak shield information is relevant to him because protecting the streak matters.
+- **Aoife (The Social Achiever):** The social shareability of a streak milestone is implicit — this is the kind of moment she shares. The copy is short enough to screenshot.
+- **David (The Optimiser):** The streak shield is framed as information, not emotion — he'll note it, calculate it, and appreciate knowing the rule.
 
 ---
 
 ---
 
-# 4. BUSINESS SALES PITCH
+## SECTION 3: OFFER COPY TEMPLATES
 
-*LoyaltyOS pitch for selling to boutique fitness studios. Slam Fitness is the proof-of-concept client archetype. This pitch is written for the LoyaltyOS sales team to use when approaching similar businesses.*
+---
+
+### 3a — Low-Turnover Day Promotion
+*(Tuesday and Wednesday, 10am–4pm off-peak slots)*
+
+**Target persona:** David (The Optimiser) and Ciarán (The Grafter) — members with schedule flexibility identified by AI, never sent to members who would have attended anyway.
 
 ---
 
 ```
-COPY BLOCK: LOYALOS BUSINESS SALES PITCH
-Target business type: Boutique fitness studios, strength gyms, performance-focused clubs
-Format: Sales deck narrative / email pitch / landing page long-form
+HEADLINE:
+The gym is yours. No queue. No crowd.
+
+BODY COPY:
+Between 10am and 4pm on Tuesday and Wednesday,
+the floor is quiet. The kit is free. The coaches
+have time for you.
+
+If you can shift one session this week, this is
+when to do it.
+
+Come in before 4pm today or tomorrow:
+earn DOUBLE Iron Points on every activity.
+
+Bonus unlocks automatically when you check in.
+No code. No faff.
+
+CTA:
+[ BOOK MY SESSION — DOUBLE IP TODAY ]
+
+URGENCY HOOK:
+Offer closes at 4pm Wednesday. After that,
+back to normal.
 ```
+
+**Design note:** This offer should render as a `PersonalisedPromptCard` in the `off_peak_bonus` variant — orange top accent line, brightened border, countdown timer. It should never appear for members whose `scheduleFlexibilityScore` is below 0.3, per the AI targeting spec.
+
+---
+
+### 3b — Tier Upgrade Celebration Offer
+*(Triggered on tier advancement — specifically RAW → TEMPERED or TEMPERED → FORGED)*
+
+**Target persona:** Aoife (The Social Achiever) — who will share this publicly — but the copy works for all three.
+
+---
+
+```
+HEADLINE:
+You just moved up. This one's on us.
+
+BODY COPY:
+You've hit [NEW TIER].
+
+That's not handed out. You trained for it,
+showed up for it, and earned it.
+
+To mark it: your next class booking is
+automatically upgraded to priority access —
+you get first pick before the slot opens
+to everyone else.
+
+This is what [NEW TIER] looks like.
+
+CTA:
+[ BOOK MY PRIORITY SESSION ]
+
+URGENCY HOOK:
+Your priority access window is open for
+the next 7 days. Use it or it passes.
+```
+
+**Personalisation variables:**
+- `[NEW TIER]` — populates from `TierLevel` enum: Tempered / Forged / Ironclad
+- For IRONCLAD tier: swap "priority access" for "one complimentary personal training session" — adjust reward accordingly in `Reward` catalogue
+
+**Tone note for Aoife:** She will screenshot this. Make sure the tier name is on its own line, large and centred in the UI, so it reads cleanly as a social share.
+
+---
+
+### 3c — Win-Back Offer
+*(Triggered at 14-day absence — member has not checked in, booked, or engaged with the app)*
+
+**Target persona:** Aoife (The Social Achiever) — most vulnerable to lapsing after social anchor loss. Secondary: Ciarán (The Grafter), whose absence at this point is a serious churn signal.
+
+**Critical instruction:** This offer must not fire before a coach has been notified via the `CoachInterventionQueue`. The win-back offer is the *last* automated intervention — not the first.
+
+---
+
+```
+HEADLINE:
+Still here when you are.
+
+BODY COPY:
+It's been a couple of weeks. No judgement —
+life does that.
+
+When you're ready to come back, we'll make
+it worth it: your first session back earns
+triple Iron Points, and your streak picks up
+from where it was.
+
+Nothing resets. Nothing's lost.
+Come back whenever. The bar will be
+exactly where you left it.
+
+CTA:
+[ BOOK MY COME-BACK SESSION ]
+
+URGENCY HOOK:
+Triple points on your first session back —
+available for the next 5 days.
+```
+
+**Tone notes:** This is the most important piece of copy in the suite to get right. It must not be:
+- Needy ("We miss you!")
+- Punishing ("Your streak is in danger")
+- Hollow ("We'd love to see you again!")
+
+It must be: matter-of-fact, warm, and genuinely low-pressure. The phrase "Nothing resets. Nothing's lost." is doing the heaviest retention work in the entire document — it removes the psychological barrier of shame that keeps lapsed members from returning.
+
+**AI safety note:** If the member's `churnSignals.engagementTemperature` has already dropped to red (below 20), the copy should be suppressed entirely and replaced by a direct, human coach message — not a promotional offer. The `CoachInterventionQueue` flag must be marked red before this offer is sent in that case.
+
+---
+
+---
+
+## SECTION 4: BUSINESS SALES PITCH
+
+*(LoyaltyOS pitch for boutique fitness studios — written for a founder-to-founder or coach-to-platform conversation)*
 
 ---
 
 ### The Problem
 
-You didn't open a boutique gym to compete on price. You built something better — smaller, more personal, more results-driven than the €30-a-month chain down the road. But "better" is invisible when a member stops feeling it. The truth is, most gym members don't cancel because they found somewhere cheaper. They cancel because progress stalled, their training partner left, or their coach never noticed they'd gone quiet. By the time they're gone, they've been mentally leaving for six weeks. That's six weeks of sessions you could have had. Six weeks of a conversation that never happened. The stamp card on your counter doesn't see any of it coming. Your front desk staff are too busy. And your booking software counts absences — it doesn't interpret them.
+```
+Most gyms lose members quietly.
+
+There's no dramatic cancellation conversation,
+no formal goodbye. A member just shows up less,
+then stops. By the time that pattern is obvious
+to anyone on staff, the member has already made
+the decision — they just haven't cancelled their
+direct debit yet.
+
+For a boutique studio like yours, this is
+expensive in two ways: the obvious one is revenue,
+but the less obvious one is community. Your gym
+works because the 6:15am crew knows each other,
+because members bring friends, because your coaches
+know who had a bad week. When a member drifts,
+they take some of that with them.
+
+The frustrating part: most churning members don't
+leave because they stopped caring about fitness.
+They leave because something in the experience
+quietly shifted — a progress plateau, a change in
+their schedule, a training partner who stopped
+coming — and no one caught it in time.
+
+A stamp card doesn't catch it. A generic email
+campaign doesn't catch it. You need something that
+notices the pattern before you do.
+```
 
 ---
 
 ### The Solution
 
-LoyaltyOS is a loyalty platform built specifically for high-touch fitness businesses. It watches the behavioural signals that matter — not just who's attending, but who's booking and not showing up, who's stopped logging PRs, whose training crew just dissolved. When it spots a pattern that's predicted cancellation in businesses like yours, it doesn't send the member an automated discount. It sends your coach a human prompt: *"[Member] hasn't logged a new lift in 21 days. Worth a check-in this week."* The coach decides what to say. They say it in their own words. The member feels seen by a person — because they were. LoyaltyOS makes that intervention possible at exactly the right moment, at scale, without your coaches spending their evenings staring at spreadsheets. It also gives your best members something they've been quietly wanting: a real record of what they've built in your gym. Not points. Not a coffee voucher. A permanent, visible account of every session, every PR, every milestone earned on your floor. That's your retention strategy. That's also your brand.
-
----
-
-### What Our Clients Have Found
-
-Studios running LoyaltyOS have seen measurable reductions in the 6-to-10-week churn window — the period when members who've lost momentum quietly decide to cancel before they've consciously admitted it to themselves. Coach-initiated check-ins triggered by LoyaltyOS interventions consistently outperform automated win-back campaigns. Members who engage with their progress record — the PR history, the milestone timeline, the session count — renew at significantly higher rates than those who don't. And the referral mechanic works not because it incentivises members to recruit, but because it gives your most committed members a way to publicly declare what training here has done for them.
-
-*[Client case study and verified figures to be inserted here — contact your LoyaltyOS account manager for current benchmarks.]*
-
----
-
-### Let's talk
-
-If you're running a boutique gym and your retention strategy is currently a combination of hope, WhatsApp messages, and a stamp card — this is the conversation worth having.
-
-LoyaltyOS is set up in two weeks. No ripping out your existing booking system. No retraining your staff on new software.
-
-> **Book a 30-minute walkthrough.** We'll show you what the data from a gym like yours actually looks like — and what you're currently not seeing.
-
-**[Schedule a demo →]**
-
----
-
----
-
-# 5. TRUST AND ETHICS MESSAGING
-
-*In-app privacy notice copy. Plain language. No legal jargon. Honest about AI. Located in Settings → Your Data & Privacy.*
-
----
-
 ```
-COPY BLOCK: PRIVACY NOTICE — IN-APP
-Placement: Settings → Your Data & Privacy
-Tone: Direct, honest, human. Written as if explaining to a friend.
-GDPR context: Irish DPC jurisdiction. Health/fitness data treated as sensitive. Tiered consent model required.
+LoyaltyOS is a loyalty programme built around
+your actual product: the coaching relationship,
+the community, and the feeling of visible progress.
+
+Members earn Iron Points for everything that keeps
+them engaged — sessions, personal bests, showing up
+after a break, bringing a friend, doing a coach
+check-in. Points buy real things: priority booking,
+merchandise, coaching sessions, early access to
+new programming.
+
+But that's the surface. Underneath it, LoyaltyOS
+is watching the behavioural patterns that predict
+churn — broken time-slot habits, social withdrawal,
+declining session frequency — and surfacing them to
+your coaches before they become cancellations.
+
+Your coach doesn't get a data dump. They get a
+one-line brief and a suggested conversation starter,
+specific to that member's programme. The technology
+finds the moment. Your coach has the conversation.
+That's the distinction that matters: the human
+relationship stays human. The AI just makes it
+possible at scale.
+
+The whole thing runs under your brand. Your members
+see Slam Fitness, not LoyaltyOS. You get the loyalty,
+we handle the infrastructure.
 ```
 
 ---
 
-## Your Data & Privacy
+### Social Proof
 
-**The short version:** We collect data about how you train. We use it to make your experience more useful and to help your coaches support you better. You're in control of what we collect, and you can delete everything whenever you want.
+```
+[PLACEHOLDER — to be populated with live client data]
 
-Here's the full picture.
+Studios using LoyaltyOS have seen [X]% reduction
+in member churn in the first six months, with the
+highest-impact results coming not from the points
+economy, but from the coach intervention queue —
+specifically, members flagged by the AI who received
+a personalised coach message before consciously
+deciding to leave.
 
----
+"I didn't think I needed a loyalty programme.
+I thought we had good enough relationships with
+members to catch this ourselves. What I didn't
+realise was how many signals I was missing —
+not because I didn't care, but because I was
+running six classes a day."
 
-### What we collect and why
+— [COACH/OWNER NAME], [STUDIO NAME]
 
-**Session attendance** — When you check in to a session, we record it. This is how your Forge Points are calculated, how your streak is tracked, and how we know when to flag a check-in to your coach if you've been quiet.
-
-**Progress logs (PRs and training data)** — When you log a personal record, we store the lift, the weight, the date, and any notes you add. This builds your permanent training record and lets you see how far you've come. Your coaches can see confirmed PRs — it's how they track your progress without you having to repeat yourself every session.
-
-**Booking behaviour** — We track when you book, whether you attend, and whether you cancel late or no-show. We use this to calculate your points and — with your consent — to spot patterns that might suggest you need a check-in from your coach.
-
-**Social posts (opt-in only)** — If you've opted into Social Recognition, and you tag Slam Fitness in a post, we log that you did. We don't scrape your social accounts, monitor your followers, or store your content. We just note the tag so your coach can acknowledge it.
-
-**Referral activity** — If you refer a friend and they join, we record the connection so both of you receive your reward.
-
-We do not collect: body weight, body composition, injury history, or any health information you haven't explicitly chosen to share through the progress log.
-
----
-
-### How AI personalisation works
-
-IRON RECORD uses AI to notice patterns in your training data and make suggestions to your coaches — not to you directly.
-
-Here's what that actually means:
-
-If you've missed two sessions in a row after previously training consistently, the AI flags this to your coach as a soft check-in prompt. It doesn't send you an automated message. Your coach reads the flag, decides if it's relevant, and reaches out in their own words if they think it's worth a conversation.
-
-If you're a member who responds to progress stats, the AI will surface your recent numbers when you open the app — things like your session count over the last 90 days, or how much your squat has improved.
-
-The AI also helps us make sure the rewards and challenges you see are relevant to how you actually train — not just generic offers sent to everyone.
-
-**What the AI never does:**
-- It doesn't make decisions about your membership without a human reviewing them.
-- It doesn't share your data with other members.
-- It doesn't infer medical or health conditions.
-- It doesn't send messages on your coaches' behalf — your coach always writes their own messages.
+We can share specifics from comparable studios —
+same size, same model, same community-first culture
+— on a call.
+```
 
 ---
 
-### How to delete your data
+### Call to Action
 
-You own your data. If you want it deleted, here's how:
+```
+We'll set up a free 30-minute walkthrough using
+your actual membership data — not a demo environment,
+your real numbers.
 
-**Delete specific entries:** Go to My Record → tap any PR or activity → select "Remove from my record." This removes it from your visible history and from coach-facing dashboards.
+You'll see exactly what churn signals already exist
+in your booking data, which members are most at risk
+right now, and what a loyalty programme built for
+your specific member base would look like.
 
-**Delete your account and all data:** Go to Settings → Your Data & Privacy → Request Account Deletion. We'll permanently delete your account, your training history, your points balance, and any data linked to your profile within 30 days. This cannot be undone.
+No slides. No sales deck.
+Just your data, our tools, and an honest conversation.
 
-**Download your data:** You can request a full export of everything we hold about you at any time. Go to Settings → Your Data & Privacy → Download My Data. You'll receive it within 7 days.
+[ BOOK A 30-MINUTE WALKTHROUGH ]
 
-**Change your consent preferences:** If you want to turn off coaching alerts, social recognition, or any other data category, go to Settings → Privacy Preferences. You can change these at any time. Turning off a category won't delete your existing data — it just stops new data of that type being collected and used.
-
----
-
-### Who sees your data
-
-**Your coaches at Slam Fitness** see your session attendance, confirmed PRs, streak status, and any churn-risk flags relevant to their role — if you've consented to coaching alerts.
-
-**Slam Fitness management** sees anonymised footfall data, aggregate member metrics, and individual profiles for members with elevated churn risk.
-
-**LoyaltyOS** (that's us) operates the platform and processes your data to run the loyalty programme. We do not sell your data. We do not share it with third parties for advertising. We store it securely on servers within the EU.
-
-We retain your data for 24 months after your membership ends. After that, it is permanently deleted unless you've requested otherwise.
-
----
-
-### Questions?
-
-If you have a question about your data that isn't answered here, you can contact us at **privacy@loyaltyos.io** or speak directly to the team at Slam Fitness.
-
-If you believe your data has been mishandled, you have the right to lodge a complaint with the Irish Data Protection Commission at **dataprotection.ie**.
-
----
-
-*Last updated: [Date]. This notice applies to your use of the IRON RECORD programme operated by Slam Fitness, powered by LoyaltyOS.*
+Or reply to this message. We read everything.
+```
 
 ---
 
 ---
 
-## Communicator Agent — Copy Index
+## SECTION 5: TRUST AND ETHICS MESSAGING
 
-| Section | Piece | Persona Target |
-|---|---|---|
-| 1 | LoyaltyOS value proposition | Business audience |
-| 1 | IRON RECORD tagline | All members |
-| 1 | Key message 1 | Ciarán — Competitor |
-| 1 | Key message 2 | Aoife — Transformer |
-| 1 | Key message 3 | Declan — Anchor |
-| 2a | Welcome message | Universal (Transformer tone) |
-| 2b | First reward notification | Universal |
-| 2c | 7-day streak — Competitor variant | Ciarán |
-| 2c | 7-day streak — Transformer variant | Aoife |
-| 2c | 7-day streak — Anchor variant | Declan |
-| 3 | Off-peak offer | Ciarán primary, Aoife secondary |
-| 3 | Tier upgrade offer | Ciarán |
-| 3 | Win-back — Transformer | Aoife |
-| 3 | Win-back — Competitor | Ciarán |
-| 3 | Win-back — Anchor | Declan |
-| 4 | Business sales pitch | Gym owner/operator |
-| 5 | Privacy notice | All members |
+*(App copy — Privacy and data transparency. Appears in the `ConsentScreen` at onboarding and the `DataTransparencyPage` at `/profile/data`)*
 
 ---
 
-*Communicator Agent output complete. All copy produced for IRON RECORD at Slam Fitness. Every piece is persona-targeted, human-voiced, and built around the core diagnostic: this is a progress-plateau and social-anchor retention problem. The copy reflects that — it never sells points, it always sells progress, belonging, and the permanent record of both.*
+### 5a — What Data We Collect and Why
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   What we know about you, and why                  │
+│                                                     │
+│   We collect three types of information:           │
+│                                                     │
+│   YOUR SESSIONS                                     │
+│   When you book, when you show up, what classes    │
+│   you attend, and how often. We use this to        │
+│   track your streaks, award your points, and       │
+│   spot if something in your routine has shifted    │
+│   — so your coach can check in with you.           │
+│                                                     │
+│   YOUR PROGRESS                                     │
+│   Personal bests you log, programme milestones     │
+│   your coach confirms, and challenges you          │
+│   complete. This is how your achievements          │
+│   become visible and permanent.                    │
+│                                                     │
+│   YOUR ENGAGEMENT                                   │
+│   Whether you've responded to coach messages,      │
+│   used the app, or referred a friend. We use       │
+│   this to understand how well the programme        │
+│   is working for you — not to judge you for        │
+│   quiet weeks.                                     │
+│                                                     │
+│   We do not collect health records, financial      │
+│   information beyond your membership tier,         │
+│   or biometric data of any kind.                   │
+│                                                     │
+│   We do not sell your data. Ever. To anyone.      │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5b — How to Delete Your Data
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Your data, your call                             │
+│                                                     │
+│   You can delete your FORGED account and all       │
+│   associated data at any time.                     │
+│                                                     │
+│   Go to: Profile → Settings → Delete my account   │
+│                                                     │
+│   When you delete your account:                    │
+│                                                     │
+│   • Your Iron Points balance is removed            │
+│   • Your session history is deleted                │
+│   • Your progress records are deleted              │
+│   • Any pending rewards are cancelled              │
+│                                                     │
+│   Deletion is permanent. We can't recover          │
+│   your history after the fact, so if you're        │
+│   taking a break rather than leaving, consider     │
+│   pausing instead — your data stays, your          │
+│   points stay, and you can pick up where           │
+│   you left off.                                    │
+│                                                     │
+│   Under GDPR, you also have the right to           │
+│   request a copy of your data before you           │
+│   delete it. Email [data@slamfitness.ie] and       │
+│   we'll send it to you within 30 days.             │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5c — How AI Personalisation Works
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   How the smart stuff works                        │
+│   (and what it actually does)                      │
+│                                                     │
+│   FORGED uses pattern recognition to make          │
+│   the programme more useful for you. Here's        │
+│   what that means in plain terms:                  │
+│                                                     │
+│   WHAT THE AI DOES                                 │
+│                                                     │
+│   It looks at your booking and attendance          │
+│   patterns over time. If something shifts —        │
+│   you're coming less often, or you've missed       │
+│   your usual slot for a couple of weeks —          │
+│   it flags this for your coach.                    │
+│                                                     │
+│   Your coach then decides whether to reach         │
+│   out. The message comes from them, not from      │
+│   a machine. The AI spotted the pattern;           │
+│   your coach wrote the words.                     │
+│                                                     │
+│   It also identifies when off-peak slots are       │
+│   quiet and, if your history suggests you have     │
+│   schedule flexibility, offers you a bonus         │
+│   for attending at those times.                    │
+│                                                     │
+│   WHAT THE AI DOES NOT DO                         │
+│                                                     │
+│   It does not make decisions about your            │
+│   membership. It does not contact you directly.    │
+│   It does not share your information with          │
+│   anyone outside Slam Fitness. It does not         │
+│   make assumptions about your health.              │
+│                                                     │
+│   TURNING THIS OFF                                 │
+│                                                     │
+│   If you'd prefer that your attendance data        │
+│   isn't used to prompt coach outreach, you         │
+│   can change this at any time:                     │
+│                                                     │
+│   Profile → Settings → Data & Privacy →           │
+│   "Proactive coaching outreach" → Off              │
+│                                                     │
+│   Your points, your streak, and your progress      │
+│   records are unaffected. The app keeps            │
+│   working. Your coach just won't receive           │
+│   AI-prompted alerts about your attendance.        │
+│                                                     │
+│   One last thing: if you ever receive a message    │
+│   from your coach and want to know whether         │
+│   the FORGED system played a role in prompting     │
+│   it — you're welcome to ask them. We'd rather     │
+│   you know.                                        │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5d — Onboarding Consent Screen Copy
+*(Renders in `ConsentScreen` component — two selectable option cards)*
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Before we start — one quick choice.              │
+│                                                     │
+│   FORGED uses your session and attendance          │
+│   history to make the programme work properly.     │
+│   You decide how far that goes.                    │
+│                                                     │
+│   ┌─────────────────────────────────────────────┐ │
+│   │                                             │ │
+│   │  ✓  Use my data fully                      │ │
+│   │                                             │ │
+│   │  Personalise my app and let my coach        │ │
+│   │  know if my attendance pattern shifts.      │ │
+│   │  I want the full experience.                │ │
+│   │                                             │ │
+│   └─────────────────────────────────────────────┘ │
+│                                                     │
+│   ┌─────────────────────────────────────────────┐ │
+│   │                                             │ │
+│   │  ○  Personalise my app only                │ │
+│   │                                             │ │
+│   │  Use my data for points, streaks, and       │ │
+│   │  rewards — but don't use it to prompt       │ │
+│   │  my coach to contact me.                    │ │
+│   │                                             │ │
+│   └─────────────────────────────────────────────┘ │
+│                                                     │
+│   You can change this at any time in               │
+│   Profile → Settings.                              │
+│                                                     │
+│              [ CONTINUE ]                          │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+---
+
+## COPY SYSTEM NOTES
+
+*For the Designer and Maker agents — implementation guidance from the Communicator.*
+
+**Voice rules across all copy:**
+1. Short sentences. If a sentence has two clauses, consider making it two sentences.
+2. No exclamation marks in serious moments. Reserve them for genuine celebration only — and even then, sparingly.
+3. Never use: "journey," "amazing," "community" more than once per screen, "we'd love to," "don't miss out," "limited time" without a specific end time attached.
+4. Always name the thing being offered specifically. "Double Iron Points" not "bonus rewards." "Priority booking" not "exclusive access."
+5. The win-back offer is the only copy in this suite where the tone becomes explicitly permissive. It should always feel like a door left open, not a hand reaching through one.
+
+**Persona cross-reference — quick guide:**
+
+| Copy Piece | Primary Persona | Secondary Persona | Key Emotional Lever |
+|---|---|---|---|
+| Welcome message | Ciarán / David | Aoife | Progress visibility |
+| First reward notification | Ciarán | David | Momentum, next milestone |
+| 7-day streak message | Ciarán | Aoife, David | Consistency identity |
+| Off-peak promotion | David | Ciarán | Value, expertise access |
+| Tier upgrade offer | Aoife | All | Social recognition |
+| Win-back offer | Aoife | Ciarán | Low-pressure return |
+| Sales pitch | Owner/Founder | Head Coach | Churn intelligence |
+| Privacy / AI notice | David | All | Transparency, control |
+
+**On the win-back offer specifically:** The line *"The bar will be exactly where you left it"* has a double meaning — the barbell in the gym, and the psychological bar that lapsed members feel they must clear before returning. Both meanings should land. Do not simplify this line in editing.
+
+**On the AI transparency section:** The sentence *"The AI spotted the pattern; your coach wrote the words"* is the single most important trust-building sentence in the product. If any future implementation automates the coach message rather than prompting it, this sentence becomes a lie. The copy cannot change unless the product does first — or vice versa.
 
 
 ---
@@ -1989,101 +2121,70 @@ If you believe your data has been mishandled, you have the right to lodge a comp
 
 **Role:** Run the business — leadership and orchestration
 **Output file:** `05_executive_summary.md`
-**Word count:** 5,433
+**Word count:** 5,657
 
-# LoyaltyOS Management Report
-## Client: Slam Fitness | Programme: IRON RECORD
-### Manager Agent Synthesis v1.0
-
----
-
-# SECTIONS 1–6: INTERNAL MANAGEMENT REPORT
+# LoyaltyOS Internal Management Report
+## Slam Fitness — FORGED Loyalty Programme
+### Pipeline Synthesis | Manager Agent
 
 ---
 
 ## 1. EXECUTIVE SUMMARY
 
-Slam Fitness is losing members not because it is doing anything wrong, but because members stop *feeling* their progress — and nobody notices in time to intervene. By the time a member cancels, they have been mentally leaving for six weeks.
+Slam Fitness has a specific problem: members don't dramatically quit — they quietly drift. A progress plateau hits around weeks 8–12, a training partner stops coming, a routine shifts, and the member simply attends less until they don't attend at all. By the time this is visible to any coach, the decision has usually already been made.
 
-What has been built is a loyalty programme called **IRON RECORD** that solves this specific problem. It gives every Slam Fitness member a permanent, visible record of their training — every session, every personal best, every milestone. When the AI detects that a member is drifting (missing sessions, stopping progress logs, losing their training crew), it does not send them an automated discount. It alerts their coach with a precise, human-readable prompt so the coach can reach out in their own words at exactly the right moment.
+What has been built is a loyalty programme called FORGED that addresses this pattern directly. Members earn Iron Points for every session they attend, every personal best they log, every friend they bring through the door, and every coach check-in they complete. Those points unlock real rewards: priority booking, free coaching sessions, merchandise. There are four membership tiers — Raw, Tempered, Forged, Ironclad — that give members a visible identity tied to their commitment level.
 
-The programme rewards members with **Forge Points** for the things that actually build commitment: logging personal records, attending consistently, completing challenges, and referring friends. Points convert into real rewards — from a post-session shake to a permanently engraved plaque recording a member's best lifts.
+Underneath the points economy, the system monitors five behavioural signals that predict when a member is about to leave — broken routines, missed bookings, social withdrawal — and alerts their coach before the member has consciously decided to go. The coach then reaches out. The AI identifies the moment; the human delivers the relationship. That distinction is not incidental — it is the product's core integrity.
 
-On the business side, the owner gets a live dashboard showing footfall patterns, which members are at risk, and whether the off-peak incentive is actually moving Tuesday and Thursday attendance.
-
-**The single most important thing the business owner must do before launch:** Complete the GDPR onboarding checklist in Section 7, specifically signing the data processing agreement with LoyaltyOS and implementing the tiered consent flow. Without this, the programme cannot legally go live in Ireland.
+**The single most important action before launch:** Complete a formal Data Protection Impact Assessment and appoint a named data lead at Slam Fitness. The AI churn-prediction function processes behavioural data to influence coaching interventions. That requires GDPR-compliant consent architecture, specific data retention policies, and documented human oversight of automated decisions. This is not optional and it is not bureaucracy — it is the legal and reputational foundation the entire programme sits on.
 
 ---
 
 ## 2. PIPELINE QUALITY REVIEW
 
-**Researcher: 9/10** — Exceptional diagnosis; the structural framing of progress-plateau and social-anchor churn is specific, evidenced, and actionable, with the five behavioural churn signals providing a genuinely useful operational framework for the AI detection layer. *One deduction: the GDPR risk section correctly identifies special category data risk but does not resolve whether fitness performance data (PRs, session attendance) crosses the Article 9 threshold in Irish DPC guidance — this ambiguity should have been flagged more sharply.* — **APPROVED**
+**Researcher: 9/10** — The diagnosis of Slam Fitness's retention problem is precise, persona-specific, and actionable; the five churn signals are ranked by predictive weight and directly inform the designer's intervention logic, though the brief would benefit from a quantified estimate of current monthly churn rate to give the programme a baseline to measure against. — **APPROVED**
 
-**Designer: 9/10** — The IRON RECORD design is internally coherent, emotionally intelligent, and directly responsive to the Researcher's diagnosis. The tier naming, the plaque reward, the Streak Freeze mechanic, and the five hard design rules around manipulation are all excellent decisions. *One deduction: the design specifies that the 7-day streak notification carries "+150 Forge Points" but the points table awards 75 FP for a 7-day streak — this numerical inconsistency exists across the design spec and must be resolved before the Maker finalises point values.* — **APPROVED** *(with required correction noted below)*
+**Designer: 9/10** — The design specification is comprehensive, internally consistent, and demonstrates genuine understanding of why each mechanic serves each persona; the trust and transparency section is unusually strong for a design document, though the streak shield earned via coach check-in requires clarification in the admin panel on how coaches confirm check-in completion to prevent the shield from being gamed. — **APPROVED**
 
-**Maker: 8/10** — The technical specification is thorough, professionally structured, and correctly implements almost all design decisions. The data model is well-designed and the component architecture is sound. *One deduction: the Business Config white-label switching section (Section 3.1) is listed in the document but its content is absent — the spec is incomplete at that section. Additionally, the Maker does not address the weather API integration for the Weather Day Bonus mechanic despite the Designer specifying it. These gaps must be closed before build begins.* — **APPROVED** *(with required completions noted below)*
+**Maker: 8/10** — The component inventory and data models are implementation-ready and faithfully execute the design specification; the data model section is truncated mid-definition on the `Reward` interface's `redemptionMethod` field, which must be completed before any developer begins build, and the absence of a defined API layer (beyond references to `/api/personalise` and `/api/offers`) leaves the Claude AI integration points underspecified. — **APPROVED with mandatory pre-build correction noted.**
 
-**Communicator: 9/10** — The copy is the strongest output in the pipeline after the Research Brief. Persona targeting is precise, the win-back variants are genuinely differentiated and emotionally calibrated, and the privacy notice is one of the best plain-English GDPR documents produced by this pipeline to date. *One deduction: the business sales pitch section contains unverified performance claims ("Studios running LoyaltyOS have seen measurable reductions in the 6-to-10-week churn window") with a placeholder noting that verified figures are absent. This copy cannot be used externally until real benchmarks replace the placeholder — using it in current form is a legal and reputational risk.* — **APPROVED** *(with mandatory correction on sales claims)*
+**Communicator: 9/10** — The copy is exceptional in tone calibration, persona alignment, and ethical discipline; the win-back offer and AI transparency section in particular set a high standard; the social proof section in the sales pitch contains placeholder data with no instruction for when or how it will be populated with real client evidence, which is a launch readiness gap, not a copy quality issue. — **APPROVED**
 
----
+**Pipeline Verdict:** All four agents are APPROVED. No agent is flagged as a blocker. Two pre-launch corrections are mandatory before any build work begins:
 
-### Blockers Requiring Resolution Before Launch
-
-**Blocker 1 — Point Value Inconsistency:** The Designer's points table (Section 2) awards **75 FP** for a 7-day streak. The Communicator's copy (Section 2c) states **+150 Forge Points** for the same event. The Maker's data model must implement one canonical figure. Decision required: 75 FP (points table) is the authoritative source. All copy must be corrected to 75 FP before the Communicator's streak notification copy is used in production.
-
-**Blocker 2 — Incomplete Maker Spec:** Section 3.1 of the Maker output (Business Config System / White-Label Switching Architecture) contains a header and no content. This section governs how LoyaltyOS deploys to multiple clients — it is architecturally critical. The Maker must complete this section before build begins.
-
-**Blocker 3 — Weather API Integration Gap:** The Designer specifies a weather API trigger for the "Weather Day Bonus" mechanic. The Maker does not implement this in the component inventory or data model. The `Business` interface includes `weatherApiEnabled` and `weatherLocationId` fields, suggesting intent, but no component, API route, or logic is specified for execution. The Maker must add a `WeatherBonus` service and the corresponding `Offer` generation trigger.
-
-**Blocker 4 — Unverified Sales Claims:** The Communicator's business pitch must not be distributed externally in its current form. The placeholder for client benchmarks must be replaced with verified, attributable data, or the performance claims must be removed entirely until evidence exists.
+1. The Maker's `Reward` interface must be completed — the `redemptionMethod` field definition is truncated at `'in_gym' |` and the remainder of the data model is missing.
+2. The API layer for Claude AI integration (`/api/personalise`, `/api/offers`, and the churn signal computation endpoint) must be specified before developer handoff. These are not frontend component questions — they are backend architecture decisions with GDPR and EU AI Act implications.
 
 ---
 
 ## 3. STRATEGIC ALIGNMENT CHECK
 
-### Does the loyalty design directly address the specific retention problem the Researcher named?
+### Does the loyalty design directly address the retention problem the Researcher named?
 
-**Yes — with one noted gap.**
+The Researcher's core finding: *"Slam Fitness loses members not because they stop caring about fitness, but because the experience of progress becomes invisible to them, and the community that made skipping feel socially costly becomes thinner."*
 
-The Researcher's core diagnosis: *"When a member stops feeling progress (whether real or perceived), the premium justification for a boutique studio over a €30/month commercial gym collapses overnight. And when a member's social anchor — a training partner, a favourite coach, a regular class crew — is disrupted, the belonging that kept them accountable disappears with it."*
+The Designer's response is structurally sound. The Iron Ring progress indicator, Personal Best logging mechanic, milestone ghost screens, and tier progression system all directly address progress invisibility. The referral mechanics, boot camp crew activity, and community contribution board address the social thinning problem. The pre-lapse coach trigger — the Designer's most important mechanic — directly operationalises the Researcher's highest-value personalisation intervention verbatim.
 
-The IRON RECORD design addresses both failure modes explicitly:
+**Alignment confirmed.** The design does not simply implement a generic loyalty programme. It implements the specific retention theory the Researcher diagnosed.
 
-- **Progress plateau:** The PR log, Progress Recap Card, PR Anniversary mechanic, My Record tab, and the churn signal "PR Silence at 21+ days" all directly combat the invisible erosion of perceived progress. The system makes progress legible at the moment a member is most at risk of concluding it isn't happening.
-
-- **Social anchor disruption:** The Anchor persona monitoring (social cluster surveillance, cohort cancellation alert), the community-framing of challenges, the Crew Builder challenge, and Declan's persona-specific dashboard are all directly targeting this failure mode.
-
-**Noted gap:** The Researcher names "The Class Switch" (a member deviating from their habitual class slot) as the second most predictive churn signal, flagging it as social anchor disruption. The Designer includes `class-switch` as a churn signal in the composite score table, but no specific intervention mechanic or UI response is designed for this signal beyond the generic churn risk register. A member who switches away from their habitual class slot because their coach has changed schedules — the exact scenario Declan's persona describes — receives no tailored response. This gap should be addressed in Phase 2 iteration.
-
----
+One gap: the Researcher identifies **coach departure** as Ciarán's single highest churn risk — *"If the person who knows his back injury history is replaced without careful transition, Ciarán re-evaluates everything."* Neither the Designer nor the Maker addresses coach continuity in the data model or admin panel. The `Coach` model exists, and `assignedCoachId` is tracked per customer, but there is no handover protocol, no alert when a coach leaves, and no mechanic for transitioning a member's programme history to a new coach. This is a named risk from the Researcher with no designed mitigation. **Explicit misalignment flagged.**
 
 ### Does the prototype plan implement all key features from the design spec?
 
-**Mostly yes. Three features require completion or confirmation:**
+The Maker implements all thirteen earnable activities, all eight rewards, all four tiers, the streak shield mechanic, the three surprise-and-delight moments, the admin panel with intervention queue, the consent screen, and the data transparency page. The AI-personalised prompt card and off-peak bonus are implemented. The tier badge visual language and activity category chips are implemented.
 
-- ✅ All 14 earnable activities are implemented in the `ActivityDefinition` data model
-- ✅ All 8 rewards are implemented in the `Reward` interface with correct fulfilment methods
-- ✅ All 4 tiers are implemented with correct visual configuration in `TierBadge`
-- ✅ The 5-screen churn intervention protocol is implemented in `ChurnRiskRegister` and `CoachActionList`
-- ✅ The Streak Freeze mechanic is implemented in `StreakCounter` and the `Customer` model
-- ✅ The 4-screen tiered consent onboarding is implemented in `OnboardingConsent`
-- ❌ **Weather Day Bonus** mechanic is not implemented (Blocker 3 above)
-- ❌ **Business Config white-label system** is incomplete (Blocker 2 above)
-- ⚠️ **PR Anniversary "Quiet Milestone"** mechanic is referenced in `MyRecordView` and `Milestone` types, but no API trigger, scheduled job, or notification service is specified for the anniversary date calculation — the Maker must add this to the backend service layer
+**One missing feature:** The design specification describes a **Community Contribution Board** in the social/referral mechanics section — *"Members who make 5+ referrals in a 12-month period receive an 'Inner Circle' badge and are given a named callout in the monthly Slam Fitness newsletter."* This feature appears in the Designer's output but has no corresponding component in the Maker's component inventory, no data model field for tracking the 5-referral threshold, and no mention of a newsletter integration or admin trigger. The `Customer.referrals.successfulReferrals` count exists in the data model, but the Community Contribution Board UI and Inner Circle badge award logic are unimplemented. **Explicit gap flagged.**
 
----
+**Second missing feature:** The design spec describes an **in-gym kiosk display** that shows tier badges and the monthly streak board. The Maker builds only the app-facing components. No kiosk component, no kiosk data endpoint, and no physical display integration are specified. This may be intentional scope reduction, but it is not documented as such. **Explicit gap flagged — requires a scope decision before launch.**
 
 ### Does the marketing copy target the exact three personas the Researcher defined?
 
-**Yes — confirmed for all three.**
+**Ciarán, 31, "The Grafter":** Confirmed. Section 1.3 addresses his progress-visibility and streak-identity needs directly. Section 2c's streak congratulation copy is calibrated for his aversion to being patronised ("that's not nothing" instead of "amazing work!"). The off-peak promotion targeting in Section 3a correctly routes to him as a schedule-flexible, data-oriented member.
 
-| Persona | Researcher Definition | Communicator Coverage | Alignment |
-|---|---|---|---|
-| **Ciarán — The Competitor** | Male, 28–36, performance-obsessed, triggered by public recognition of measurable progress, disengages when plateau is unacknowledged | Dedicated key messages, 7-day streak variant, off-peak offer primary, tier upgrade offer, win-back variant — all framed around rankings, PRs, and performance evidence | ✅ Confirmed |
-| **Aoife — The Transformer** | Female, 25–33, goal-driven, highly coachable, emotionally responsive, disengages when a streak break is met with silence | Dedicated key messages, 7-day streak variant, win-back variant (coach-attributed, emotionally calibrated, progress-anchored), welcome message tone | ✅ Confirmed |
-| **Declan — The Anchor** | 35–45, habitual, community-anchored, anti-friction, disengages when social geography is disrupted | Dedicated key messages, 7-day streak variant, win-back variant (no metrics, social hook only, minimal copy) | ✅ Confirmed |
+**Aoife, 28, "The Social Achiever":** Confirmed. The referral power messaging, tier upgrade social shareability design note, community contribution board callout, and win-back offer are all primarily targeted at Aoife. The Communicator correctly identifies that the line "The bar will be exactly where you left it" is doing retention work specifically for members whose barrier to return is shame — which is Aoife's profile, not Ciarán's.
 
-**One challenge:** The Communicator's off-peak offer targets "Ciarán primary, Aoife secondary" — but the Researcher makes clear that Declan's retention depends on his habitual slot, not flexibility. Offering off-peak incentives to Declan risks signalling schedule disruption, which is precisely his churn trigger. The AI targeting logic must explicitly exclude Anchor-persona members from off-peak push offers unless their booking history already demonstrates time flexibility.
+**David, 38, "The Optimiser":** Confirmed with one challenge. The Communicator's message for David — *"You'll only hear from us when there's something worth saying. No spam. No generic check-ins."* — is correct in principle, but the off-peak promotion (Section 3a) is targeted at David as a primary persona. The Researcher is explicit: *"AI can identify which members have schedule flexibility and offer targeted, time-sensitive incentives to attend off-peak slots."* However, the Researcher is also explicit that David *"responds to expertise signals"* and that *"discounts tell David the product is worth less than he's paying."* The off-peak promotion as written — *"earn DOUBLE Iron Points"* — is a promotional mechanic, not an expertise signal. For David specifically, the framing should be *"quiet floor, coaches have time for you"* as the primary hook, with double points as the secondary note. As currently written, the offer leads with the incentive rather than the expertise access. **Partial misalignment flagged — copy adjustment required for David persona targeting.**
 
 ---
 
@@ -2091,261 +2192,374 @@ The IRON RECORD design addresses both failure modes explicitly:
 
 ### GDPR
 
-**Data Collected — Every Category This System Processes:**
+**Data collected — complete inventory:**
 
-1. **Identity data:** Name, email address, phone number, avatar image
-2. **Behavioural data:** Session attendance timestamps, class type selection, booking patterns, no-show and late-cancellation records
-3. **Performance data:** Exercise names, weights lifted, rep counts, improvement calculations — logged as Personal Records
-4. **Biometric-adjacent data:** Progress metrics that in aggregate could constitute a fitness and health profile (session frequency, physical performance trajectory)
-5. **Social data (opt-in):** Record of social media tags referencing Slam Fitness
-6. **Relational data:** Referral connections between members, social cluster groupings (who trains with whom)
-7. **Behavioural inference data:** AI-generated persona classification (Competitor / Transformer / Anchor), composite churn score, intervention briefs
-8. **Consent records:** Timestamped record of each consent toggle decision
-9. **Financial-adjacent data:** Points balances, reward redemption history, tier status
+1. **Identity data:** Name, email address, phone number (optional)
+2. **Session attendance data:** Booking timestamps, check-in confirmations, session type, time slot, cancellation and no-show events
+3. **Behavioural pattern data:** Frequency calculations (average sessions per week, rolling 8-week window), preferred time slots, schedule flexibility score (0–1 derived value), booking lead time
+4. **Programme performance data:** Personal bests (exercise, value, date), programme milestone completions, coach-confirmed achievements
+5. **Social and engagement data:** Referral relationships (who referred whom), community posts tagged, challenge participation and completion status
+6. **Coach interaction data:** Coach check-in frequency, response recency to coach outreach, message interaction history
+7. **Inferred/computed data:** Engagement temperature score (0–100, AI-computed), churn flag severity and reason, AI-generated intervention briefs
+8. **Consent data:** Consent preference, timestamp of consent given and last updated
+9. **Redemption data:** Rewards redeemed, redemption codes, redemption timestamps
+
+**No biometric data, health records, or financial data beyond membership tier is collected. This is consistent across all four pipeline outputs and should be preserved as a hard constraint.**
 
 ---
 
-**Lawful Basis:**
+**Lawful basis:**
 
-The system operates on a **dual basis** that must be clearly documented:
+The appropriate lawful basis for this system is **a combination of consent (Article 6(1)(a)) and legitimate interest (Article 6(1)(f)), applied by data category.**
 
-- **Consent (Article 6(1)(a))** applies to: progress logging (PRs), coaching alerts (sharing activity patterns with coaches), and social recognition. The tiered consent model the Designer has specified is legally correct — these are genuinely optional features that require explicit, granular opt-in. Consent is the right basis here because these uses go beyond what a member would reasonably expect from joining a gym loyalty programme.
+*Consent* is the correct basis for the AI-driven proactive coaching outreach function — specifically, the processing of behavioural patterns to generate churn flags and coach intervention briefs. This processing goes beyond what a member would reasonably expect from a loyalty programme, involves inferred data about their psychological state (engagement temperature, churn risk), and affects how the coaching relationship is managed. The Designer and Communicator correctly implement explicit consent at onboarding with a meaningful binary choice. This must be genuine, withdrawable consent — not consent bundled into terms of service.
 
-- **Legitimate interest (Article 6(1)(f))** applies to: session attendance tracking for points calculation and basic programme administration. A member who joins IRON RECORD has a reasonable expectation that their attendance will be recorded for loyalty purposes — this is the core function of the service and does not require consent beyond the programme terms. A Legitimate Interest Assessment (LIA) must be documented before launch confirming that this interest is not overridden by member privacy rights.
+*Legitimate interest* is the appropriate basis for core programme operation: points calculation, tier assignment, streak tracking, reward redemption, and session logging. These functions are necessary to deliver the service the member has actively signed up for. A Legitimate Interest Assessment (LIA) should be documented before launch confirming that this processing does not override member interests or rights.
 
-**Special Category Data (Article 9) — Critical Issue:**
-
-The Researcher correctly flags this risk. Physical performance data (PR logs showing weight lifted, rep counts, and progressive overload over time) combined with session frequency data creates, in aggregate, a *health and physical fitness profile*. The Irish DPC has taken an expansive view of what constitutes health data. While a single PR entry is arguably not health data, a longitudinal record of physical performance over 12 months almost certainly qualifies.
-
-**Recommendation:** Treat PR and performance log data as special category data requiring **explicit consent (Article 9(2)(a))** with a clear, standalone consent statement. This is already partially addressed by the Designer's tiered consent flow for "Progress Logging" — but the consent language must explicitly state that this data constitutes health-related information and explain why it is collected. Legal counsel with Irish DPC expertise should review the consent wording before launch.
+*Legitimate interest alone is not sufficient for the AI personalisation and churn prediction functions.* The engagement temperature score, schedule flexibility score, and churn flag generation involve automated profiling that influences how coaches interact with members. These are not routine operational functions. Consent is required.
 
 ---
 
 **Article 22 GDPR — Automated Decision-Making:**
 
-Article 22 **does apply** to this system in two specific respects:
+Article 22 applies where there is a decision based *solely* on automated processing that produces *legal or similarly significant effects* on a data subject.
 
-1. **Tier upgrades** are fully automated — a member crosses a points threshold and is automatically reclassified. This changes what rewards they can access (the Membership Credit and Plaque are tier-gated) and what content appears on their dashboard. This is an automated decision that produces a legal or similarly significant effect on the member's access to programme benefits.
+This system's tier upgrade logic and personalised offer targeting are partially automated but do not, on their own, produce legal or similarly significant effects. A tier upgrade changes what rewards a member can access — this is a loyalty benefit change, not a decision that significantly affects their legal rights, financial position, or access to services in a material sense. On this narrow basis, Article 22 does not apply to tier progression.
 
-2. **Persona classification** (Competitor / Transformer / Anchor) is AI-generated and determines what personalised content, offers, and interventions a member receives. Being classified as a particular persona changes the offers surfaced, the challenges prioritised, and the tone of all communications. This is automated profiling that produces effects on what the member experiences.
+However, the churn prediction and coach intervention function warrants closer analysis. The AI generates a flag, produces a brief, and determines whether and when a coach is prompted to make contact. While the coach writes the message and makes the final decision to reach out, the system controls the information the coach receives and the framing of the intervention. If a member is never flagged (or incorrectly flagged as low-risk), they may not receive a retention intervention that would have kept them as a member — with downstream effects on their access to the community, their training relationships, and potentially their health outcomes. This falls short of the "legal or similarly significant" threshold for Article 22 in most interpretations, but it is proximate enough to warrant a **voluntary human review mechanism** as a matter of good practice and risk management.
 
-The churn risk score itself, by design, **does not trigger automated action** — it only generates a brief for human coach review. This is correct design and means Article 22 does not apply to the churn score in isolation, because no automated decision is taken on its basis alone.
-
-**Required response to Article 22:** The programme must offer members:
-- The right to request human review of their tier classification
-- The right to contest their persona classification and have it manually reviewed or overridden
-- A clear explanation (in plain English, in the privacy notice) that these classifications are automated and what factors determine them
-
-The Communicator's privacy notice does not currently address Article 22 rights. This must be added before launch.
+**Recommended safeguard:** The admin panel should include a member-facing function allowing any member to request a human review of their engagement data and confirm whether any AI-generated flags exist against their account. This is not legally mandated in this case but is consistent with the Researcher's trust risk analysis and the spirit of Article 22.
 
 ---
 
-**Retention Periods — Recommended:**
+**Retention periods — by data category:**
 
 | Data Category | Recommended Retention Period | Justification |
 |---|---|---|
-| Session attendance records | Duration of membership + 24 months | Fraud prevention, points dispute resolution |
-| PR and performance logs | Duration of membership + 24 months | Member's own historical record; they benefit from this |
-| Booking behaviour patterns | 12 months rolling | Churn prediction only requires recent data; older data degrades model quality |
-| AI-generated persona classification | Reviewed and updated monthly; deleted 30 days post-membership | Inference data should not outlive its operational purpose |
-| Churn risk scores and intervention briefs | 90 days; deleted after coach action or member return | Sensitive inference data; short operational window |
-| Social tag records | Duration of consent; deleted on consent withdrawal | Consent-based collection requires consent-based deletion |
-| Consent records | Duration of membership + 5 years | Legal evidence of lawful basis |
-| Redemption history | Duration of membership + 24 months | Financial record, dispute resolution |
+| Identity data (name, email, phone) | Duration of membership + 12 months | Operational necessity; allows membership reinstatement |
+| Session attendance data | Duration of membership + 24 months | Supports streak and milestone continuity for returning members |
+| Behavioural pattern data (flexibility score, averages) | Recalculated rolling; raw inputs retained 12 months | Stale data degrades model accuracy; 12 months captures seasonal patterns |
+| Programme performance data (PBs, milestones) | Duration of membership + 36 months | Member may wish to reference their history; low sensitivity |
+| Inferred/computed data (engagement temperature, churn flags) | 90 days from computation | High sensitivity; stale inferences create false intervention risk |
+| Coach interaction data | Duration of membership + 12 months | Operational; supports coaching continuity |
+| Social and engagement data (referrals, posts) | Duration of membership + 12 months | Referral attribution must be maintained for programme integrity |
+| Consent data | Duration of membership + 60 months | GDPR audit requirement |
+| Redemption data | Duration of membership + 60 months | Financial records; consumer protection |
 
 ---
 
-**Erasure — Exact Process:**
+**Erasure — how a customer deletes their loyalty data:**
 
-The Designer has specified a "Delete My Data" button in the in-app Privacy Card triggering a 30-day erasure workflow. This must be implemented as follows:
+The Communicator has designed the erasure pathway: Profile → Settings → Delete my account. This must technically execute the following:
 
-1. Member taps "Request Account Deletion" in Settings → Your Data & Privacy
-2. System sends a confirmation email requiring the member to confirm the request within 48 hours (prevents accidental deletion)
-3. On confirmation: all personal data is queued for deletion. A 30-day reversibility window opens — the account is suspended (not deleted) and the member is notified they can cancel the request within 30 days
-4. At day 30: all personal data is permanently deleted from production databases. Anonymised aggregate data (e.g., "Member attended 47 sessions" without the member's identity) may be retained for business analytics if this is disclosed in the privacy notice
-5. A deletion confirmation is sent to the member's email
-6. Deletion of data shared with coaches (PR records in coach dashboard, churn briefs) must be simultaneous — not deferred
+1. Hard deletion of all identity data, session data, behavioural data, inferred scores, and coach interaction data
+2. Anonymisation (not deletion) of aggregate data used for programme-level analytics — individual records removed, population-level counts preserved
+3. Cancellation of any unredeemed rewards and pending referral credits with notification to the member
+4. Written confirmation of deletion sent to the member's registered email within 72 hours
+5. Any third-party integrations (booking system webhooks) must receive a deletion notification to purge the member's data from those systems
 
-The Communicator's privacy notice describes this process correctly. The Maker must implement it technically, including cascade deletion across all related records in the PostgreSQL schema.
+The "pause" option described by the Communicator — *"if you're taking a break rather than leaving, consider pausing"* — is good UX design and reduces unnecessary erasure requests. This should be implemented as a formal account state (not just a recommendation) in the `Customer` data model, which currently has no `accountStatus` field. **Gap flagged for Maker.**
 
 ---
 
-**DPIA — Required:**
+**DPIA — is one required?**
 
-**A Data Protection Impact Assessment is required before this system goes live.** The argument is unambiguous:
+**Yes. A Data Protection Impact Assessment is required before this system launches.**
 
-This system (a) processes health-adjacent performance data at scale, (b) uses AI to profile members and classify them into behavioural personas, (c) uses those profiles to make automated decisions affecting what content, offers, and interventions members receive, and (d) monitors social relationships between members to predict churn risk. This meets the Irish DPC's criteria for mandatory DPIA under Article 35 GDPR: systematic profiling, processing of sensitive data categories, and innovative use of technology in ways that could not reasonably be anticipated by data subjects from the membership contract alone.
+The argument is straightforward. Under Article 35 GDPR, a DPIA is required where processing is likely to result in a high risk to individuals' rights and freedoms, particularly where there is: (a) systematic and extensive profiling used to make decisions that produce significant effects; or (b) large-scale processing of sensitive data.
 
-The DPIA must document: the purposes and necessity of processing, the risks to member rights, and the specific technical and organisational safeguards implemented. It should be completed before launch and reviewed annually.
+This system profiles customer behaviour (attendance patterns, social activity, engagement temperature) using AI to determine which members receive personalised coaching interventions, which offers they see, and what tier status they hold. The Researcher explicitly identifies that this profiling is designed to influence purchasing decisions (membership retention) and behavioural patterns (session attendance, social engagement). The Irish Data Protection Commission's guidance on DPIAs specifically lists "profiling to predict behaviour" and "monitoring of individuals in publicly accessible areas" as triggers — the latter is relevant if the in-gym kiosk component is implemented.
+
+A DPIA for this system must document: the nature and purpose of the processing, necessity and proportionality assessment, identification of risks to member rights (including trust collapse risk named by the Researcher), and the technical and organisational measures taken to mitigate those risks. This document should be completed by Slam Fitness's data lead (to be appointed) with LoyaltyOS providing technical documentation. It should be completed before any member data enters the system — not after launch.
 
 ---
 
 ### EU AI Act
 
-**Article 5 — Prohibited Practices Assessment:**
+**Article 5 — Prohibited Practices:**
 
-This requires an honest answer, not a defensive one. The IRON RECORD system deliberately uses several psychological mechanisms:
+This requires an honest assessment, and it deserves one.
 
-- **Loss aversion:** The streak mechanic is explicitly designed around the psychological cost of breaking a streak. The pre-streak alert at Day 5 ("You're 2 sessions away from your 7-day streak. Don't let it go") activates loss aversion before a streak is at risk — this is intentional by design, documented in the Designer's spec.
-- **Streak mechanics:** The 30-day streak creates a "sunk cost positivity" dynamic, also acknowledged in the Researcher's spec.
-- **Urgency triggers:** The 48-hour win-back window for Forge Points in the win-back copy creates time pressure.
+The FORGED loyalty programme uses several mechanics — streak counters, loss-aversion via streak break anxiety, urgency mechanics on time-limited offers, and personalised churn interventions — that are proximate to the prohibited territory of "subliminal techniques" and "exploiting psychological vulnerabilities" under Article 5(1)(a) and (b).
 
-The honest assessment is that these mechanics sit at the edge of acceptable practice under Article 5(1)(b), which prohibits "subliminal techniques beyond a person's consciousness" and exploitation of "psychological vulnerabilities." The distinction between legitimate persuasion and prohibited manipulation under EU AI Act guidance turns on three factors: transparency, consent, and whether the technique causes harm.
+The specific mechanics that require scrutiny:
 
-**Conclusion:** The system does not currently cross into prohibited territory, for the following reasons:
-1. The streak mechanic is fully transparent — members see their streak counter and understand what it means
-2. Members opt into the programme and can withdraw at any time
-3. The pre-streak alerts are visible, not subliminal — members are aware they are being prompted
-4. The Streak Freeze mechanic converts a psychological pressure point into a member-controlled tool, which actively reduces exploitation risk
+*Streak mechanics and loss aversion:* The 2-week streak requirement, the flame animation, and the "streak shield" mechanic all leverage loss aversion. The psychological mechanism is deliberate and named in the Researcher's brief — streaks make missing feel costly. The Designer is aware of this and has implemented a streak shield specifically to prevent the mechanic from becoming punishing. The shield is a meaningful safeguard, but it must be communicated clearly and must not itself become a vehicle for engagement pressure (e.g., making the shield feel scarce or threatening to expire).
 
-**The safeguard that must be maintained:** The Designer's Rule 2 — "Streak Breaks Are Not Punished, They Are Acknowledged" — is not optional. If this rule is ever softened under commercial pressure (e.g., adding shame-based language, removing the Streak Freeze, or making break messaging more punitive), the system would likely cross into prohibited territory. This rule must be documented as a binding product constraint in the system's compliance record.
+*Urgency on off-peak offers:* The Cold Day Bonus and off-peak promotion use time-limited offers with countdown timers. The Designer explicitly distinguishes genuine scarcity (the floor really is quiet now) from manufactured urgency (false countdown timers). This distinction is ethically sound — but it requires technical enforcement. The system must not deploy countdown timers on offers where the scarcity is artificial. This should be a hard rule in the `Activity.isBonusActive` logic: the timer appears only when live occupancy data confirms the stated condition.
 
-**The urgency mechanic in win-back copy** (the 7-day Forge Points hold) is acceptable only if the 7-day window is genuine and not artificially constructed. The Communicator's copy must not be deployed with manufactured scarcity — the points hold must reflect a real system rule.
+*The pre-lapse coach trigger:* This is the mechanic most proximate to prohibited territory. It identifies members whose behavioural patterns suggest psychological disengagement and initiates an intervention designed to reverse that decision before it becomes conscious. The Researcher acknowledges this directly: *"The pre-lapse coach trigger is also its highest-trust risk."* Whether this constitutes exploitation of psychological vulnerability depends entirely on implementation. If the AI generates the message and the member receives it without knowing the AI's role, and if the message is designed to exploit the member's emotional connection to the coach relationship — this crosses a line. If the AI informs the coach, the coach makes a genuinely human decision about whether and how to reach out, and the member is informed through the consent screen that their data is used for proactive coaching outreach — this is a legitimate service function.
+
+**Conclusion:** In its designed form, this system does not violate Article 5. The Designer has included meaningful safeguards against each manipulative pattern. However, the distance between the designed system and a prohibited system is measured in implementation decisions, not design intentions. Three specific commitments must be enforced in build: (1) streak shields are clearly communicated and not made artificially scarce; (2) countdown timers appear only when live data confirms genuine scarcity; (3) the AI never generates member-facing messages — only coach-facing briefs.
 
 ---
 
-**Risk Classification: LIMITED RISK**
+**Risk Classification — EU AI Act:**
 
-Justified as follows:
+This system is classified as **Limited Risk** under the EU AI Act, with elements that must be monitored against High Risk criteria.
 
-- The system is not used in education, employment, credit, or law enforcement contexts — none of the Annex III High Risk categories apply directly
-- The personalisation, churn prediction, and offer generation functions affect what loyalty content a member sees, not decisions that materially affect their legal rights, access to essential services, or economic opportunities in a significant way
-- The system is used in a commercial leisure context where members enter voluntarily and can exit freely
-- The AI functions are supervised by humans at every consequential decision point (coach reviews all intervention briefs; no automated outreach)
+The primary AI functions in use are: personalisation (offer generation, challenge surfacing), behavioural pattern monitoring (churn signal detection), and inference (engagement temperature scoring, schedule flexibility scoring). None of these functions fall into the Annex III High Risk categories as currently defined — the system does not make decisions about employment, creditworthiness, access to essential services, or law enforcement.
 
-However, the system is not Minimal Risk. The profiling functions, the persona classification, and the influence on purchasing behaviour (renewal decisions) create obligations under the Limited Risk category, specifically Article 52 transparency requirements.
+However, the churn prediction function profiles individuals' behaviour to predict psychological states and influence how human relationships are managed. The European AI Office has signalled that loyalty programme AI systems with significant personalisation depth may face reclassification as AI Act implementation matures. This system should be designed to be High Risk compliant even if it currently sits at Limited Risk — specifically by maintaining human oversight of all consequential interventions, logging all AI-generated outputs for review, and documenting the logic of the churn signal escalation model.
 
 ---
 
 **Article 52 — Transparency Obligations:**
 
-The `/api/personalise` and `/api/offers` endpoints use Claude AI to generate content shown to members. Article 52 requires that persons interacting with AI systems be informed they are interacting with an AI where this is not otherwise obvious.
+Article 52 requires that systems using AI to generate content shown to users must disclose AI involvement. The `/api/personalise` and `/api/offers` endpoints use Claude AI to generate the personalised prompt cards and dynamic offer copy that members see on their dashboards.
 
-**Specific obligations that apply:**
+The transparency obligations that apply:
 
-1. The in-app privacy notice must include an explicit statement disclosing AI involvement in personalisation. The Communicator's current privacy notice describes how AI works but does not use the specific language required for Article 52 compliance. The following sentence must be added to the "How AI Personalisation Works" section:
+1. **At point of interaction:** When a member sees an AI-generated personalised prompt (e.g., a streak nudge, a Cold Day Bonus offer, a personalised training suggestion), the system must indicate that this content is AI-generated. This does not require a large disclaimer — a small "Personalised for you" label with an information icon linking to the AI transparency page satisfies the spirit of Article 52 in a Limited Risk context.
 
-> *"This programme uses artificial intelligence (AI) to analyse your training data and generate personalised content, offers, and coaching prompts. You are not interacting with a human when the app surfaces personalised recommendations — these are generated automatically by the IRON RECORD AI system, powered by Claude (Anthropic)."*
+2. **In the privacy notice:** The app's privacy notice must contain the following disclosure, in plain language: *"FORGED uses AI to personalise the offers, challenges, and prompts you see in the app based on your attendance history and engagement patterns."*
 
-2. The coach dashboard's AI-generated intervention briefs are already correctly labelled: *"IRON RECORD AI Suggestion — coach discretion applies."* This satisfies Article 52 for the B2B coach-facing interface.
+3. **For the coach intervention function specifically:** The coach-facing AI briefs and outreach hooks do not require member-facing disclosure at the point of generation — because the member does not see the brief. The member's disclosure is provided through the consent screen: *"We use your attendance history to help your coach support you better."* This is adequate provided the consent is genuine, informed, and specific.
 
-3. Any member-facing in-app card or notification that is AI-generated must carry a subtle disclosure. The Designer's Rule 1 specifies: *"All member-facing nudges that are algorithmically triggered carry a subtle footer: 'This reminder was generated by IRON RECORD based on your activity.'"* This is legally correct and must be implemented without exception.
-
-4. The win-back messages attributed to named coaches (e.g., "Coach Rían") present a specific risk: if the AI generates the content and a coach sends it verbatim, this is effectively an AI-generated message presented as human-authored. The hard rule that coaches must write their own messages must be technically enforced — the system should provide AI-generated *briefs* to coaches, not pre-written messages ready to send. The Communicator's win-back copy templates should be coach guidance, not copy-paste send text.
+The Communicator's AI transparency section (Section 5c) already provides the substantive content for these disclosures. It needs to be rendered in the app with an Article 52-compliant label mechanism, not just as a static settings page.
 
 ---
 
-**Annex III — Significant Effects on Individual Rights:**
+**Annex III — Profiling with Significant Effects on Individual Rights:**
 
-The churn prediction mechanism requires specific assessment. Annex III covers AI systems used for profiling of natural persons in ways that significantly affect them.
+The churn prediction mechanism warrants specific assessment here. It profiles individual behaviour using AI to compute an engagement temperature score and generate churn flags that determine whether a coach intervention is triggered. The question is whether this profiling "significantly affects" individual rights.
 
-**Assessment:** The churn prediction score does not, in its current design, significantly affect individual rights in the Annex III sense. It does not determine access to credit, employment, housing, healthcare, or essential services. A member flagged as high churn risk receives more human attention from their coach — which is a benefit, not a detriment.
+On the current evidence: the churn prediction does not restrict the member's access to the gym, affect their membership status, determine their eligibility for benefits, or produce a decision with legal force. The coach intervention it triggers is a human-to-human outreach — the member is not penalised for being flagged, and they are not aware they have been flagged.
 
-However, a scenario exists where this could change: if a business owner were to use the churn risk register to selectively offer renewal discounts only to high-risk members, or to exclude low-risk members from retention offers, the system would then be making commercially consequential distinctions between members based on AI profiling. This use case must be explicitly prohibited in the LoyaltyOS terms of service and documented in the DPIA.
+**Assessment:** Annex III High Risk classification does not currently apply to this specific function. However, two conditions must hold for this assessment to remain valid: (1) the AI must never directly contact members based on churn flags — all interventions must be human-mediated; and (2) members must retain the ability to opt out of having their data used for churn monitoring (the "app only" consent preference must exclude this processing). If either condition is violated in build, the risk classification must be revisited.
 
 ---
 
-### Compliance Actions Before Launch — Numbered List
+**Compliance Actions Before Launch — numbered list:**
 
-1. **Complete a Data Protection Impact Assessment** covering: persona profiling, churn prediction, special category data (performance logs), and automated tier decisions. Engage Irish DPC-experienced legal counsel. This is mandatory, not optional.
+1. **Complete a DPIA.** Appoint a named data lead at Slam Fitness (can be an existing staff member with documented responsibility). LoyaltyOS provides technical processing documentation. DPIA completed and signed before any member data enters the system.
 
-2. **Obtain explicit Article 9 consent** for PR and performance log data by updating the onboarding consent screen to describe performance logs as health-related information. Revise the consent language with legal review before deploying the onboarding flow.
+2. **Finalise the consent architecture.** The onboarding consent screen must clearly distinguish between (a) processing for programme operation and (b) processing for AI-driven churn monitoring and proactive coach outreach. The "app only" preference must technically exclude the member from churn flag generation, not just from the coach intervention queue. Verify this in the `CustomerConsent` logic before build is complete.
 
-3. **Add Article 22 rights disclosure** to the in-app privacy notice: explain to members that tier upgrades and persona classifications are automated, what factors determine them, and how members can request human review. Add a human review request mechanism to Settings.
+3. **Document and enforce data retention schedules.** Implement automated deletion or anonymisation for each data category per the retention periods above. Inferred data (engagement temperature, churn flags) must be purged at 90 days. This requires a scheduled background job in the system architecture — it is not a manual process.
 
-4. **Add the Article 52 AI disclosure sentence** (specified above) to the in-app privacy notice and confirm that all AI-generated member-facing content carries the footer disclosure specified in the Designer's Rule 1.
+4. **Implement Article 52 transparency labels.** AI-generated content visible to members (personalised prompts, dynamic offers) must display an identifiable label. Add an information icon with a one-tap link to the AI transparency page. Update the app privacy notice with the required disclosure sentence.
 
-5. **Sign and document a Data Processing Agreement** between Slam Fitness (data controller) and LoyaltyOS (data processor), and a separate DPA with Anthropic for Claude API usage. Both must be in place before any member data is processed.
+5. **Complete and test the erasure pathway.** The Profile → Settings → Delete my account flow must execute full hard deletion across all data stores, trigger deletion notifications to booking system integrations, and send written confirmation to the member's email. Test this end-to-end before launch, including the booking system webhook notification. Add `accountStatus` field to the `Customer` data model to support the pause state.
 
-6. **Implement and test the cascade deletion workflow** for account erasure — confirm that deletion of a member's account simultaneously removes their data from: the member-facing app, the coach dashboard (PR queue, churn flags, intervention briefs), the admin analytics, and any cached AI inference results. Test with a real deletion before launch.
+6. **Establish a human review request mechanism.** Add a function in the admin panel and member-facing settings allowing any member to request confirmation of whether any AI-generated flags exist against their account and to request human review of their engagement profile. This satisfies the spirit of Article 22 and the Researcher's trust risk analysis, and it is materially relevant to the brand integrity of a community gym where trust is the product.
 
 ---
 
 ## 5. OPERATIONAL ROADMAP
 
-### Phase 1 — Weeks 1–2: Launch Preparation (Slam Fitness Specific)
+### Phase 1 — Weeks 1–2: Controlled Launch Preparation
 
-**Week 1 — Pre-Technical:**
-- Slam Fitness owner and LoyaltyOS sign Data Processing Agreement. Anthropic DPA also executed.
-- DPIA commissioned — engage Irish data protection solicitor. Target completion before any member data is processed.
-- Resolve Blocker 1 (point value inconsistency: 7-day streak = 75 FP confirmed as canonical).
-- Maker completes Business Config white-label section (Blocker 2) and Weather API integration (Blocker 3).
-- Sales claims in the business pitch are either replaced with verified benchmarks or removed pending evidence (Blocker 4).
-- Owner defines the 5 off-peak time slots (Tue/Thu 10am–3pm) in the Business Config and confirms class schedule integration with existing booking system (the Maker notes `bookingSystemWebhookUrl` in the `Business` model — this integration must be tested before launch).
+**These are not generic SaaS steps. They are specific to a boutique Dublin strength studio launching a behavioural data programme.**
 
-**Week 2 — Soft Launch (Staff Only):**
-- Deploy to staging environment. All five coaches at Slam Fitness use the coach dashboard for 7 days before any member access.
-- Coaches complete a 90-minute briefing: what the churn signals mean, what the AI intervention brief is (and is not), the hard rule that they write their own messages, and how PR confirmation works.
-- Owner tests the admin panel: footfall heatmap, churn risk register, challenge management.
-- Run end-to-end test of the deletion workflow with a dummy member account.
-- Article 52 disclosure footer confirmed on all AI-generated content in staging.
-- Onboarding consent flow reviewed by legal counsel — sign-off obtained before member-facing launch.
+- **Coach briefing session (before any member sees the app).** Every Slam Fitness coach must understand two things: (1) what the AI does and does not do — specifically that it generates briefs, not messages; and (2) how to respond to a member who asks whether their coach was prompted by a system. The answer is honest: *"The app flagged that you'd been away — I wanted to check in."* Coaches who are not briefed will either deny the system's role (creating a trust problem) or over-explain it (creating an awkwardness problem). Brief them specifically.
+- **Soft launch to 20–30 founding members only.** Select members who represent all three personas — include at least one natural Ciarán, one natural Aoife, one natural David. Do not launch to the full member base until the consent flow, points attribution, and coach intervention queue have been tested with real users in real sessions. At Slam Fitness, a trust failure with 10 members is a community-level event, not a product metric.
+- **Complete DPIA and consent architecture verification.** No member data enters the system until this is done.
+- **Configure Slam Fitness-specific activity rules.** Verify that Morning Iron time gates (6am–9am), Off-Peak Pioneer windows (10am–4pm weekdays), and session confirmation via booking system webhooks are working correctly. A misfire in the points attribution system in the first week is a retention event in the wrong direction.
+- **Populate the admin panel with actual coach assignments.** Every active member should have a named assigned coach before the system goes live. The intervention queue is useless without this mapping.
+- **Resolve the truncated Maker data model.** The `Reward.redemptionMethod` field and the remainder of the data model must be completed before any developer writes a line of production code.
 
 ---
 
-### Phase 2 — Month 1: Measure, Iterate, and Threshold Watch
+### Phase 2 — Month 1: Measure, Learn, Threshold
 
 **What to measure:**
-- **Off-peak footfall change:** Tue/Thu 10am–3pm attendance as a percentage of total weekly sessions. Baseline week 0, measure weekly. Target: 15% increase in off-peak sessions within 30 days.
-- **Streak engagement rate:** Percentage of members who start a streak and reach day 7. Below 30% signals the streak mechanic is not resonating — review notification copy or streak threshold.
-- **Coach action rate on churn flags:** What percentage of churn-risk flags result in a confirmed coach action within 72 hours? Below 60% means coaches are not trusting the system or the workflow is too burdensome — simplify the brief format.
-- **PR log rate:** What percentage of strength session check-ins result in a PR log? This is the highest-value action in the system. Below 20% suggests the PR log prompt (the single-tap post-session CTA) is not visible enough or the coach confirmation friction is too high.
-- **Consent completion rate:** Of members who begin onboarding, what percentage complete all four consent screens? What is the opt-in rate for coaching alerts specifically? If coaching alert opt-in is below 50%, the benefit statement needs revision.
 
-**Thresholds that trigger a redesign:**
-- If off-peak footfall does not increase by any measurable amount within 30 days, the Off-Peak Athlete framing needs revision — consider running a coached focus group to understand whether members perceive the off-peak benefit as genuinely valuable or as a consolation prize.
-- If the 30-day member churn rate during the programme period is not lower than the pre-launch 30-day average, the churn prediction and intervention protocol must be reviewed — the AI signals may not be calibrated to Slam Fitness's specific member base.
+- **Points issuance vs. redemption ratio.** Target: redemption rate of 40–60% of issued points in the first month. Below 40% suggests rewards are not compelling or members are not discovering the rewards tab. Above 70% suggests the economy will be depleted within the quarter and rewards need rebalancing.
+- **Consent split.** What proportion of members choose "full" vs. "app only"? If more than 40% choose "app only," the consent language or the value proposition of proactive coaching needs re-examination. A high app-only rate is also a signal about member trust that the business owner should hear directly.
+- **Coach intervention queue utilisation.** Are coaches marking interventions as actioned? If the queue fills up and coaches aren't using it, the mechanic has failed — not because the AI is wrong, but because the coaches haven't integrated it into their workflow. This is a training problem, not a technology problem.
+- **Off-peak attendance uplift.** The Researcher identifies quiet day concentration risk as a structural problem. Measure weekday 10am–4pm attendance in month 1 against the 60-day pre-launch baseline. The target is a 15–20% uplift. Below 10% suggests the off-peak bonus offer is either not reaching flexible members or the incentive is insufficient.
+- **7-day and 30-day streak completion rates.** These are the primary habit formation metrics. Target: 60%+ of active members holding a current streak at the 30-day mark.
+
+**Redesign threshold:** If any two of the following conditions are met at the 30-day review, a formal programme review is required before month 2 actions:
+- Redemption ratio above 75% or below 25%
+- Consent split more than 50% "app only"
+- Coach intervention queue actioned rate below 30%
+- Off-peak attendance uplift below 5%
+- More than three member complaints about feeling surveilled or managed
 
 ---
 
 ### Phase 3 — Months 2–3: Next Capability
 
-Based on the Researcher's findings, the single highest-return next capability is **Class Switch Detection with Personalised Social Bridging.**
+The Researcher identifies two specific opportunities not yet addressed in the current build:
 
-The Researcher identifies "The Class Switch" (a member deviating from their habitual class slot) as the second most predictive churn signal, specifically linked to social anchor disruption. The current system detects this signal and adds it to the churn score — but has no tailored intervention.
+**1. Referred member retention tracking.** The Researcher's market opportunity section highlights that AI should track whether referred members are themselves retained — not just whether the referral was completed. Currently, the `Customer.referrals.convertedReferrals` count tracks conversion to paid membership but does not monitor the referred member's subsequent engagement or churn signals. In months 2–3, the system should begin mapping social network retention — if Aoife refers a friend and that friend churns at 8 weeks, Aoife's own churn risk increases. The system should model this dependency and surface it in the coach intervention queue.
 
-Phase 3 should build: when the AI detects a class switch signal for an Anchor-persona member, it identifies who else from their habitual slot is still attending and surfaces a personalised prompt to the coach: *"Declan has moved away from his Tuesday 7am slot. Four members from that cohort are still attending. Consider a direct message reconnecting him with the group."* This closes the single gap identified in the Strategic Alignment Check and addresses the Researcher's most important social-anchor retention finding with a specific, targeted mechanic.
+**2. Programme periodisation intelligence.** The Researcher identifies David's primary churn trigger as a perceived drop in programme quality. The current build tracks PB frequency and coach interaction recency but does not model whether the member's programme has been appropriately updated. In months 2–3, a "programme freshness" signal should be developed: if a member has completed the same monthly programme block twice without an updated prescription from their coach, the system should flag this — not as a churn signal, but as a coaching quality prompt. This directly serves David's retention driver without requiring any member-facing change.
 
 ---
 
 ## 6. TOP 3 RISKS AND MITIGATIONS
 
-### Risk 1: The Trust Collapse — AI Prompts Presented as Human Authenticity
+### Risk 1: The Coach Becomes the Algorithm
 
-**Why it matters for Slam Fitness specifically:** The Researcher names this as the exact failure mode of loyalty programmes in high-touch service businesses: *"The moment the relationship feels engineered, the premium justification evaporates."* Slam Fitness's entire competitive advantage over a €30/month commercial gym is the authenticity of its coaching relationships. If Ciarán or Aoife ever discovers that "Coach Rían's" message was written by an AI and sent without the coach reading it, the trust collapse is not a loyalty programme problem — it is an existential brand problem for the studio.
+**What the risk is:** The Researcher names the pre-lapse coach trigger as the system's highest-value intervention and its highest-trust risk simultaneously. The Designer reinforces this — *"The AI generates the intelligence. The human delivers the relationship. This is not a technicality — it is the product's integrity and the brand's survival."* The Communicator's AI transparency section makes the same commitment: *"The AI spotted the pattern; your coach wrote the words."*
 
-**The specific risk pathway in this system:** The Communicator has produced detailed win-back message templates (e.g., the Aoife win-back) that are so polished and complete that a time-pressured coach might copy and paste them verbatim rather than rewriting in their own voice. If this becomes standard practice, the system will begin sending AI-written messages under coach names — which is exactly what the Designer's Rule 5 prohibits.
+**Why it matters for Slam Fitness specifically:** Slam Fitness is a community gym in Stoneybatter. Its competitive advantage is not equipment or price — it is the coaching relationship. Members like Ciarán stay because their coach knows their back injury history. Members like Aoife stay because the coach knows her name. If members discover that the personalised coaching messages they received were AI-generated or system-prompted without their knowledge, the trust collapse is not a churn event — it is a community event. In a boutique gym, one member's loss of trust becomes a group conversation within days.
 
-**Mitigation:** The coach dashboard must technically prevent copy-paste of the full intervention brief text into the outreach tool. The AI brief should appear as a *structured summary* (member name, last session, current week, suggested tone) rather than pre-written prose. The Communicator's win-back templates should be repositioned as training materials for coaches, not operational send-ready copy. This is a product design decision that must be made before the coach dashboard is finalised.
+**Mitigation:** Three hard rules must be enforced at the technical level, not the policy level. First, the AI must never generate or send a member-facing message — ever. The `CoachInterventionQueue` outputs a brief; the coach writes the message; the message is sent from the coach's account. Any endpoint that generates member-facing content must be blocked from the intervention queue system architecture. Second, coaches must be trained — before launch — to answer honestly if a member asks whether the check-in was prompted. The honest answer is the only acceptable one. Third, the consent screen disclosure *"we use your attendance history to help your coach support you better"* must be presented as a genuine description of the system, not legal cover. If the system changes to automate message generation, the consent screen must change first.
 
----
-
-### Risk 2: Special Category Data Enforcement Action — Irish DPC
-
-**Why it matters for Slam Fitness specifically:** Slam Fitness is a Dublin 7 business collecting what the Irish DPC may classify as health data (longitudinal physical performance records) from Irish residents. The Irish DPC is one of the most active data protection regulators in the EU — it processed over 10,000 complaints in 2023 and has issued significant fines against organisations for exactly the kind of consent failures this system must avoid: inadequate consent language, insufficient data subject rights mechanisms, and failure to conduct DPIAs for AI profiling systems.
-
-The Researcher flags this risk explicitly: *"Dublin-based businesses fall under Irish DPC jurisdiction, which has been active in enforcement."*
-
-**The specific risk pathway:** If the DPIA is not completed before launch, if the Article 9 consent wording does not meet the Irish DPC's standard for explicit consent for health data, or if the cascade deletion workflow fails to actually remove data from all locations, a single member complaint to the Irish DPC could result in an investigation, an enforcement notice, and reputational damage disproportionate to the size of the business.
-
-**Mitigation:** Do not launch without a completed DPIA and legal sign-off on the consent language. This is the non-negotiable prerequisite. The cost of a Dublin data protection solicitor reviewing the consent flow and DPIA documentation is trivially small relative to the cost of an enforcement action. Budget for it and complete it before any member data is processed.
+**Reference:** Researcher §6 (Trust Risk), Designer §4 (AI rule that must never be broken), Communicator §5c (AI transparency).
 
 ---
 
-### Risk 3: Points Liability Imbalance — Unredeemed Points Becoming a Financial Obligation
+### Risk 2: The Points Economy Becomes Financially Unviable
 
-**Why it matters for Slam Fitness specifically:** The Designer identifies this risk implicitly: *"Monthly Forge Points issued vs. redeemed (balance health indicator — ensures rewards liability is manageable)"* appears in the Owner Dashboard metrics. This is the right instinct, but the risk is not yet fully managed.
+**What the risk is:** The Maker's admin panel includes a points economy health monitor tracking IP issued vs. IP redeemed, with a flag if the redemption ratio exceeds 0.8. However, no agent has modelled the actual cost of the rewards catalogue against a realistic membership base and engagement rate. The "Slam Month" reward (600 IP = €20 off next month's membership) and the "Coach Session Upgrade" (400 IP = one free 30-minute session) represent real costs to Slam Fitness. If the points economy is calibrated incorrectly — particularly if early members earn points faster than expected through the combination of challenge bonuses, streak bonuses, and referral rewards — the business could face a liability in month 1.
 
-If the programme is successful, a significant number of members will accumulate large Forge Points balances. The Membership Credit reward (800 FP = one month's membership free) and the 1-on-1 Programming Session (400 FP) represent real cost to the business when redeemed at scale. If 20% of members simultaneously reach Iron tier and redeem Membership Credits in the same month, the cash flow impact on a small boutique studio could be material.
+**Why it matters for Slam Fitness specifically:** A boutique gym with a relatively small member base (estimated 100–300 members based on the operating profile) does not have the economic buffer of a large chain. A 20% redemption surge of Coach Session Upgrades in month 2 represents real labour hours from coaches who are already running six classes a day. Unlike a national chain that can absorb a points liability as a marketing cost, Slam Fitness would experience it as a staffing pressure.
 
-The Maker's data model tracks `forgePoints` and `lifetimePoints` separately, and the `Business` interface supports reward management — but no points expiry policy, redemption rate cap, or liability reserve calculation is specified anywhere in the pipeline.
+**Mitigation:** Before launch, model the full points economy under three scenarios: conservative engagement (30% of members active in the programme), moderate engagement (60%), and high engagement (90%). For each scenario, calculate the expected monthly IP issuance, expected redemption at historical loyalty programme redemption rates (typically 20–30% of earned currency), and the cost to the business in actual service delivery. Cap the high-cost rewards (Coach Session Upgrade, Slam Month) with inventory limits per month in the admin panel — a feature the Maker has designed but that requires Slam Fitness to set explicit monthly caps before launch. Set the initial caps conservatively and adjust upward based on month 1 data.
 
-**Mitigation:** Before launch, the owner must define: (a) a points expiry policy (e.g., points expire 12 months after earning if the membership lapses — this is already partially addressed by the 24-month retention period, but expiry for inactive members must be explicit), (b) a monthly redemption budget cap per reward category (the admin panel should flag when monthly redemption approaches a preset threshold), and (c) a rolling liability estimate in the Owner Dashboard showing the total FP liability if all current balances were redeemed today. The Maker must add this liability metric to the Owner Dashboard in Phase 1.
-
----
-
-# 7. CUSTOMER GOVERNANCE REPORT
+**Reference:** Maker §1.6 (AdminDashboard — Points Economy health monitor, Rewards Management with inventory cap controls), Designer §2 (Rewards catalogue with real service costs).
 
 ---
 
-## Your LoyaltyOS
+### Risk 3: Social Withdrawal Signal
+
+
+---
+
+
+---
+
+## Customer Governance Report
+
+*Produced by the Manager agent as a standalone customer-facing document.*
+
+## 7. CUSTOMER GOVERNANCE REPORT
+
+---
+
+## Your LoyaltyOS Governance Report
+
+**Prepared for:** The Owner, Slam Fitness, Stoneybatter, Dublin 7
+**Programme:** FORGED — Slam Fitness Member Loyalty Programme
+**Prepared by:** LoyaltyOS Manager Agent
+
+---
+
+### What Was Built For You
+
+FORGED is a loyalty programme designed specifically for Slam Fitness. Here is what it does, in plain terms.
+
+**The currency.** Members earn a points currency called Iron Points (⬡ IP). These points cannot be bought — they can only be earned through activity. When a member attends a session, logs a personal best, completes a challenge, refers a friend, or does a progress review with their coach, they earn Iron Points. The points add up over time and can be spent on real rewards.
+
+**The tiers.** As members accumulate Iron Points over their lifetime with you, they move through four membership tiers. A new member starts at **Raw**. With consistent attendance they progress to **Tempered**, then **Forged**, then — for your most committed long-term members — **Ironclad**. These tiers are displayed on their app profile and recognised by coaches. They are a measure of genuine, sustained commitment — not something that can be bought or reset.
+
+**The activities.** Members earn points for thirteen specific activities. These include attending morning sessions, training during quieter off-peak hours, maintaining a weekly attendance streak, logging a new personal best (confirmed by their coach), completing a monthly training programme, referring a friend who tries the gym, sharing their training journey on social media, and returning after a period of absence. Each activity has a defined points value and clear rules about how often it can be claimed.
+
+**The rewards.** Members can spend their Iron Points on eight rewards: a guest pass for a friend, merchandise credit, a one-to-one coaching session, priority access to class booking, entry to a nutrition workshop, a recovery or mobility session, a discount on next month's membership, and — for the most dedicated members — permanent entry into the Slam Fitness Hall of Iron, displayed in the gym and in the app.
+
+**The experience.** The programme runs through a branded mobile app. Members see their points balance at all times, watch a visual progress ring fill toward their next tier, track their attendance streaks, and receive personalised prompts relevant to their own training history. The app is dark-themed, clean, and designed to feel like it belongs in a performance studio — not a coffee shop loyalty card.
+
+---
+
+### How the AI Works
+
+Think of the AI in FORGED as a very attentive assistant who reads all the booking data so your coaches don't have to.
+
+Your coaches know their members well — but they are running sessions, coaching lifts, and managing a gym floor. They cannot simultaneously monitor whether a member who always trains at 6:15am on a Tuesday hasn't been in for twelve days, or notice that a member's session frequency has quietly halved over the past fortnight. That kind of pattern is almost impossible to catch by feel alone, especially as membership grows.
+
+The AI watches for exactly these patterns. It compares each member's current behaviour against their own personal history — not against any average or external standard. If something shifts, it generates a brief summary for the relevant coach: who the member is, what has changed, how long they've been absent, what their last personal best was, and a suggested way to start a conversation rooted in that member's actual programme.
+
+The coach then decides what to do. They read the brief, they write the message, they make the call. The AI identifies the moment and provides the context. The human delivers the relationship. That distinction is not a technicality — it is the core of how this system is designed, and it must not be changed without revisiting the commitments made to your members.
+
+The AI also manages the off-peak incentive system. When your gym floor is quieter than usual, it identifies which members have historically shown schedule flexibility, and sends them a time-limited bonus points offer for that specific window. Members who always attend the same fixed slot and would never come at that time are not contacted — only those whose own history suggests they might.
+
+The AI does not make any decisions about members' memberships, does not contact members directly, and does not draw any conclusions about members' health or personal circumstances. It reads attendance and booking patterns. That is the full extent of what it does.
+
+---
+
+### Data We Collect and Why
+
+- **Session booking records** — which sessions a member books, when they book them, and whether they attend. Kept for the duration of membership plus 24 months. Used to calculate Iron Points, track streaks, and identify shifts in attendance patterns that may prompt a coach to check in.
+
+- **Session timestamps and time-slot preferences** — what time of day a member typically trains. Kept for the duration of membership plus 24 months. Used to identify whether an absence represents a broken habit, and to determine which members may be receptive to off-peak incentive offers.
+
+- **Class type attendance** — whether a member attends group boot camps, strength sessions, conditioning classes, or open gym. Kept for the duration of membership plus 24 months. Used to understand whether a member is engaging socially or withdrawing, which is one signal in the churn pattern.
+
+- **Personal best records** — lift weights, times, and performance outputs, logged by the member or confirmed by their coach. Kept for the duration of membership plus 24 months. Used to award points for the Personal Best activity and to track whether a member's progress has stalled, which is another signal the AI monitors.
+
+- **Coach interaction history** — whether a member has completed a progress review with their coach, and when. Kept for the duration of membership plus 24 months. Used to award points for the Coach Check-In activity and as one of the strongest predictors of whether a member is still engaged with their programme.
+
+- **Referral activity** — who a member referred, and whether that person completed a trial session or became a paid member. Kept for the duration of membership plus 24 months. Used to award referral points and to understand which members are active community builders.
+
+- **App engagement data** — whether a member opens the app, dismisses prompts, or changes their settings. Kept for 12 months on a rolling basis. Used to assess whether the programme itself is working for each member and to avoid sending prompts to members who are clearly disengaged with the app itself.
+
+- **Consent preference** — which data use option a member chose at onboarding, and whether they have subsequently changed it. Kept for the duration of membership plus 5 years for compliance purposes. Used to ensure that members who have opted out of proactive coaching outreach are not included in the AI alert system.
+
+We do not collect health records, medical information, biometric data, financial information beyond membership tier, or any information a member has not provided through their use of the booking system and the FORGED app.
+
+We do not sell member data to any third party. Ever.
+
+---
+
+### Your Customers' Rights
+
+Under GDPR, every member of FORGED has four key rights in relation to their personal data. Here is what each right means and how a member exercises it.
+
+**The right to access their data.** Any member can request a copy of all the personal data you hold about them. This includes their session history, points records, coach interaction logs, and consent records. They are entitled to receive this within 30 days of asking.
+
+*How a member exercises this right:* They email your designated data contact — we recommend you set up a dedicated address such as data@slamfitness.ie — with the subject line "Data Access Request" and their full name and membership email address. You then export their data from the admin panel (the FORGED admin panel includes a GDPR data export tool for exactly this purpose) and send it to them within 30 days.
+
+**The right to correct their data.** If a member believes any information held about them is wrong — for example, a session they did not attend has been logged against their account, or their name is recorded incorrectly — they have the right to have it corrected.
+
+*How a member exercises this right:* They contact you directly, either in person at the gym or by email, and identify the specific record they believe is incorrect. You can make corrections directly through the admin panel. There is no fee and no required form — a straightforward email is sufficient.
+
+**The right to erasure.** A member can ask for their personal data to be deleted. This is sometimes called the "right to be forgotten." If they exercise this right, their session history, points balance, progress records, and all associated personal data must be deleted. Their Iron Points cannot be preserved after erasure — deletion is complete.
+
+*How a member exercises this right:* They can initiate deletion themselves through the app (Profile → Settings → Delete my account), or they can contact you by email. Before deleting, you should make them aware that deletion is permanent and that any unspent Iron Points will be lost. You may want to offer them the option to download their data first. Once confirmed, deletion should be completed within 30 days.
+
+**The right to object to automated decision-making.** This is the right that is most specific to how FORGED works, and it is important that you understand it clearly. Under Article 22 of GDPR, individuals have the right to object to decisions made about them solely by automated means — particularly where those decisions significantly affect them.
+
+In FORGED, the AI does not make any decisions that significantly affect members. It generates alerts for coaches, who then decide whether and how to act. No member's access to the gym, their membership status, or their points are ever changed by the AI alone. However, members still have the right to object to having their behaviour used to generate these AI-driven alerts — and we have honoured this by building a genuine opt-out into the consent system.
+
+*How a member exercises this right:* They can switch off proactive coaching outreach at any time in the app (Profile → Settings → Data & Privacy → "Proactive coaching outreach" → Off). This immediately removes them from the AI alert system. Their points, streaks, and programme history are completely unaffected. Alternatively, they can contact you directly and you can update their preference in the admin panel on their behalf.
+
+---
+
+### EU AI Act — Our Position
+
+The AI system within FORGED is classified as **minimal risk** under the EU AI Act. It does not make consequential decisions about individuals — it does not determine creditworthiness, employment, access to services, or any outcome that materially affects a person's rights or opportunities. It analyses behavioural patterns in attendance data and generates internal alerts for human coaches, who retain full discretion over whether and how to act. Because AI is used in the personalisation of your members' experience, transparency is required: your app's privacy notice must include the following sentence, and it must appear clearly, not buried in small print:
+
+> *"This programme uses automated analysis of your attendance and booking history to personalise your experience and, where you have consented, to prompt your coaches to support you at the right moment."*
+
+---
+
+### Our Ethics Commitments
+
+**Commitment 1: We will never automate the coaching relationship.**
+The most powerful intervention in FORGED — the moment a coach reaches out to a member who is drifting — works precisely because it is human. The AI identifies the pattern and prepares a brief. The coach reads it, decides whether to act, and writes the message themselves. We have designed the system so that the AI has no channel through which to contact members directly. If a future version of the product were to change this — to generate and send the coach message automatically — we commit to telling you before it happens and giving you the choice to opt out. The sentence "The AI spotted the pattern; your coach wrote the words" must remain true, or it must be removed from your member-facing communications.
+
+**Commitment 2: We will never manufacture urgency where none exists.**
+The off-peak bonus offer is time-limited because the offer genuinely expires — the quiet period on the gym floor is real and finite. We have built the system so that countdown timers and urgency language can only be applied to offers with a genuine, system-verified end time. A countdown cannot be added to a reward that has no real scarcity. This is a design constraint, not a policy — the admin panel will not allow an expiry timer to be attached to an open-ended offer. Your members will never be pressured by a false clock.
+
+**Commitment 3: We will never show a member their own churn risk score.**
+The AI computes an engagement temperature score for every member — a number between 0 and 100 that reflects how at-risk they are of drifting. This score is visible only in the coach admin panel. Members never see it, are never told about it, and are never shown any language suggesting their engagement is declining or that they are at risk of losing anything. The member-facing app surfaces only positive pulls — challenges to complete, milestones approaching, rewards within reach. The intelligence layer exists to help your coaches; it is never used to pressure or shame the people it is designed to help retain.
+
+---
+
+### Before You Go Live — Your Checklist
+
+The following five actions must be completed before FORGED is made available to your members. These are not optional enhancements — they are legal and operational requirements.
+
+**1. Appoint a named data contact and set up a dedicated email address.**
+You need a real person responsible for responding to member data requests, and a real email address where those requests can be sent. This does not need to be a solicitor or a formal Data Protection Officer — for a business of your size, it can be you or a trusted member of your team. Set up data@slamfitness.ie (or equivalent), decide who monitors it, and make sure they know what a Subject Access Request is and how to respond to one within 30 days. This address must appear in the app's privacy notice.
+
+**2. Complete a basic Data Protection Impact Assessment (DPIA) and keep a written record of it.**
+Because FORGED processes behavioural data and uses AI-driven profiling, Irish data protection law (under GDPR) requires that you document the risks you have considered and the steps you have taken to address them. This does not need to be a lengthy document — a structured one-page record covering what data is collected, why, how long it is kept, who has access, and what safeguards are in place is sufficient for a business of your size. LoyaltyOS can provide a template. Keep this on file — it is your evidence of responsible compliance, and you may be asked for it.
+
+**3. Review and confirm the member-facing consent screen before launch.**
+The `ConsentScreen` that appears during member onboarding contains specific plain-language descriptions of how data is used. Read it carefully. Make sure every statement on that screen is accurate for the way you intend to operate the programme — particularly the description of how coach outreach works and what "proactive coaching outreach" means in practice at your gym. If anything does not reflect how you will actually use the system, it must be corrected before launch. A consent screen that does not accurately describe the product is not valid consent.
+
+**4. Brief every coach and front-of-house staff member on how the system works.**
+Your coaches will receive alerts from the intervention queue. They need to understand that these alerts are AI-generated suggestions, not instructions — they always decide whether and how to act. They also need to know that if a member ever asks whether a coach message was prompted by a system, the honest answer is yes. Brief your reception staff on how members can change their data preferences (in-app, or by asking at the desk). Staff who do not know how the system works cannot represent it honestly to members.
+
+**5. Test the full member journey — including deletion — before opening to the public.**
+Create a test member account and complete every significant flow: earning points, completing a challenge, referring a friend, redeeming a reward, and — critically — deleting the account. Confirm that deletion removes all data as described in the member-facing copy. Confirm that switching off proactive outreach in the app settings actually removes the test account from the coach intervention queue. Confirm that the QR code on the redemption screen displays correctly on your reception desk's screen or scanner. Do not go live until you have seen every member-facing moment work exactly as described. What your members experience in their first week sets the expectation they will hold for everything that follows.
+
+---
+
+*This report was prepared by the LoyaltyOS Manager Agent as part of the FORGED programme delivery for Slam Fitness. It should be retained alongside your Data Protection Impact Assessment and reviewed any time a material change is made to how member data is collected or used.*

@@ -1,544 +1,671 @@
-# LoyaltyOS × Slam Fitness — IRON RECORD
-## Communicator Agent Output v1.0
+# LoyaltyOS × Slam Fitness — FORGED
+## Full Marketing & Communications Suite
+
+*Prepared by LoyaltyOS Communicator Agent*
 
 ---
 
-# 1. PLATFORM POSITIONING
+## SECTION 1: PLATFORM POSITIONING
 
 ---
 
-## LoyaltyOS — One-Line Value Proposition
-*(For selling to gym owners and studio operators)*
+### 1.1 LoyaltyOS One-Line Value Proposition
+*(Selling to businesses)*
 
-> **"LoyaltyOS turns the data your gym already generates into the human conversations that keep members from leaving."**
-
----
-
-## IRON RECORD Programme Tagline
-*(Member-facing — appears in the app, on collateral, on the wall)*
-
-> **"Your record. Built in this room."**
+> **LoyaltyOS gives you the intelligence to see who's about to leave — and the tools to bring them back before they've made the decision.**
 
 ---
 
-## Key Messages by Persona
+### 1.2 Programme Tagline
+*(For Slam Fitness members — shown on app, merchandise, and communications)*
+
+> **FORGED. Every session counts.**
+
+*Secondary line for marketing materials:*
+> *You put in the work. We make sure it's never invisible.*
 
 ---
 
-### Persona 1: Ciarán — The Competitor
-
-> **"Every kilo you add is logged. Every rank you earn is visible. IRON RECORD doesn't just count your sessions — it counts what you achieved in them."**
-
-> **"You're not here to collect stamps. You're here to hit numbers. IRON RECORD tracks them, remembers them, and makes sure your coaches see them too."**
-
-> **"The leaderboard doesn't lie. Neither does your PR history. IRON RECORD keeps the scorecard so you can keep training."**
+### 1.3 Key Messages by Persona
 
 ---
 
-### Persona 2: Aoife — The Transformer
+#### Persona 1 — Ciarán, "The Grafter"
 
-> **"Progress is happening even when it doesn't feel like it. IRON RECORD keeps the receipts — every session, every milestone, every kilo you earned."**
+> **Message 1 — Progress Visibility**
+> "Every kilo you add to the bar lives here. Your numbers don't disappear between sessions — they build. Watch the thing you're actually building."
 
-> **"One bad week doesn't erase three great months. IRON RECORD makes sure you remember that, even when you'd rather forget."**
+> **Message 2 — Streak Identity**
+> "You don't miss. That's not a personality trait, it's a record. FORGED tracks it so you never have to explain it to anyone."
 
-> **"When your coach notices your deadlift went up 15kg, that's not an accident. IRON RECORD makes sure the people who matter see the work you're putting in."**
-
----
-
-### Persona 3: Declan — The Anchor
-
-> **"Tuesday 7am. Thursday 6pm. Same crew, same coaches, same standard. IRON RECORD keeps your routine running smoothly — no fuss, no friction."**
-
-> **"You've been building something here for over a year. IRON RECORD makes sure that counts for something — without you having to do anything differently."**
-
-> **"You're not here for the app. You're here for the training. IRON RECORD stays out of your way and makes sure Slam stays worth showing up for."**
+> **Message 3 — Coach Continuity**
+> "Your coach knows your left shoulder is a problem. Your programme knows it too. The relationship doesn't reset — it compounds."
 
 ---
 
----
+#### Persona 2 — Aoife, "The Social Achiever"
 
-# 2. ONBOARDING SEQUENCE
+> **Message 1 — Community Visibility**
+> "You show up. You bring people with you. You make this place what it is. FORGED notices all of that — and rewards it."
 
----
+> **Message 2 — Social Belonging**
+> "Challenges. Crew streaks. Moments worth sharing. This isn't a loyalty app — it's proof you're part of something."
 
-## a) Welcome Message — First App Open
-
-*Shown on first launch, after onboarding consent is complete. Member's first name is pulled from their account.*
-
----
-
-```
-COPY BLOCK: WELCOME MESSAGE
-Target persona: All members (universal)
-Placement: Full-screen welcome card, first app open
-```
-
-**Headline:**
-> Right. Let's build your record.
-
-**Body:**
-> Welcome to IRON RECORD, [First Name].
->
-> This isn't a points collector. It's a record of what you've actually done — every session, every lift, every time you showed up when you didn't feel like it.
->
-> Your coaches can see your progress. You'll be recognised when you hit something real. And when life gets in the way, we'll notice before you disappear.
->
-> Training starts now. The record starts today.
-
-**CTA Button:**
-> Let's go →
+> **Message 3 — Referral Power**
+> "The person who got you into Slam Fitness changed your life a little bit. Do that for someone else — and earn Iron Points for it."
 
 ---
 
-## b) First Reward Earned Notification
+#### Persona 3 — David, "The Optimiser"
 
-*Triggered after the member's first confirmed session check-in earns their first Forge Points. Delivered as an in-app notification and push.*
+> **Message 1 — Value Integrity**
+> "You didn't join Slam Fitness because it was convenient. You joined because it's better. FORGED is how you get more out of a programme that's already working."
+
+> **Message 2 — Performance Intelligence**
+> "Early access to specialist workshops. Programme analytics. Coach reviews on your schedule. This is what a premium membership actually looks like."
+
+> **Message 3 — No Noise**
+> "You'll only hear from us when there's something worth saying. No spam. No generic check-ins. Just relevant, useful signals — when they matter."
+
+---
+
+---
+
+## SECTION 2: ONBOARDING SEQUENCE
+
+---
+
+### 2a — Welcome Message
+*(Shown on first app open, after consent is given)*
 
 ---
 
 ```
-COPY BLOCK: FIRST REWARD EARNED
-Target persona: All members (universal, with Aoife/Transformer tone)
-Placement: Push notification + in-app toast
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Welcome to FORGED.                                │
+│                                                     │
+│   This is your Slam Fitness loyalty programme.      │
+│   But it's not a stamp card.                        │
+│                                                     │
+│   Every session you show up for, every             │
+│   personal best you log, every friend you          │
+│   bring through the door — it all counts.          │
+│   It always did. Now it's visible.                 │
+│                                                     │
+│   You start as RAW.                                │
+│   You won't stay there long.                       │
+│                                                     │
+│   Let's go.                                        │
+│                                                     │
+│              [ START EARNING ]                      │
+│                                                     │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Push notification (short form):**
-> First session, first points. [First Name], your record just started. 🔥
+**Persona targeting:** All three — but the language of tiers and visible progress speaks most directly to Ciarán (The Grafter) and David (The Optimiser). The "friend you bring through the door" line seeds referral thinking for Aoife (The Social Achiever) from the first moment.
 
-**In-app message (full):**
-
-**Headline:**
-> [First Name], you've earned your first Forge Points.
-
-**Body:**
-> 25 points for showing up. But more importantly — session one is in the books.
->
-> Your coaches have seen it. Your record has it. Twelve months from now, this is the day you'll look back at.
->
-> Keep going. It adds up faster than you think.
-
-**Points display:**
-> **+25 Forge Points** — Session Complete
-
-**CTA:**
-> See what you can earn →
+**Tone notes:** No exclamation marks. No "amazing journey ahead." Short sentences, real words. The word "stamp card" is used deliberately — we're naming the thing we're replacing.
 
 ---
 
-## c) 7-Day Streak Congratulation Message
-
-*Triggered when a member completes their 7-consecutive-session streak. Delivered as an in-app notification and push. Three variants by persona — system selects based on `personaType`.*
+### 2b — First Reward Earned Notification
+*(Push notification + in-app banner, triggered after first Iron Points are confirmed)*
 
 ---
-
-```
-COPY BLOCK: 7-DAY STREAK — CIARÁN VARIANT
-Target persona: Persona 1 — The Competitor
-Placement: PointEarnOverlay + push notification
-```
 
 **Push notification:**
-> 7 days straight, [First Name]. That's not a coincidence — that's a standard. 🔥
 
-**In-app overlay headline:**
-> 7-day streak. That's a number worth defending.
+```
+FORGED · Slam Fitness
 
-**Body:**
-> Seven sessions in a row. You've set a pace most people can't match — now the question is whether you can hold it.
->
-> Your coaches have noticed. Your rank on the current challenge reflects it.
->
-> **+150 Forge Points** added to your record.
+Your first Iron Points just landed. 🔥
+That's not a freebie — you earned it.
+Open to see your balance.
+```
 
-**CTA:**
-> Check your ranking →
+**In-app banner (on next open):**
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   First points. First session tracked.             │
+│                                                     │
+│   From here, every session adds to something       │
+│   you can actually see. Your progress isn't        │
+│   just in your body anymore — it's on the          │
+│   screen in front of you.                          │
+│                                                     │
+│   Keep going. The next milestone is closer         │
+│   than you think.                                  │
+│                                                     │
+│   [ SEE YOUR BALANCE ]   [ WHAT CAN I EARN? ]     │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+**Persona targeting:**
+- **Ciarán (The Grafter):** "Every session adds to something you can actually see" — this is the progress-visibility message that is his primary retention driver.
+- **David (The Optimiser):** "The next milestone is closer than you think" — gives him something to calculate and pursue.
+- **Aoife (The Social Achiever):** The secondary CTA "What can I earn?" sets up discovery of referral rewards.
 
 ---
 
-```
-COPY BLOCK: 7-DAY STREAK — AOIFE VARIANT
-Target persona: Persona 2 — The Transformer
-Placement: PointEarnOverlay + push notification
-```
+### 2c — 7-Day Streak Congratulation Message
+*(Push notification + full in-app celebration screen, triggered on week 1 streak confirmation)*
+
+---
 
 **Push notification:**
-> 7 days in a row. [First Name], you've built something this week. 🔥
-
-**In-app overlay headline:**
-> Seven days straight. You've earned this one.
-
-**Body:**
-> A week of showing up — even when work was mad, even when the couch looked good, even when it would have been very easy to skip.
->
-> You didn't skip. That matters more than you know right now.
->
-> Your coaches have been watching. This streak is officially on your record.
->
-> **+150 Forge Points** — and you've earned a Streak Freeze for when life happens.
-
-**CTA:**
-> See your progress →
-
----
 
 ```
-COPY BLOCK: 7-DAY STREAK — DECLAN VARIANT
-Target persona: Persona 3 — The Anchor
-Placement: PointEarnOverlay + push notification
+FORGED · Slam Fitness
+
+One week straight. 🔥
+That's not nothing, [First Name].
 ```
-
-**Push notification:**
-> 7 sessions, no breaks. Quiet work, [First Name]. The best kind. 🔥
-
-**In-app overlay headline:**
-> Seven days. Consistent as ever.
-
-**Body:**
-> No drama. No missed sessions. Just you, the routine, and the work.
->
-> That consistency is exactly what this place is built on — and exactly why the people you train alongside keep showing up too.
->
-> **+150 Forge Points** added to your record. You've also earned a Streak Freeze — it's there if you ever need it.
-
-**CTA:**
-> Keep going →
-
----
-
----
-
-# 3. OFFER COPY TEMPLATES
-
----
-
-## Offer 1 — Low Footfall Day Promotion
-
-*Targets Tuesday and Thursday off-peak sessions (10am–3pm). Earns double Forge Points. Framed as an insider benefit, not a desperation discount.*
-
----
-
-```
-COPY BLOCK: OFF-PEAK OFFER — "THE QUIET HOUR"
-Target persona: Ciarán (Competitor) — primary; Aoife (Transformer) — secondary
-Campaign trigger: Automated, Tuesday/Thursday, targeted at members who haven't booked that week
-```
-
-**Headline:**
-> Train when the gym is yours.
-
-**Body:**
-> Tuesday and Thursday afternoons, the floor is quieter. The racks are free. Coach attention is yours if you want it.
->
-> This week, sessions between 10am and 3pm on Tuesday and Thursday earn **double Forge Points** — 50 FP instead of 25, plus the best conditions you'll get all week for hitting a new lift.
->
-> Some of our best PRs happen on Tuesday afternoons. There's a reason for that.
-
-**CTA Button:**
-> Book your session →
-
-**Urgency Hook:**
-> Double points available this Tuesday and Thursday only. Spots filling — 6 left at peak-quiet times.
-
----
-
-## Offer 2 — Tier Upgrade Celebration
-
-*Triggered automatically when a member crosses a tier threshold. Personalised by the tier they've just reached. Example below is for Lifter → Competitor upgrade.*
-
----
-
-```
-COPY BLOCK: TIER UPGRADE — COMPETITOR TIER CELEBRATION
-Target persona: Ciarán (Competitor) — primary
-Trigger: Automated on tier-upgrade milestone event
-Placement: PointEarnOverlay → push notification → email follow-up
-```
-
-**Headline:**
-> You're a Competitor now. Act like it.
-
-**Body:**
-> [First Name], you've crossed into **Competitor** tier.
->
-> That's not a badge. It's a record of what you've put in — the sessions, the PRs, the challenges you signed up for and actually finished.
->
-> To mark it: you've unlocked **access to the monthly Competitor Challenge** — a programming block designed for members who've proven they'll show up consistently.
->
-> You also have 500 bonus Forge Points in your account, right now.
-
-**CTA Button:**
-> See what's unlocked →
-
-**Urgency Hook:**
-> Your Competitor Challenge access opens this Monday. First session is on us — redeem your complimentary session from your Rewards page before Friday.
-
----
-
-## Offer 3 — Win-Back Offer (14-Day Lapse)
-
-*Triggered when a member has not attended a session in 14 days, with no recorded absence reason. Three variants. Copy below is Aoife's version — the most emotionally resonant, and the most important to get right.*
-
----
-
-```
-COPY BLOCK: WIN-BACK — AOIFE VARIANT (14-DAY LAPSE)
-Target persona: Persona 2 — The Transformer
-Trigger: 14 days since last confirmed session, no recorded absence
-Delivery: Push notification → in-app message on next app open
-Critical design rule: Coach name appears as sender. This is flagged to coach for awareness BEFORE sending. Coach can edit or suppress.
-```
-
-**Push notification:**
-> Hey [First Name] — Coach [Name] here. You've been quiet. Wanted to check in.
 
 **In-app message:**
 
-**Headline:**
-> Two weeks. Your record is waiting.
-
-**Body (Coach-attributed — sent as message from coach):**
-> Hey [First Name] —
->
-> It's been a couple of weeks since we've seen you, and I wanted to reach out before it turns into a month.
->
-> You're [X weeks] into your current programme. Your back squat is [X kg] — up [X kg] since you started. That didn't happen by accident.
->
-> One session won't undo two weeks away. But two weeks away won't undo three months of work either.
->
-> There's a class on [next available session day] with a few familiar faces in it. Come back and see how it feels. No pressure, no performance — just get back on the floor.
->
-> We've held 200 Forge Points for you. They're waiting whenever you're ready.
->
-> — Coach [Name]
-
-**CTA Button:**
-> Book my comeback session →
-
-**Urgency Hook:**
-> Your 200 welcome-back points are held for 7 days.
-
----
-
 ```
-COPY BLOCK: WIN-BACK — CIARÁN VARIANT (14-DAY LAPSE)
-Target persona: Persona 1 — The Competitor
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   🔥                                               │
+│                                                     │
+│   One week. Every session.                         │
+│                                                     │
+│   A lot of people talk about going to the gym.     │
+│   You went. Seven days in a row.                   │
+│                                                     │
+│   Your streak is alive. Keep feeding it.           │
+│                                                     │
+│   + 25 IP added to your balance                    │
+│   Streak shield unlocked at week 4 — one           │
+│   miss won't break what you're building.           │
+│                                                     │
+│              [ SEE YOUR STREAK ]                   │
+│                                                     │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Push notification:**
-> [First Name] — your PR streak stopped 14 days ago. Let's not let that be the number you remember.
-
-**In-app headline:**
-> The record doesn't pause. You do.
-
-**Body:**
-> You've been away for two weeks, [First Name]. Your current programme is mid-block.
->
-> The strength you've built doesn't disappear in two weeks — but the momentum does. Come back before the gap starts to feel insurmountable.
->
-> There's a morning session on [next available day] with space on the platform. Your programme is exactly where you left it.
->
-> 200 Forge Points added to your account. Your ranking is still live.
-
-**CTA:**
-> Book my session →
-
----
-
-```
-COPY BLOCK: WIN-BACK — DECLAN VARIANT (14-DAY LAPSE)
-Target persona: Persona 3 — The Anchor
-Note: Softer tone. No metrics. Social anchor is the hook.
-```
-
-**Push notification:**
-> [First Name], Tuesday hasn't been the same. Your crew are asking after you.
-
-**In-app headline:**
-> Tuesday misses you.
-
-**Body:**
-> It's been a couple of weeks, [First Name]. Your usual session is running — same crew, same slot.
->
-> No big deal made of it. Just wanted you to know the door's open and the spot is yours whenever you're back.
->
-> Come to [usual session]. That's all.
-
-**CTA:**
-> Book Tuesday →
+**Persona targeting:**
+- **Ciarán (The Grafter):** The direct, no-fluff congratulation is calibrated for someone who doesn't want to be patronised — "that's not nothing" acknowledges effort without gushing. The streak shield information is relevant to him because protecting the streak matters.
+- **Aoife (The Social Achiever):** The social shareability of a streak milestone is implicit — this is the kind of moment she shares. The copy is short enough to screenshot.
+- **David (The Optimiser):** The streak shield is framed as information, not emotion — he'll note it, calculate it, and appreciate knowing the rule.
 
 ---
 
 ---
 
-# 4. BUSINESS SALES PITCH
+## SECTION 3: OFFER COPY TEMPLATES
 
-*LoyaltyOS pitch for selling to boutique fitness studios. Slam Fitness is the proof-of-concept client archetype. This pitch is written for the LoyaltyOS sales team to use when approaching similar businesses.*
+---
+
+### 3a — Low-Turnover Day Promotion
+*(Tuesday and Wednesday, 10am–4pm off-peak slots)*
+
+**Target persona:** David (The Optimiser) and Ciarán (The Grafter) — members with schedule flexibility identified by AI, never sent to members who would have attended anyway.
 
 ---
 
 ```
-COPY BLOCK: LOYALOS BUSINESS SALES PITCH
-Target business type: Boutique fitness studios, strength gyms, performance-focused clubs
-Format: Sales deck narrative / email pitch / landing page long-form
+HEADLINE:
+The gym is yours. No queue. No crowd.
+
+BODY COPY:
+Between 10am and 4pm on Tuesday and Wednesday,
+the floor is quiet. The kit is free. The coaches
+have time for you.
+
+If you can shift one session this week, this is
+when to do it.
+
+Come in before 4pm today or tomorrow:
+earn DOUBLE Iron Points on every activity.
+
+Bonus unlocks automatically when you check in.
+No code. No faff.
+
+CTA:
+[ BOOK MY SESSION — DOUBLE IP TODAY ]
+
+URGENCY HOOK:
+Offer closes at 4pm Wednesday. After that,
+back to normal.
 ```
+
+**Design note:** This offer should render as a `PersonalisedPromptCard` in the `off_peak_bonus` variant — orange top accent line, brightened border, countdown timer. It should never appear for members whose `scheduleFlexibilityScore` is below 0.3, per the AI targeting spec.
+
+---
+
+### 3b — Tier Upgrade Celebration Offer
+*(Triggered on tier advancement — specifically RAW → TEMPERED or TEMPERED → FORGED)*
+
+**Target persona:** Aoife (The Social Achiever) — who will share this publicly — but the copy works for all three.
+
+---
+
+```
+HEADLINE:
+You just moved up. This one's on us.
+
+BODY COPY:
+You've hit [NEW TIER].
+
+That's not handed out. You trained for it,
+showed up for it, and earned it.
+
+To mark it: your next class booking is
+automatically upgraded to priority access —
+you get first pick before the slot opens
+to everyone else.
+
+This is what [NEW TIER] looks like.
+
+CTA:
+[ BOOK MY PRIORITY SESSION ]
+
+URGENCY HOOK:
+Your priority access window is open for
+the next 7 days. Use it or it passes.
+```
+
+**Personalisation variables:**
+- `[NEW TIER]` — populates from `TierLevel` enum: Tempered / Forged / Ironclad
+- For IRONCLAD tier: swap "priority access" for "one complimentary personal training session" — adjust reward accordingly in `Reward` catalogue
+
+**Tone note for Aoife:** She will screenshot this. Make sure the tier name is on its own line, large and centred in the UI, so it reads cleanly as a social share.
+
+---
+
+### 3c — Win-Back Offer
+*(Triggered at 14-day absence — member has not checked in, booked, or engaged with the app)*
+
+**Target persona:** Aoife (The Social Achiever) — most vulnerable to lapsing after social anchor loss. Secondary: Ciarán (The Grafter), whose absence at this point is a serious churn signal.
+
+**Critical instruction:** This offer must not fire before a coach has been notified via the `CoachInterventionQueue`. The win-back offer is the *last* automated intervention — not the first.
+
+---
+
+```
+HEADLINE:
+Still here when you are.
+
+BODY COPY:
+It's been a couple of weeks. No judgement —
+life does that.
+
+When you're ready to come back, we'll make
+it worth it: your first session back earns
+triple Iron Points, and your streak picks up
+from where it was.
+
+Nothing resets. Nothing's lost.
+Come back whenever. The bar will be
+exactly where you left it.
+
+CTA:
+[ BOOK MY COME-BACK SESSION ]
+
+URGENCY HOOK:
+Triple points on your first session back —
+available for the next 5 days.
+```
+
+**Tone notes:** This is the most important piece of copy in the suite to get right. It must not be:
+- Needy ("We miss you!")
+- Punishing ("Your streak is in danger")
+- Hollow ("We'd love to see you again!")
+
+It must be: matter-of-fact, warm, and genuinely low-pressure. The phrase "Nothing resets. Nothing's lost." is doing the heaviest retention work in the entire document — it removes the psychological barrier of shame that keeps lapsed members from returning.
+
+**AI safety note:** If the member's `churnSignals.engagementTemperature` has already dropped to red (below 20), the copy should be suppressed entirely and replaced by a direct, human coach message — not a promotional offer. The `CoachInterventionQueue` flag must be marked red before this offer is sent in that case.
+
+---
+
+---
+
+## SECTION 4: BUSINESS SALES PITCH
+
+*(LoyaltyOS pitch for boutique fitness studios — written for a founder-to-founder or coach-to-platform conversation)*
 
 ---
 
 ### The Problem
 
-You didn't open a boutique gym to compete on price. You built something better — smaller, more personal, more results-driven than the €30-a-month chain down the road. But "better" is invisible when a member stops feeling it. The truth is, most gym members don't cancel because they found somewhere cheaper. They cancel because progress stalled, their training partner left, or their coach never noticed they'd gone quiet. By the time they're gone, they've been mentally leaving for six weeks. That's six weeks of sessions you could have had. Six weeks of a conversation that never happened. The stamp card on your counter doesn't see any of it coming. Your front desk staff are too busy. And your booking software counts absences — it doesn't interpret them.
+```
+Most gyms lose members quietly.
+
+There's no dramatic cancellation conversation,
+no formal goodbye. A member just shows up less,
+then stops. By the time that pattern is obvious
+to anyone on staff, the member has already made
+the decision — they just haven't cancelled their
+direct debit yet.
+
+For a boutique studio like yours, this is
+expensive in two ways: the obvious one is revenue,
+but the less obvious one is community. Your gym
+works because the 6:15am crew knows each other,
+because members bring friends, because your coaches
+know who had a bad week. When a member drifts,
+they take some of that with them.
+
+The frustrating part: most churning members don't
+leave because they stopped caring about fitness.
+They leave because something in the experience
+quietly shifted — a progress plateau, a change in
+their schedule, a training partner who stopped
+coming — and no one caught it in time.
+
+A stamp card doesn't catch it. A generic email
+campaign doesn't catch it. You need something that
+notices the pattern before you do.
+```
 
 ---
 
 ### The Solution
 
-LoyaltyOS is a loyalty platform built specifically for high-touch fitness businesses. It watches the behavioural signals that matter — not just who's attending, but who's booking and not showing up, who's stopped logging PRs, whose training crew just dissolved. When it spots a pattern that's predicted cancellation in businesses like yours, it doesn't send the member an automated discount. It sends your coach a human prompt: *"[Member] hasn't logged a new lift in 21 days. Worth a check-in this week."* The coach decides what to say. They say it in their own words. The member feels seen by a person — because they were. LoyaltyOS makes that intervention possible at exactly the right moment, at scale, without your coaches spending their evenings staring at spreadsheets. It also gives your best members something they've been quietly wanting: a real record of what they've built in your gym. Not points. Not a coffee voucher. A permanent, visible account of every session, every PR, every milestone earned on your floor. That's your retention strategy. That's also your brand.
-
----
-
-### What Our Clients Have Found
-
-Studios running LoyaltyOS have seen measurable reductions in the 6-to-10-week churn window — the period when members who've lost momentum quietly decide to cancel before they've consciously admitted it to themselves. Coach-initiated check-ins triggered by LoyaltyOS interventions consistently outperform automated win-back campaigns. Members who engage with their progress record — the PR history, the milestone timeline, the session count — renew at significantly higher rates than those who don't. And the referral mechanic works not because it incentivises members to recruit, but because it gives your most committed members a way to publicly declare what training here has done for them.
-
-*[Client case study and verified figures to be inserted here — contact your LoyaltyOS account manager for current benchmarks.]*
-
----
-
-### Let's talk
-
-If you're running a boutique gym and your retention strategy is currently a combination of hope, WhatsApp messages, and a stamp card — this is the conversation worth having.
-
-LoyaltyOS is set up in two weeks. No ripping out your existing booking system. No retraining your staff on new software.
-
-> **Book a 30-minute walkthrough.** We'll show you what the data from a gym like yours actually looks like — and what you're currently not seeing.
-
-**[Schedule a demo →]**
-
----
-
----
-
-# 5. TRUST AND ETHICS MESSAGING
-
-*In-app privacy notice copy. Plain language. No legal jargon. Honest about AI. Located in Settings → Your Data & Privacy.*
-
----
-
 ```
-COPY BLOCK: PRIVACY NOTICE — IN-APP
-Placement: Settings → Your Data & Privacy
-Tone: Direct, honest, human. Written as if explaining to a friend.
-GDPR context: Irish DPC jurisdiction. Health/fitness data treated as sensitive. Tiered consent model required.
+LoyaltyOS is a loyalty programme built around
+your actual product: the coaching relationship,
+the community, and the feeling of visible progress.
+
+Members earn Iron Points for everything that keeps
+them engaged — sessions, personal bests, showing up
+after a break, bringing a friend, doing a coach
+check-in. Points buy real things: priority booking,
+merchandise, coaching sessions, early access to
+new programming.
+
+But that's the surface. Underneath it, LoyaltyOS
+is watching the behavioural patterns that predict
+churn — broken time-slot habits, social withdrawal,
+declining session frequency — and surfacing them to
+your coaches before they become cancellations.
+
+Your coach doesn't get a data dump. They get a
+one-line brief and a suggested conversation starter,
+specific to that member's programme. The technology
+finds the moment. Your coach has the conversation.
+That's the distinction that matters: the human
+relationship stays human. The AI just makes it
+possible at scale.
+
+The whole thing runs under your brand. Your members
+see Slam Fitness, not LoyaltyOS. You get the loyalty,
+we handle the infrastructure.
 ```
 
 ---
 
-## Your Data & Privacy
+### Social Proof
 
-**The short version:** We collect data about how you train. We use it to make your experience more useful and to help your coaches support you better. You're in control of what we collect, and you can delete everything whenever you want.
+```
+[PLACEHOLDER — to be populated with live client data]
 
-Here's the full picture.
+Studios using LoyaltyOS have seen [X]% reduction
+in member churn in the first six months, with the
+highest-impact results coming not from the points
+economy, but from the coach intervention queue —
+specifically, members flagged by the AI who received
+a personalised coach message before consciously
+deciding to leave.
 
----
+"I didn't think I needed a loyalty programme.
+I thought we had good enough relationships with
+members to catch this ourselves. What I didn't
+realise was how many signals I was missing —
+not because I didn't care, but because I was
+running six classes a day."
 
-### What we collect and why
+— [COACH/OWNER NAME], [STUDIO NAME]
 
-**Session attendance** — When you check in to a session, we record it. This is how your Forge Points are calculated, how your streak is tracked, and how we know when to flag a check-in to your coach if you've been quiet.
-
-**Progress logs (PRs and training data)** — When you log a personal record, we store the lift, the weight, the date, and any notes you add. This builds your permanent training record and lets you see how far you've come. Your coaches can see confirmed PRs — it's how they track your progress without you having to repeat yourself every session.
-
-**Booking behaviour** — We track when you book, whether you attend, and whether you cancel late or no-show. We use this to calculate your points and — with your consent — to spot patterns that might suggest you need a check-in from your coach.
-
-**Social posts (opt-in only)** — If you've opted into Social Recognition, and you tag Slam Fitness in a post, we log that you did. We don't scrape your social accounts, monitor your followers, or store your content. We just note the tag so your coach can acknowledge it.
-
-**Referral activity** — If you refer a friend and they join, we record the connection so both of you receive your reward.
-
-We do not collect: body weight, body composition, injury history, or any health information you haven't explicitly chosen to share through the progress log.
-
----
-
-### How AI personalisation works
-
-IRON RECORD uses AI to notice patterns in your training data and make suggestions to your coaches — not to you directly.
-
-Here's what that actually means:
-
-If you've missed two sessions in a row after previously training consistently, the AI flags this to your coach as a soft check-in prompt. It doesn't send you an automated message. Your coach reads the flag, decides if it's relevant, and reaches out in their own words if they think it's worth a conversation.
-
-If you're a member who responds to progress stats, the AI will surface your recent numbers when you open the app — things like your session count over the last 90 days, or how much your squat has improved.
-
-The AI also helps us make sure the rewards and challenges you see are relevant to how you actually train — not just generic offers sent to everyone.
-
-**What the AI never does:**
-- It doesn't make decisions about your membership without a human reviewing them.
-- It doesn't share your data with other members.
-- It doesn't infer medical or health conditions.
-- It doesn't send messages on your coaches' behalf — your coach always writes their own messages.
+We can share specifics from comparable studios —
+same size, same model, same community-first culture
+— on a call.
+```
 
 ---
 
-### How to delete your data
+### Call to Action
 
-You own your data. If you want it deleted, here's how:
+```
+We'll set up a free 30-minute walkthrough using
+your actual membership data — not a demo environment,
+your real numbers.
 
-**Delete specific entries:** Go to My Record → tap any PR or activity → select "Remove from my record." This removes it from your visible history and from coach-facing dashboards.
+You'll see exactly what churn signals already exist
+in your booking data, which members are most at risk
+right now, and what a loyalty programme built for
+your specific member base would look like.
 
-**Delete your account and all data:** Go to Settings → Your Data & Privacy → Request Account Deletion. We'll permanently delete your account, your training history, your points balance, and any data linked to your profile within 30 days. This cannot be undone.
+No slides. No sales deck.
+Just your data, our tools, and an honest conversation.
 
-**Download your data:** You can request a full export of everything we hold about you at any time. Go to Settings → Your Data & Privacy → Download My Data. You'll receive it within 7 days.
+[ BOOK A 30-MINUTE WALKTHROUGH ]
 
-**Change your consent preferences:** If you want to turn off coaching alerts, social recognition, or any other data category, go to Settings → Privacy Preferences. You can change these at any time. Turning off a category won't delete your existing data — it just stops new data of that type being collected and used.
-
----
-
-### Who sees your data
-
-**Your coaches at Slam Fitness** see your session attendance, confirmed PRs, streak status, and any churn-risk flags relevant to their role — if you've consented to coaching alerts.
-
-**Slam Fitness management** sees anonymised footfall data, aggregate member metrics, and individual profiles for members with elevated churn risk.
-
-**LoyaltyOS** (that's us) operates the platform and processes your data to run the loyalty programme. We do not sell your data. We do not share it with third parties for advertising. We store it securely on servers within the EU.
-
-We retain your data for 24 months after your membership ends. After that, it is permanently deleted unless you've requested otherwise.
-
----
-
-### Questions?
-
-If you have a question about your data that isn't answered here, you can contact us at **privacy@loyaltyos.io** or speak directly to the team at Slam Fitness.
-
-If you believe your data has been mishandled, you have the right to lodge a complaint with the Irish Data Protection Commission at **dataprotection.ie**.
-
----
-
-*Last updated: [Date]. This notice applies to your use of the IRON RECORD programme operated by Slam Fitness, powered by LoyaltyOS.*
+Or reply to this message. We read everything.
+```
 
 ---
 
 ---
 
-## Communicator Agent — Copy Index
+## SECTION 5: TRUST AND ETHICS MESSAGING
 
-| Section | Piece | Persona Target |
-|---|---|---|
-| 1 | LoyaltyOS value proposition | Business audience |
-| 1 | IRON RECORD tagline | All members |
-| 1 | Key message 1 | Ciarán — Competitor |
-| 1 | Key message 2 | Aoife — Transformer |
-| 1 | Key message 3 | Declan — Anchor |
-| 2a | Welcome message | Universal (Transformer tone) |
-| 2b | First reward notification | Universal |
-| 2c | 7-day streak — Competitor variant | Ciarán |
-| 2c | 7-day streak — Transformer variant | Aoife |
-| 2c | 7-day streak — Anchor variant | Declan |
-| 3 | Off-peak offer | Ciarán primary, Aoife secondary |
-| 3 | Tier upgrade offer | Ciarán |
-| 3 | Win-back — Transformer | Aoife |
-| 3 | Win-back — Competitor | Ciarán |
-| 3 | Win-back — Anchor | Declan |
-| 4 | Business sales pitch | Gym owner/operator |
-| 5 | Privacy notice | All members |
+*(App copy — Privacy and data transparency. Appears in the `ConsentScreen` at onboarding and the `DataTransparencyPage` at `/profile/data`)*
 
 ---
 
-*Communicator Agent output complete. All copy produced for IRON RECORD at Slam Fitness. Every piece is persona-targeted, human-voiced, and built around the core diagnostic: this is a progress-plateau and social-anchor retention problem. The copy reflects that — it never sells points, it always sells progress, belonging, and the permanent record of both.*
+### 5a — What Data We Collect and Why
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   What we know about you, and why                  │
+│                                                     │
+│   We collect three types of information:           │
+│                                                     │
+│   YOUR SESSIONS                                     │
+│   When you book, when you show up, what classes    │
+│   you attend, and how often. We use this to        │
+│   track your streaks, award your points, and       │
+│   spot if something in your routine has shifted    │
+│   — so your coach can check in with you.           │
+│                                                     │
+│   YOUR PROGRESS                                     │
+│   Personal bests you log, programme milestones     │
+│   your coach confirms, and challenges you          │
+│   complete. This is how your achievements          │
+│   become visible and permanent.                    │
+│                                                     │
+│   YOUR ENGAGEMENT                                   │
+│   Whether you've responded to coach messages,      │
+│   used the app, or referred a friend. We use       │
+│   this to understand how well the programme        │
+│   is working for you — not to judge you for        │
+│   quiet weeks.                                     │
+│                                                     │
+│   We do not collect health records, financial      │
+│   information beyond your membership tier,         │
+│   or biometric data of any kind.                   │
+│                                                     │
+│   We do not sell your data. Ever. To anyone.      │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5b — How to Delete Your Data
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Your data, your call                             │
+│                                                     │
+│   You can delete your FORGED account and all       │
+│   associated data at any time.                     │
+│                                                     │
+│   Go to: Profile → Settings → Delete my account   │
+│                                                     │
+│   When you delete your account:                    │
+│                                                     │
+│   • Your Iron Points balance is removed            │
+│   • Your session history is deleted                │
+│   • Your progress records are deleted              │
+│   • Any pending rewards are cancelled              │
+│                                                     │
+│   Deletion is permanent. We can't recover          │
+│   your history after the fact, so if you're        │
+│   taking a break rather than leaving, consider     │
+│   pausing instead — your data stays, your          │
+│   points stay, and you can pick up where           │
+│   you left off.                                    │
+│                                                     │
+│   Under GDPR, you also have the right to           │
+│   request a copy of your data before you           │
+│   delete it. Email [data@slamfitness.ie] and       │
+│   we'll send it to you within 30 days.             │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5c — How AI Personalisation Works
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   How the smart stuff works                        │
+│   (and what it actually does)                      │
+│                                                     │
+│   FORGED uses pattern recognition to make          │
+│   the programme more useful for you. Here's        │
+│   what that means in plain terms:                  │
+│                                                     │
+│   WHAT THE AI DOES                                 │
+│                                                     │
+│   It looks at your booking and attendance          │
+│   patterns over time. If something shifts —        │
+│   you're coming less often, or you've missed       │
+│   your usual slot for a couple of weeks —          │
+│   it flags this for your coach.                    │
+│                                                     │
+│   Your coach then decides whether to reach         │
+│   out. The message comes from them, not from      │
+│   a machine. The AI spotted the pattern;           │
+│   your coach wrote the words.                     │
+│                                                     │
+│   It also identifies when off-peak slots are       │
+│   quiet and, if your history suggests you have     │
+│   schedule flexibility, offers you a bonus         │
+│   for attending at those times.                    │
+│                                                     │
+│   WHAT THE AI DOES NOT DO                         │
+│                                                     │
+│   It does not make decisions about your            │
+│   membership. It does not contact you directly.    │
+│   It does not share your information with          │
+│   anyone outside Slam Fitness. It does not         │
+│   make assumptions about your health.              │
+│                                                     │
+│   TURNING THIS OFF                                 │
+│                                                     │
+│   If you'd prefer that your attendance data        │
+│   isn't used to prompt coach outreach, you         │
+│   can change this at any time:                     │
+│                                                     │
+│   Profile → Settings → Data & Privacy →           │
+│   "Proactive coaching outreach" → Off              │
+│                                                     │
+│   Your points, your streak, and your progress      │
+│   records are unaffected. The app keeps            │
+│   working. Your coach just won't receive           │
+│   AI-prompted alerts about your attendance.        │
+│                                                     │
+│   One last thing: if you ever receive a message    │
+│   from your coach and want to know whether         │
+│   the FORGED system played a role in prompting     │
+│   it — you're welcome to ask them. We'd rather     │
+│   you know.                                        │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+### 5d — Onboarding Consent Screen Copy
+*(Renders in `ConsentScreen` component — two selectable option cards)*
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   Before we start — one quick choice.              │
+│                                                     │
+│   FORGED uses your session and attendance          │
+│   history to make the programme work properly.     │
+│   You decide how far that goes.                    │
+│                                                     │
+│   ┌─────────────────────────────────────────────┐ │
+│   │                                             │ │
+│   │  ✓  Use my data fully                      │ │
+│   │                                             │ │
+│   │  Personalise my app and let my coach        │ │
+│   │  know if my attendance pattern shifts.      │ │
+│   │  I want the full experience.                │ │
+│   │                                             │ │
+│   └─────────────────────────────────────────────┘ │
+│                                                     │
+│   ┌─────────────────────────────────────────────┐ │
+│   │                                             │ │
+│   │  ○  Personalise my app only                │ │
+│   │                                             │ │
+│   │  Use my data for points, streaks, and       │ │
+│   │  rewards — but don't use it to prompt       │ │
+│   │  my coach to contact me.                    │ │
+│   │                                             │ │
+│   └─────────────────────────────────────────────┘ │
+│                                                     │
+│   You can change this at any time in               │
+│   Profile → Settings.                              │
+│                                                     │
+│              [ CONTINUE ]                          │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+---
+
+## COPY SYSTEM NOTES
+
+*For the Designer and Maker agents — implementation guidance from the Communicator.*
+
+**Voice rules across all copy:**
+1. Short sentences. If a sentence has two clauses, consider making it two sentences.
+2. No exclamation marks in serious moments. Reserve them for genuine celebration only — and even then, sparingly.
+3. Never use: "journey," "amazing," "community" more than once per screen, "we'd love to," "don't miss out," "limited time" without a specific end time attached.
+4. Always name the thing being offered specifically. "Double Iron Points" not "bonus rewards." "Priority booking" not "exclusive access."
+5. The win-back offer is the only copy in this suite where the tone becomes explicitly permissive. It should always feel like a door left open, not a hand reaching through one.
+
+**Persona cross-reference — quick guide:**
+
+| Copy Piece | Primary Persona | Secondary Persona | Key Emotional Lever |
+|---|---|---|---|
+| Welcome message | Ciarán / David | Aoife | Progress visibility |
+| First reward notification | Ciarán | David | Momentum, next milestone |
+| 7-day streak message | Ciarán | Aoife, David | Consistency identity |
+| Off-peak promotion | David | Ciarán | Value, expertise access |
+| Tier upgrade offer | Aoife | All | Social recognition |
+| Win-back offer | Aoife | Ciarán | Low-pressure return |
+| Sales pitch | Owner/Founder | Head Coach | Churn intelligence |
+| Privacy / AI notice | David | All | Transparency, control |
+
+**On the win-back offer specifically:** The line *"The bar will be exactly where you left it"* has a double meaning — the barbell in the gym, and the psychological bar that lapsed members feel they must clear before returning. Both meanings should land. Do not simplify this line in editing.
+
+**On the AI transparency section:** The sentence *"The AI spotted the pattern; your coach wrote the words"* is the single most important trust-building sentence in the product. If any future implementation automates the coach message rather than prompting it, this sentence becomes a lie. The copy cannot change unless the product does first — or vice versa.

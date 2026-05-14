@@ -199,5 +199,206 @@
     "aiPersonalisationEnabled": true,
     "theme": "dark",
     "adminPassword": "admin123"
+  },
+  "sportsco": {
+    "id": "sportsco",
+    "name": "Sportsco",
+    "type": "gym",
+    "tagline": "Every visit. Every milestone. Every reason to come back.",
+    "currency": {
+      "name": "Anchor Points",
+      "symbol": "AP"
+    },
+    "primaryColor": "#0EA5E9",
+    "accentColor": "#38BDF8",
+    "activities": [
+      {
+        "id": "first_dip",
+        "name": "First Dip",
+        "points": 100,
+        "category": "Special",
+        "icon": "\ud83c\udfca",
+        "description": "Earn once for your first visit to any facility type you have never used before."
+      },
+      {
+        "id": "lane_regular",
+        "name": "Lane Regular",
+        "points": 10,
+        "category": "Daily",
+        "icon": "\ud83c\udf0a",
+        "description": "Check in for any pool session including swim lanes, lessons, or aqua class."
+      },
+      {
+        "id": "court_committed",
+        "name": "Court Committed",
+        "points": 15,
+        "category": "Visit",
+        "icon": "\ud83c\udfbe",
+        "description": "Complete a court sport booking for squash, padel, or 5-a-side."
+      },
+      {
+        "id": "class_regular",
+        "name": "Class Regular",
+        "points": 15,
+        "category": "Visit",
+        "icon": "\ud83c\udfcb\ufe0f",
+        "description": "Attend any group fitness class including spin, Pilates, HIIT, or yoga."
+      },
+      {
+        "id": "four_week_fix",
+        "name": "Four-Week Fix",
+        "points": 40,
+        "category": "Special",
+        "icon": "\ud83d\udcc5",
+        "description": "Attend the same group fitness class for four consecutive weeks to earn this streak reward."
+      },
+      {
+        "id": "quiet_hours",
+        "name": "Quiet Hours",
+        "points": 20,
+        "category": "Special",
+        "icon": "\ud83c\udf05",
+        "description": "Check in during off-peak windows \u2014 before 9am, after 7pm, or on Saturday afternoon."
+      },
+      {
+        "id": "court_ritual",
+        "name": "Court Ritual",
+        "points": 30,
+        "category": "Visit",
+        "icon": "\ud83d\udd01",
+        "description": "Book the same court slot three weeks in a row to earn this group ritual recognition bonus."
+      },
+      {
+        "id": "family_day",
+        "name": "Family Day",
+        "points": 50,
+        "category": "Family",
+        "icon": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67",
+        "description": "Earn when three or more family members are active at Sportsco within the same calendar month."
+      },
+      {
+        "id": "block_reenrol",
+        "name": "Block Re-Enrol",
+        "points": 75,
+        "category": "Special",
+        "icon": "\ud83d\udcda",
+        "description": "Re-enrol in swim lessons within 7 days of your current block completing."
+      },
+      {
+        "id": "bring_a_friend",
+        "name": "Bring a Friend",
+        "points": 80,
+        "category": "Social",
+        "icon": "\ud83e\udd1d",
+        "description": "Earn when a friend you referred joins Sportsco as a full member."
+      },
+      {
+        "id": "loyal_friend_bonus",
+        "name": "Loyal Friend Bonus",
+        "points": 10,
+        "category": "Social",
+        "icon": "\ud83d\udc9a",
+        "description": "Earn per visit your referred friend makes during their first 60 days of membership, up to 12 visits."
+      },
+      {
+        "id": "cafe_ritual",
+        "name": "Caf\u00e9 Ritual",
+        "points": 5,
+        "category": "Daily",
+        "icon": "\u2615",
+        "description": "Grab something from the Sportsco caf\u00e9 after a workout or swim lesson."
+      },
+      {
+        "id": "wellness_addon",
+        "name": "Wellness Add-On",
+        "points": 25,
+        "category": "Visit",
+        "icon": "\ud83e\uddd6",
+        "description": "Use the spa or sauna following any facility visit at Sportsco."
+      }
+    ],
+    "rewards": [
+      {
+        "id": "cafe_credit",
+        "name": "Caf\u00e9 Credit",
+        "cost": 80,
+        "icon": "\u2615",
+        "description": "Receive \u20ac5 credit at the Sportsco caf\u00e9, applied instantly to your account at checkout."
+      },
+      {
+        "id": "priority_court_booking",
+        "name": "Priority Court Booking",
+        "cost": 120,
+        "icon": "\ud83c\udfbe",
+        "description": "Book your court slot 48 hours before general availability opens to other members."
+      },
+      {
+        "id": "guest_pass",
+        "name": "Guest Pass",
+        "cost": 150,
+        "icon": "\ud83c\udf9f\ufe0f",
+        "description": "Bring a non-member for a full day visit across any Sportsco facility."
+      },
+      {
+        "id": "spa_sauna_pass",
+        "name": "Spa & Sauna Pass",
+        "cost": 180,
+        "icon": "\ud83e\uddd6",
+        "description": "Redeem for a standalone spa and sauna access session for yourself or gift it to a guest."
+      },
+      {
+        "id": "first_padel_free",
+        "name": "First Padel Session Free",
+        "cost": 200,
+        "icon": "\ud83c\udfd3",
+        "description": "Redeem for a complimentary padel session \u2014 the ideal way to try a new facility for the first time."
+      },
+      {
+        "id": "class_pack_topup",
+        "name": "Class Pack Top-Up",
+        "cost": 250,
+        "icon": "\ud83d\udcaa",
+        "description": "Receive two complimentary classes added directly to your account, valid for any class type."
+      },
+      {
+        "id": "kids_lesson_discount",
+        "name": "Kids Lesson Discount",
+        "cost": 300,
+        "icon": "\ud83d\udc67",
+        "description": "Receive 15% off your next swim lesson block enrolment, exclusively available to family accounts."
+      },
+      {
+        "id": "annual_loyalty_credit",
+        "name": "Annual Loyalty Credit",
+        "cost": 500,
+        "icon": "\ud83c\udfc5",
+        "description": "Receive \u20ac20 credit applied directly against your membership renewal \u2014 the highest-value redemption available."
+      }
+    ],
+    "tiers": [
+      {
+        "name": "Shoreline",
+        "minPoints": 0,
+        "color": "#64B5F6"
+      },
+      {
+        "name": "Harbour",
+        "minPoints": 500,
+        "color": "#0EA5E9"
+      },
+      {
+        "name": "Channel",
+        "minPoints": 1500,
+        "color": "#D4AF37"
+      },
+      {
+        "name": "Deep Water",
+        "minPoints": 3500,
+        "color": "#7C3AED"
+      }
+    ],
+    "aiPersonalisationEnabled": true,
+    "theme": "light",
+    "adminPassword": "admin123"
   }
 }
